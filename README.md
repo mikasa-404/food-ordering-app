@@ -1,8 +1,8 @@
-# namaste-dev-react
+# Food-app-React
 
 
 
-# namaste food
+
 /*
 Header
   - logo
