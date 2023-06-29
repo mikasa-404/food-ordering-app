@@ -1,15 +1,19 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import userContext from "../utils/userContext";
+
 
 const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const {user, setUser}=useContext(userContext);
 
   useEffect(() => {
     console.log("UseEffect CALLED");
@@ -38,7 +42,7 @@ const Body = () => {
     <div className="body">
       {/* <div className="filter flex bg-[url('./imgs/bgrnd.jpg')]  h-96  text-slate-100"> */}
 
-      <div className="filter flex bg-[url('./imgs/bgrnd.jpg')]  h-96  text-slate-100 justify-center">
+      <div className="filter flex bg-[url('./imgs/bgrnd.jpg')]  h-96  justify-center">
         <div className="search p-3 ">
           <input
             type="text"
@@ -47,7 +51,7 @@ const Body = () => {
             onChange={(e) => {setSearchText(e.target.value);}}
           />
           <button
-            className="search-btn m-2 p-2 bg-slate-600 rounded-lg"
+            className="search-btn m-2 p-2 bg-slate-600 rounded-lg  text-slate-100"
             onClick={() => {
               console.log(searchText);
               //we are searching in list of restaurants->which won't be modified
@@ -58,8 +62,16 @@ const Body = () => {
           >
             Search
           </button>
+
+          <input
+          value={user.name}
+          onChange={(e)=>{setUser({
+            name: e.target.value,
+            email: "newemail@gmail.com"
+          });}}
+          ></input>
         </div>
-        <div className="filter-btn p-3 m-4">
+        <div className="filter-btn p-3 m-4  text-slate-100">
         <button
           className=" hover:bg-slate-700 border"
           onClick={() => {
@@ -73,6 +85,7 @@ const Body = () => {
           Filter by Rating
         </button>
         </div>
+
         
       </div>
       <div className="res-container flex flex-wrap mx-20 justify-center my-5 ">

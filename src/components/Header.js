@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Mylogo from "../../imgs/FOODYVILLE2.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
+import store from "../utils/store";
 
 const Title=()=>(
   <a href="/">
@@ -8,18 +12,15 @@ const Title=()=>(
     </a>
 );
   
-
-
-// const styles = {
-//   color: "red",
-//   background: "#0f0",
-//   fontSize: "32px"
-// };
 const Header = () => {
+  const cartItems= useSelector(store => store.cart.items);
+
+  const {user} = useContext(userContext);
+
   const [btnName, setBtnName] = useState("Login");
   return (
     <div>
-      <div className="bg-fixed flex justify-between bg-black shadow-md">
+      <div className="bg-fixed flex justify-between bg-black shadow-xl">
     <Title/>
       <div className="nav-items py-2">
         <ul className="flex p-6 text-white space-x-5">
@@ -29,15 +30,21 @@ const Header = () => {
           <li>
             <Link to="/about">About us</Link>
           </li>
-          
           <li>
             <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            {user.name}
           </li>
           <li>
             <Link to="/instamart">Instamart</Link>
           </li>
           <li>
-            Cart
+          <Link to="/cart">
+            Cart- {cartItems.length}
+            {console.log(cartItems)}
+            </Link>
+
           </li>
 
           <button
