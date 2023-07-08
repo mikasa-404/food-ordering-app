@@ -1,10 +1,10 @@
 # Foodyville -Food Ordering App  🥞
 
-> This is a food ordering app project developed using ReactJS. The app aims to provide a seamless experience for users to order food from various restaurants near them. 
+This is a food ordering app project developed using ReactJS. The app aims to provide a seamless experience for users to order food from various restaurants near them. 
 
 ![Home page](./imgs/Screenshot%20from%202023-07-08%2017-46-58.png)
 
-## Tech-Stack 💻
+## 💻 Tech-Stack 
 - Frontend Library: React 
 - Styling: Tailwind CSS 
 - Bundler: Parcel 
@@ -13,8 +13,7 @@
 - Transpiler: Babel 
 - Routing: React Router 
 
-## Features 📓
-
+## 📓Features 
 - Fetches data of each restaurant using Swiggy API
 - Restaurant listings with area name, cuisine category, and ratings
 - Search functionality for restaurants
@@ -22,8 +21,8 @@
 - Custom shimmer UI effect for improved user experience.
 - Utilizes custom hooks for code organization and reusability.
 - Implements lazy loading to optimize performance.
-## Installation ⚙️
 
+## ⚙️Installation 
 To set up the Food Ordering App project locally, follow these steps:
 
 1. Clone the repository:
@@ -48,8 +47,7 @@ To set up the Food Ordering App project locally, follow these steps:
 
 5. Make sure you are using a browser extension like "[Allow CORS](https://cldup.com/dTxpPi9lDf.thumb.png)" or "[CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)" installed in your browser to bypass CORS restrictions during development.
 
-
-## To-do 🔨
+## 🔨To-do 
 - Add User registration and authentication
 - Improvise custom shimmer ui
 - Improve cors issue : Set up a server-side proxy that forwards your requests to the target API. 
