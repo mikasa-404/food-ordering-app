@@ -1,17 +1,8 @@
 # Foodyville -Food Ordering App  🥞
 
-> This is a food ordering app project developed using ReactJS. The app aims to provide a seamless experience for users to order food from various restaurants near them. It utilizes the Swiggy API to fetch restaurant data and provides users with a wide selection of restaurants and dishes to choose from.
+> This is a food ordering app project developed using ReactJS. The app aims to provide a seamless experience for users to order food from various restaurants near them. 
 
-## Features 📓
-
-- Fetches data of each restaurant using Swiggy API.
-- Restaurant listings with area name, cuisine category, and ratings.
-- Search functionality for restaurants by name.
-- Detailed information and prices per quantity for each dish.
-- Cart management feature implemented using Redux Toolkit.
-- Custom shimmer UI effect for improved user experience.
-- Utilizes custom hooks for code organization and reusability.
-- Implements lazy loading to optimize performance.
+![Home page](./imgs/Screenshot%20from%202023-07-08%2017-46-58.png)
 
 ## Tech-Stack 💻
 - Frontend Library: React 
@@ -22,6 +13,15 @@
 - Transpiler: Babel 
 - Routing: React Router 
 
+## Features 📓
+
+- Fetches data of each restaurant using Swiggy API
+- Restaurant listings with area name, cuisine category, and ratings
+- Search functionality for restaurants
+- Cart management feature implemented using Redux Toolkit.
+- Custom shimmer UI effect for improved user experience.
+- Utilizes custom hooks for code organization and reusability.
+- Implements lazy loading to optimize performance.
 ## Installation ⚙️
 
 To set up the Food Ordering App project locally, follow these steps:
@@ -48,9 +48,6 @@ To set up the Food Ordering App project locally, follow these steps:
 
 5. Make sure you are using a browser extension like "[Allow CORS](https://cldup.com/dTxpPi9lDf.thumb.png)" or "[CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)" installed in your browser to bypass CORS restrictions during development.
 
-## Screenshots 🖼️
-![Home page](./imgs/Screenshot%20from%202023-07-08%2017-46-58.png)
-![Restaurant Menu Page](./imgs/Screenshot%20from%202023-07-08%2017-55-57.png)
 
 ## To-do 🔨
 - Add User registration and authentication
