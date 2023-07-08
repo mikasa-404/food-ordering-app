@@ -30,7 +30,10 @@ const AppLayout = () => {
     <Provider store={store}>
       <billingContext.Provider value={{ bill: bill, setBill: setBill }}>
         <Header />
+        <Suspense fallback={<Shimmer />}>
         <Outlet />
+        </Suspense>
+
       </billingContext.Provider>
     </Provider>
   );
@@ -43,7 +46,9 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: 
+        
+        <Body />,
       },
       {
         path: "/about",
@@ -60,9 +65,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/help",
         element: (
-          <Suspense fallback={<Shimmer />}>
             <Help />
-          </Suspense>
         ),
       },
       {
