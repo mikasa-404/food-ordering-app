@@ -21,12 +21,16 @@ const RestaurantMenu = () => {
     resInfo?.cards[0]?.card?.card?.info;
   // console.log(resInfo?.cards[0]?.card?.card?.info);
 
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  itemCards.forEach((element) => {
-    element.card.info.qty = 0;
-  });
+  const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  console.log(resInfo?.cards[2]);
   console.log(itemCards);
+
+  if(itemCards.length!=0) {
+    itemCards.forEach((element) => {
+      element.card.info.qty = 0;
+    })
+  }
+ 
 
   return (
     <div className="menu mx-40">

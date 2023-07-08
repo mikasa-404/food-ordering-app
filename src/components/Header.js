@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/instamart">Instamart</Link>
+            <Link to="/help">Help</Link>
           </li>
           <li>
           <Link to="/cart">

@@ -13,7 +13,7 @@ import store from "./utils/store";
 import Cart from "./components/Cart";
 import billingContext from "./utils/billingContext";
 
-const Instamart = lazy(() => import("./components/Instamart"));
+const Help = lazy(() => import("./components/Help"));
 
 const AppLayout = () => {
   // const [user, setUser] = useState({
@@ -58,10 +58,10 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/instamart",
+        path: "/help",
         element: (
           <Suspense fallback={<Shimmer />}>
-            <Instamart />
+            <Help />
           </Suspense>
         ),
       },
