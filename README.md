@@ -5,9 +5,9 @@ This is a food ordering app project developed using ReactJS. The app aims to pro
 ![Home page](./imgs/Screenshot%20from%202023-07-08%2017-46-58.png)
 
 ## 🔗 Live link
-&nbsp;&nbsp;&nbsp;&nbsp;Note:Make sure you are using a browser extension like "[CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)" (preferred) or "[Allow CORS](https://cldup.com/dTxpPi9lDf.thumb.png)" installed in your browser to bypass CORS restrictions when accesing the site.
 
-<center>[https://stalwart-paletas-743f43.netlify.app/](https://stalwart-paletas-743f43.netlify.app/)</center>
+**[https://stalwart-paletas-743f43.netlify.app/](https://stalwart-paletas-743f43.netlify.app/)**
+**Note** :Make sure you are using a browser extension like "[CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)" (preferred) or "[Allow CORS](https://cldup.com/dTxpPi9lDf.thumb.png)" installed in your browser to bypass CORS restrictions when accesing the site.
 
 
 ## 💻 Tech-Stack 
