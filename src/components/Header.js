@@ -2,7 +2,6 @@ import { useState } from "react";
 import Mylogo from "../../imgs/FOODYVILLE2.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import userContext from "../utils/userContext";
 import { useSelector } from "react-redux";
 import store from "../utils/store";
 
@@ -14,9 +13,6 @@ const Title=()=>(
   
 const Header = () => {
   const cartItems= useSelector(store => store.cart.items);
-
-  const {user} = useContext(userContext);
-
   const [btnName, setBtnName] = useState("Login");
   return (
     <div>
@@ -34,9 +30,6 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            {user.name}
-          </li>
-          <li>
             <Link to="/instamart">Instamart</Link>
           </li>
           <li>
@@ -44,7 +37,6 @@ const Header = () => {
             Cart- {cartItems.length}
             {console.log(cartItems)}
             </Link>
-
           </li>
 
           <button

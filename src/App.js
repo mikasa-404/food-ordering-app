@@ -8,26 +8,30 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
-import Footer from "./components/Footer";
-import userContext from "./utils/userContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
+import billingContext from "./utils/billingContext";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
-  const [user, setUser] = useState({
-    name: "Priya",
-    email: "jhapriya106@gmail.com",
-  });
+  // const [user, setUser] = useState({
+  //   name: "Priya",
+  //   email: "jhapriya106@gmail.com",
+  // });
+  const [bill, setBill]= useState(
+    {
+      totalBill: 0,
+    }
+  );
+
   return (
     <Provider store={store}>
-      <userContext.Provider value={{ user: user, setUser: setUser }}>
+      <billingContext.Provider value={{ bill: bill, setBill: setBill }}>
         <Header />
         <Outlet />
-        <Footer />
-      </userContext.Provider>
+      </billingContext.Provider>
     </Provider>
   );
 };
@@ -43,7 +47,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: <About name="Priya"/>,
       },
       {
         path: "/contact",

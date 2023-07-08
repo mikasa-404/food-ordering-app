@@ -2,7 +2,6 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurant from "../utils/useRestaurant";
 import { addItem } from "../utils/cartSlice";
-import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { MENU_ITEM_URL } from "../utils/constants";
 
@@ -20,11 +19,14 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwoMessage, city , areaName, avgRating ,totalRatings} =
     resInfo?.cards[0]?.card?.card?.info;
-  console.log(resInfo?.cards[0]?.card?.card?.info);
+  // console.log(resInfo?.cards[0]?.card?.card?.info);
 
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  // console.log(itemCards);
+  itemCards.forEach((element) => {
+    element.card.info.qty = 0;
+  });
+  console.log(itemCards);
 
   return (
     <div className="menu mx-40">
@@ -72,8 +74,8 @@ const RestaurantMenu = () => {
               </div>
             </div>
             <button
-              className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800"
-              onClick={() => addFoodItem(item)}
+              className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950"
+              onClick={() => addFoodItem(item.card.info)}
             >
               + Add to Cart
             </button>
