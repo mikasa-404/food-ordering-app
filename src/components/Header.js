@@ -15,38 +15,40 @@ const Header = () => {
   const cartItems= useSelector(store => store.cart.items);
   const [btnName, setBtnName] = useState("Login");
   return (
-    <div>
-      <div className="bg-fixed flex justify-between bg-black shadow-xl">
+    <div className=" font-medium">
+      <div className="bg-fixed flex items-center justify-between bg-black shadow-xl">
     <Title/>
-      <div className="nav-items py-2">
-        <ul className="flex p-6 text-white space-x-5">
-          <li className="">
-            <Link to="/">Home</Link>
+      <div className="nav-items py-5">
+        <ul className="flex text-white space-x-6 mx-5">
+          <li className="m-x-2">
+            <Link className="focus:text-red-500 " to="/">Home</Link>
+          </li>
+          <li className="m-x-2">
+            <Link className="focus:text-red-500" to="/about">About</Link>
           </li>
           <li>
-            <Link to="/about">About us</Link>
+            <Link className="focus:text-red-500" to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className="focus:text-red-500" to="/help">Help</Link>
           </li>
           <li>
-            <Link to="/help">Help</Link>
-          </li>
-          <li>
-          <Link to="/cart">
+          <Link className="focus:text-red-500" to="/cart">
             Cart- {cartItems.length}
             {console.log(cartItems)}
             </Link>
           </li>
-
+          <li>
           <button
-            className="login"
+            className="login focus:text-red-500"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
           >
             {btnName}
           </button>
+          </li>
+          
         </ul>
     </div>
     </div>

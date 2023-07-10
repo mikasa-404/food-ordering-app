@@ -27,7 +27,7 @@ const AppLayout = () => {
   );
 
   return (
-    <Provider store={store}>
+      <Provider store={store}>
       <billingContext.Provider value={{ bill: bill, setBill: setBill }}>
         <Header />
         <Suspense fallback={<Shimmer />}>
@@ -36,6 +36,7 @@ const AppLayout = () => {
 
       </billingContext.Provider>
     </Provider>
+    
   );
 };
 

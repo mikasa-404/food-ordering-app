@@ -55,6 +55,7 @@ To set up the Food Ordering App project locally, follow these steps:
 5. Make sure you are using a browser extension like "[Allow CORS](https://cldup.com/dTxpPi9lDf.thumb.png)" or "[CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino)" installed in your browser to bypass CORS restrictions during development.
 
 ## 🔨To-do 
+- Update About, Contact and help pages
 - Add User registration and authentication
 - Improvise custom shimmer ui
 - Improve cors issue : Set up a server-side proxy that forwards your requests to the target API. 

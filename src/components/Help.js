@@ -2,57 +2,81 @@ import { useState } from "react";
 
 const Section = (props) => {
   return (
-    <div className="border border-black p-3 m-2">
-      <h3 className=" font-bold text-2xl">{props.title}</h3>
+    <div className=" my-4 border-b-2">
+      <div className="flex justify-between">
+      <h3 className=" text-lg">{props.title}</h3>
       {props.isVisible ? (
         <button
-          className=" cursor-pointer border bg-slate-700 text-red-100 p-1 rounded-lg"
+          className=" cursor-pointer border text-sm p-1 rounded-lg m-2"
           onClick={() => props.setIsVisible()}
         >
-          Hide
+Hide
         </button>
       ) : (
         <button
-          className=" cursor-pointer border bg-slate-700 text-red-100 p-1 rounded-lg"
+          className=" cursor-pointer border text-sm p-1 rounded-lg m-2"
           onClick={() => props.setIsVisible()}
         >
           Show
         </button>
       )}
-      {props.isVisible && <p>{props.description}</p>}
+      </div>
+      
+      {props.isVisible && <p className="m-2 my-1">{props.description}</p>}
     </div>
   );
 };
 const Help = () => {
- const [visibleSection, setVisibleSection]=useState("about");
+ const [visibleSection, setVisibleSection]=useState("");
 
   return (
-    <div>
+    <div className="bg-red-300 m-0 flex justify-center">
+      <div className="w-3/5 h-auto p-10 bg-white my-5">
+      <div className="heading text-3xl font-semibold font-serif my-5">FAQs</div>
+      <div>
       <Section
-        title={"About us"}
+        title={"How does the food ordering app work?"}
         description={
-          "This is description of about us section.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
+          "The food ordering app allows you to browse through a list of restaurants or food establishments, select the items you want to order, customize your order if necessary, and place the order. "
         }
-        isVisible= {visibleSection==="about"}
-        setIsVisible={() => setVisibleSection(visibleSection==="about"? "": "about")}
+        isVisible= {visibleSection==="sec1"}
+        setIsVisible={() => setVisibleSection(visibleSection==="sec1"? "": "sec1")}
       />
       <Section
-        title={"Team instamart"}
+        title={" How can I pay for my food order?"}
         description={
-          "This is description of our team.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
+          "Food ordering apps typically offer various payment options, including credit/debit card payments, digital wallets, and cash on delivery. You can choose the payment method that suits you best during the checkout process."
         }
-        isVisible= {visibleSection==="team"}
-        setIsVisible={() => setVisibleSection(visibleSection==="team"? "": "team")}
+        isVisible= {visibleSection==="sec2"}
+        setIsVisible={() => setVisibleSection(visibleSection==="sec2"? "": "sec2")}
       />
       <Section
-        title={"Contact instamart"}
+        title={"Is there a minimum order requirement?"}
         description={
-          "This is description of our contact info.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
+          "Some restaurants may have a minimum order requirement for delivery, which means you must reach a certain total amount for the order to be eligible for delivery. This requirement varies from restaurant to restaurant, and the food ordering app will typically inform you if there is a minimum order limit."
         }
-        isVisible= {visibleSection==="contact"}
-        setIsVisible={() => setVisibleSection(visibleSection==="contact"? "" : "contact")}
+        isVisible= {visibleSection==="sec3"}
+        setIsVisible={() => setVisibleSection(visibleSection==="sec3"? "" : "sec3")}
+      />
+      <Section
+        title={"I entered the wrong CVV, why did my transaction still go through?"}
+        description={
+"The logic of validations of CVV resides with either payment gateways or banks. It is absolutely the choice of banks to have CVV as a mandatory input field or not. As per RBI guidelines, 2-Factor-Authentication is not mandatory for less than Rs 2000 rupees transaction. It is not in control of Foodyville. As an organization, we don't store any card information"        }
+        isVisible= {visibleSection==="sec4"}
+        setIsVisible={() => setVisibleSection(visibleSection==="sec4"? "" : "sec4")}
+      />
+      <Section
+        title={"Is there a minimum order requirement?"}
+        description={
+          "Some restaurants may have a minimum order requirement for delivery, which means you must reach a certain total amount for the order to be eligible for delivery. This requirement varies from restaurant to restaurant, and the food ordering app will typically inform you if there is a minimum order limit."
+        }
+        isVisible= {visibleSection==="sec5"}
+        setIsVisible={() => setVisibleSection(visibleSection==="sec5"? "" : "sec5")}
       />
     </div>
+    </div>
+      </div>
+    
   );
 };
 export default Help;
