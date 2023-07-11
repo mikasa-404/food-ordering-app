@@ -18,6 +18,14 @@ const cartSlice = createSlice({
         action.payload.qty++;
       }
     },
+    removeItem:(state, action)=>{
+        const index= state.items.findIndex(
+            (item) => item.id === action.payload.id
+        );
+        if (index > -1) { // only splice array when item is found
+            state.items.splice(index, 1); // 2nd parameter means remove one item only
+        }
+    },
     increaseQuantity: (state, action) => {
       const itemFound = state.items.find(
         (item) => item.id === action.payload.id
@@ -31,17 +39,8 @@ const cartSlice = createSlice({
       if (itemFound.qty == 1) itemFound.qty = 1;
       else itemFound.qty--;
     },
-
-    // removeItem: (state, action) => {
-    //   state.items.pop();
-    // },
     clearCart: (state, action) => {
       state.items = [];
-      state.totalItems = [];
-    },
-    getTotal: (state, action) => {
-      const price=0;
-      state.totalItems = [];
     },
   },
 });

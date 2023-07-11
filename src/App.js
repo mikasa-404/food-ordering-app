@@ -10,7 +10,7 @@ import Shimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
-import billingContext from "./utils/billingContext";
+import OrderPlaced from "./components/Orderplaced";
 
 const Help = lazy(() => import("./components/Help"));
 
@@ -27,13 +27,13 @@ const AppLayout = () => {
 
   return (
       <Provider store={store}>
-      <billingContext.Provider value={{ bill: bill, setBill: setBill }}>
+      {/* <billingContext.Provider value={{ bill: bill, setBill: setBill }}> */}
         <Header />
         <Suspense fallback={<Shimmer />}>
         <Outlet />
         </Suspense>
 
-      </billingContext.Provider>
+      {/* </billingContext.Provider> */}
     </Provider>
     
   );
@@ -67,6 +67,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart/>,
+      },
+      {
+        path: "/order",
+        element: <OrderPlaced/>,
       },
     ],
     errorElement: <Error />,

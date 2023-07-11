@@ -2,13 +2,25 @@ import { useSelector } from "react-redux";
 import FoodItem from "./FoodItem";
 import Cart_img from "../../imgs/images.png";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
+
+import { useState } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-//   const dispatch = useDispatch();
-//   const handleClearCart = () => {
-//     dispatch(clearCart());
-//   };
+    const dispatch = useDispatch();
+    const handleClearCart = () => {
+      dispatch(clearCart());
+    };
+ 
+
+  var tprice = 0;
+  cartItems.forEach((item) => {
+    tprice =
+      tprice +
+      ((item.price * item.qty) / 100 || (item.defaultPrice * item.qty) / 100);
+  });
 
   console.log(cartItems);
 
@@ -24,22 +36,43 @@ const Cart = () => {
       </button>
     </div>
   ) : (
-    <div className="mx-40 flex justify-center">
-      <div className="m-10">
-        <div className="text-2xl font-bold m-3">
-          Your cart ({cartItems.length} items)
+    <div className=" flex justify-between mx-40">
+      <div className="mt-10">
+        <div className="flex mb-2 p-2 justify-between border-b-2">
+          <p className="text-2xl font-bold">
+            Your cart ({cartItems.length} items)
+          </p>
+          <Link to="/" className="underline text-medium ">Continue shopping</Link>
         </div>
-    
-        {cartItems.map((item) => (
-          <FoodItem key={item.id} items={item} />
-        ))}
+        <div>
+          {cartItems.map((item) => (
+            <FoodItem key={item.id} items={item} />
+          ))}
+        </div>
       </div>
-      <div className="m-10 border-slate-800 border-2">
-        <h2 className="text-2xl font-bold m-3">Summary</h2>
-        <p>Item total</p>
-        <p>Delivery Fee</p>
-        <p>GST and Restaurant Charges</p>
-        <h1>To pay</h1>
+      <div></div>
+      <div className="mb-auto m-10 bg-slate-100 border-2 rounded-md">
+        <h2 className="text-2xl font-bold m-3">Order Summary:</h2>
+
+        <div className=" border-b-2 border-black m-3 p-2">
+          <div className="flex justify-between p-1">
+            <p className=" mr-4">Item total</p> <p> ₹{tprice}</p>
+          </div>
+          <div className="flex justify-between p-1">
+            <p>Delivery Fee</p>
+            <p>FREE</p>
+          </div>
+          <div className="flex justify-between p-1">
+            <p className=" mr-10">GST and Restaurant charges</p>
+            <p> ₹40.0</p>
+          </div>
+        </div>
+        <div className="flex justify-between m-3 font-semibold p-2">
+          <p>TO PAY</p>
+          <p>₹{tprice + 40}</p>
+        </div>
+        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md"><Link to="/order"> Checkout → { handleClearCart()} </Link></button>
+
       </div>
     </div>
   );

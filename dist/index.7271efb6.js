@@ -2965,8 +2965,8 @@ var _store = require("./utils/store");
 var _storeDefault = parcelHelpers.interopDefault(_store);
 var _cart = require("./components/Cart");
 var _cartDefault = parcelHelpers.interopDefault(_cart);
-var _billingContext = require("./utils/billingContext");
-var _billingContextDefault = parcelHelpers.interopDefault(_billingContext);
+var _orderplaced = require("./components/Orderplaced");
+var _orderplacedDefault = parcelHelpers.interopDefault(_orderplaced);
 var _s = $RefreshSig$();
 const Help = /*#__PURE__*/ (0, _react.lazy)(()=>require("c60e88b0803b6e12"));
 _c = Help;
@@ -2981,36 +2981,26 @@ const AppLayout = ()=>{
     });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
         store: (0, _storeDefault.default),
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _billingContextDefault.default).Provider, {
-            value: {
-                bill: bill,
-                setBill: setBill
-            },
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 31,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 31,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
-                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 33,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 32,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/App.js",
-            lineNumber: 30,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
+            }, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 32,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/App.js",
         lineNumber: 29,
         columnNumber: 7
@@ -3068,11 +3058,19 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     lineNumber: 69,
                     columnNumber: 18
                 }, undefined)
+            },
+            {
+                path: "/order",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderplacedDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 73,
+                    columnNumber: 18
+                }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 72,
+            lineNumber: 76,
             columnNumber: 19
         }, undefined)
     }
@@ -3082,7 +3080,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 78,
+    lineNumber: 82,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -3094,7 +3092,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/About":"9R1Eu","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6","react-router-dom":"9xmpe","./components/Shimmer":"g6ZGj","react-redux":"bdVon","./utils/store":"k2jPV","./components/Cart":"h8J3U","./utils/billingContext":"60TNP","c60e88b0803b6e12":"dkZO3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/About":"9R1Eu","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6","react-router-dom":"9xmpe","./components/Shimmer":"g6ZGj","react-redux":"bdVon","./utils/store":"k2jPV","./components/Cart":"h8J3U","./components/Orderplaced":"aWW1k","c60e88b0803b6e12":"dkZO3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -38756,6 +38754,10 @@ const cartSlice = (0, _toolkit.createSlice)({
                 action.payload.qty++;
             }
         },
+        removeItem: (state, action)=>{
+            const index = state.items.findIndex((item)=>item.id === action.payload.id);
+            if (index > -1) state.items.splice(index, 1); // 2nd parameter means remove one item only
+        },
         increaseQuantity: (state, action)=>{
             const itemFound = state.items.find((item)=>item.id === action.payload.id);
             itemFound.qty++;
@@ -38765,16 +38767,8 @@ const cartSlice = (0, _toolkit.createSlice)({
             if (itemFound.qty == 1) itemFound.qty = 1;
             else itemFound.qty--;
         },
-        // removeItem: (state, action) => {
-        //   state.items.pop();
-        // },
         clearCart: (state, action)=>{
             state.items = [];
-            state.totalItems = [];
-        },
-        getTotal: (state, action)=>{
-            const price = 0;
-            state.totalItems = [];
         }
     }
 });
@@ -39093,7 +39087,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","react":"21dqq","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Shimmer":"g6ZGj"}],"bMboU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","react":"21dqq","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39211,54 +39205,7 @@ const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,
 const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 const MENU_ITEM_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3GF3D":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "filterData", ()=>filterData);
-function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((res)=>res?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterData;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"74Yls":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$03b2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _s = $RefreshSig$();
-const useOnline = ()=>{
-    _s();
-    const [isOnline, setIsOnline] = (0, _react.useState)(true);
-    const handleOnline = ()=>{
-        setIsOnline(true);
-    };
-    const handleOffline = ()=>{
-        setIsOnline(false);
-    };
-    (0, _react.useEffect)(()=>{
-        window.addEventListener("online", handleOnline);
-        window.addEventListener("offline", handleOffline);
-        return ()=>{
-            window.removeEventListener("online", handleOnline);
-            window.removeEventListener("offline", handleOffline);
-        };
-    }, []);
-    return isOnline;
-};
-_s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
-exports.default = useOnline;
-
-  $parcel$ReactRefreshHelpers$03b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6ZGj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39372,7 +39319,54 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterData", ()=>filterData);
+function filterData(searchText, restaurants) {
+    const filterData = restaurants.filter((res)=>res?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterData;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"74Yls":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$03b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    const handleOnline = ()=>{
+        setIsOnline(true);
+    };
+    const handleOffline = ()=>{
+        setIsOnline(false);
+    };
+    (0, _react.useEffect)(()=>{
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOffline);
+        return ()=>{
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOffline);
+        };
+    }, []);
+    return isOnline;
+};
+_s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
+exports.default = useOnline;
+
+  $parcel$ReactRefreshHelpers$03b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39506,7 +39500,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../imgs/food2.jpg":"h0orP"}],"h0orP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../imgs/food2.jpg":"h0orP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0orP":[function(require,module,exports) {
 module.exports = require("e3e15a64bf89753b").getBundleURL("aXMci") + "food2.79b95d7d.jpg" + "?" + Date.now();
 
 },{"e3e15a64bf89753b":"lgJ39"}],"kvula":[function(require,module,exports) {
@@ -39886,14 +39880,20 @@ var _foodItemDefault = parcelHelpers.interopDefault(_foodItem);
 var _imagesPng = require("../../imgs/images.png");
 var _imagesPngDefault = parcelHelpers.interopDefault(_imagesPng);
 var _reactRouterDom = require("react-router-dom");
+var _cartSlice = require("../utils/cartSlice");
+var _react = require("react");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
-    //   const dispatch = useDispatch();
-    //   const handleClearCart = () => {
-    //     dispatch(clearCart());
-    //   };
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleClearCart = ()=>{
+        dispatch((0, _cartSlice.clearCart)());
+    };
+    var tprice = 0;
+    cartItems.forEach((item)=>{
+        tprice = tprice + (item.price * item.qty / 100 || item.defaultPrice * item.qty / 100);
+    });
     console.log(cartItems);
     return cartItems.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col items-center p-5 bg-slate-100",
@@ -39903,7 +39903,7 @@ const Cart = ()=>{
                 src: (0, _imagesPngDefault.default)
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 17,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -39911,7 +39911,7 @@ const Cart = ()=>{
                 children: "Your Cart is empty"
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 18,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -39919,7 +39919,7 @@ const Cart = ()=>{
                 children: "You can go to home page to view more restaurants"
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 19,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -39929,105 +39929,236 @@ const Cart = ()=>{
                     children: " Click here to go back to Restaurants "
                 }, void 0, false, {
                     fileName: "src/components/Cart.js",
-                    lineNumber: 23,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 22,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Cart.js",
-        lineNumber: 16,
+        lineNumber: 28,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mx-40 flex justify-center",
+        className: " flex justify-between mx-40",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "m-10",
+                className: "mt-10",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "text-2xl font-bold m-3",
+                        className: "flex mb-2 p-2 justify-between border-b-2",
                         children: [
-                            "Your cart (",
-                            cartItems.length,
-                            " items)"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-2xl font-bold",
+                                children: [
+                                    "Your cart (",
+                                    cartItems.length,
+                                    " items)"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 42,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                className: "underline text-medium ",
+                                children: "Continue shopping"
+                            }, void 0, false, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 45,
+                                columnNumber: 11
+                            }, undefined)
                         ]
                     }, void 0, true, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, undefined),
-                    cartItems.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemDefault.default), {
-                            items: item
-                        }, item.id, false, {
-                            fileName: "src/components/Cart.js",
-                            lineNumber: 34,
-                            columnNumber: 11
-                        }, undefined))
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Cart.js",
-                lineNumber: 28,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "m-10 border-slate-800 border-2",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-2xl font-bold m-3",
-                        children: "Summary"
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 38,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "Item total"
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 39,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "Delivery Fee"
-                    }, void 0, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 40,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "GST and Restaurant Charges"
-                    }, void 0, false, {
                         fileName: "src/components/Cart.js",
                         lineNumber: 41,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "To pay"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: cartItems.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemDefault.default), {
+                                items: item
+                            }, item.id, false, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 49,
+                                columnNumber: 13
+                            }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/Cart.js",
-                        lineNumber: 42,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 37,
+                lineNumber: 40,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
+                fileName: "src/components/Cart.js",
+                lineNumber: 53,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "mb-auto m-10 bg-slate-100 border-2 rounded-md",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        className: "text-2xl font-bold m-3",
+                        children: "Order Summary:"
+                    }, void 0, false, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 55,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: " border-b-2 border-black m-3 p-2",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "flex justify-between p-1",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: " mr-4",
+                                        children: "Item total"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 59,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    " ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: [
+                                            " ₹",
+                                            tprice
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 59,
+                                        columnNumber: 49
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 58,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "flex justify-between p-1",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "Delivery Fee"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 62,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "FREE"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 63,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 61,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "flex justify-between p-1",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: " mr-10",
+                                        children: "GST and Restaurant charges"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 66,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: " ₹40.0"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Cart.js",
+                                        lineNumber: 67,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 65,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 57,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex justify-between m-3 font-semibold p-2",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "TO PAY"
+                            }, void 0, false, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 71,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: [
+                                    "₹",
+                                    tprice + 40
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Cart.js",
+                                lineNumber: 72,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/order",
+                            children: [
+                                " Checkout → ",
+                                handleClearCart(),
+                                " "
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/Cart.js",
+                            lineNumber: 74,
+                            columnNumber: 104
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/Cart.js",
+                        lineNumber: 74,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Cart.js",
+                lineNumber: 54,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Cart.js",
-        lineNumber: 27,
+        lineNumber: 39,
         columnNumber: 5
     }, undefined);
 };
-_s(Cart, "sOGYiwJY+kD+ABxufRt7JbvggIE=", false, function() {
+_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
     return [
-        (0, _reactRedux.useSelector)
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
     ];
 });
 _c = Cart;
@@ -40040,7 +40171,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","./FoodItem":"9xltm","../../imgs/images.png":"gJLas","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xltm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","./FoodItem":"9xltm","../../imgs/images.png":"gJLas","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/cartSlice":"5RXlr"}],"9xltm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8f2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40053,12 +40184,16 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../utils/constants");
 var _reactRedux = require("react-redux");
 var _cartSlice = require("../utils/cartSlice");
+var _vegPng = require("../../imgs/veg.png");
+var _vegPngDefault = parcelHelpers.interopDefault(_vegPng);
+var _nvegPng = require("../../imgs/nveg.png");
+var _nvegPngDefault = parcelHelpers.interopDefault(_nvegPng);
 var _s = $RefreshSig$();
 const FoodItem = (props)=>{
     _s();
     const { items  } = props;
     console.log(items);
-    const { imageId , name , qty , price , defaultPrice  } = items;
+    const { imageId , name , qty , price , defaultPrice , isVeg  } = items;
     const dispatch = (0, _reactRedux.useDispatch)();
     const increaseQty = (item)=>{
         //dispatch an action
@@ -40068,75 +40203,107 @@ const FoodItem = (props)=>{
         //dispatch an action
         dispatch((0, _cartSlice.decreaseQuantity)(item));
     };
+    const remove = (item)=>{
+        dispatch((0, _cartSlice.removeItem)(item));
+    };
     // const decreaseQty=(item)=>{
     //     dispatch(decreaseQuantity(item));
     // };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex justify-between items-center",
+        className: "flex justify-between",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex items-center",
+                className: "flex",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "p-2 w-40",
                         src: (0, _constants.MENU_ITEM_URL) + imageId
                     }, void 0, false, {
                         fileName: "src/components/FoodItem.js",
-                        lineNumber: 27,
-                        columnNumber: 13
+                        lineNumber: 35,
+                        columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        className: "text-lg font-bold",
-                        children: name
-                    }, void 0, false, {
-                        fileName: "src/components/FoodItem.js",
-                        lineNumber: 31,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/FoodItem.js",
-                lineNumber: 26,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "p-4 ",
+                        className: "mt-3 m-2 mr-10",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "border bg-slate-300 m-0",
-                                onClick: ()=>increaseQty(items),
-                                children: "+"
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-lg font-bold",
+                                children: name
                             }, void 0, false, {
                                 fileName: "src/components/FoodItem.js",
                                 lineNumber: 37,
-                                columnNumber: 17
+                                columnNumber: 11
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: " border m-0",
-                                children: qty
+                            isVeg ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-5",
+                                src: (0, _vegPngDefault.default),
+                                alt: ""
                             }, void 0, false, {
                                 fileName: "src/components/FoodItem.js",
-                                lineNumber: 40,
-                                columnNumber: 17
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "border m-0 bg-slate-300",
-                                onClick: ()=>decreaseQty(items),
-                                children: "-"
+                                lineNumber: 38,
+                                columnNumber: 19
+                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-5",
+                                src: (0, _nvegPngDefault.default),
+                                alt: ""
                             }, void 0, false, {
                                 fileName: "src/components/FoodItem.js",
-                                lineNumber: 41,
-                                columnNumber: 17
+                                lineNumber: 38,
+                                columnNumber: 60
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/FoodItem.js",
                         lineNumber: 36,
-                        columnNumber: 17
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/FoodItem.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "p-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "border bg-slate-300 m-0 p-0.5",
+                                onClick: ()=>increaseQty(items),
+                                children: "+"
+                            }, void 0, false, {
+                                fileName: "src/components/FoodItem.js",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: " border m-0 p-0.5",
+                                children: qty
+                            }, void 0, false, {
+                                fileName: "src/components/FoodItem.js",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "border m-0 bg-slate-300 p-0.5",
+                                onClick: ()=>{
+                                    qty == 1 ? remove(items) : decreaseQty(items);
+                                },
+                                children: "-"
+                            }, void 0, false, {
+                                fileName: "src/components/FoodItem.js",
+                                lineNumber: 51,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/FoodItem.js",
+                        lineNumber: 43,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "px-3",
                         children: [
                             " ",
                             " Rs.",
@@ -40144,20 +40311,20 @@ const FoodItem = (props)=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/FoodItem.js",
-                        lineNumber: 43,
-                        columnNumber: 17
+                        lineNumber: 60,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/FoodItem.js",
-                lineNumber: 35,
-                columnNumber: 13
+                lineNumber: 42,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/FoodItem.js",
-        lineNumber: 25,
-        columnNumber: 9
+        lineNumber: 33,
+        columnNumber: 5
     }, undefined);
 };
 _s(FoodItem, "rgTLoBID190wEKCp9+G8W6F7A5M=", false, function() {
@@ -40175,32 +40342,90 @@ $RefreshReg$(_c, "FoodItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","react-redux":"bdVon","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gJLas":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","react-redux":"bdVon","../utils/cartSlice":"5RXlr","../../imgs/veg.png":"bWt0Z","../../imgs/nveg.png":"6ADQU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bWt0Z":[function(require,module,exports) {
+module.exports = require("737bc5422df26ecf").getBundleURL("aXMci") + "veg.42c21273.png" + "?" + Date.now();
+
+},{"737bc5422df26ecf":"lgJ39"}],"6ADQU":[function(require,module,exports) {
+module.exports = require("f765b836b0177b9b").getBundleURL("aXMci") + "nveg.413cdf8c.png" + "?" + Date.now();
+
+},{"f765b836b0177b9b":"lgJ39"}],"gJLas":[function(require,module,exports) {
 module.exports = require("77dd5aa3fe76d5e5").getBundleURL("aXMci") + "images.cb750a71.png" + "?" + Date.now();
 
-},{"77dd5aa3fe76d5e5":"lgJ39"}],"60TNP":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$86d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"77dd5aa3fe76d5e5":"lgJ39"}],"aWW1k":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$07bf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$86d6.prelude(module);
+$parcel$ReactRefreshHelpers$07bf.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-const billingContext = /*#__PURE__*/ (0, _react.createContext)({
-    billingData: {
-        totalBill: 0
-    }
-});
-exports.default = billingContext;
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _imgGif = require("../../imgs/img.gif");
+var _imgGifDefault = parcelHelpers.interopDefault(_imgGif);
+var _reactRouterDom = require("react-router-dom");
+const OrderPlaced = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex items-center flex-col",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "w-2/5",
+                src: (0, _imgGifDefault.default)
+            }, void 0, false, {
+                fileName: "src/components/Orderplaced.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "Thank You!"
+            }, void 0, false, {
+                fileName: "src/components/Orderplaced.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "Order succesfully placed"
+            }, void 0, false, {
+                fileName: "src/components/Orderplaced.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-blue-600 text-white p-2 m-7 text-sm font-bold rounded-md",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: "/",
+                    children: " Click here to go back to Restaurants "
+                }, void 0, false, {
+                    fileName: "src/components/Orderplaced.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Orderplaced.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Orderplaced.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = OrderPlaced;
+exports.default = OrderPlaced;
+var _c;
+$RefreshReg$(_c, "OrderPlaced");
 
-  $parcel$ReactRefreshHelpers$86d6.postlude(module);
+  $parcel$ReactRefreshHelpers$07bf.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dkZO3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../../imgs/img.gif":"1jm5d","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1jm5d":[function(require,module,exports) {
+module.exports = require("d21b014d1b2211ee").getBundleURL("aXMci") + "img.2319dfe9.gif" + "?" + Date.now();
+
+},{"d21b014d1b2211ee":"lgJ39"}],"dkZO3":[function(require,module,exports) {
 module.exports = require("b25969a78033ff58")(require("9e4a8a453d42f0cf").getBundleURL("aXMci") + "Help.f20f5b5a.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
