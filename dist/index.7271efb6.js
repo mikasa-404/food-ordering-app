@@ -40125,18 +40125,8 @@ const Cart = ()=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: "/order",
-                            children: [
-                                " Checkout → ",
-                                handleClearCart(),
-                                " "
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/Cart.js",
-                            lineNumber: 74,
-                            columnNumber: 104
-                        }, undefined)
+                        onClick: ()=>handleClearCart(),
+                        children: "Checkout "
                     }, void 0, false, {
                         fileName: "src/components/Cart.js",
                         lineNumber: 74,
@@ -40171,7 +40161,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","./FoodItem":"9xltm","../../imgs/images.png":"gJLas","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/cartSlice":"5RXlr"}],"9xltm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","./FoodItem":"9xltm","../../imgs/images.png":"gJLas","react-router-dom":"9xmpe","../utils/cartSlice":"5RXlr","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xltm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8f2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

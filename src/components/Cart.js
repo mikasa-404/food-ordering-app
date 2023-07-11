@@ -71,8 +71,7 @@ const Cart = () => {
           <p>TO PAY</p>
           <p>₹{tprice + 40}</p>
         </div>
-        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md"><Link to="/order"> Checkout → { handleClearCart()} </Link></button>
-
+        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClearCart()}>Checkout </button>
       </div>
     </div>
   );
