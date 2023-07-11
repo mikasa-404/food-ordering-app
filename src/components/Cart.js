@@ -34,7 +34,7 @@ const Cart = () => {
           <FoodItem key={item.id} items={item} />
         ))}
       </div>
-      <div className="m-10">
+      <div className="m-10 border-slate-800 border-2">
         <h2 className="text-2xl font-bold m-3">Summary</h2>
         <p>Item total</p>
         <p>Delivery Fee</p>

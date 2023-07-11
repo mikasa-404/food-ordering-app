@@ -27,9 +27,6 @@ const Header = () => {
             <Link className="focus:text-red-500" to="/about">About</Link>
           </li>
           <li>
-            <Link className="focus:text-red-500" to="/contact">Contact</Link>
-          </li>
-          <li>
             <Link className="focus:text-red-500" to="/help">Help</Link>
           </li>
           <li>

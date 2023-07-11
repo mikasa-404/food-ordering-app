@@ -2953,8 +2953,6 @@ var _body = require("./components/Body");
 var _bodyDefault = parcelHelpers.interopDefault(_body);
 var _about = require("./components/About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _contact = require("./components/Contact");
-var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _error = require("./components/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _restaurantMenu = require("./components/RestaurantMenu");
@@ -2991,30 +2989,30 @@ const AppLayout = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 32,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 34,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 33,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/App.js",
-            lineNumber: 31,
+            lineNumber: 30,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 30,
+        lineNumber: 29,
         columnNumber: 7
     }, undefined);
 };
@@ -3025,7 +3023,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 46,
+            lineNumber: 45,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3033,7 +3031,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 52,
+                    lineNumber: 51,
                     columnNumber: 9
                 }, undefined)
             },
@@ -3043,15 +3041,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     name: "Priya"
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 56,
-                    columnNumber: 18
-                }, undefined)
-            },
-            {
-                path: "/contact",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 55,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3059,7 +3049,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurants/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 64,
+                    lineNumber: 59,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3067,7 +3057,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/help",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Help, {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 69,
+                    lineNumber: 64,
                     columnNumber: 13
                 }, undefined)
             },
@@ -3075,14 +3065,14 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 74,
+                    lineNumber: 69,
                     columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 77,
+            lineNumber: 72,
             columnNumber: 19
         }, undefined)
     }
@@ -3092,7 +3082,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 83,
+    lineNumber: 78,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -27379,8 +27369,8 @@ const Header = ()=>{
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                         className: "focus:text-red-500",
-                                        to: "/contact",
-                                        children: "Contact"
+                                        to: "/help",
+                                        children: "Help"
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
                                         lineNumber: 30,
@@ -27394,21 +27384,6 @@ const Header = ()=>{
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                         className: "focus:text-red-500",
-                                        to: "/help",
-                                        children: "Help"
-                                    }, void 0, false, {
-                                        fileName: "src/components/Header.js",
-                                        lineNumber: 33,
-                                        columnNumber: 13
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/components/Header.js",
-                                    lineNumber: 32,
-                                    columnNumber: 11
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        className: "focus:text-red-500",
                                         to: "/cart",
                                         children: [
                                             "Cart- ",
@@ -27417,12 +27392,12 @@ const Header = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 36,
+                                        lineNumber: 33,
                                         columnNumber: 11
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 35,
+                                    lineNumber: 32,
                                     columnNumber: 11
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27434,12 +27409,12 @@ const Header = ()=>{
                                         children: btnName
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 42,
+                                        lineNumber: 39,
                                         columnNumber: 11
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 41,
+                                    lineNumber: 38,
                                     columnNumber: 11
                                 }, undefined)
                             ]
@@ -27463,7 +27438,7 @@ const Header = ()=>{
                 className: "search"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 55,
+                lineNumber: 52,
                 columnNumber: 5
             }, undefined)
         ]
@@ -38790,11 +38765,15 @@ const cartSlice = (0, _toolkit.createSlice)({
             if (itemFound.qty == 1) itemFound.qty = 1;
             else itemFound.qty--;
         },
-        removeItem: (state, action)=>{
-            state.items.pop();
-        },
+        // removeItem: (state, action) => {
+        //   state.items.pop();
+        // },
         clearCart: (state, action)=>{
             state.items = [];
+            state.totalItems = [];
+        },
+        getTotal: (state, action)=>{
+            const price = 0;
             state.totalItems = [];
         }
     }
@@ -40030,7 +40009,7 @@ const Cart = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "m-10",
+                className: "m-10 border-slate-800 border-2",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         className: "text-2xl font-bold m-3",

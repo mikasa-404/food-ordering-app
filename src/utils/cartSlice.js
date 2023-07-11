@@ -32,11 +32,15 @@ const cartSlice = createSlice({
       else itemFound.qty--;
     },
 
-    removeItem: (state, action) => {
-      state.items.pop();
-    },
+    // removeItem: (state, action) => {
+    //   state.items.pop();
+    // },
     clearCart: (state, action) => {
       state.items = [];
+      state.totalItems = [];
+    },
+    getTotal: (state, action) => {
+      const price=0;
       state.totalItems = [];
     },
   },
