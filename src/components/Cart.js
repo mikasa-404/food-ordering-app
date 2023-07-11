@@ -4,8 +4,9 @@ import Cart_img from "../../imgs/images.png";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../utils/cartSlice";
+import { useNavigate } from "react-router-dom";
 
-import { useState } from "react";
+
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -15,6 +16,12 @@ const Cart = () => {
     };
  
 
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/order")
+    handleClearCart();
+  }
   var tprice = 0;
   cartItems.forEach((item) => {
     tprice =
@@ -71,7 +78,7 @@ const Cart = () => {
           <p>TO PAY</p>
           <p>₹{tprice + 40}</p>
         </div>
-        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClearCart()}>Checkout </button>
+        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClick()}>Checkout </button>
       </div>
     </div>
   );

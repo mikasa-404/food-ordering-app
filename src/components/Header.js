@@ -21,7 +21,7 @@ const Header = () => {
       <div className="nav-items py-5">
         <ul className="flex text-white space-x-6 mx-5">
           <li className="m-x-2">
-            <Link className="focus:text-red-500 " to="/">Home</Link>
+            <a className="focus:text-red-500 " href="/">Home</a>
           </li>
           <li className="m-x-2">
             <Link className="focus:text-red-500" to="/about">About</Link>
