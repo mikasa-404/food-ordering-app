@@ -7,7 +7,7 @@ import store from "../utils/store";
 
 const Title=()=>(
   <a href="/">
-    <img  className=" h-20 px-2  m-3" src={Mylogo} alt="" />
+    <img data-testid="logo" className=" h-20 px-2  m-3" src={Mylogo} alt="" />
     </a>
 );
   
@@ -30,8 +30,8 @@ const Header = () => {
             <Link className="focus:text-red-500" to="/help">Help</Link>
           </li>
           <li>
-          <Link className="focus:text-red-500" to="/cart">
-            Cart- {cartItems.length}
+          <Link data-testid="cart" className="focus:text-red-500" to="/cart">
+            Cart-{cartItems.length}
             {console.log(cartItems)}
             </Link>
           </li>
@@ -49,7 +49,6 @@ const Header = () => {
         </ul>
     </div>
     </div>
-    <div className="search"></div>
     </div>
     
   );

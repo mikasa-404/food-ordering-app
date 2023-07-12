@@ -231,6 +231,10 @@ img, video {
   --tw-backdrop-sepia: ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .m-0 {
   margin: 0;
 }

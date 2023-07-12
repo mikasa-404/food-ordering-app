@@ -46,6 +46,7 @@ const Body = () => {
         </div>
         <div className="search m-5 text-black">
           <input
+            data-testid="search-input"
             type="text"
             className="search-box leading-6"
             value={searchText}
@@ -53,7 +54,7 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button
+          <button data-testid="searchbtn" 
             className="search-btn m-2 p-1 bg-red-700 text-slate-100"
             onClick={() => {
               console.log(searchText);
@@ -95,7 +96,7 @@ const Body = () => {
         </div> */}
       </div>
       <div className="mx-10 my-10 p-5"> 
-      <div className="res-container grid grid-cols-4 mx-4 gap-12">
+      <div data-testid="res-list" className="res-container grid grid-cols-4 mx-4 gap-12">
         {filteredRestaurants.map((restaurant) => (
           <Link
             className="links"

@@ -21,7 +21,9 @@ const RestaurantMenu = () => {
     resInfo?.cards[0]?.card?.card?.info;
   // console.log(resInfo?.cards[0]?.card?.card?.info);
 
-  const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  const itemCardsCheck = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
+    const { itemCards } = ((itemCardsCheck)? resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card : resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]);
+  
   console.log(resInfo?.cards[2]);
   console.log(itemCards);
 
@@ -54,7 +56,7 @@ const RestaurantMenu = () => {
       {/* city, cost for two , time */}
 
       <h2 className="mx-3 font-bold text-xl my-3">Menu</h2>
-      <ul className="mx-3">
+      <ul data-testid="menu" className="mx-3">
         {itemCards?.map((item) => (
           <li
             className="border-b-2 flex justify-between p-2 items-center"
@@ -77,7 +79,8 @@ const RestaurantMenu = () => {
                 </button> 
               </div>
             </div>
-            <button
+            <button 
+              data-testid="addBtn"
               className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950"
               onClick={() => addFoodItem(item.card.info)}
             >
