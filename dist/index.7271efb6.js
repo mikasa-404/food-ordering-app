@@ -26456,7 +26456,7 @@ const Header = ()=>{
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     const [btnName, setBtnName] = (0, _react.useState)("Login");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: " font-medium",
+        className: "font-Lato",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
             className: "bg-fixed flex items-center justify-between bg-black shadow-xl",
             children: [
@@ -34949,25 +34949,25 @@ const Body = ()=>{
                 className: "filter bg-[url('./imgs/bgrnd.jpg')] text-slate-100 text-center p-5",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "p-5",
+                        className: "m-8 mt-0",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                                className: "heading text-3xl",
+                                className: "heading text-3xl font-Oswald",
                                 children: "Order Delivery & Take-Out"
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                                className: "text-sm m-2",
+                                className: "m-2 font-Roboto ",
                                 children: "Find best restaurants near you"
                             })
                         ]
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "search m-5 text-black",
+                        className: "search m-3 text-black font-Lato ",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                 "data-testid": "search-input",
                                 type: "text",
-                                className: "search-box leading-6",
+                                className: "search-box rounded-md h-8 w-1/5",
                                 value: searchText,
                                 onChange: (e)=>{
                                     setSearchText(e.target.value);
@@ -34975,7 +34975,7 @@ const Body = ()=>{
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 "data-testid": "searchbtn",
-                                className: "search-btn m-2 p-1 bg-red-700 text-slate-100",
+                                className: "search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md",
                                 onClick: ()=>{
                                     console.log(searchText);
                                     //we are searching in list of restaurants->which won't be modified
@@ -35035,7 +35035,7 @@ const RestaurantCard = (props)=>{
     const { resData  } = props;
     const { cloudinaryImageId , name , avgRating , cuisines , costForTwo , deliveryTime  } = resData?.data;
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        className: "shadow-lg border hover:bg-slate-200 rounded-lg ",
+        className: "shadow-lg border hover:bg-slate-200 rounded-lg font-Roboto",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                 className: "res-logo rounded-lg",
@@ -35046,7 +35046,7 @@ const RestaurantCard = (props)=>{
                 className: "res-card-content p-2",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                        className: "font-bold text-xl truncate ... ",
+                        className: "font-bold text-xl truncate ... font-serif",
                         children: name
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {

@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Alegreya+Sans:ital,wght@1,300&family=Lato&family=Roboto&family=Roboto+Condensed&family=Source+Serif+4&display=swap";
 *, :before, :after {
   box-sizing: border-box;
   border: 0 solid #e5e7eb;
@@ -267,6 +269,15 @@ img, video {
   margin: 1.75rem;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
+.mx-1 {
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -317,11 +328,6 @@ img, video {
   margin-bottom: 1.25rem;
 }
 
-.mx-1 {
-  margin-left: .25rem;
-  margin-right: .25rem;
-}
-
 .mb-2 {
   margin-bottom: .5rem;
 }
@@ -336,6 +342,10 @@ img, video {
 
 .mr-4 {
   margin-right: 1rem;
+}
+
+.mt-0 {
+  margin-top: 0;
 }
 
 .mt-10 {
@@ -370,6 +380,10 @@ img, video {
   height: .125rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -378,8 +392,8 @@ img, video {
   height: 1.25rem;
 }
 
-.h-7 {
-  height: 1.75rem;
+.h-8 {
+  height: 2rem;
 }
 
 .h-\[350px\] {
@@ -390,8 +404,8 @@ img, video {
   height: auto;
 }
 
-.h-10 {
-  height: 2.5rem;
+.w-1\/5 {
+  width: 20%;
 }
 
 .w-11\/12 {
@@ -444,12 +458,6 @@ img, video {
 
 .gap-12 {
   gap: 3rem;
-}
-
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -611,22 +619,46 @@ img, video {
   padding-right: .75rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .text-center {
   text-align: center;
 }
 
+.font-Alegreya {
+  font-family: Alegreya Sans, sans-serif;
+}
+
+.font-Lato {
+  font-family: Lato, sans-serif;
+}
+
+.font-Oswald {
+  font-family: Oswald, sans-serif;
+}
+
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+}
+
+.font-RobotoCon {
+  font-family: Roboto Condensed, serif;
+}
+
+.font-Roboto {
+  font-family: Roboto, sans-serif;
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 .text-2xl {
@@ -669,10 +701,6 @@ img, video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.leading-6 {
-  line-height: 1.5rem;
 }
 
 .text-black {
@@ -749,11 +777,6 @@ img, video {
 .hover\:bg-slate-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
-.focus\:text-red-500:focus {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .active\:bg-blue-950:active {

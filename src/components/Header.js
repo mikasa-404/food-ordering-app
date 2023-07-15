@@ -24,7 +24,7 @@ const Header = () => {
   const cartItems= useSelector(store => store.cart.items);
   const [btnName, setBtnName] = useState("Login");
   return (
-    <div className=" font-medium">
+    <div className="font-Lato">
       <div className="bg-fixed flex items-center justify-between bg-black shadow-xl">
     <Title/>
       <div className="nav-items py-5 ">

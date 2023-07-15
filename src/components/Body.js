@@ -40,22 +40,22 @@ const Body = () => {
     <div className="body"> 
       <div className="filter bg-[url('./imgs/bgrnd.jpg')] text-slate-100 text-center p-5">
         {/* <div className="filter flex bg-black justify-center"> */}
-        <div className="p-5">
-          <div className="heading text-3xl">Order Delivery & Take-Out</div>
-          <div className="text-sm m-2">Find best restaurants near you</div>
+        <div className="m-8 mt-0">
+          <div className="heading text-3xl font-Oswald">Order Delivery & Take-Out</div>
+          <div className="m-2 font-Roboto ">Find best restaurants near you</div>
         </div>
-        <div className="search m-5 text-black">
+        <div className="search m-3 text-black font-Lato ">
           <input
             data-testid="search-input"
             type="text"
-            className="search-box leading-6"
+            className="search-box rounded-md h-8 w-1/5"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button data-testid="searchbtn" 
-            className="search-btn m-2 p-1 bg-red-700 text-slate-100"
+            className="search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md"
             onClick={() => {
               console.log(searchText);
               //we are searching in list of restaurants->which won't be modified
@@ -69,16 +69,6 @@ const Body = () => {
           >
             Search
           </button>
-
-          {/* <input
-            value={user.name}
-            onChange={(e) => {
-              setUser({
-                name: e.target.value,
-                email: "newemail@gmail.com",
-              });
-            }}
-          ></input> */}
         </div>
         {/* <div className="filter-btn p-3 m-4  text-slate-100">
           <button
