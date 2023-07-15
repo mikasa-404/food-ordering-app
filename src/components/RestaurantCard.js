@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
    
   
     return (
-      <div className="shadow-lg border hover:bg-slate-200 rounded-lg h-[350px]">
+      <div className="shadow-lg border hover:bg-slate-200 rounded-lg ">
         <img
         className="res-logo rounded-lg"
         alt="res-logo"
@@ -14,7 +14,7 @@ const RestaurantCard = (props) => {
       />
         <div className="res-card-content p-2">
         <h2 className="font-bold text-xl truncate ... ">{name}</h2>
-        <h4 className="line-clamp-2 text-sm  text-gray-600">{cuisines.join(", ")}</h4>
+        <h4 className="text-sm  text-gray-600 truncate ...">{cuisines.join(", ")}</h4>
         <div className="flex justify-between items-center  text-gray-600 mt-4 text-sm">
           <h4 className=" px-2 p-1 bg-green-700 rounded-md text-white">★ {avgRating}</h4>
           <h4>{deliveryTime} mins</h4>

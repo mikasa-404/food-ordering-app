@@ -30,8 +30,8 @@ const FoodItem = (props) => {
   // };
 
   return (
-    <div className="flex justify-between">
-      <div className="flex">
+    <div className="flex justify-between flex-nowrap">
+      <div className="flex"> 
         <img className="p-2 w-40" src={MENU_ITEM_URL + imageId}></img>
         <div className="mt-3 m-2 mr-10">
           <h2 className="text-lg font-bold">{name}</h2>

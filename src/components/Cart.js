@@ -44,7 +44,7 @@ const Cart = () => {
     </div>
   ) : (
     <div className=" flex justify-between mx-40">
-      <div className="mt-10">
+      <div className="mt-10 w-3/5">
         <div className="flex mb-2 p-2 justify-between border-b-2">
           <p className="text-2xl font-bold">
             Your cart ({cartItems.length} items)
@@ -78,7 +78,7 @@ const Cart = () => {
           <p>TO PAY</p>
           <p>₹{tprice + 40}</p>
         </div>
-        <button className="mx-3 my-3 bg-red-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClick()}>Checkout </button>
+        <button className="mx-3 my-3 bg-blue-800 hover:bg-blue-500 active:bg-blue-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClick()}>Checkout </button>
       </div>
     </div>
   );

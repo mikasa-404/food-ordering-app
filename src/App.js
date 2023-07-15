@@ -1,3 +1,4 @@
+// import "../index.css"
 import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
@@ -27,13 +28,11 @@ const AppLayout = () => {
 
   return (
       <Provider store={store}>
-      {/* <billingContext.Provider value={{ bill: bill, setBill: setBill }}> */}
         <Header />
         <Suspense fallback={<Shimmer />}>
         <Outlet />
         </Suspense>
 
-      {/* </billingContext.Provider> */}
     </Provider>
     
   );
