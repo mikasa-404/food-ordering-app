@@ -12,6 +12,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
 
+
   // const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Body = () => {
     setlistOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   };
-  console.log(listOfRestaurants);
+  // console.log(listOfRestaurants);
 
   const isOnline = useOnline();
   if (!isOnline) {

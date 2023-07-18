@@ -633,10 +633,6 @@ img, video {
   text-align: center;
 }
 
-.font-Alegreya {
-  font-family: Alegreya Sans, sans-serif;
-}
-
 .font-Lato {
   font-family: Lato, sans-serif;
 }
@@ -645,20 +641,12 @@ img, video {
   font-family: Oswald, sans-serif;
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-}
-
-.font-RobotoCon {
-  font-family: Roboto Condensed, serif;
-}
-
 .font-Roboto {
   font-family: Roboto, sans-serif;
 }
 
-.font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 }
 
 .text-2xl {

@@ -34937,7 +34937,7 @@ const Body = ()=>{
         setlistOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
         setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     };
-    console.log(listOfRestaurants);
+    // console.log(listOfRestaurants);
     const isOnline = (0, _useOnline.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
         children: "Offline, please check your internet connection!!!"
