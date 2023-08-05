@@ -26430,29 +26430,31 @@ function _interopRequireDefault(obj) {
     };
 }
 // import { useContext } from "react";
-// import store from "../utils/store";
-const Title = ()=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-        href: "/",
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-            className: "text-white flex items-center mx-4",
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                    "data-testid": "logo",
-                    className: " h-10",
-                    src: _logo.default,
-                    alt: ""
-                }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                    className: "font-serif font-bold text-2xl m-0 mx-1",
-                    children: "Foodyville"
-                })
-            ]
-        })
+const Title = ()=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
+        className: " ",
+        to: "/",
+        children: [
+            "  ",
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "text-white flex items-center mx-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        "data-testid": "logo",
+                        className: " h-10",
+                        src: _logo.default,
+                        alt: ""
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        className: "font-serif font-bold text-2xl m-0 mx-1",
+                        children: "Foodyville"
+                    })
+                ]
+            })
+        ]
     });
 _c = Title;
 const Header = ()=>{
     const location = (0, _reactRouterDom.useLocation)();
-    console.log(location.pathname);
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     const [btnName, setBtnName] = (0, _react.useState)("Login");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
@@ -26468,8 +26470,9 @@ const Header = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
                                 className: `p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/" ? "bg-slate-800" : ""}`,
-                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    href: "/",
+                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
+                                    className: " ",
+                                    to: "/",
                                     children: "Home"
                                 })
                             }),
@@ -26497,8 +26500,7 @@ const Header = ()=>{
                                     to: "/cart",
                                     children: [
                                         "Cart-",
-                                        cartItems.length,
-                                        console.log(cartItems)
+                                        cartItems.length
                                     ]
                                 })
                             }),
@@ -34934,10 +34936,10 @@ const Body = ()=>{
     const fetchData = async ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        setlistOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        setlistOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
-    // console.log(listOfRestaurants);
     const isOnline = (0, _useOnline.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
         children: "Offline, please check your internet connection!!!"
@@ -34996,11 +34998,11 @@ const Body = ()=>{
                     className: "res-container grid grid-cols-4 mx-4 gap-12",
                     children: filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                             className: "links",
-                            to: "/restaurants/" + restaurant.data.id,
+                            to: "/restaurants/" + restaurant.info.id,
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
                                 resData: restaurant
                             })
-                        }, restaurant.data.id))
+                        }, restaurant.info.id))
                 })
             })
         ]
@@ -35033,7 +35035,8 @@ var _constants = require("1c53833a5d057a08");
 var _jsxRuntime = require("f44eda5bde163857");
 const RestaurantCard = (props)=>{
     const { resData  } = props;
-    const { cloudinaryImageId , name , avgRating , cuisines , costForTwo , deliveryTime  } = resData?.data;
+    console.log(resData);
+    const { cloudinaryImageId , name , avgRating , cuisines , costForTwo , deliveryTime  } = resData?.info;
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         className: "shadow-lg border hover:bg-slate-200 rounded-lg font-Roboto",
         children: [
@@ -39773,30 +39776,31 @@ const FoodItem = (props)=>{
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "p-4",
+                        className: "p-4  m-auto",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "border bg-slate-300 m-0 p-0.5",
-                                onClick: ()=>increaseQty(items),
-                                children: "+"
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: " border m-0 p-0.5",
-                                children: qty
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "border m-0 bg-slate-300 p-0.5",
+                                className: " m-0 bg-slate-200 p-1 pl-2 rounded-l-lg text-red-700 font-bold",
                                 onClick: ()=>{
                                     qty == 1 ? remove(items) : decreaseQty(items);
                                 },
                                 children: "-"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                className: " m-0 p-1 bg-slate-200",
+                                children: qty
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                className: " bg-slate-200 m-0 p-1 pr-2 rounded-r-lg text-green-700 font-bold",
+                                onClick: ()=>increaseQty(items),
+                                children: "+"
                             })
                         ]
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "px-3",
+                        className: "px-3 text-center",
                         children: [
                             " ",
                             " Rs.",

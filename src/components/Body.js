@@ -9,7 +9,7 @@ const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState("");
+    const [searchText, setSearchText] = useState("");
 
 
 
@@ -25,10 +25,10 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    setlistOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setlistOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
-  // console.log(listOfRestaurants);
 
   const isOnline = useOnline();
   if (!isOnline) {
@@ -48,7 +48,7 @@ const Body = () => {
         <div className="search m-3 text-black font-Lato ">
           <input
             data-testid="search-input"
-            type="text"
+            type="text" 
             className="search-box rounded-md h-8 w-1/5"
             value={searchText}
             onChange={(e) => {
@@ -71,28 +71,15 @@ const Body = () => {
             Search
           </button>
         </div>
-        {/* <div className="filter-btn p-3 m-4  text-slate-100">
-          <button
-            className=" hover:bg-slate-700 border"
-            onClick={() => {
-              //filter logic here->to modify our list of rest to only filtered restaurants
-              const filteredList = listOfRestaurants.filter(
-                (res) => res.data.avgRating > 4
-              );
-              setfilteredRestaurants(filteredList);
-            }}
-          >
-            Filter by Rating
-          </button>
-        </div> */}
+        
       </div>
       <div className="mx-10 my-10 p-5"> 
       <div data-testid="res-list" className="res-container grid grid-cols-4 mx-4 gap-12">
         {filteredRestaurants.map((restaurant) => (
           <Link
             className="links"
-            key={restaurant.data.id}
-            to={"/restaurants/" + restaurant.data.id}
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
           >
             <RestaurantCard resData={restaurant} />
           </Link>

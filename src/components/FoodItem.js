@@ -39,25 +39,25 @@ const FoodItem = (props) => {
         </div>
       </div>
 
-      <div>
-        <div className="p-4">
-          <button
-            className="border bg-slate-300 m-0 p-0.5"
-            onClick={() => increaseQty(items)}
-          >
-            +
-          </button>
-          <button className=" border m-0 p-0.5">{qty}</button>
-          <button
-            className="border m-0 bg-slate-300 p-0.5"
+      <div className="">
+        <div className="p-4  m-auto">
+          
+          <button className=" m-0 bg-slate-200 p-1 pl-2 rounded-l-lg text-red-700 font-bold"
             onClick={() => {
               (qty==1) ? remove(items) : decreaseQty(items);
             }}
           >
             -
           </button>
+          <button className=" m-0 p-1 bg-slate-200">{qty}</button>
+          <button className=" bg-slate-200 m-0 p-1 pr-2 rounded-r-lg text-green-700 font-bold"
+            onClick={() => increaseQty(items)}
+          >
+            +
+          </button>
+          
         </div>
-        <div className="px-3">
+        <div className="px-3 text-center">
           {" "}
           {" Rs."}
           {(price * qty) / 100 || (defaultPrice * qty) / 100}
