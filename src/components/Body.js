@@ -4,14 +4,13 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import { list } from "postcss";
 
 const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
-
-
 
   // const { user, setUser } = useContext(userContext);
 
@@ -51,9 +50,11 @@ const Body = () => {
             type="text" 
             className="search-box rounded-md h-8 w-1/5"
             value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            onChange={
+              (e)=>{
+                setSearchText(e.target.value);
+              }
+            }
           />
           <button data-testid="searchbtn" 
             className="search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md"

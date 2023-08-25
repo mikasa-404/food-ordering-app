@@ -2,8 +2,7 @@ import {CDN_URL} from "../utils/constants"
   
 const RestaurantCard = (props) => {
     const { resData} =  props ;
-    console.log(resData);
-    const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, deliveryTime } = resData?.info;
+    const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } = resData?.info;
    
   
     return (
@@ -18,8 +17,8 @@ const RestaurantCard = (props) => {
         <h4 className="text-sm  text-gray-600 truncate ...">{cuisines.join(", ")}</h4>
         <div className="flex justify-between items-center  text-gray-600 mt-4 text-sm">
           <h4 className=" px-2 p-1 bg-green-700 rounded-md text-white">★ {avgRating}</h4>
-          <h4>{deliveryTime} mins</h4>
-          <h4>{costForTwo / 100} for two</h4>
+          <h4>{sla.deliveryTime} mins</h4>
+          <h4>{costForTwo}</h4>
 
         </div>
         

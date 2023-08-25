@@ -1,6 +1,7 @@
 export function filterData(searchText, restaurants){
+  console.log(restaurants);
   const filterData=  restaurants.filter((res)=>
-  res?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+  res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 };
