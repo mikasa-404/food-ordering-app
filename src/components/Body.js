@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import { list } from "postcss";
-
+import { SWIGGY_API_URL } from "../utils/constants";
 const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -15,19 +15,30 @@ const Body = () => {
   // const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
-    console.log("UseEffect CALLED");
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    setlistOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  };
+
+
+  async function fetchData() {
+    try {
+      const response = await fetch(SWIGGY_API_URL);
+      // if response is not ok then throw new Error
+      if (!response.ok) {
+        const err = response.status;
+        throw new Error(err);
+      } else {
+        const json = await response.json();
+
+        const resData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+        setlistOfRestaurants(resData);
+        setfilteredRestaurants(resData);
+      }
+    } catch (error) {
+      console.error(error); // show error in console
+    }
+  }
 
   const isOnline = useOnline();
   if (!isOnline) {
@@ -39,7 +50,6 @@ const Body = () => {
   ) : (
     <div className="body"> 
       <div className="filter bg-[url('./imgs/bgrnd.jpg')] text-slate-100 text-center p-5">
-        {/* <div className="filter flex bg-black justify-center"> */}
         <div className="m-8 mt-0">
           <div className="heading text-3xl font-Oswald">Order Delivery & Take-Out</div>
           <div className="m-2 font-Roboto ">Find best restaurants near you</div>

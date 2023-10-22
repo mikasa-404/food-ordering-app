@@ -34918,6 +34918,7 @@ var _reactRouterDom = require("3cae63fbb41e880e");
 var _helper = require("8949cb392ce0e084");
 var _useOnline = _interopRequireDefault(require("c1f819b138cbd8cc"));
 var _postcss = require("4d84513bc81d4f99");
+var _constants = require("e80e9338f5df0fad");
 var _jsxRuntime = require("dbc8d7661d78507b");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -34931,16 +34932,25 @@ const Body = ()=>{
     const [searchText, setSearchText] = (0, _react.useState)("");
     // const { user, setUser } = useContext(userContext);
     (0, _react.useEffect)(()=>{
-        console.log("UseEffect CALLED");
         fetchData();
     }, []);
-    const fetchData = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        setlistOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    };
+    async function fetchData() {
+        try {
+            const response = await fetch(_constants.SWIGGY_API_URL);
+            // if response is not ok then throw new Error
+            if (!response.ok) {
+                const err = response.status;
+                throw new Error(err);
+            } else {
+                const json = await response.json();
+                const resData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+                setlistOfRestaurants(resData);
+                setfilteredRestaurants(resData);
+            }
+        } catch (error) {
+            console.error(error); // show error in console
+        }
+    }
     const isOnline = (0, _useOnline.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
         children: "Offline, please check your internet connection!!!"
@@ -35020,7 +35030,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"414d9513f92cc73":"bMboU","2481c59d75fda5ac":"21dqq","dfdcad3f5b7c09c1":"g6ZGj","3cae63fbb41e880e":"9xmpe","8949cb392ce0e084":"3GF3D","c1f819b138cbd8cc":"74Yls","dbc8d7661d78507b":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","4d84513bc81d4f99":"gauyy"}],"bMboU":[function(require,module,exports) {
+},{"414d9513f92cc73":"bMboU","2481c59d75fda5ac":"21dqq","dfdcad3f5b7c09c1":"g6ZGj","3cae63fbb41e880e":"9xmpe","8949cb392ce0e084":"3GF3D","c1f819b138cbd8cc":"74Yls","dbc8d7661d78507b":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","4d84513bc81d4f99":"gauyy","e80e9338f5df0fad":"hB8jg"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35098,10 +35108,12 @@ $RefreshReg$(_c, "RestaurantCard");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MENU_ITEM_URL = exports.MENU_API = exports.CDN_URL = void 0;
+exports.SWIGGY_API_URL = exports.MENU_ITEM_URL = exports.MENU_API = exports.CDN_URL = void 0;
+const SWIGGY_API_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING";
+exports.SWIGGY_API_URL = SWIGGY_API_URL;
 const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 exports.CDN_URL = CDN_URL;
-const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
+const MENU_API = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 exports.MENU_API = MENU_API;
 const MENU_ITEM_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 exports.MENU_ITEM_URL = MENU_ITEM_URL;
