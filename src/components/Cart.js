@@ -38,7 +38,7 @@ const Cart = () => {
       <p className="text-sm">
         You can go to home page to view more restaurants
       </p>
-      <button className="bg-blue-600 text-white p-2 m-7 text-sm font-bold rounded-md">
+      <button className="bg-blue-600 text-white p-2 m-7 text-sm font-bold rounded-md hover:scale-105">
         <Link to="/"> Click here to go back to Restaurants </Link>
       </button>
     </div>
@@ -78,7 +78,7 @@ const Cart = () => {
           <p>TO PAY</p>
           <p>₹{tprice + 40}</p>
         </div>
-        <button className="mx-3 my-3 bg-blue-800 hover:bg-blue-500 active:bg-blue-950 text-white p-2 block w-11/12 font-semibold rounded-md" onClick={()=> handleClick()}>Checkout </button>
+        <button className="mx-3 my-3 bg-blue-800 hover:bg-blue-500 active:bg-blue-950 text-white p-2 block w-11/12 font-semibold rounded-md hover:scale-105" onClick={()=> handleClick()}>Checkout </button>
       </div>
     </div>
   );

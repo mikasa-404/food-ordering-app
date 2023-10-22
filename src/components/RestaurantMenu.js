@@ -59,12 +59,12 @@ const RestaurantMenu = () => {
       <ul data-testid="menu" className="mx-3">
         {itemCards?.map((item) => (
           <li
-            className="border-b-2 flex justify-between p-2 items-center"
+            className="border-b-2 flex justify-between p-2 items-center hover:scale-95"
             key={item.card.info.id}
           >
             <div className="flex">
               <img
-                className="p-2 w-40"
+                className="p-2 w-40 rounded-xl"
                 src={MENU_ITEM_URL + item.card.info.imageId}
               ></img>
               <div className="m-2 text-slate-700">
@@ -81,7 +81,7 @@ const RestaurantMenu = () => {
             </div>
             <button 
               data-testid="addBtn"
-              className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950"
+              className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950 hover:scale-105"
               onClick={() => addFoodItem(item.card.info)}
             >
               + Add to Cart

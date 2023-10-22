@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
    
   
     return (
-      <div className="shadow-lg border hover:bg-slate-200 rounded-lg font-Roboto">
+      <div className="shadow-lg border rounded-lg font-Roboto hover:scale-110">
         <img
         className="res-logo rounded-lg"
         alt="res-logo"

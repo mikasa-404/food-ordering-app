@@ -1,5 +1,4 @@
 export function filterData(searchText, restaurants){
-  console.log(restaurants);
   const filterData=  restaurants.filter((res)=>
   res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );

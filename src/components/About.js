@@ -4,7 +4,6 @@ import food_img from "../../imgs/food2.jpg";
 
 const About = (props) => {
 
-
   return (
     <div className="bg-red-300 m-0 flex justify-center">
       <div className="w-3/5 h-auto p-10 bg-white my-5">

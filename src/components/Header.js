@@ -24,22 +24,22 @@ const Header = () => {
       <div className="bg-fixed flex items-center justify-between bg-black shadow-xl">
     <Title/>
       <div className="nav-items py-5 ">
-        <ul className="flex text-white space-x-1 mx-4">
-          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/" ? "bg-slate-800" : ""}`}>
+        <ul className="flex text-white space-x-1 mx-4 ">
+          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/" ? "bg-slate-800" : "hover:scale-110"}`}>
           <Link className=" " to="/">Home</Link>
           </li>
-          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/about" ? "bg-slate-800" : ""}`}>
+          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/about" ? "bg-slate-800" : "hover:scale-110"}`}>
             <Link className=" " to="/about">About</Link>
           </li>
-          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/help" ? "bg-slate-800" : ""}`}>
+          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/help" ? "bg-slate-800" : "hover:scale-110"}`}>
             <Link className="" to="/help">Help</Link>
           </li>
-          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/cart" ? "bg-slate-800" : ""}`}>
+          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/cart" ? "bg-slate-800" : "hover:scale-110"}`}>
           <Link data-testid="cart" className="" to="/cart">
             Cart-{cartItems.length}
             </Link>
           </li>
-          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800`}>
+          <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800 hover:scale-110`}>
           <button
             className="login"
             onClick={() => {

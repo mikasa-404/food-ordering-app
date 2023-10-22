@@ -26466,10 +26466,10 @@ const Header = ()=>{
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                     className: "nav-items py-5 ",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
-                        className: "flex text-white space-x-1 mx-4",
+                        className: "flex text-white space-x-1 mx-4 ",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/" ? "bg-slate-800" : ""}`,
+                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/" ? "bg-slate-800" : "hover:scale-110"}`,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                     className: " ",
                                     to: "/",
@@ -26477,7 +26477,7 @@ const Header = ()=>{
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/about" ? "bg-slate-800" : ""}`,
+                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/about" ? "bg-slate-800" : "hover:scale-110"}`,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                     className: " ",
                                     to: "/about",
@@ -26485,7 +26485,7 @@ const Header = ()=>{
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/help" ? "bg-slate-800" : ""}`,
+                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/help" ? "bg-slate-800" : "hover:scale-110"}`,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                     className: "",
                                     to: "/help",
@@ -26493,7 +26493,7 @@ const Header = ()=>{
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800 ${location.pathname == "/cart" ? "bg-slate-800" : ""}`,
+                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/cart" ? "bg-slate-800" : "hover:scale-110"}`,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
                                     "data-testid": "cart",
                                     className: "",
@@ -26505,7 +26505,7 @@ const Header = ()=>{
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800`,
+                                className: `p-2 px-4 rounded-2xl hover:bg-slate-800 hover:scale-110`,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                     className: "login",
                                     onClick: ()=>{
@@ -34930,6 +34930,7 @@ const Body = ()=>{
     const [listOfRestaurants, setlistOfRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setfilteredRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
+    const [noReserr, setnoReserr] = (0, _react.useState)("");
     // const { user, setUser } = useContext(userContext);
     (0, _react.useEffect)(()=>{
         fetchData();
@@ -34951,6 +34952,17 @@ const Body = ()=>{
             console.error(error); // show error in console
         }
     }
+    const performSearch = (searchText, restaurants)=>{
+        if (searchText != "") {
+            const filtered = (0, _helper.filterData)(searchText, restaurants);
+            setfilteredRestaurants(filtered);
+            setnoReserr("");
+            if (filtered?.length === 0) setnoReserr("No Results Found!");
+        } else {
+            setnoReserr("");
+            setfilteredRestaurants(restaurants);
+        }
+    };
     const isOnline = (0, _useOnline.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
         children: "Offline, please check your internet connection!!!"
@@ -34980,21 +34992,19 @@ const Body = ()=>{
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                 "data-testid": "search-input",
                                 type: "text",
-                                className: "search-box rounded-md h-8 w-1/5",
+                                className: "search-box rounded-md h-8 w-1/5 p-3",
                                 value: searchText,
                                 onChange: (e)=>{
                                     setSearchText(e.target.value);
+                                    performSearch(e.target.value, listOfRestaurants);
+                                    console.log(searchText);
                                 }
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 "data-testid": "searchbtn",
                                 className: "search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md",
                                 onClick: ()=>{
-                                    console.log(searchText);
-                                    //we are searching in list of restaurants->which won't be modified
-                                    const filteredRestaurants = (0, _helper.filterData)(searchText, listOfRestaurants);
-                                    //we update filtered restaurants and display it ->list of restaurants remains unchanged
-                                    setfilteredRestaurants(filteredRestaurants);
+                                    performSearch(searchText, listOfRestaurants);
                                 },
                                 children: "Search"
                             })
@@ -35004,16 +35014,25 @@ const Body = ()=>{
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "mx-10 my-10 p-5",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     "data-testid": "res-list",
                     className: "res-container grid grid-cols-4 mx-4 gap-12",
-                    children: filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
-                            className: "links",
-                            to: "/restaurants/" + restaurant.info.id,
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
-                                resData: restaurant
-                            })
-                        }, restaurant.info.id))
+                    children: [
+                        noReserr && /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: " text-red-400 align-middle",
+                            children: [
+                                " ",
+                                noReserr
+                            ]
+                        }),
+                        filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
+                                className: "links",
+                                to: "/restaurants/" + restaurant.info.id,
+                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
+                                    resData: restaurant
+                                })
+                            }, restaurant.info.id))
+                    ]
                 })
             })
         ]
@@ -35030,7 +35049,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"414d9513f92cc73":"bMboU","2481c59d75fda5ac":"21dqq","dfdcad3f5b7c09c1":"g6ZGj","3cae63fbb41e880e":"9xmpe","8949cb392ce0e084":"3GF3D","c1f819b138cbd8cc":"74Yls","dbc8d7661d78507b":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","4d84513bc81d4f99":"gauyy","e80e9338f5df0fad":"hB8jg"}],"bMboU":[function(require,module,exports) {
+},{"414d9513f92cc73":"bMboU","2481c59d75fda5ac":"21dqq","dfdcad3f5b7c09c1":"g6ZGj","3cae63fbb41e880e":"9xmpe","8949cb392ce0e084":"3GF3D","c1f819b138cbd8cc":"74Yls","4d84513bc81d4f99":"gauyy","e80e9338f5df0fad":"hB8jg","dbc8d7661d78507b":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35048,7 +35067,7 @@ const RestaurantCard = (props)=>{
     const { resData  } = props;
     const { cloudinaryImageId , name , avgRating , cuisines , costForTwo , sla  } = resData?.info;
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-        className: "shadow-lg border hover:bg-slate-200 rounded-lg font-Roboto",
+        className: "shadow-lg border rounded-lg font-Roboto hover:scale-110",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                 className: "res-logo rounded-lg",
@@ -35200,7 +35219,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.filterData = filterData;
 function filterData(searchText, restaurants) {
-    console.log(restaurants);
     const filterData = restaurants.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
     return filterData;
 }
@@ -40262,13 +40280,13 @@ const RestaurantMenu = ()=>{
                 "data-testid": "menu",
                 className: "mx-3",
                 children: itemCards?.map((item)=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
-                        className: "border-b-2 flex justify-between p-2 items-center",
+                        className: "border-b-2 flex justify-between p-2 items-center hover:scale-95",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                                 className: "flex",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                        className: "p-2 w-40",
+                                        className: "p-2 w-40 rounded-xl",
                                         src: _constants.MENU_ITEM_URL + item.card.info.imageId
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
@@ -40301,7 +40319,7 @@ const RestaurantMenu = ()=>{
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 "data-testid": "addBtn",
-                                className: "p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950",
+                                className: "p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950 hover:scale-105",
                                 onClick: ()=>addFoodItem(item.card.info),
                                 children: "+ Add to Cart"
                             })
@@ -44356,7 +44374,7 @@ const Cart = ()=>{
                 children: "You can go to home page to view more restaurants"
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "bg-blue-600 text-white p-2 m-7 text-sm font-bold rounded-md",
+                className: "bg-blue-600 text-white p-2 m-7 text-sm font-bold rounded-md hover:scale-105",
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                     to: "/",
                     children: " Click here to go back to Restaurants "
@@ -44461,7 +44479,7 @@ const Cart = ()=>{
                         ]
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "mx-3 my-3 bg-blue-800 hover:bg-blue-500 active:bg-blue-950 text-white p-2 block w-11/12 font-semibold rounded-md",
+                        className: "mx-3 my-3 bg-blue-800 hover:bg-blue-500 active:bg-blue-950 text-white p-2 block w-11/12 font-semibold rounded-md hover:scale-105",
                         onClick: ()=>handleClick(),
                         children: "Checkout "
                     })

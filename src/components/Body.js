@@ -10,15 +10,14 @@ const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
-    const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [noReserr, setnoReserr]=useState("");
 
   // const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
     fetchData();
   }, []);
-
-
 
   async function fetchData() {
     try {
@@ -39,7 +38,20 @@ const Body = () => {
       console.error(error); // show error in console
     }
   }
-
+  const performSearch=(searchText, restaurants)=>{
+    if(searchText!=""){
+      const filtered = filterData( searchText,restaurants);
+      setfilteredRestaurants(filtered);
+      setnoReserr("")
+      if(filtered?.length===0){
+        setnoReserr("No Results Found!");
+      }
+    }
+    else{
+      setnoReserr("");
+      setfilteredRestaurants(restaurants);
+    }
+  }
   const isOnline = useOnline();
   if (!isOnline) {
     return <h1>Offline, please check your internet connection!!!</h1>;
@@ -58,25 +70,20 @@ const Body = () => {
           <input
             data-testid="search-input"
             type="text" 
-            className="search-box rounded-md h-8 w-1/5"
+            className="search-box rounded-md h-8 w-1/5 p-3"
             value={searchText}
             onChange={
               (e)=>{
                 setSearchText(e.target.value);
+                performSearch(e.target.value, listOfRestaurants);
+                console.log(searchText);
               }
             }
           />
           <button data-testid="searchbtn" 
             className="search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md"
             onClick={() => {
-              console.log(searchText);
-              //we are searching in list of restaurants->which won't be modified
-              const filteredRestaurants = filterData(
-                searchText,
-                listOfRestaurants
-              );
-              //we update filtered restaurants and display it ->list of restaurants remains unchanged
-              setfilteredRestaurants(filteredRestaurants);
+              performSearch(searchText, listOfRestaurants);
             }}
           >
             Search
@@ -84,8 +91,10 @@ const Body = () => {
         </div>
         
       </div>
+
       <div className="mx-10 my-10 p-5"> 
       <div data-testid="res-list" className="res-container grid grid-cols-4 mx-4 gap-12">
+      {noReserr && <div className=" text-red-400 align-middle"> {noReserr}</div>}
         {filteredRestaurants.map((restaurant) => (
           <Link
             className="links"
