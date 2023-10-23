@@ -11,7 +11,7 @@ const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [noReserr, setnoReserr]=useState("");
+  const [noReserr, setnoReserr] = useState("");
 
   // const { user, setUser } = useContext(userContext);
 
@@ -38,16 +38,16 @@ const Body = () => {
       console.error(error); // show error in console
     }
   }
-  const performSearch=(searchText, restaurants)=>{
-    if(searchText!=""){
-      const filtered = filterData( searchText,restaurants);
+  const performSearch = (searchText, restaurants) => {
+    if (searchText != "") {
+      const filtered = filterData(searchText, restaurants);
       setfilteredRestaurants(filtered);
       setnoReserr("")
-      if(filtered?.length===0){
-        setnoReserr("No Results Found!");
+      if (filtered?.length === 0) {
+        setnoReserr("No Restaurants Found!");
       }
     }
-    else{
+    else {
       setnoReserr("");
       setfilteredRestaurants(restaurants);
     }
@@ -60,7 +60,8 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body"> 
+    <div className="body">
+      {/* search header */}
       <div className="filter bg-[url('./imgs/bgrnd.jpg')] text-slate-100 text-center p-5">
         <div className="m-8 mt-0">
           <div className="heading text-3xl font-Oswald">Order Delivery & Take-Out</div>
@@ -69,19 +70,20 @@ const Body = () => {
         <div className="search m-3 text-black font-Lato ">
           <input
             data-testid="search-input"
-            type="text" 
-            className="search-box rounded-md h-8 w-1/5 p-3"
+            type="text"
+            className="search-box rounded-md h-8 w-4/5 sm:w-1/5 p-3"
+            placeholder="Search Restaurants"
             value={searchText}
             onChange={
-              (e)=>{
+              (e) => {
                 setSearchText(e.target.value);
                 performSearch(e.target.value, listOfRestaurants);
                 console.log(searchText);
               }
             }
           />
-          <button data-testid="searchbtn" 
-            className="search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md"
+          <button data-testid="searchbtn"
+            className="search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 hidden sm:inline-block rounded-md"
             onClick={() => {
               performSearch(searchText, listOfRestaurants);
             }}
@@ -89,24 +91,22 @@ const Body = () => {
             Search
           </button>
         </div>
-        
+      </div>
+      <div className="mx-10 my-10 p-5">
+      {noReserr && <div className="flex items-center justify-center text-center"> <p className="text-lg text-red-700 font-semibold ">{noReserr}</p></div>}
+        <div data-testid="res-list" className="res-container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 mx-4 gap-12">
+          {filteredRestaurants.map((restaurant) => (
+            <Link
+              className="links"
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />
+            </Link>
+          ))}
+        </div>
       </div>
 
-      <div className="mx-10 my-10 p-5"> 
-      <div data-testid="res-list" className="res-container grid grid-cols-4 mx-4 gap-12">
-      {noReserr && <div className=" text-red-400 align-middle"> {noReserr}</div>}
-        {filteredRestaurants.map((restaurant) => (
-          <Link
-            className="links"
-            key={restaurant.info.id}
-            to={"/restaurants/" + restaurant.info.id}
-          >
-            <RestaurantCard resData={restaurant} />
-          </Link>
-        ))}
-      </div>
-      </div>
-      
     </div>
   );
 };

@@ -26460,7 +26460,7 @@ const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
         className: "font-Lato",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-            className: "bg-fixed flex items-center justify-between bg-black shadow-xl",
+            className: "bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row",
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)(Title, {}),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
@@ -34957,7 +34957,7 @@ const Body = ()=>{
             const filtered = (0, _helper.filterData)(searchText, restaurants);
             setfilteredRestaurants(filtered);
             setnoReserr("");
-            if (filtered?.length === 0) setnoReserr("No Results Found!");
+            if (filtered?.length === 0) setnoReserr("No Restaurants Found!");
         } else {
             setnoReserr("");
             setfilteredRestaurants(restaurants);
@@ -34992,7 +34992,8 @@ const Body = ()=>{
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                 "data-testid": "search-input",
                                 type: "text",
-                                className: "search-box rounded-md h-8 w-1/5 p-3",
+                                className: "search-box rounded-md h-8 w-4/5 sm:w-1/5 p-3",
+                                placeholder: "Search Restaurants",
                                 value: searchText,
                                 onChange: (e)=>{
                                     setSearchText(e.target.value);
@@ -35002,7 +35003,7 @@ const Body = ()=>{
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 "data-testid": "searchbtn",
-                                className: "search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 rounded-md",
+                                className: "search-btn m-2 h-8 p-1 px-2 bg-red-700 text-slate-100 hidden sm:inline-block rounded-md",
                                 onClick: ()=>{
                                     performSearch(searchText, listOfRestaurants);
                                 },
@@ -35012,28 +35013,31 @@ const Body = ()=>{
                     })
                 ]
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                 className: "mx-10 my-10 p-5",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    "data-testid": "res-list",
-                    className: "res-container grid grid-cols-4 mx-4 gap-12",
-                    children: [
-                        noReserr && /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: " text-red-400 align-middle",
-                            children: [
-                                " ",
-                                noReserr
-                            ]
-                        }),
-                        filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
+                children: [
+                    noReserr && /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "flex items-center justify-center text-center",
+                        children: [
+                            " ",
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                className: "text-lg text-red-700 font-semibold ",
+                                children: noReserr
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                        "data-testid": "res-list",
+                        className: "res-container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 mx-4 gap-12",
+                        children: filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Link, {
                                 className: "links",
                                 to: "/restaurants/" + restaurant.info.id,
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RestaurantCard.default, {
                                     resData: restaurant
                                 })
                             }, restaurant.info.id))
-                    ]
-                })
+                    })
+                ]
             })
         ]
     });
@@ -35086,13 +35090,19 @@ const RestaurantCard = (props)=>{
                         children: cuisines.join(", ")
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "flex justify-between items-center  text-gray-600 mt-4 text-sm",
+                        className: "flex justify-between items-center text-gray-600 mt-4 text-sm ",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
-                                className: " px-2 p-1 bg-green-700 rounded-md text-white",
+                                className: " px-2 p-1 bg-green-700 rounded-md text-white ",
                                 children: [
-                                    "★ ",
-                                    avgRating
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("p", {
+                                        className: "",
+                                        children: [
+                                            "★",
+                                            avgRating
+                                        ]
+                                    }),
+                                    " "
                                 ]
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h4", {
@@ -35161,39 +35171,54 @@ function Shimmer() {
         "data-testid": "shimmer",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "h-20 bg-slate-200"
+                className: "h-40 bg-slate-200"
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "mx-10 my-10 p-5",
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "res-container grid grid-cols-4 mx-4 gap-12",
+                    className: "res-container grid grid-cols-5 mx-4 gap-12",
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "shadow-lg border bg-slate-200 rounded-lg h-[350px]"
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "shadow-lg border bg-slate-200 rounded-lg h-[250px]"
                         })
                     ]
                 })
