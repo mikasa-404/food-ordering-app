@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Mylogo from "../../imgs/logo.png";
 import { Link } from "react-router-dom";
 // import { useContext } from "react";
@@ -16,12 +16,24 @@ const Title = () => (
 );
 
 const Header = () => {
+  const [isFixed, setIsFixed]=useState(false);
   const location = useLocation();
   const cartItems = useSelector(store => store.cart.items);
   const [btnName, setBtnName] = useState("Login");
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+  },[]);
   return (
-    <div className="font-Lato">
-      <div className="bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row">
+    <div className={ `font-Lato ${isFixed? 'fixed z-10': 'relative'} w-full`}>
+      <div className="bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row ">
         <Title />
         <div className="nav-items py-5 ">
           <ul className="flex text-white space-x-1 mx-4 ">

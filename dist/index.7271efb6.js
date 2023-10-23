@@ -26454,13 +26454,21 @@ const Title = ()=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
     });
 _c = Title;
 const Header = ()=>{
+    const [isFixed, setIsFixed] = (0, _react.useState)(false);
     const location = (0, _reactRouterDom.useLocation)();
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     const [btnName, setBtnName] = (0, _react.useState)("Login");
+    (0, _react.useEffect)(()=>{
+        const handleScroll = ()=>{
+            if (window.scrollY > 50) setIsFixed(true);
+            else setIsFixed(false);
+        };
+        window.addEventListener("scroll", handleScroll);
+    }, []);
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "font-Lato",
+        className: `font-Lato ${isFixed ? "fixed z-10" : "relative"} w-full`,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-            className: "bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row",
+            className: "bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row ",
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)(Title, {}),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
