@@ -8,7 +8,7 @@ import { list } from "postcss";
 import { SWIGGY_API_URL } from "../utils/constants";
 const Body = () => {
   //state  variable
-  const [listOfRestaurants, setlistOfRestaurants] = useState([]);
+  const [listOfRestaurants, setlistOfRestaurants] = useState([""]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [noReserr, setnoReserr] = useState("");
@@ -22,16 +22,17 @@ const Body = () => {
   async function fetchData() {
     try {
       const response = await fetch(SWIGGY_API_URL);
-      // if response is not ok then throw new Error
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);
       } else {
         const json = await response.json();
-
-        const resData = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-
+        const datay=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        
+        const resData = (datay )? (json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants): (json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        
         setlistOfRestaurants(resData);
+        // console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setfilteredRestaurants(resData);
       }
     } catch (error) {
@@ -56,14 +57,13 @@ const Body = () => {
   if (!isOnline) {
     return <h1>Offline, please check your internet connection!!!</h1>;
   }
-
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       {/* search header */}
       <div className="filter bg-[url('./imgs/bgrnd.jpg')] text-slate-100 text-center p-5">
-        <div className="m-8 mt-0">
+        <div className="m-8 mt-0 whitespace-nowrap">
           <div className="heading text-3xl font-Oswald">Order Delivery & Take-Out</div>
           <div className="m-2 font-Roboto ">Find best restaurants near you</div>
         </div>

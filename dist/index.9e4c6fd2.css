@@ -245,8 +245,16 @@ img, video {
   position: relative;
 }
 
+.bottom-3 {
+  bottom: .75rem;
+}
+
 .z-10 {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-0 {
@@ -494,6 +502,10 @@ img, video {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded {

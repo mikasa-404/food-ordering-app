@@ -35,7 +35,7 @@ const Header = () => {
     <div className={ `font-Lato ${isFixed? 'fixed z-10': 'relative'} w-full`}>
       <div className="bg-fixed items-center bg-black shadow-xl flex flex-col sm:justify-between sm:flex-row ">
         <Title />
-        <div className="nav-items py-5 ">
+        <div className="nav-items py-5 whitespace-nowrap">
           <ul className="flex text-white space-x-1 mx-4 ">
             <li className={`p-2 px-4 rounded-2xl hover:bg-slate-800   ${location.pathname == "/" ? "bg-slate-800" : "hover:scale-110"}`}>
               <Link className=" " to="/">Home</Link>
