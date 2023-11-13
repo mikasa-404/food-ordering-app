@@ -35100,9 +35100,7 @@ var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
     //state  variable
-    const [listOfRestaurants, setlistOfRestaurants] = (0, _react.useState)([
-        ""
-    ]);
+    const [listOfRestaurants, setlistOfRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setfilteredRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
     const [noReserr, setnoReserr] = (0, _react.useState)("");
@@ -35121,7 +35119,6 @@ const Body = ()=>{
                 const datay = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
                 const resData = datay ? json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
                 setlistOfRestaurants(resData);
-                // console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
                 setfilteredRestaurants(resData);
             }
         } catch (error) {
@@ -35144,12 +35141,12 @@ const Body = ()=>{
         children: "Offline, please check your internet connection!!!"
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 58,
+        lineNumber: 56,
         columnNumber: 12
     }, undefined);
     return listOfRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 61,
+        lineNumber: 60,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -35165,7 +35162,7 @@ const Body = ()=>{
                                 children: "Order Delivery & Take-Out"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 67,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35173,13 +35170,13 @@ const Body = ()=>{
                                 children: "Find best restaurants near you"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 68,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 66,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35198,7 +35195,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 71,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35210,19 +35207,19 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 85,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 70,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 65,
+                lineNumber: 63,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35237,13 +35234,13 @@ const Body = ()=>{
                                 children: noReserr
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 96,
+                                lineNumber: 94,
                                 columnNumber: 83
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 96,
+                        lineNumber: 94,
                         columnNumber: 20
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35256,33 +35253,33 @@ const Body = ()=>{
                                     resData: restaurant
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 104,
+                                    lineNumber: 102,
                                     columnNumber: 15
                                 }, undefined)
                             }, restaurant.info.id, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 99,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 97,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 95,
+                lineNumber: 93,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 63,
+        lineNumber: 62,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "tZ4mQ8iZ+xsZnjO0T22sl3o2SKc=", false, function() {
+_s(Body, "BCSanEUJHhetVHe0d/i3QmedDfo=", false, function() {
     return [
         (0, _useOnlineDefault.default)
     ];
@@ -35437,6 +35434,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 function Shimmer() {
+    console.log("shimmer");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         "data-testid": "shimmer",
         children: [
