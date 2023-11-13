@@ -8,7 +8,6 @@ import { MENU_ITEM_URL } from "../utils/constants";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurant(resId);
-
   const dispatch = useDispatch();
   const addFoodItem = (item) => {
     //dispatch an action
@@ -20,22 +19,25 @@ const RestaurantMenu = () => {
   const { name, cuisines, costForTwoMessage, city , areaName, avgRating ,totalRatings} =
     resInfo?.cards[0]?.card?.card?.info;
   // console.log(resInfo?.cards[0]?.card?.card?.info);
-
   const itemCardsCheck = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
-    const { itemCards } = ((itemCardsCheck)? resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card : resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]);
+  var itemCards  = ((itemCardsCheck)? resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards : resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards);
+  if(itemCards==undefined){
+    const cardsCheck = resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
+    if(cardsCheck==undefined) itemCards= resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards;
+    else itemCards=cardsCheck;
+  }
   
-  console.log(resInfo?.cards[2]);
-  console.log(itemCards);
 
   if(itemCards.length!=0) {
     itemCards.forEach((element) => {
       element.card.info.qty = 0;
+      console.log(element.card.info)
     })
   }
- 
+ console.log(itemCards)
 
   return (
-    <div className="menu mx-40">
+    <div className="menu lg:mx-40 ">
       <p className="m-2 text-xs text-slate-700">Home/{name}</p>
 
       <div className="flex justify-between items-center">
@@ -81,7 +83,7 @@ const RestaurantMenu = () => {
             </div>
             <button 
               data-testid="addBtn"
-              className="p-2 m-2 rounded-md text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950 hover:scale-105"
+              className="p-1 md:p-2 m-1 md:m-2 rounded-md text-sm md:text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950 hover:scale-105"
               onClick={() => addFoodItem(item.card.info)}
             >
               + Add to Cart

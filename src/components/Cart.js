@@ -43,10 +43,10 @@ const Cart = () => {
       </button>
     </div>
   ) : (
-    <div className=" flex justify-between mx-40">
-      <div className="mt-10 w-3/5">
+    <div className=" flex justify-between lg:mx-28 flex-col sm:flex-row">
+      <div className="mt-10 sm:w-3/5">
         <div className="flex mb-2 p-2 justify-between border-b-2">
-          <p className="text-2xl font-bold">
+          <p className=" text-lg md:text-2xl font-bold">
             Your cart ({cartItems.length} items)
           </p>
           <Link to="/" className="underline text-medium ">Continue shopping</Link>
@@ -57,8 +57,7 @@ const Cart = () => {
           ))}
         </div>
       </div>
-      <div></div>
-      <div className="mb-auto m-10 bg-slate-100 border-2 rounded-md">
+      <div className="mb-auto sm:m-10 bg-slate-100 border-2 rounded-md">
         <h2 className="text-2xl font-bold m-3">Order Summary:</h2>
 
         <div className=" border-b-2 border-black m-3 p-2">

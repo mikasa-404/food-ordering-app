@@ -30,19 +30,18 @@ const FoodItem = (props) => {
   // };
 
   return (
-    <div className="flex justify-between flex-nowrap">
+    <div className="flex justify-between flex-nowrap ">
       <div className="flex"> 
-        <img className="p-2 w-40" src={MENU_ITEM_URL + imageId}></img>
+        <img className="p-2 w-28 md:w-40" src={MENU_ITEM_URL + imageId}></img>
         <div className="mt-3 m-2 mr-10">
-          <h2 className="text-lg font-bold">{name}</h2>
+          <h2 className=" text-base lg:text-lg font-bold">{name}</h2>
           {isVeg? <img className="h-5" src={veg} alt=""/>: <img className="h-5" src={nveg} alt=""/>}
         </div>
       </div>
 
-      <div className="">
-        <div className="p-4  m-auto">
-          
-          <button className=" m-0 bg-slate-200 p-1 pl-2 rounded-l-lg text-red-700 font-bold"
+      <div className="p-4  m-auto flex flex-col">
+        <div className="sm:text-center">
+        <button className=" m-0 bg-slate-200 p-1 pl-2 rounded-l-lg text-red-700 font-bold"
             onClick={() => {
               (qty==1) ? remove(items) : decreaseQty(items);
             }}
@@ -55,13 +54,12 @@ const FoodItem = (props) => {
           >
             +
           </button>
-          
         </div>
-        <div className="px-3 text-center">
+          <span className="px-3 sm:text-center m-4">
           {" "}
           {" Rs."}
           {(price * qty) / 100 || (defaultPrice * qty) / 100}
-        </div>
+          </span>
       </div>
     </div>
   );
