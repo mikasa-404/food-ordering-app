@@ -6,7 +6,7 @@ This is a food ordering app project developed using ReactJS. The app aims to pro
 
 ## 🔗 Live link
 
-**[https://stalwart-paletas-743f43.netlify.app/](https://stalwart-paletas-743f43.netlify.app/)**
+**[https://foodyville.netlify.app/](https://foodyville.netlify.app/)**
 
 
 ## 💻 Tech-Stack 
