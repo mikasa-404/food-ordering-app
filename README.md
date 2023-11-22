@@ -54,4 +54,3 @@ To set up the Food Ordering App project locally, follow these steps:
 - Create login page using Formik Library
 - Add User registration and authentication
 - Improvise custom shimmer ui component and error component
-- Add responsiveness for mobile phones
