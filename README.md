@@ -19,11 +19,12 @@ This is a food ordering app project developed using ReactJS. The app aims to pro
 - Routing: React Router 
 
 ## 📓Features 
-- Fetches data of each restaurant using Swiggy API
+- Fetches data of nearby restaurants using Swiggy API
 - Restaurant listings with area name, cuisine category, and ratings
-- Search functionality for restaurants
-- Cart management feature implemented using Redux Toolkit.
+- Cart management feature implemented using *Redux Toolkit*.
 - Custom shimmer UI effect for improved user experience.
+- Dynamic routing using *react-router-dom*
+- Search functionality for restaurants
 - Utilizes custom hooks for code organization and reusability.
 - Implements lazy loading to optimize performance.
 
