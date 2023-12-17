@@ -2968,53 +2968,47 @@ var _cart = require("./components/Cart");
 var _cartDefault = parcelHelpers.interopDefault(_cart);
 var _orderplaced = require("./components/Orderplaced");
 var _orderplacedDefault = parcelHelpers.interopDefault(_orderplaced);
-var _s = $RefreshSig$();
 const Help = /*#__PURE__*/ (0, _react.lazy)(()=>require("c60e88b0803b6e12"));
 _c = Help;
 const AppLayout = ()=>{
-    _s();
     // const [user, setUser] = useState({
     //   name: "Priya",
     //   email: "jhapriya106@gmail.com",
     // });
-    const [bill, setBill] = (0, _react.useState)({
-        totalBill: 0
-    });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
         store: (0, _storeDefault.default),
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 31,
+                lineNumber: 27,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                 fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 33,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 32,
+                lineNumber: 28,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 30,
+        lineNumber: 26,
         columnNumber: 7
     }, undefined);
 };
-_s(AppLayout, "WQjaQkdGqjPr5otkt3ieNso8wJ4=");
 _c1 = AppLayout;
 const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 44,
+            lineNumber: 40,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3022,7 +3016,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 48,
+                    lineNumber: 44,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3032,7 +3026,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     name: "Priya"
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 52,
+                    lineNumber: 48,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3040,7 +3034,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurants/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 56,
+                    lineNumber: 52,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3048,7 +3042,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/help",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Help, {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 61,
+                    lineNumber: 57,
                     columnNumber: 13
                 }, undefined)
             },
@@ -3056,7 +3050,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 66,
+                    lineNumber: 62,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3064,14 +3058,14 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/order",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _orderplacedDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 70,
+                    lineNumber: 66,
                     columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 73,
+            lineNumber: 69,
             columnNumber: 19
         }, undefined)
     }
@@ -3081,7 +3075,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 79,
+    lineNumber: 75,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -35416,9 +35410,9 @@ parcelHelpers.export(exports, "SWIGGY_API_URL", ()=>SWIGGY_API_URL);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
 parcelHelpers.export(exports, "MENU_API", ()=>MENU_API);
 parcelHelpers.export(exports, "MENU_ITEM_URL", ()=>MENU_ITEM_URL);
-const SWIGGY_API_URL = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING";
+const SWIGGY_API_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING";
 const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-const MENU_API = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
+const MENU_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 const MENU_ITEM_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6ZGj":[function(require,module,exports) {

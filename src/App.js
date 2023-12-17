@@ -20,11 +20,7 @@ const AppLayout = () => {
   //   name: "Priya",
   //   email: "jhapriya106@gmail.com",
   // });
-  const [bill, setBill]= useState(
-    {
-      totalBill: 0,
-    }
-  );
+  
 
   return (
       <Provider store={store}>
