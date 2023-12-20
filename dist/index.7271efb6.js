@@ -3087,248 +3087,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"c60e88b0803b6e12":"dkZO3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/About":"9R1Eu","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6","react-router-dom":"9xmpe","./components/Shimmer":"g6ZGj","react-redux":"bdVon","./utils/store":"k2jPV","./components/Cart":"h8J3U","./components/Orderplaced":"aWW1k","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dkZO3":[function(require,module,exports) {
-module.exports = require("b25969a78033ff58")(require("9e4a8a453d42f0cf").getBundleURL("aXMci") + "Help.f20f5b5a.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("fQMB0"));
-
-},{"b25969a78033ff58":"61B45","9e4a8a453d42f0cf":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("7422ead32dcc1e6b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"7422ead32dcc1e6b":"786KC"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/About":"9R1Eu","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6","react-router-dom":"9xmpe","./components/Shimmer":"g6ZGj","react-redux":"bdVon","./utils/store":"k2jPV","./components/Cart":"h8J3U","./components/Orderplaced":"aWW1k","c60e88b0803b6e12":"dkZO3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27726,7 +27485,42 @@ $RefreshReg$(_c1, "Header");
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../imgs/logo.png":"kCfrM","react-router-dom":"9xmpe","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kCfrM":[function(require,module,exports) {
 module.exports = require("c49f13c4fc0e06c").getBundleURL("aXMci") + "logo.c5dd6f41.png" + "?" + Date.now();
 
-},{"c49f13c4fc0e06c":"lgJ39"}],"9xmpe":[function(require,module,exports) {
+},{"c49f13c4fc0e06c":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.12.1
  *
@@ -35069,7 +34863,145 @@ const useStore = /*#__PURE__*/ createStoreHook();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"7422ead32dcc1e6b":"786KC"}],"8yaV8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35088,8 +35020,7 @@ var _reactRouterDom = require("react-router-dom");
 var _helper = require("../utils/helper");
 var _useOnline = require("../utils/useOnline");
 var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
-var _postcss = require("postcss");
-var _constants = require("../utils/constants");
+var _mockResData = require("../mocks/MOCK_RES_DATA");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
@@ -35102,22 +35033,12 @@ const Body = ()=>{
     (0, _react.useEffect)(()=>{
         fetchData();
     }, []);
-    async function fetchData() {
-        try {
-            const response = await fetch((0, _constants.SWIGGY_API_URL));
-            if (!response.ok) {
-                const err = response.status;
-                throw new Error(err);
-            } else {
-                const json = await response.json();
-                const datay = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-                const resData = datay ? json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-                setlistOfRestaurants(resData);
-                setfilteredRestaurants(resData);
-            }
-        } catch (error) {
-            console.error(error); // show error in console
-        }
+    function fetchData() {
+        const json = (0, _mockResData.data);
+        const datay = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const resData = datay ? json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        setlistOfRestaurants(resData);
+        setfilteredRestaurants(resData);
     }
     const performSearch = (searchText, restaurants)=>{
         if (searchText != "") {
@@ -35135,12 +35056,12 @@ const Body = ()=>{
         children: "Offline, please check your internet connection!!!"
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 56,
+        lineNumber: 45,
         columnNumber: 12
     }, undefined);
     return listOfRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 60,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -35156,7 +35077,7 @@ const Body = ()=>{
                                 children: "Order Delivery & Take-Out"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 65,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35164,13 +35085,13 @@ const Body = ()=>{
                                 children: "Find best restaurants near you"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 66,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 64,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35189,7 +35110,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 69,
+                                lineNumber: 58,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35201,19 +35122,19 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 83,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 68,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 63,
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35228,13 +35149,13 @@ const Body = ()=>{
                                 children: noReserr
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 94,
+                                lineNumber: 83,
                                 columnNumber: 83
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 94,
+                        lineNumber: 83,
                         columnNumber: 20
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35247,29 +35168,29 @@ const Body = ()=>{
                                     resData: restaurant
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 102,
+                                    lineNumber: 91,
                                     columnNumber: 15
                                 }, undefined)
                             }, restaurant.info.id, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 97,
+                                lineNumber: 86,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 95,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 93,
+                lineNumber: 82,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 62,
+        lineNumber: 51,
         columnNumber: 5
     }, undefined);
 };
@@ -35288,7 +35209,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","react":"21dqq","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","postcss":"gauyy","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","react":"21dqq","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","../mocks/MOCK_RES_DATA":"2PAsh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35404,13 +35325,12 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hB8jg":[function(require,module,exports) {
+// export const SWIGGY_API_URL=      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SWIGGY_API_URL", ()=>SWIGGY_API_URL);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
 parcelHelpers.export(exports, "MENU_API", ()=>MENU_API);
 parcelHelpers.export(exports, "MENU_ITEM_URL", ()=>MENU_ITEM_URL);
-const SWIGGY_API_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6083697&lng=77.293112&page_type=DESKTOP_WEB_LISTING";
 const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 const MENU_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 const MENU_ITEM_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
@@ -35617,4775 +35537,6619 @@ exports.default = useOnline;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gauyy":[function(require,module,exports) {
-"use strict";
-let CssSyntaxError = require("b94c122da89285cf");
-let Declaration = require("58b9b695b5cdec4f");
-let LazyResult = require("28800b7f609eacb4");
-let Container = require("53e8dbf4303f6b2");
-let Processor = require("74e2939a62033b88");
-let stringify = require("423052f41b6923a8");
-let fromJSON = require("265270fe03ed0453");
-let Document = require("6d045fa42be054c3");
-let Warning = require("5e8938f8ea2bde5c");
-let Comment = require("a80a0398f4ef418a");
-let AtRule = require("3d45f8dbf6f865b3");
-let Result = require("7861cd83b55ece93");
-let Input = require("88cc225cd57b2cfd");
-let parse = require("d869a996a852aa7b");
-let list = require("b9cbb1c1f8b97b6d");
-let Rule = require("885ac03c34871ebd");
-let Root = require("4e735dfb84c57321");
-let Node = require("f911e43317d4d41c");
-function postcss(...plugins) {
-    if (plugins.length === 1 && Array.isArray(plugins[0])) plugins = plugins[0];
-    return new Processor(plugins);
-}
-postcss.plugin = function plugin(name, initializer) {
-    let warningPrinted = false;
-    function creator(...args) {
-        // eslint-disable-next-line no-console
-        if (console && console.warn && !warningPrinted) {
-            warningPrinted = true;
-            // eslint-disable-next-line no-console
-            console.warn(name + ": postcss.plugin was deprecated. Migration guide:\n" + "https://evilmartians.com/chronicles/postcss-8-plugin-migration");
-        }
-        let transformer = initializer(...args);
-        transformer.postcssPlugin = name;
-        transformer.postcssVersion = new Processor().version;
-        return transformer;
-    }
-    let cache;
-    Object.defineProperty(creator, "postcss", {
-        get () {
-            if (!cache) cache = creator();
-            return cache;
-        }
-    });
-    creator.process = function(css, processOpts, pluginOpts) {
-        return postcss([
-            creator(pluginOpts)
-        ]).process(css, processOpts);
-    };
-    return creator;
-};
-postcss.stringify = stringify;
-postcss.parse = parse;
-postcss.fromJSON = fromJSON;
-postcss.list = list;
-postcss.comment = (defaults)=>new Comment(defaults);
-postcss.atRule = (defaults)=>new AtRule(defaults);
-postcss.decl = (defaults)=>new Declaration(defaults);
-postcss.rule = (defaults)=>new Rule(defaults);
-postcss.root = (defaults)=>new Root(defaults);
-postcss.document = (defaults)=>new Document(defaults);
-postcss.CssSyntaxError = CssSyntaxError;
-postcss.Declaration = Declaration;
-postcss.Container = Container;
-postcss.Processor = Processor;
-postcss.Document = Document;
-postcss.Comment = Comment;
-postcss.Warning = Warning;
-postcss.AtRule = AtRule;
-postcss.Result = Result;
-postcss.Input = Input;
-postcss.Rule = Rule;
-postcss.Root = Root;
-postcss.Node = Node;
-LazyResult.registerPostcss(postcss);
-module.exports = postcss;
-postcss.default = postcss;
-
-},{"b94c122da89285cf":"5TKyW","58b9b695b5cdec4f":"2mU8a","28800b7f609eacb4":"580Su","53e8dbf4303f6b2":"1gj6C","74e2939a62033b88":"lU6wZ","423052f41b6923a8":"a0MwE","265270fe03ed0453":"iiNZS","6d045fa42be054c3":"dK3sP","5e8938f8ea2bde5c":"lw5j2","a80a0398f4ef418a":"5CBjv","3d45f8dbf6f865b3":"kbVAt","7861cd83b55ece93":"dmoqr","88cc225cd57b2cfd":"fb1UO","d869a996a852aa7b":"ioa1B","b9cbb1c1f8b97b6d":"hZo3l","885ac03c34871ebd":"4SFJx","4e735dfb84c57321":"hsDFv","f911e43317d4d41c":"5azBO"}],"5TKyW":[function(require,module,exports) {
-"use strict";
-let pico = require("9ad9103a933bde56");
-let terminalHighlight = require("76818616dc2728aa");
-class CssSyntaxError extends Error {
-    constructor(message, line, column, source, file, plugin){
-        super(message);
-        this.name = "CssSyntaxError";
-        this.reason = message;
-        if (file) this.file = file;
-        if (source) this.source = source;
-        if (plugin) this.plugin = plugin;
-        if (typeof line !== "undefined" && typeof column !== "undefined") {
-            if (typeof line === "number") {
-                this.line = line;
-                this.column = column;
-            } else {
-                this.line = line.line;
-                this.column = line.column;
-                this.endLine = column.line;
-                this.endColumn = column.column;
-            }
-        }
-        this.setMessage();
-        if (Error.captureStackTrace) Error.captureStackTrace(this, CssSyntaxError);
-    }
-    setMessage() {
-        this.message = this.plugin ? this.plugin + ": " : "";
-        this.message += this.file ? this.file : "<css input>";
-        if (typeof this.line !== "undefined") this.message += ":" + this.line + ":" + this.column;
-        this.message += ": " + this.reason;
-    }
-    showSourceCode(color) {
-        if (!this.source) return "";
-        let css = this.source;
-        if (color == null) color = pico.isColorSupported;
-        if (terminalHighlight) {
-            if (color) css = terminalHighlight(css);
-        }
-        let lines = css.split(/\r?\n/);
-        let start = Math.max(this.line - 3, 0);
-        let end = Math.min(this.line + 2, lines.length);
-        let maxWidth = String(end).length;
-        let mark, aside;
-        if (color) {
-            let { bold , red , gray  } = pico.createColors(true);
-            mark = (text)=>bold(red(text));
-            aside = (text)=>gray(text);
-        } else mark = aside = (str)=>str;
-        return lines.slice(start, end).map((line, index)=>{
-            let number = start + 1 + index;
-            let gutter = " " + (" " + number).slice(-maxWidth) + " | ";
-            if (number === this.line) {
-                let spacing = aside(gutter.replace(/\d/g, " ")) + line.slice(0, this.column - 1).replace(/[^\t]/g, " ");
-                return mark(">") + aside(gutter) + line + "\n " + spacing + mark("^");
-            }
-            return " " + aside(gutter) + line;
-        }).join("\n");
-    }
-    toString() {
-        let code = this.showSourceCode();
-        if (code) code = "\n\n" + code + "\n";
-        return this.name + ": " + this.message + code;
-    }
-}
-module.exports = CssSyntaxError;
-CssSyntaxError.default = CssSyntaxError;
-
-},{"9ad9103a933bde56":"1298x","76818616dc2728aa":"jhUEF"}],"1298x":[function(require,module,exports) {
-var x = String;
-var create = function() {
-    return {
-        isColorSupported: false,
-        reset: x,
-        bold: x,
-        dim: x,
-        italic: x,
-        underline: x,
-        inverse: x,
-        hidden: x,
-        strikethrough: x,
-        black: x,
-        red: x,
-        green: x,
-        yellow: x,
-        blue: x,
-        magenta: x,
-        cyan: x,
-        white: x,
-        gray: x,
-        bgBlack: x,
-        bgRed: x,
-        bgGreen: x,
-        bgYellow: x,
-        bgBlue: x,
-        bgMagenta: x,
-        bgCyan: x,
-        bgWhite: x
-    };
-};
-module.exports = create();
-module.exports.createColors = create;
-
-},{}],"jhUEF":[function(require,module,exports) {
-"use strict";
-
-},{}],"2mU8a":[function(require,module,exports) {
-"use strict";
-let Node = require("943ca4e816e55fa8");
-class Declaration extends Node {
-    constructor(defaults){
-        if (defaults && typeof defaults.value !== "undefined" && typeof defaults.value !== "string") defaults = {
-            ...defaults,
-            value: String(defaults.value)
-        };
-        super(defaults);
-        this.type = "decl";
-    }
-    get variable() {
-        return this.prop.startsWith("--") || this.prop[0] === "$";
-    }
-}
-module.exports = Declaration;
-Declaration.default = Declaration;
-
-},{"943ca4e816e55fa8":"5azBO"}],"5azBO":[function(require,module,exports) {
-"use strict";
-let { isClean , my  } = require("2a4266f65f480cdb");
-let CssSyntaxError = require("c1e82465b8844d24");
-let Stringifier = require("b3be92e0a68c8c98");
-let stringify = require("5a353b155add93c7");
-function cloneNode(obj, parent) {
-    let cloned = new obj.constructor();
-    for(let i in obj){
-        if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-        if (i === "proxyCache") continue;
-        let value = obj[i];
-        let type = typeof value;
-        if (i === "parent" && type === "object") {
-            if (parent) cloned[i] = parent;
-        } else if (i === "source") cloned[i] = value;
-        else if (Array.isArray(value)) cloned[i] = value.map((j)=>cloneNode(j, cloned));
-        else {
-            if (type === "object" && value !== null) value = cloneNode(value);
-            cloned[i] = value;
-        }
-    }
-    return cloned;
-}
-class Node {
-    constructor(defaults = {}){
-        this.raws = {};
-        this[isClean] = false;
-        this[my] = true;
-        for(let name in defaults)if (name === "nodes") {
-            this.nodes = [];
-            for (let node of defaults[name])if (typeof node.clone === "function") this.append(node.clone());
-            else this.append(node);
-        } else this[name] = defaults[name];
-    }
-    error(message, opts = {}) {
-        if (this.source) {
-            let { start , end  } = this.rangeBy(opts);
-            return this.source.input.error(message, {
-                line: start.line,
-                column: start.column
-            }, {
-                line: end.line,
-                column: end.column
-            }, opts);
-        }
-        return new CssSyntaxError(message);
-    }
-    warn(result, text, opts) {
-        let data = {
-            node: this
-        };
-        for(let i in opts)data[i] = opts[i];
-        return result.warn(text, data);
-    }
-    remove() {
-        if (this.parent) this.parent.removeChild(this);
-        this.parent = undefined;
-        return this;
-    }
-    toString(stringifier = stringify) {
-        if (stringifier.stringify) stringifier = stringifier.stringify;
-        let result = "";
-        stringifier(this, (i)=>{
-            result += i;
-        });
-        return result;
-    }
-    assign(overrides = {}) {
-        for(let name in overrides)this[name] = overrides[name];
-        return this;
-    }
-    clone(overrides = {}) {
-        let cloned = cloneNode(this);
-        for(let name in overrides)cloned[name] = overrides[name];
-        return cloned;
-    }
-    cloneBefore(overrides = {}) {
-        let cloned = this.clone(overrides);
-        this.parent.insertBefore(this, cloned);
-        return cloned;
-    }
-    cloneAfter(overrides = {}) {
-        let cloned = this.clone(overrides);
-        this.parent.insertAfter(this, cloned);
-        return cloned;
-    }
-    replaceWith(...nodes) {
-        if (this.parent) {
-            let bookmark = this;
-            let foundSelf = false;
-            for (let node of nodes){
-                if (node === this) foundSelf = true;
-                else if (foundSelf) {
-                    this.parent.insertAfter(bookmark, node);
-                    bookmark = node;
-                } else this.parent.insertBefore(bookmark, node);
-            }
-            if (!foundSelf) this.remove();
-        }
-        return this;
-    }
-    next() {
-        if (!this.parent) return undefined;
-        let index = this.parent.index(this);
-        return this.parent.nodes[index + 1];
-    }
-    prev() {
-        if (!this.parent) return undefined;
-        let index = this.parent.index(this);
-        return this.parent.nodes[index - 1];
-    }
-    before(add) {
-        this.parent.insertBefore(this, add);
-        return this;
-    }
-    after(add) {
-        this.parent.insertAfter(this, add);
-        return this;
-    }
-    root() {
-        let result = this;
-        while(result.parent && result.parent.type !== "document")result = result.parent;
-        return result;
-    }
-    raw(prop, defaultType) {
-        let str = new Stringifier();
-        return str.raw(this, prop, defaultType);
-    }
-    cleanRaws(keepBetween) {
-        delete this.raws.before;
-        delete this.raws.after;
-        if (!keepBetween) delete this.raws.between;
-    }
-    toJSON(_, inputs) {
-        let fixed = {};
-        let emitInputs = inputs == null;
-        inputs = inputs || new Map();
-        let inputsNextIndex = 0;
-        for(let name in this){
-            if (!Object.prototype.hasOwnProperty.call(this, name)) continue;
-            if (name === "parent" || name === "proxyCache") continue;
-            let value = this[name];
-            if (Array.isArray(value)) fixed[name] = value.map((i)=>{
-                if (typeof i === "object" && i.toJSON) return i.toJSON(null, inputs);
-                else return i;
-            });
-            else if (typeof value === "object" && value.toJSON) fixed[name] = value.toJSON(null, inputs);
-            else if (name === "source") {
-                let inputId = inputs.get(value.input);
-                if (inputId == null) {
-                    inputId = inputsNextIndex;
-                    inputs.set(value.input, inputsNextIndex);
-                    inputsNextIndex++;
-                }
-                fixed[name] = {
-                    inputId,
-                    start: value.start,
-                    end: value.end
-                };
-            } else fixed[name] = value;
-        }
-        if (emitInputs) fixed.inputs = [
-            ...inputs.keys()
-        ].map((input)=>input.toJSON());
-        return fixed;
-    }
-    positionInside(index) {
-        let string = this.toString();
-        let column = this.source.start.column;
-        let line = this.source.start.line;
-        for(let i = 0; i < index; i++)if (string[i] === "\n") {
-            column = 1;
-            line += 1;
-        } else column += 1;
-        return {
-            line,
-            column
-        };
-    }
-    positionBy(opts) {
-        let pos = this.source.start;
-        if (opts.index) pos = this.positionInside(opts.index);
-        else if (opts.word) {
-            let index = this.toString().indexOf(opts.word);
-            if (index !== -1) pos = this.positionInside(index);
-        }
-        return pos;
-    }
-    rangeBy(opts) {
-        let start = {
-            line: this.source.start.line,
-            column: this.source.start.column
-        };
-        let end = this.source.end ? {
-            line: this.source.end.line,
-            column: this.source.end.column + 1
-        } : {
-            line: start.line,
-            column: start.column + 1
-        };
-        if (opts.word) {
-            let index = this.toString().indexOf(opts.word);
-            if (index !== -1) {
-                start = this.positionInside(index);
-                end = this.positionInside(index + opts.word.length);
-            }
-        } else {
-            if (opts.start) start = {
-                line: opts.start.line,
-                column: opts.start.column
-            };
-            else if (opts.index) start = this.positionInside(opts.index);
-            if (opts.end) end = {
-                line: opts.end.line,
-                column: opts.end.column
-            };
-            else if (opts.endIndex) end = this.positionInside(opts.endIndex);
-            else if (opts.index) end = this.positionInside(opts.index + 1);
-        }
-        if (end.line < start.line || end.line === start.line && end.column <= start.column) end = {
-            line: start.line,
-            column: start.column + 1
-        };
-        return {
-            start,
-            end
-        };
-    }
-    getProxyProcessor() {
-        return {
-            set (node, prop, value) {
-                if (node[prop] === value) return true;
-                node[prop] = value;
-                if (prop === "prop" || prop === "value" || prop === "name" || prop === "params" || prop === "important" || /* c8 ignore next */ prop === "text") node.markDirty();
-                return true;
-            },
-            get (node, prop) {
-                if (prop === "proxyOf") return node;
-                else if (prop === "root") return ()=>node.root().toProxy();
-                else return node[prop];
-            }
-        };
-    }
-    toProxy() {
-        if (!this.proxyCache) this.proxyCache = new Proxy(this, this.getProxyProcessor());
-        return this.proxyCache;
-    }
-    addToError(error) {
-        error.postcssNode = this;
-        if (error.stack && this.source && /\n\s{4}at /.test(error.stack)) {
-            let s = this.source;
-            error.stack = error.stack.replace(/\n\s{4}at /, `$&${s.input.from}:${s.start.line}:${s.start.column}$&`);
-        }
-        return error;
-    }
-    markDirty() {
-        if (this[isClean]) {
-            this[isClean] = false;
-            let next = this;
-            while(next = next.parent)next[isClean] = false;
-        }
-    }
-    get proxyOf() {
-        return this;
-    }
-}
-module.exports = Node;
-Node.default = Node;
-
-},{"2a4266f65f480cdb":"9Ej2B","c1e82465b8844d24":"5TKyW","b3be92e0a68c8c98":"ebmGP","5a353b155add93c7":"a0MwE"}],"9Ej2B":[function(require,module,exports) {
-"use strict";
-module.exports.isClean = Symbol("isClean");
-module.exports.my = Symbol("my");
-
-},{}],"ebmGP":[function(require,module,exports) {
-"use strict";
-const DEFAULT_RAW = {
-    colon: ": ",
-    indent: "    ",
-    beforeDecl: "\n",
-    beforeRule: "\n",
-    beforeOpen: " ",
-    beforeClose: "\n",
-    beforeComment: "\n",
-    after: "\n",
-    emptyBody: "",
-    commentLeft: " ",
-    commentRight: " ",
-    semicolon: false
-};
-function capitalize(str) {
-    return str[0].toUpperCase() + str.slice(1);
-}
-class Stringifier {
-    constructor(builder){
-        this.builder = builder;
-    }
-    stringify(node, semicolon) {
-        /* c8 ignore start */ if (!this[node.type]) throw new Error("Unknown AST node type " + node.type + ". " + "Maybe you need to change PostCSS stringifier.");
-        /* c8 ignore stop */ this[node.type](node, semicolon);
-    }
-    document(node) {
-        this.body(node);
-    }
-    root(node) {
-        this.body(node);
-        if (node.raws.after) this.builder(node.raws.after);
-    }
-    comment(node) {
-        let left = this.raw(node, "left", "commentLeft");
-        let right = this.raw(node, "right", "commentRight");
-        this.builder("/*" + left + node.text + right + "*/", node);
-    }
-    decl(node, semicolon) {
-        let between = this.raw(node, "between", "colon");
-        let string = node.prop + between + this.rawValue(node, "value");
-        if (node.important) string += node.raws.important || " !important";
-        if (semicolon) string += ";";
-        this.builder(string, node);
-    }
-    rule(node) {
-        this.block(node, this.rawValue(node, "selector"));
-        if (node.raws.ownSemicolon) this.builder(node.raws.ownSemicolon, node, "end");
-    }
-    atrule(node, semicolon) {
-        let name = "@" + node.name;
-        let params = node.params ? this.rawValue(node, "params") : "";
-        if (typeof node.raws.afterName !== "undefined") name += node.raws.afterName;
-        else if (params) name += " ";
-        if (node.nodes) this.block(node, name + params);
-        else {
-            let end = (node.raws.between || "") + (semicolon ? ";" : "");
-            this.builder(name + params + end, node);
-        }
-    }
-    body(node) {
-        let last = node.nodes.length - 1;
-        while(last > 0){
-            if (node.nodes[last].type !== "comment") break;
-            last -= 1;
-        }
-        let semicolon = this.raw(node, "semicolon");
-        for(let i = 0; i < node.nodes.length; i++){
-            let child = node.nodes[i];
-            let before = this.raw(child, "before");
-            if (before) this.builder(before);
-            this.stringify(child, last !== i || semicolon);
-        }
-    }
-    block(node, start) {
-        let between = this.raw(node, "between", "beforeOpen");
-        this.builder(start + between + "{", node, "start");
-        let after;
-        if (node.nodes && node.nodes.length) {
-            this.body(node);
-            after = this.raw(node, "after");
-        } else after = this.raw(node, "after", "emptyBody");
-        if (after) this.builder(after);
-        this.builder("}", node, "end");
-    }
-    raw(node, own, detect) {
-        let value;
-        if (!detect) detect = own;
-        // Already had
-        if (own) {
-            value = node.raws[own];
-            if (typeof value !== "undefined") return value;
-        }
-        let parent = node.parent;
-        if (detect === "before") {
-            // Hack for first rule in CSS
-            if (!parent || parent.type === "root" && parent.first === node) return "";
-            // `root` nodes in `document` should use only their own raws
-            if (parent && parent.type === "document") return "";
-        }
-        // Floating child without parent
-        if (!parent) return DEFAULT_RAW[detect];
-        // Detect style by other nodes
-        let root = node.root();
-        if (!root.rawCache) root.rawCache = {};
-        if (typeof root.rawCache[detect] !== "undefined") return root.rawCache[detect];
-        if (detect === "before" || detect === "after") return this.beforeAfter(node, detect);
-        else {
-            let method = "raw" + capitalize(detect);
-            if (this[method]) value = this[method](root, node);
-            else root.walk((i)=>{
-                value = i.raws[own];
-                if (typeof value !== "undefined") return false;
-            });
-        }
-        if (typeof value === "undefined") value = DEFAULT_RAW[detect];
-        root.rawCache[detect] = value;
-        return value;
-    }
-    rawSemicolon(root) {
-        let value;
-        root.walk((i)=>{
-            if (i.nodes && i.nodes.length && i.last.type === "decl") {
-                value = i.raws.semicolon;
-                if (typeof value !== "undefined") return false;
-            }
-        });
-        return value;
-    }
-    rawEmptyBody(root) {
-        let value;
-        root.walk((i)=>{
-            if (i.nodes && i.nodes.length === 0) {
-                value = i.raws.after;
-                if (typeof value !== "undefined") return false;
-            }
-        });
-        return value;
-    }
-    rawIndent(root) {
-        if (root.raws.indent) return root.raws.indent;
-        let value;
-        root.walk((i)=>{
-            let p = i.parent;
-            if (p && p !== root && p.parent && p.parent === root) {
-                if (typeof i.raws.before !== "undefined") {
-                    let parts = i.raws.before.split("\n");
-                    value = parts[parts.length - 1];
-                    value = value.replace(/\S/g, "");
-                    return false;
-                }
-            }
-        });
-        return value;
-    }
-    rawBeforeComment(root, node) {
-        let value;
-        root.walkComments((i)=>{
-            if (typeof i.raws.before !== "undefined") {
-                value = i.raws.before;
-                if (value.includes("\n")) value = value.replace(/[^\n]+$/, "");
-                return false;
-            }
-        });
-        if (typeof value === "undefined") value = this.raw(node, null, "beforeDecl");
-        else if (value) value = value.replace(/\S/g, "");
-        return value;
-    }
-    rawBeforeDecl(root, node) {
-        let value;
-        root.walkDecls((i)=>{
-            if (typeof i.raws.before !== "undefined") {
-                value = i.raws.before;
-                if (value.includes("\n")) value = value.replace(/[^\n]+$/, "");
-                return false;
-            }
-        });
-        if (typeof value === "undefined") value = this.raw(node, null, "beforeRule");
-        else if (value) value = value.replace(/\S/g, "");
-        return value;
-    }
-    rawBeforeRule(root) {
-        let value;
-        root.walk((i)=>{
-            if (i.nodes && (i.parent !== root || root.first !== i)) {
-                if (typeof i.raws.before !== "undefined") {
-                    value = i.raws.before;
-                    if (value.includes("\n")) value = value.replace(/[^\n]+$/, "");
-                    return false;
-                }
-            }
-        });
-        if (value) value = value.replace(/\S/g, "");
-        return value;
-    }
-    rawBeforeClose(root) {
-        let value;
-        root.walk((i)=>{
-            if (i.nodes && i.nodes.length > 0) {
-                if (typeof i.raws.after !== "undefined") {
-                    value = i.raws.after;
-                    if (value.includes("\n")) value = value.replace(/[^\n]+$/, "");
-                    return false;
-                }
-            }
-        });
-        if (value) value = value.replace(/\S/g, "");
-        return value;
-    }
-    rawBeforeOpen(root) {
-        let value;
-        root.walk((i)=>{
-            if (i.type !== "decl") {
-                value = i.raws.between;
-                if (typeof value !== "undefined") return false;
-            }
-        });
-        return value;
-    }
-    rawColon(root) {
-        let value;
-        root.walkDecls((i)=>{
-            if (typeof i.raws.between !== "undefined") {
-                value = i.raws.between.replace(/[^\s:]/g, "");
-                return false;
-            }
-        });
-        return value;
-    }
-    beforeAfter(node, detect) {
-        let value;
-        if (node.type === "decl") value = this.raw(node, null, "beforeDecl");
-        else if (node.type === "comment") value = this.raw(node, null, "beforeComment");
-        else if (detect === "before") value = this.raw(node, null, "beforeRule");
-        else value = this.raw(node, null, "beforeClose");
-        let buf = node.parent;
-        let depth = 0;
-        while(buf && buf.type !== "root"){
-            depth += 1;
-            buf = buf.parent;
-        }
-        if (value.includes("\n")) {
-            let indent = this.raw(node, null, "indent");
-            if (indent.length) for(let step = 0; step < depth; step++)value += indent;
-        }
-        return value;
-    }
-    rawValue(node, prop) {
-        let value = node[prop];
-        let raw = node.raws[prop];
-        if (raw && raw.value === value) return raw.raw;
-        return value;
-    }
-}
-module.exports = Stringifier;
-Stringifier.default = Stringifier;
-
-},{}],"a0MwE":[function(require,module,exports) {
-"use strict";
-let Stringifier = require("f7559227119e51ac");
-function stringify(node, builder) {
-    let str = new Stringifier(builder);
-    str.stringify(node);
-}
-module.exports = stringify;
-stringify.default = stringify;
-
-},{"f7559227119e51ac":"ebmGP"}],"580Su":[function(require,module,exports) {
-"use strict";
-let { isClean , my  } = require("784df17aa24f7eff");
-let MapGenerator = require("66ac869ca9d5e2f0");
-let stringify = require("d3d5a028585e9913");
-let Container = require("cde52f575286bb6");
-let Document = require("681b63fe9d05e426");
-let warnOnce = require("139c0704f6de1f4e");
-let Result = require("9fd200a8479a5908");
-let parse = require("4ddbb908fc5050d1");
-let Root = require("b7ad0485699a64e0");
-const TYPE_TO_CLASS_NAME = {
-    document: "Document",
-    root: "Root",
-    atrule: "AtRule",
-    rule: "Rule",
-    decl: "Declaration",
-    comment: "Comment"
-};
-const PLUGIN_PROPS = {
-    postcssPlugin: true,
-    prepare: true,
-    Once: true,
-    Document: true,
-    Root: true,
-    Declaration: true,
-    Rule: true,
-    AtRule: true,
-    Comment: true,
-    DeclarationExit: true,
-    RuleExit: true,
-    AtRuleExit: true,
-    CommentExit: true,
-    RootExit: true,
-    DocumentExit: true,
-    OnceExit: true
-};
-const NOT_VISITORS = {
-    postcssPlugin: true,
-    prepare: true,
-    Once: true
-};
-const CHILDREN = 0;
-function isPromise(obj) {
-    return typeof obj === "object" && typeof obj.then === "function";
-}
-function getEvents(node) {
-    let key = false;
-    let type = TYPE_TO_CLASS_NAME[node.type];
-    if (node.type === "decl") key = node.prop.toLowerCase();
-    else if (node.type === "atrule") key = node.name.toLowerCase();
-    if (key && node.append) return [
-        type,
-        type + "-" + key,
-        CHILDREN,
-        type + "Exit",
-        type + "Exit-" + key
-    ];
-    else if (key) return [
-        type,
-        type + "-" + key,
-        type + "Exit",
-        type + "Exit-" + key
-    ];
-    else if (node.append) return [
-        type,
-        CHILDREN,
-        type + "Exit"
-    ];
-    else return [
-        type,
-        type + "Exit"
-    ];
-}
-function toStack(node) {
-    let events;
-    if (node.type === "document") events = [
-        "Document",
-        CHILDREN,
-        "DocumentExit"
-    ];
-    else if (node.type === "root") events = [
-        "Root",
-        CHILDREN,
-        "RootExit"
-    ];
-    else events = getEvents(node);
-    return {
-        node,
-        events,
-        eventIndex: 0,
-        visitors: [],
-        visitorIndex: 0,
-        iterator: 0
-    };
-}
-function cleanMarks(node) {
-    node[isClean] = false;
-    if (node.nodes) node.nodes.forEach((i)=>cleanMarks(i));
-    return node;
-}
-let postcss = {};
-class LazyResult {
-    constructor(processor, css, opts){
-        this.stringified = false;
-        this.processed = false;
-        let root;
-        if (typeof css === "object" && css !== null && (css.type === "root" || css.type === "document")) root = cleanMarks(css);
-        else if (css instanceof LazyResult || css instanceof Result) {
-            root = cleanMarks(css.root);
-            if (css.map) {
-                if (typeof opts.map === "undefined") opts.map = {};
-                if (!opts.map.inline) opts.map.inline = false;
-                opts.map.prev = css.map;
-            }
-        } else {
-            let parser = parse;
-            if (opts.syntax) parser = opts.syntax.parse;
-            if (opts.parser) parser = opts.parser;
-            if (parser.parse) parser = parser.parse;
-            try {
-                root = parser(css, opts);
-            } catch (error) {
-                this.processed = true;
-                this.error = error;
-            }
-            if (root && !root[my]) /* c8 ignore next 2 */ Container.rebuild(root);
-        }
-        this.result = new Result(processor, root, opts);
-        this.helpers = {
-            ...postcss,
-            result: this.result,
-            postcss
-        };
-        this.plugins = this.processor.plugins.map((plugin)=>{
-            if (typeof plugin === "object" && plugin.prepare) return {
-                ...plugin,
-                ...plugin.prepare(this.result)
-            };
-            else return plugin;
-        });
-    }
-    get [Symbol.toStringTag]() {
-        return "LazyResult";
-    }
-    get processor() {
-        return this.result.processor;
-    }
-    get opts() {
-        return this.result.opts;
-    }
-    get css() {
-        return this.stringify().css;
-    }
-    get content() {
-        return this.stringify().content;
-    }
-    get map() {
-        return this.stringify().map;
-    }
-    get root() {
-        return this.sync().root;
-    }
-    get messages() {
-        return this.sync().messages;
-    }
-    warnings() {
-        return this.sync().warnings();
-    }
-    toString() {
-        return this.css;
-    }
-    then(onFulfilled, onRejected) {
-        if (!("from" in this.opts)) warnOnce("Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.");
-        return this.async().then(onFulfilled, onRejected);
-    }
-    catch(onRejected) {
-        return this.async().catch(onRejected);
-    }
-    finally(onFinally) {
-        return this.async().then(onFinally, onFinally);
-    }
-    async() {
-        if (this.error) return Promise.reject(this.error);
-        if (this.processed) return Promise.resolve(this.result);
-        if (!this.processing) this.processing = this.runAsync();
-        return this.processing;
-    }
-    sync() {
-        if (this.error) throw this.error;
-        if (this.processed) return this.result;
-        this.processed = true;
-        if (this.processing) throw this.getAsyncError();
-        for (let plugin of this.plugins){
-            let promise = this.runOnRoot(plugin);
-            if (isPromise(promise)) throw this.getAsyncError();
-        }
-        this.prepareVisitors();
-        if (this.hasListener) {
-            let root = this.result.root;
-            while(!root[isClean]){
-                root[isClean] = true;
-                this.walkSync(root);
-            }
-            if (this.listeners.OnceExit) {
-                if (root.type === "document") for (let subRoot of root.nodes)this.visitSync(this.listeners.OnceExit, subRoot);
-                else this.visitSync(this.listeners.OnceExit, root);
-            }
-        }
-        return this.result;
-    }
-    stringify() {
-        if (this.error) throw this.error;
-        if (this.stringified) return this.result;
-        this.stringified = true;
-        this.sync();
-        let opts = this.result.opts;
-        let str = stringify;
-        if (opts.syntax) str = opts.syntax.stringify;
-        if (opts.stringifier) str = opts.stringifier;
-        if (str.stringify) str = str.stringify;
-        let map = new MapGenerator(str, this.result.root, this.result.opts);
-        let data = map.generate();
-        this.result.css = data[0];
-        this.result.map = data[1];
-        return this.result;
-    }
-    walkSync(node) {
-        node[isClean] = true;
-        let events = getEvents(node);
-        for (let event of events){
-            if (event === CHILDREN) {
-                if (node.nodes) node.each((child)=>{
-                    if (!child[isClean]) this.walkSync(child);
-                });
-            } else {
-                let visitors = this.listeners[event];
-                if (visitors) {
-                    if (this.visitSync(visitors, node.toProxy())) return;
-                }
-            }
-        }
-    }
-    visitSync(visitors, node) {
-        for (let [plugin, visitor] of visitors){
-            this.result.lastPlugin = plugin;
-            let promise;
-            try {
-                promise = visitor(node, this.helpers);
-            } catch (e) {
-                throw this.handleError(e, node.proxyOf);
-            }
-            if (node.type !== "root" && node.type !== "document" && !node.parent) return true;
-            if (isPromise(promise)) throw this.getAsyncError();
-        }
-    }
-    runOnRoot(plugin) {
-        this.result.lastPlugin = plugin;
-        try {
-            if (typeof plugin === "object" && plugin.Once) {
-                if (this.result.root.type === "document") {
-                    let roots = this.result.root.nodes.map((root)=>plugin.Once(root, this.helpers));
-                    if (isPromise(roots[0])) return Promise.all(roots);
-                    return roots;
-                }
-                return plugin.Once(this.result.root, this.helpers);
-            } else if (typeof plugin === "function") return plugin(this.result.root, this.result);
-        } catch (error) {
-            throw this.handleError(error);
-        }
-    }
-    getAsyncError() {
-        throw new Error("Use process(css).then(cb) to work with async plugins");
-    }
-    handleError(error, node) {
-        let plugin = this.result.lastPlugin;
-        try {
-            if (node) node.addToError(error);
-            this.error = error;
-            if (error.name === "CssSyntaxError" && !error.plugin) {
-                error.plugin = plugin.postcssPlugin;
-                error.setMessage();
-            } else if (plugin.postcssVersion) {
-                let pluginName = plugin.postcssPlugin;
-                let pluginVer = plugin.postcssVersion;
-                let runtimeVer = this.result.processor.version;
-                let a = pluginVer.split(".");
-                let b = runtimeVer.split(".");
-                if (a[0] !== b[0] || parseInt(a[1]) > parseInt(b[1])) // eslint-disable-next-line no-console
-                console.error("Unknown error from PostCSS plugin. Your current PostCSS version is " + runtimeVer + ", but " + pluginName + " uses " + pluginVer + ". Perhaps this is the source of the error below.");
-            }
-        } catch (err) {
-            /* c8 ignore next 3 */ // eslint-disable-next-line no-console
-            if (console && console.error) console.error(err);
-        }
-        return error;
-    }
-    async runAsync() {
-        this.plugin = 0;
-        for(let i = 0; i < this.plugins.length; i++){
-            let plugin = this.plugins[i];
-            let promise = this.runOnRoot(plugin);
-            if (isPromise(promise)) try {
-                await promise;
-            } catch (error) {
-                throw this.handleError(error);
-            }
-        }
-        this.prepareVisitors();
-        if (this.hasListener) {
-            let root = this.result.root;
-            while(!root[isClean]){
-                root[isClean] = true;
-                let stack = [
-                    toStack(root)
-                ];
-                while(stack.length > 0){
-                    let promise = this.visitTick(stack);
-                    if (isPromise(promise)) try {
-                        await promise;
-                    } catch (e) {
-                        let node = stack[stack.length - 1].node;
-                        throw this.handleError(e, node);
-                    }
-                }
-            }
-            if (this.listeners.OnceExit) for (let [plugin, visitor] of this.listeners.OnceExit){
-                this.result.lastPlugin = plugin;
-                try {
-                    if (root.type === "document") {
-                        let roots = root.nodes.map((subRoot)=>visitor(subRoot, this.helpers));
-                        await Promise.all(roots);
-                    } else await visitor(root, this.helpers);
-                } catch (e) {
-                    throw this.handleError(e);
-                }
-            }
-        }
-        this.processed = true;
-        return this.stringify();
-    }
-    prepareVisitors() {
-        this.listeners = {};
-        let add = (plugin, type, cb)=>{
-            if (!this.listeners[type]) this.listeners[type] = [];
-            this.listeners[type].push([
-                plugin,
-                cb
-            ]);
-        };
-        for (let plugin of this.plugins){
-            if (typeof plugin === "object") for(let event in plugin){
-                if (!PLUGIN_PROPS[event] && /^[A-Z]/.test(event)) throw new Error(`Unknown event ${event} in ${plugin.postcssPlugin}. ` + `Try to update PostCSS (${this.processor.version} now).`);
-                if (!NOT_VISITORS[event]) {
-                    if (typeof plugin[event] === "object") {
-                        for(let filter in plugin[event])if (filter === "*") add(plugin, event, plugin[event][filter]);
-                        else add(plugin, event + "-" + filter.toLowerCase(), plugin[event][filter]);
-                    } else if (typeof plugin[event] === "function") add(plugin, event, plugin[event]);
-                }
-            }
-        }
-        this.hasListener = Object.keys(this.listeners).length > 0;
-    }
-    visitTick(stack) {
-        let visit = stack[stack.length - 1];
-        let { node , visitors  } = visit;
-        if (node.type !== "root" && node.type !== "document" && !node.parent) {
-            stack.pop();
-            return;
-        }
-        if (visitors.length > 0 && visit.visitorIndex < visitors.length) {
-            let [plugin, visitor] = visitors[visit.visitorIndex];
-            visit.visitorIndex += 1;
-            if (visit.visitorIndex === visitors.length) {
-                visit.visitors = [];
-                visit.visitorIndex = 0;
-            }
-            this.result.lastPlugin = plugin;
-            try {
-                return visitor(node.toProxy(), this.helpers);
-            } catch (e) {
-                throw this.handleError(e, node);
-            }
-        }
-        if (visit.iterator !== 0) {
-            let iterator = visit.iterator;
-            let child;
-            while(child = node.nodes[node.indexes[iterator]]){
-                node.indexes[iterator] += 1;
-                if (!child[isClean]) {
-                    child[isClean] = true;
-                    stack.push(toStack(child));
-                    return;
-                }
-            }
-            visit.iterator = 0;
-            delete node.indexes[iterator];
-        }
-        let events = visit.events;
-        while(visit.eventIndex < events.length){
-            let event = events[visit.eventIndex];
-            visit.eventIndex += 1;
-            if (event === CHILDREN) {
-                if (node.nodes && node.nodes.length) {
-                    node[isClean] = true;
-                    visit.iterator = node.getIterator();
-                }
-                return;
-            } else if (this.listeners[event]) {
-                visit.visitors = this.listeners[event];
-                return;
-            }
-        }
-        stack.pop();
-    }
-}
-LazyResult.registerPostcss = (dependant)=>{
-    postcss = dependant;
-};
-module.exports = LazyResult;
-LazyResult.default = LazyResult;
-Root.registerLazyResult(LazyResult);
-Document.registerLazyResult(LazyResult);
-
-},{"784df17aa24f7eff":"9Ej2B","66ac869ca9d5e2f0":"ghfT0","d3d5a028585e9913":"a0MwE","cde52f575286bb6":"1gj6C","681b63fe9d05e426":"dK3sP","139c0704f6de1f4e":"dpzGz","9fd200a8479a5908":"dmoqr","4ddbb908fc5050d1":"ioa1B","b7ad0485699a64e0":"hsDFv"}],"ghfT0":[function(require,module,exports) {
-var Buffer = require("91ad75e9856644d").Buffer;
-"use strict";
-let { SourceMapConsumer , SourceMapGenerator  } = require("d7d3f4b3c85e89c0");
-let { dirname , resolve , relative , sep  } = require("4b1599d5a5511897");
-let { pathToFileURL  } = require("b3f2b26b354a6135");
-let Input = require("376c58899937cbfc");
-let sourceMapAvailable = Boolean(SourceMapConsumer && SourceMapGenerator);
-let pathAvailable = Boolean(dirname && resolve && relative && sep);
-class MapGenerator {
-    constructor(stringify, root, opts, cssString){
-        this.stringify = stringify;
-        this.mapOpts = opts.map || {};
-        this.root = root;
-        this.opts = opts;
-        this.css = cssString;
-        this.usesFileUrls = !this.mapOpts.from && this.mapOpts.absolute;
-    }
-    isMap() {
-        if (typeof this.opts.map !== "undefined") return !!this.opts.map;
-        return this.previous().length > 0;
-    }
-    previous() {
-        if (!this.previousMaps) {
-            this.previousMaps = [];
-            if (this.root) this.root.walk((node)=>{
-                if (node.source && node.source.input.map) {
-                    let map = node.source.input.map;
-                    if (!this.previousMaps.includes(map)) this.previousMaps.push(map);
-                }
-            });
-            else {
-                let input = new Input(this.css, this.opts);
-                if (input.map) this.previousMaps.push(input.map);
-            }
-        }
-        return this.previousMaps;
-    }
-    isInline() {
-        if (typeof this.mapOpts.inline !== "undefined") return this.mapOpts.inline;
-        let annotation = this.mapOpts.annotation;
-        if (typeof annotation !== "undefined" && annotation !== true) return false;
-        if (this.previous().length) return this.previous().some((i)=>i.inline);
-        return true;
-    }
-    isSourcesContent() {
-        if (typeof this.mapOpts.sourcesContent !== "undefined") return this.mapOpts.sourcesContent;
-        if (this.previous().length) return this.previous().some((i)=>i.withContent());
-        return true;
-    }
-    clearAnnotation() {
-        if (this.mapOpts.annotation === false) return;
-        if (this.root) {
-            let node;
-            for(let i = this.root.nodes.length - 1; i >= 0; i--){
-                node = this.root.nodes[i];
-                if (node.type !== "comment") continue;
-                if (node.text.indexOf("# sourceMappingURL=") === 0) this.root.removeChild(i);
-            }
-        } else if (this.css) this.css = this.css.replace(/(\n)?\/\*#[\S\s]*?\*\/$/gm, "");
-    }
-    setSourcesContent() {
-        let already = {};
-        if (this.root) this.root.walk((node)=>{
-            if (node.source) {
-                let from = node.source.input.from;
-                if (from && !already[from]) {
-                    already[from] = true;
-                    let fromUrl = this.usesFileUrls ? this.toFileUrl(from) : this.toUrl(this.path(from));
-                    this.map.setSourceContent(fromUrl, node.source.input.css);
-                }
-            }
-        });
-        else if (this.css) {
-            let from = this.opts.from ? this.toUrl(this.path(this.opts.from)) : "<no source>";
-            this.map.setSourceContent(from, this.css);
-        }
-    }
-    applyPrevMaps() {
-        for (let prev of this.previous()){
-            let from = this.toUrl(this.path(prev.file));
-            let root = prev.root || dirname(prev.file);
-            let map;
-            if (this.mapOpts.sourcesContent === false) {
-                map = new SourceMapConsumer(prev.text);
-                if (map.sourcesContent) map.sourcesContent = map.sourcesContent.map(()=>null);
-            } else map = prev.consumer();
-            this.map.applySourceMap(map, from, this.toUrl(this.path(root)));
-        }
-    }
-    isAnnotation() {
-        if (this.isInline()) return true;
-        if (typeof this.mapOpts.annotation !== "undefined") return this.mapOpts.annotation;
-        if (this.previous().length) return this.previous().some((i)=>i.annotation);
-        return true;
-    }
-    toBase64(str) {
-        if (Buffer) return Buffer.from(str).toString("base64");
-        else return window.btoa(unescape(encodeURIComponent(str)));
-    }
-    addAnnotation() {
-        let content;
-        if (this.isInline()) content = "data:application/json;base64," + this.toBase64(this.map.toString());
-        else if (typeof this.mapOpts.annotation === "string") content = this.mapOpts.annotation;
-        else if (typeof this.mapOpts.annotation === "function") content = this.mapOpts.annotation(this.opts.to, this.root);
-        else content = this.outputFile() + ".map";
-        let eol = "\n";
-        if (this.css.includes("\r\n")) eol = "\r\n";
-        this.css += eol + "/*# sourceMappingURL=" + content + " */";
-    }
-    outputFile() {
-        if (this.opts.to) return this.path(this.opts.to);
-        else if (this.opts.from) return this.path(this.opts.from);
-        else return "to.css";
-    }
-    generateMap() {
-        if (this.root) this.generateString();
-        else if (this.previous().length === 1) {
-            let prev = this.previous()[0].consumer();
-            prev.file = this.outputFile();
-            this.map = SourceMapGenerator.fromSourceMap(prev);
-        } else {
-            this.map = new SourceMapGenerator({
-                file: this.outputFile()
-            });
-            this.map.addMapping({
-                source: this.opts.from ? this.toUrl(this.path(this.opts.from)) : "<no source>",
-                generated: {
-                    line: 1,
-                    column: 0
-                },
-                original: {
-                    line: 1,
-                    column: 0
-                }
-            });
-        }
-        if (this.isSourcesContent()) this.setSourcesContent();
-        if (this.root && this.previous().length > 0) this.applyPrevMaps();
-        if (this.isAnnotation()) this.addAnnotation();
-        if (this.isInline()) return [
-            this.css
-        ];
-        else return [
-            this.css,
-            this.map
-        ];
-    }
-    path(file) {
-        if (file.indexOf("<") === 0) return file;
-        if (/^\w+:\/\//.test(file)) return file;
-        if (this.mapOpts.absolute) return file;
-        let from = this.opts.to ? dirname(this.opts.to) : ".";
-        if (typeof this.mapOpts.annotation === "string") from = dirname(resolve(from, this.mapOpts.annotation));
-        file = relative(from, file);
-        return file;
-    }
-    toUrl(path) {
-        if (sep === "\\") path = path.replace(/\\/g, "/");
-        return encodeURI(path).replace(/[#?]/g, encodeURIComponent);
-    }
-    toFileUrl(path) {
-        if (pathToFileURL) return pathToFileURL(path).toString();
-        else throw new Error("`map.absolute` option is not available in this PostCSS build");
-    }
-    sourcePath(node) {
-        if (this.mapOpts.from) return this.toUrl(this.mapOpts.from);
-        else if (this.usesFileUrls) return this.toFileUrl(node.source.input.from);
-        else return this.toUrl(this.path(node.source.input.from));
-    }
-    generateString() {
-        this.css = "";
-        this.map = new SourceMapGenerator({
-            file: this.outputFile()
-        });
-        let line = 1;
-        let column = 1;
-        let noSource = "<no source>";
-        let mapping = {
-            source: "",
-            generated: {
-                line: 0,
-                column: 0
-            },
-            original: {
-                line: 0,
-                column: 0
-            }
-        };
-        let lines, last;
-        this.stringify(this.root, (str, node, type)=>{
-            this.css += str;
-            if (node && type !== "end") {
-                mapping.generated.line = line;
-                mapping.generated.column = column - 1;
-                if (node.source && node.source.start) {
-                    mapping.source = this.sourcePath(node);
-                    mapping.original.line = node.source.start.line;
-                    mapping.original.column = node.source.start.column - 1;
-                    this.map.addMapping(mapping);
-                } else {
-                    mapping.source = noSource;
-                    mapping.original.line = 1;
-                    mapping.original.column = 0;
-                    this.map.addMapping(mapping);
-                }
-            }
-            lines = str.match(/\n/g);
-            if (lines) {
-                line += lines.length;
-                last = str.lastIndexOf("\n");
-                column = str.length - last;
-            } else column += str.length;
-            if (node && type !== "start") {
-                let p = node.parent || {
-                    raws: {}
-                };
-                let childless = node.type === "decl" || node.type === "atrule" && !node.nodes;
-                if (!childless || node !== p.last || p.raws.semicolon) {
-                    if (node.source && node.source.end) {
-                        mapping.source = this.sourcePath(node);
-                        mapping.original.line = node.source.end.line;
-                        mapping.original.column = node.source.end.column - 1;
-                        mapping.generated.line = line;
-                        mapping.generated.column = column - 2;
-                        this.map.addMapping(mapping);
-                    } else {
-                        mapping.source = noSource;
-                        mapping.original.line = 1;
-                        mapping.original.column = 0;
-                        mapping.generated.line = line;
-                        mapping.generated.column = column - 1;
-                        this.map.addMapping(mapping);
-                    }
-                }
-            }
-        });
-    }
-    generate() {
-        this.clearAnnotation();
-        if (pathAvailable && sourceMapAvailable && this.isMap()) return this.generateMap();
-        else {
-            let result = "";
-            this.stringify(this.root, (i)=>{
-                result += i;
-            });
-            return [
-                result
-            ];
-        }
-    }
-}
-module.exports = MapGenerator;
-
-},{"91ad75e9856644d":"fCgem","d7d3f4b3c85e89c0":"jhUEF","4b1599d5a5511897":"jhUEF","b3f2b26b354a6135":"jhUEF","376c58899937cbfc":"fb1UO"}],"fCgem":[function(require,module,exports) {
-/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */ /* eslint-disable no-proto */ "use strict";
-const base64 = require("9c62938f1dccc73c");
-const ieee754 = require("aceacb6a4531a9d2");
-const customInspectSymbol = typeof Symbol === "function" && typeof Symbol["for"] === "function" // eslint-disable-line dot-notation
- ? Symbol["for"]("nodejs.util.inspect.custom") // eslint-disable-line dot-notation
- : null;
-exports.Buffer = Buffer;
-exports.SlowBuffer = SlowBuffer;
-exports.INSPECT_MAX_BYTES = 50;
-const K_MAX_LENGTH = 0x7fffffff;
-exports.kMaxLength = K_MAX_LENGTH;
-/**
- * If `Buffer.TYPED_ARRAY_SUPPORT`:
- *   === true    Use Uint8Array implementation (fastest)
- *   === false   Print warning and recommend using `buffer` v4.x which has an Object
- *               implementation (most compatible, even IE6)
- *
- * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
- * Opera 11.6+, iOS 4.2+.
- *
- * We report that the browser does not support typed arrays if the are not subclassable
- * using __proto__. Firefox 4-29 lacks support for adding new properties to `Uint8Array`
- * (See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438). IE 10 lacks support
- * for __proto__ and has a buggy typed array implementation.
- */ Buffer.TYPED_ARRAY_SUPPORT = typedArraySupport();
-if (!Buffer.TYPED_ARRAY_SUPPORT && typeof console !== "undefined" && typeof console.error === "function") console.error("This browser lacks typed array (Uint8Array) support which is required by `buffer` v5.x. Use `buffer` v4.x if you require old browser support.");
-function typedArraySupport() {
-    // Can typed array instances can be augmented?
-    try {
-        const arr = new Uint8Array(1);
-        const proto = {
-            foo: function() {
-                return 42;
-            }
-        };
-        Object.setPrototypeOf(proto, Uint8Array.prototype);
-        Object.setPrototypeOf(arr, proto);
-        return arr.foo() === 42;
-    } catch (e) {
-        return false;
-    }
-}
-Object.defineProperty(Buffer.prototype, "parent", {
-    enumerable: true,
-    get: function() {
-        if (!Buffer.isBuffer(this)) return undefined;
-        return this.buffer;
-    }
-});
-Object.defineProperty(Buffer.prototype, "offset", {
-    enumerable: true,
-    get: function() {
-        if (!Buffer.isBuffer(this)) return undefined;
-        return this.byteOffset;
-    }
-});
-function createBuffer(length) {
-    if (length > K_MAX_LENGTH) throw new RangeError('The value "' + length + '" is invalid for option "size"');
-    // Return an augmented `Uint8Array` instance
-    const buf = new Uint8Array(length);
-    Object.setPrototypeOf(buf, Buffer.prototype);
-    return buf;
-}
-/**
- * The Buffer constructor returns instances of `Uint8Array` that have their
- * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
- * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
- * and the `Uint8Array` methods. Square bracket notation works as expected -- it
- * returns a single octet.
- *
- * The `Uint8Array` prototype remains unmodified.
- */ function Buffer(arg, encodingOrOffset, length) {
-    // Common case.
-    if (typeof arg === "number") {
-        if (typeof encodingOrOffset === "string") throw new TypeError('The "string" argument must be of type string. Received type number');
-        return allocUnsafe(arg);
-    }
-    return from(arg, encodingOrOffset, length);
-}
-Buffer.poolSize = 8192 // not used by this implementation
-;
-function from(value, encodingOrOffset, length) {
-    if (typeof value === "string") return fromString(value, encodingOrOffset);
-    if (ArrayBuffer.isView(value)) return fromArrayView(value);
-    if (value == null) throw new TypeError("The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " + typeof value);
-    if (isInstance(value, ArrayBuffer) || value && isInstance(value.buffer, ArrayBuffer)) return fromArrayBuffer(value, encodingOrOffset, length);
-    if (typeof SharedArrayBuffer !== "undefined" && (isInstance(value, SharedArrayBuffer) || value && isInstance(value.buffer, SharedArrayBuffer))) return fromArrayBuffer(value, encodingOrOffset, length);
-    if (typeof value === "number") throw new TypeError('The "value" argument must not be of type number. Received type number');
-    const valueOf = value.valueOf && value.valueOf();
-    if (valueOf != null && valueOf !== value) return Buffer.from(valueOf, encodingOrOffset, length);
-    const b = fromObject(value);
-    if (b) return b;
-    if (typeof Symbol !== "undefined" && Symbol.toPrimitive != null && typeof value[Symbol.toPrimitive] === "function") return Buffer.from(value[Symbol.toPrimitive]("string"), encodingOrOffset, length);
-    throw new TypeError("The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " + typeof value);
-}
-/**
- * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
- * if value is a number.
- * Buffer.from(str[, encoding])
- * Buffer.from(array)
- * Buffer.from(buffer)
- * Buffer.from(arrayBuffer[, byteOffset[, length]])
- **/ Buffer.from = function(value, encodingOrOffset, length) {
-    return from(value, encodingOrOffset, length);
-};
-// Note: Change prototype *after* Buffer.from is defined to workaround Chrome bug:
-// https://github.com/feross/buffer/pull/148
-Object.setPrototypeOf(Buffer.prototype, Uint8Array.prototype);
-Object.setPrototypeOf(Buffer, Uint8Array);
-function assertSize(size) {
-    if (typeof size !== "number") throw new TypeError('"size" argument must be of type number');
-    else if (size < 0) throw new RangeError('The value "' + size + '" is invalid for option "size"');
-}
-function alloc(size, fill, encoding) {
-    assertSize(size);
-    if (size <= 0) return createBuffer(size);
-    if (fill !== undefined) // Only pay attention to encoding if it's a string. This
-    // prevents accidentally sending in a number that would
-    // be interpreted as a start offset.
-    return typeof encoding === "string" ? createBuffer(size).fill(fill, encoding) : createBuffer(size).fill(fill);
-    return createBuffer(size);
-}
-/**
- * Creates a new filled Buffer instance.
- * alloc(size[, fill[, encoding]])
- **/ Buffer.alloc = function(size, fill, encoding) {
-    return alloc(size, fill, encoding);
-};
-function allocUnsafe(size) {
-    assertSize(size);
-    return createBuffer(size < 0 ? 0 : checked(size) | 0);
-}
-/**
- * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
- * */ Buffer.allocUnsafe = function(size) {
-    return allocUnsafe(size);
-};
-/**
- * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
- */ Buffer.allocUnsafeSlow = function(size) {
-    return allocUnsafe(size);
-};
-function fromString(string, encoding) {
-    if (typeof encoding !== "string" || encoding === "") encoding = "utf8";
-    if (!Buffer.isEncoding(encoding)) throw new TypeError("Unknown encoding: " + encoding);
-    const length = byteLength(string, encoding) | 0;
-    let buf = createBuffer(length);
-    const actual = buf.write(string, encoding);
-    if (actual !== length) // Writing a hex string, for example, that contains invalid characters will
-    // cause everything after the first invalid character to be ignored. (e.g.
-    // 'abxxcd' will be treated as 'ab')
-    buf = buf.slice(0, actual);
-    return buf;
-}
-function fromArrayLike(array) {
-    const length = array.length < 0 ? 0 : checked(array.length) | 0;
-    const buf = createBuffer(length);
-    for(let i = 0; i < length; i += 1)buf[i] = array[i] & 255;
-    return buf;
-}
-function fromArrayView(arrayView) {
-    if (isInstance(arrayView, Uint8Array)) {
-        const copy = new Uint8Array(arrayView);
-        return fromArrayBuffer(copy.buffer, copy.byteOffset, copy.byteLength);
-    }
-    return fromArrayLike(arrayView);
-}
-function fromArrayBuffer(array, byteOffset, length) {
-    if (byteOffset < 0 || array.byteLength < byteOffset) throw new RangeError('"offset" is outside of buffer bounds');
-    if (array.byteLength < byteOffset + (length || 0)) throw new RangeError('"length" is outside of buffer bounds');
-    let buf;
-    if (byteOffset === undefined && length === undefined) buf = new Uint8Array(array);
-    else if (length === undefined) buf = new Uint8Array(array, byteOffset);
-    else buf = new Uint8Array(array, byteOffset, length);
-    // Return an augmented `Uint8Array` instance
-    Object.setPrototypeOf(buf, Buffer.prototype);
-    return buf;
-}
-function fromObject(obj) {
-    if (Buffer.isBuffer(obj)) {
-        const len = checked(obj.length) | 0;
-        const buf = createBuffer(len);
-        if (buf.length === 0) return buf;
-        obj.copy(buf, 0, 0, len);
-        return buf;
-    }
-    if (obj.length !== undefined) {
-        if (typeof obj.length !== "number" || numberIsNaN(obj.length)) return createBuffer(0);
-        return fromArrayLike(obj);
-    }
-    if (obj.type === "Buffer" && Array.isArray(obj.data)) return fromArrayLike(obj.data);
-}
-function checked(length) {
-    // Note: cannot use `length < K_MAX_LENGTH` here because that fails when
-    // length is NaN (which is otherwise coerced to zero.)
-    if (length >= K_MAX_LENGTH) throw new RangeError("Attempt to allocate Buffer larger than maximum size: 0x" + K_MAX_LENGTH.toString(16) + " bytes");
-    return length | 0;
-}
-function SlowBuffer(length) {
-    if (+length != length) length = 0;
-    return Buffer.alloc(+length);
-}
-Buffer.isBuffer = function isBuffer(b) {
-    return b != null && b._isBuffer === true && b !== Buffer.prototype // so Buffer.isBuffer(Buffer.prototype) will be false
-    ;
-};
-Buffer.compare = function compare(a, b) {
-    if (isInstance(a, Uint8Array)) a = Buffer.from(a, a.offset, a.byteLength);
-    if (isInstance(b, Uint8Array)) b = Buffer.from(b, b.offset, b.byteLength);
-    if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) throw new TypeError('The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array');
-    if (a === b) return 0;
-    let x = a.length;
-    let y = b.length;
-    for(let i = 0, len = Math.min(x, y); i < len; ++i)if (a[i] !== b[i]) {
-        x = a[i];
-        y = b[i];
-        break;
-    }
-    if (x < y) return -1;
-    if (y < x) return 1;
-    return 0;
-};
-Buffer.isEncoding = function isEncoding(encoding) {
-    switch(String(encoding).toLowerCase()){
-        case "hex":
-        case "utf8":
-        case "utf-8":
-        case "ascii":
-        case "latin1":
-        case "binary":
-        case "base64":
-        case "ucs2":
-        case "ucs-2":
-        case "utf16le":
-        case "utf-16le":
-            return true;
-        default:
-            return false;
-    }
-};
-Buffer.concat = function concat(list, length) {
-    if (!Array.isArray(list)) throw new TypeError('"list" argument must be an Array of Buffers');
-    if (list.length === 0) return Buffer.alloc(0);
-    let i;
-    if (length === undefined) {
-        length = 0;
-        for(i = 0; i < list.length; ++i)length += list[i].length;
-    }
-    const buffer = Buffer.allocUnsafe(length);
-    let pos = 0;
-    for(i = 0; i < list.length; ++i){
-        let buf = list[i];
-        if (isInstance(buf, Uint8Array)) {
-            if (pos + buf.length > buffer.length) {
-                if (!Buffer.isBuffer(buf)) buf = Buffer.from(buf);
-                buf.copy(buffer, pos);
-            } else Uint8Array.prototype.set.call(buffer, buf, pos);
-        } else if (!Buffer.isBuffer(buf)) throw new TypeError('"list" argument must be an Array of Buffers');
-        else buf.copy(buffer, pos);
-        pos += buf.length;
-    }
-    return buffer;
-};
-function byteLength(string, encoding) {
-    if (Buffer.isBuffer(string)) return string.length;
-    if (ArrayBuffer.isView(string) || isInstance(string, ArrayBuffer)) return string.byteLength;
-    if (typeof string !== "string") throw new TypeError('The "string" argument must be one of type string, Buffer, or ArrayBuffer. Received type ' + typeof string);
-    const len = string.length;
-    const mustMatch = arguments.length > 2 && arguments[2] === true;
-    if (!mustMatch && len === 0) return 0;
-    // Use a for loop to avoid recursion
-    let loweredCase = false;
-    for(;;)switch(encoding){
-        case "ascii":
-        case "latin1":
-        case "binary":
-            return len;
-        case "utf8":
-        case "utf-8":
-            return utf8ToBytes(string).length;
-        case "ucs2":
-        case "ucs-2":
-        case "utf16le":
-        case "utf-16le":
-            return len * 2;
-        case "hex":
-            return len >>> 1;
-        case "base64":
-            return base64ToBytes(string).length;
-        default:
-            if (loweredCase) return mustMatch ? -1 : utf8ToBytes(string).length // assume utf8
-            ;
-            encoding = ("" + encoding).toLowerCase();
-            loweredCase = true;
-    }
-}
-Buffer.byteLength = byteLength;
-function slowToString(encoding, start, end) {
-    let loweredCase = false;
-    // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
-    // property of a typed array.
-    // This behaves neither like String nor Uint8Array in that we set start/end
-    // to their upper/lower bounds if the value passed is out of range.
-    // undefined is handled specially as per ECMA-262 6th Edition,
-    // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
-    if (start === undefined || start < 0) start = 0;
-    // Return early if start > this.length. Done here to prevent potential uint32
-    // coercion fail below.
-    if (start > this.length) return "";
-    if (end === undefined || end > this.length) end = this.length;
-    if (end <= 0) return "";
-    // Force coercion to uint32. This will also coerce falsey/NaN values to 0.
-    end >>>= 0;
-    start >>>= 0;
-    if (end <= start) return "";
-    if (!encoding) encoding = "utf8";
-    while(true)switch(encoding){
-        case "hex":
-            return hexSlice(this, start, end);
-        case "utf8":
-        case "utf-8":
-            return utf8Slice(this, start, end);
-        case "ascii":
-            return asciiSlice(this, start, end);
-        case "latin1":
-        case "binary":
-            return latin1Slice(this, start, end);
-        case "base64":
-            return base64Slice(this, start, end);
-        case "ucs2":
-        case "ucs-2":
-        case "utf16le":
-        case "utf-16le":
-            return utf16leSlice(this, start, end);
-        default:
-            if (loweredCase) throw new TypeError("Unknown encoding: " + encoding);
-            encoding = (encoding + "").toLowerCase();
-            loweredCase = true;
-    }
-}
-// This property is used by `Buffer.isBuffer` (and the `is-buffer` npm package)
-// to detect a Buffer instance. It's not possible to use `instanceof Buffer`
-// reliably in a browserify context because there could be multiple different
-// copies of the 'buffer' package in use. This method works even for Buffer
-// instances that were created from another copy of the `buffer` package.
-// See: https://github.com/feross/buffer/issues/154
-Buffer.prototype._isBuffer = true;
-function swap(b, n, m) {
-    const i = b[n];
-    b[n] = b[m];
-    b[m] = i;
-}
-Buffer.prototype.swap16 = function swap16() {
-    const len = this.length;
-    if (len % 2 !== 0) throw new RangeError("Buffer size must be a multiple of 16-bits");
-    for(let i = 0; i < len; i += 2)swap(this, i, i + 1);
-    return this;
-};
-Buffer.prototype.swap32 = function swap32() {
-    const len = this.length;
-    if (len % 4 !== 0) throw new RangeError("Buffer size must be a multiple of 32-bits");
-    for(let i = 0; i < len; i += 4){
-        swap(this, i, i + 3);
-        swap(this, i + 1, i + 2);
-    }
-    return this;
-};
-Buffer.prototype.swap64 = function swap64() {
-    const len = this.length;
-    if (len % 8 !== 0) throw new RangeError("Buffer size must be a multiple of 64-bits");
-    for(let i = 0; i < len; i += 8){
-        swap(this, i, i + 7);
-        swap(this, i + 1, i + 6);
-        swap(this, i + 2, i + 5);
-        swap(this, i + 3, i + 4);
-    }
-    return this;
-};
-Buffer.prototype.toString = function toString() {
-    const length = this.length;
-    if (length === 0) return "";
-    if (arguments.length === 0) return utf8Slice(this, 0, length);
-    return slowToString.apply(this, arguments);
-};
-Buffer.prototype.toLocaleString = Buffer.prototype.toString;
-Buffer.prototype.equals = function equals(b) {
-    if (!Buffer.isBuffer(b)) throw new TypeError("Argument must be a Buffer");
-    if (this === b) return true;
-    return Buffer.compare(this, b) === 0;
-};
-Buffer.prototype.inspect = function inspect() {
-    let str = "";
-    const max = exports.INSPECT_MAX_BYTES;
-    str = this.toString("hex", 0, max).replace(/(.{2})/g, "$1 ").trim();
-    if (this.length > max) str += " ... ";
-    return "<Buffer " + str + ">";
-};
-if (customInspectSymbol) Buffer.prototype[customInspectSymbol] = Buffer.prototype.inspect;
-Buffer.prototype.compare = function compare(target, start, end, thisStart, thisEnd) {
-    if (isInstance(target, Uint8Array)) target = Buffer.from(target, target.offset, target.byteLength);
-    if (!Buffer.isBuffer(target)) throw new TypeError('The "target" argument must be one of type Buffer or Uint8Array. Received type ' + typeof target);
-    if (start === undefined) start = 0;
-    if (end === undefined) end = target ? target.length : 0;
-    if (thisStart === undefined) thisStart = 0;
-    if (thisEnd === undefined) thisEnd = this.length;
-    if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) throw new RangeError("out of range index");
-    if (thisStart >= thisEnd && start >= end) return 0;
-    if (thisStart >= thisEnd) return -1;
-    if (start >= end) return 1;
-    start >>>= 0;
-    end >>>= 0;
-    thisStart >>>= 0;
-    thisEnd >>>= 0;
-    if (this === target) return 0;
-    let x = thisEnd - thisStart;
-    let y = end - start;
-    const len = Math.min(x, y);
-    const thisCopy = this.slice(thisStart, thisEnd);
-    const targetCopy = target.slice(start, end);
-    for(let i = 0; i < len; ++i)if (thisCopy[i] !== targetCopy[i]) {
-        x = thisCopy[i];
-        y = targetCopy[i];
-        break;
-    }
-    if (x < y) return -1;
-    if (y < x) return 1;
-    return 0;
-};
-// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
-// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
-//
-// Arguments:
-// - buffer - a Buffer to search
-// - val - a string, Buffer, or number
-// - byteOffset - an index into `buffer`; will be clamped to an int32
-// - encoding - an optional encoding, relevant is val is a string
-// - dir - true for indexOf, false for lastIndexOf
-function bidirectionalIndexOf(buffer, val, byteOffset, encoding, dir) {
-    // Empty buffer means no match
-    if (buffer.length === 0) return -1;
-    // Normalize byteOffset
-    if (typeof byteOffset === "string") {
-        encoding = byteOffset;
-        byteOffset = 0;
-    } else if (byteOffset > 0x7fffffff) byteOffset = 0x7fffffff;
-    else if (byteOffset < -2147483648) byteOffset = -2147483648;
-    byteOffset = +byteOffset // Coerce to Number.
-    ;
-    if (numberIsNaN(byteOffset)) // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
-    byteOffset = dir ? 0 : buffer.length - 1;
-    // Normalize byteOffset: negative offsets start from the end of the buffer
-    if (byteOffset < 0) byteOffset = buffer.length + byteOffset;
-    if (byteOffset >= buffer.length) {
-        if (dir) return -1;
-        else byteOffset = buffer.length - 1;
-    } else if (byteOffset < 0) {
-        if (dir) byteOffset = 0;
-        else return -1;
-    }
-    // Normalize val
-    if (typeof val === "string") val = Buffer.from(val, encoding);
-    // Finally, search either indexOf (if dir is true) or lastIndexOf
-    if (Buffer.isBuffer(val)) {
-        // Special case: looking for empty string/buffer always fails
-        if (val.length === 0) return -1;
-        return arrayIndexOf(buffer, val, byteOffset, encoding, dir);
-    } else if (typeof val === "number") {
-        val = val & 0xFF // Search for a byte value [0-255]
-        ;
-        if (typeof Uint8Array.prototype.indexOf === "function") {
-            if (dir) return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset);
-            else return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset);
-        }
-        return arrayIndexOf(buffer, [
-            val
-        ], byteOffset, encoding, dir);
-    }
-    throw new TypeError("val must be string, number or Buffer");
-}
-function arrayIndexOf(arr, val, byteOffset, encoding, dir) {
-    let indexSize = 1;
-    let arrLength = arr.length;
-    let valLength = val.length;
-    if (encoding !== undefined) {
-        encoding = String(encoding).toLowerCase();
-        if (encoding === "ucs2" || encoding === "ucs-2" || encoding === "utf16le" || encoding === "utf-16le") {
-            if (arr.length < 2 || val.length < 2) return -1;
-            indexSize = 2;
-            arrLength /= 2;
-            valLength /= 2;
-            byteOffset /= 2;
-        }
-    }
-    function read(buf, i) {
-        if (indexSize === 1) return buf[i];
-        else return buf.readUInt16BE(i * indexSize);
-    }
-    let i;
-    if (dir) {
-        let foundIndex = -1;
-        for(i = byteOffset; i < arrLength; i++)if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
-            if (foundIndex === -1) foundIndex = i;
-            if (i - foundIndex + 1 === valLength) return foundIndex * indexSize;
-        } else {
-            if (foundIndex !== -1) i -= i - foundIndex;
-            foundIndex = -1;
-        }
-    } else {
-        if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength;
-        for(i = byteOffset; i >= 0; i--){
-            let found = true;
-            for(let j = 0; j < valLength; j++)if (read(arr, i + j) !== read(val, j)) {
-                found = false;
-                break;
-            }
-            if (found) return i;
-        }
-    }
-    return -1;
-}
-Buffer.prototype.includes = function includes(val, byteOffset, encoding) {
-    return this.indexOf(val, byteOffset, encoding) !== -1;
-};
-Buffer.prototype.indexOf = function indexOf(val, byteOffset, encoding) {
-    return bidirectionalIndexOf(this, val, byteOffset, encoding, true);
-};
-Buffer.prototype.lastIndexOf = function lastIndexOf(val, byteOffset, encoding) {
-    return bidirectionalIndexOf(this, val, byteOffset, encoding, false);
-};
-function hexWrite(buf, string, offset, length) {
-    offset = Number(offset) || 0;
-    const remaining = buf.length - offset;
-    if (!length) length = remaining;
-    else {
-        length = Number(length);
-        if (length > remaining) length = remaining;
-    }
-    const strLen = string.length;
-    if (length > strLen / 2) length = strLen / 2;
-    let i;
-    for(i = 0; i < length; ++i){
-        const parsed = parseInt(string.substr(i * 2, 2), 16);
-        if (numberIsNaN(parsed)) return i;
-        buf[offset + i] = parsed;
-    }
-    return i;
-}
-function utf8Write(buf, string, offset, length) {
-    return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length);
-}
-function asciiWrite(buf, string, offset, length) {
-    return blitBuffer(asciiToBytes(string), buf, offset, length);
-}
-function base64Write(buf, string, offset, length) {
-    return blitBuffer(base64ToBytes(string), buf, offset, length);
-}
-function ucs2Write(buf, string, offset, length) {
-    return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length);
-}
-Buffer.prototype.write = function write(string, offset, length, encoding) {
-    // Buffer#write(string)
-    if (offset === undefined) {
-        encoding = "utf8";
-        length = this.length;
-        offset = 0;
-    // Buffer#write(string, encoding)
-    } else if (length === undefined && typeof offset === "string") {
-        encoding = offset;
-        length = this.length;
-        offset = 0;
-    // Buffer#write(string, offset[, length][, encoding])
-    } else if (isFinite(offset)) {
-        offset = offset >>> 0;
-        if (isFinite(length)) {
-            length = length >>> 0;
-            if (encoding === undefined) encoding = "utf8";
-        } else {
-            encoding = length;
-            length = undefined;
-        }
-    } else throw new Error("Buffer.write(string, encoding, offset[, length]) is no longer supported");
-    const remaining = this.length - offset;
-    if (length === undefined || length > remaining) length = remaining;
-    if (string.length > 0 && (length < 0 || offset < 0) || offset > this.length) throw new RangeError("Attempt to write outside buffer bounds");
-    if (!encoding) encoding = "utf8";
-    let loweredCase = false;
-    for(;;)switch(encoding){
-        case "hex":
-            return hexWrite(this, string, offset, length);
-        case "utf8":
-        case "utf-8":
-            return utf8Write(this, string, offset, length);
-        case "ascii":
-        case "latin1":
-        case "binary":
-            return asciiWrite(this, string, offset, length);
-        case "base64":
-            // Warning: maxLength not taken into account in base64Write
-            return base64Write(this, string, offset, length);
-        case "ucs2":
-        case "ucs-2":
-        case "utf16le":
-        case "utf-16le":
-            return ucs2Write(this, string, offset, length);
-        default:
-            if (loweredCase) throw new TypeError("Unknown encoding: " + encoding);
-            encoding = ("" + encoding).toLowerCase();
-            loweredCase = true;
-    }
-};
-Buffer.prototype.toJSON = function toJSON() {
-    return {
-        type: "Buffer",
-        data: Array.prototype.slice.call(this._arr || this, 0)
-    };
-};
-function base64Slice(buf, start, end) {
-    if (start === 0 && end === buf.length) return base64.fromByteArray(buf);
-    else return base64.fromByteArray(buf.slice(start, end));
-}
-function utf8Slice(buf, start, end) {
-    end = Math.min(buf.length, end);
-    const res = [];
-    let i = start;
-    while(i < end){
-        const firstByte = buf[i];
-        let codePoint = null;
-        let bytesPerSequence = firstByte > 0xEF ? 4 : firstByte > 0xDF ? 3 : firstByte > 0xBF ? 2 : 1;
-        if (i + bytesPerSequence <= end) {
-            let secondByte, thirdByte, fourthByte, tempCodePoint;
-            switch(bytesPerSequence){
-                case 1:
-                    if (firstByte < 0x80) codePoint = firstByte;
-                    break;
-                case 2:
-                    secondByte = buf[i + 1];
-                    if ((secondByte & 0xC0) === 0x80) {
-                        tempCodePoint = (firstByte & 0x1F) << 0x6 | secondByte & 0x3F;
-                        if (tempCodePoint > 0x7F) codePoint = tempCodePoint;
-                    }
-                    break;
-                case 3:
-                    secondByte = buf[i + 1];
-                    thirdByte = buf[i + 2];
-                    if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
-                        tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | thirdByte & 0x3F;
-                        if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) codePoint = tempCodePoint;
-                    }
-                    break;
-                case 4:
-                    secondByte = buf[i + 1];
-                    thirdByte = buf[i + 2];
-                    fourthByte = buf[i + 3];
-                    if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
-                        tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | fourthByte & 0x3F;
-                        if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) codePoint = tempCodePoint;
-                    }
-            }
-        }
-        if (codePoint === null) {
-            // we did not generate a valid codePoint so insert a
-            // replacement char (U+FFFD) and advance only 1 byte
-            codePoint = 0xFFFD;
-            bytesPerSequence = 1;
-        } else if (codePoint > 0xFFFF) {
-            // encode to utf16 (surrogate pair dance)
-            codePoint -= 0x10000;
-            res.push(codePoint >>> 10 & 0x3FF | 0xD800);
-            codePoint = 0xDC00 | codePoint & 0x3FF;
-        }
-        res.push(codePoint);
-        i += bytesPerSequence;
-    }
-    return decodeCodePointsArray(res);
-}
-// Based on http://stackoverflow.com/a/22747272/680742, the browser with
-// the lowest limit is Chrome, with 0x10000 args.
-// We go 1 magnitude less, for safety
-const MAX_ARGUMENTS_LENGTH = 0x1000;
-function decodeCodePointsArray(codePoints) {
-    const len = codePoints.length;
-    if (len <= MAX_ARGUMENTS_LENGTH) return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
-    ;
-    // Decode in chunks to avoid "call stack size exceeded".
-    let res = "";
-    let i = 0;
-    while(i < len)res += String.fromCharCode.apply(String, codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH));
-    return res;
-}
-function asciiSlice(buf, start, end) {
-    let ret = "";
-    end = Math.min(buf.length, end);
-    for(let i = start; i < end; ++i)ret += String.fromCharCode(buf[i] & 0x7F);
-    return ret;
-}
-function latin1Slice(buf, start, end) {
-    let ret = "";
-    end = Math.min(buf.length, end);
-    for(let i = start; i < end; ++i)ret += String.fromCharCode(buf[i]);
-    return ret;
-}
-function hexSlice(buf, start, end) {
-    const len = buf.length;
-    if (!start || start < 0) start = 0;
-    if (!end || end < 0 || end > len) end = len;
-    let out = "";
-    for(let i = start; i < end; ++i)out += hexSliceLookupTable[buf[i]];
-    return out;
-}
-function utf16leSlice(buf, start, end) {
-    const bytes = buf.slice(start, end);
-    let res = "";
-    // If bytes.length is odd, the last 8 bits must be ignored (same as node.js)
-    for(let i = 0; i < bytes.length - 1; i += 2)res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256);
-    return res;
-}
-Buffer.prototype.slice = function slice(start, end) {
-    const len = this.length;
-    start = ~~start;
-    end = end === undefined ? len : ~~end;
-    if (start < 0) {
-        start += len;
-        if (start < 0) start = 0;
-    } else if (start > len) start = len;
-    if (end < 0) {
-        end += len;
-        if (end < 0) end = 0;
-    } else if (end > len) end = len;
-    if (end < start) end = start;
-    const newBuf = this.subarray(start, end);
-    // Return an augmented `Uint8Array` instance
-    Object.setPrototypeOf(newBuf, Buffer.prototype);
-    return newBuf;
-};
-/*
- * Need to make sure that buffer isn't trying to write out of bounds.
- */ function checkOffset(offset, ext, length) {
-    if (offset % 1 !== 0 || offset < 0) throw new RangeError("offset is not uint");
-    if (offset + ext > length) throw new RangeError("Trying to access beyond buffer length");
-}
-Buffer.prototype.readUintLE = Buffer.prototype.readUIntLE = function readUIntLE(offset, byteLength, noAssert) {
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) checkOffset(offset, byteLength, this.length);
-    let val = this[offset];
-    let mul = 1;
-    let i = 0;
-    while(++i < byteLength && (mul *= 0x100))val += this[offset + i] * mul;
-    return val;
-};
-Buffer.prototype.readUintBE = Buffer.prototype.readUIntBE = function readUIntBE(offset, byteLength, noAssert) {
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) checkOffset(offset, byteLength, this.length);
-    let val = this[offset + --byteLength];
-    let mul = 1;
-    while(byteLength > 0 && (mul *= 0x100))val += this[offset + --byteLength] * mul;
-    return val;
-};
-Buffer.prototype.readUint8 = Buffer.prototype.readUInt8 = function readUInt8(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 1, this.length);
-    return this[offset];
-};
-Buffer.prototype.readUint16LE = Buffer.prototype.readUInt16LE = function readUInt16LE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 2, this.length);
-    return this[offset] | this[offset + 1] << 8;
-};
-Buffer.prototype.readUint16BE = Buffer.prototype.readUInt16BE = function readUInt16BE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 2, this.length);
-    return this[offset] << 8 | this[offset + 1];
-};
-Buffer.prototype.readUint32LE = Buffer.prototype.readUInt32LE = function readUInt32LE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return (this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16) + this[offset + 3] * 0x1000000;
-};
-Buffer.prototype.readUint32BE = Buffer.prototype.readUInt32BE = function readUInt32BE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return this[offset] * 0x1000000 + (this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3]);
-};
-Buffer.prototype.readBigUInt64LE = defineBigIntMethod(function readBigUInt64LE(offset) {
-    offset = offset >>> 0;
-    validateNumber(offset, "offset");
-    const first = this[offset];
-    const last = this[offset + 7];
-    if (first === undefined || last === undefined) boundsError(offset, this.length - 8);
-    const lo = first + this[++offset] * 256 + this[++offset] * 2 ** 16 + this[++offset] * 2 ** 24;
-    const hi = this[++offset] + this[++offset] * 256 + this[++offset] * 2 ** 16 + last * 2 ** 24;
-    return BigInt(lo) + (BigInt(hi) << BigInt(32));
-});
-Buffer.prototype.readBigUInt64BE = defineBigIntMethod(function readBigUInt64BE(offset) {
-    offset = offset >>> 0;
-    validateNumber(offset, "offset");
-    const first = this[offset];
-    const last = this[offset + 7];
-    if (first === undefined || last === undefined) boundsError(offset, this.length - 8);
-    const hi = first * 2 ** 24 + this[++offset] * 2 ** 16 + this[++offset] * 256 + this[++offset];
-    const lo = this[++offset] * 2 ** 24 + this[++offset] * 2 ** 16 + this[++offset] * 256 + last;
-    return (BigInt(hi) << BigInt(32)) + BigInt(lo);
-});
-Buffer.prototype.readIntLE = function readIntLE(offset, byteLength, noAssert) {
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) checkOffset(offset, byteLength, this.length);
-    let val = this[offset];
-    let mul = 1;
-    let i = 0;
-    while(++i < byteLength && (mul *= 0x100))val += this[offset + i] * mul;
-    mul *= 0x80;
-    if (val >= mul) val -= Math.pow(2, 8 * byteLength);
-    return val;
-};
-Buffer.prototype.readIntBE = function readIntBE(offset, byteLength, noAssert) {
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) checkOffset(offset, byteLength, this.length);
-    let i = byteLength;
-    let mul = 1;
-    let val = this[offset + --i];
-    while(i > 0 && (mul *= 0x100))val += this[offset + --i] * mul;
-    mul *= 0x80;
-    if (val >= mul) val -= Math.pow(2, 8 * byteLength);
-    return val;
-};
-Buffer.prototype.readInt8 = function readInt8(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 1, this.length);
-    if (!(this[offset] & 0x80)) return this[offset];
-    return (0xff - this[offset] + 1) * -1;
-};
-Buffer.prototype.readInt16LE = function readInt16LE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 2, this.length);
-    const val = this[offset] | this[offset + 1] << 8;
-    return val & 0x8000 ? val | 0xFFFF0000 : val;
-};
-Buffer.prototype.readInt16BE = function readInt16BE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 2, this.length);
-    const val = this[offset + 1] | this[offset] << 8;
-    return val & 0x8000 ? val | 0xFFFF0000 : val;
-};
-Buffer.prototype.readInt32LE = function readInt32LE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16 | this[offset + 3] << 24;
-};
-Buffer.prototype.readInt32BE = function readInt32BE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return this[offset] << 24 | this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3];
-};
-Buffer.prototype.readBigInt64LE = defineBigIntMethod(function readBigInt64LE(offset) {
-    offset = offset >>> 0;
-    validateNumber(offset, "offset");
-    const first = this[offset];
-    const last = this[offset + 7];
-    if (first === undefined || last === undefined) boundsError(offset, this.length - 8);
-    const val = this[offset + 4] + this[offset + 5] * 256 + this[offset + 6] * 2 ** 16 + (last << 24 // Overflow
-    );
-    return (BigInt(val) << BigInt(32)) + BigInt(first + this[++offset] * 256 + this[++offset] * 2 ** 16 + this[++offset] * 2 ** 24);
-});
-Buffer.prototype.readBigInt64BE = defineBigIntMethod(function readBigInt64BE(offset) {
-    offset = offset >>> 0;
-    validateNumber(offset, "offset");
-    const first = this[offset];
-    const last = this[offset + 7];
-    if (first === undefined || last === undefined) boundsError(offset, this.length - 8);
-    const val = (first << 24) + // Overflow
-    this[++offset] * 2 ** 16 + this[++offset] * 256 + this[++offset];
-    return (BigInt(val) << BigInt(32)) + BigInt(this[++offset] * 2 ** 24 + this[++offset] * 2 ** 16 + this[++offset] * 256 + last);
-});
-Buffer.prototype.readFloatLE = function readFloatLE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return ieee754.read(this, offset, true, 23, 4);
-};
-Buffer.prototype.readFloatBE = function readFloatBE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 4, this.length);
-    return ieee754.read(this, offset, false, 23, 4);
-};
-Buffer.prototype.readDoubleLE = function readDoubleLE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 8, this.length);
-    return ieee754.read(this, offset, true, 52, 8);
-};
-Buffer.prototype.readDoubleBE = function readDoubleBE(offset, noAssert) {
-    offset = offset >>> 0;
-    if (!noAssert) checkOffset(offset, 8, this.length);
-    return ieee754.read(this, offset, false, 52, 8);
-};
-function checkInt(buf, value, offset, ext, max, min) {
-    if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance');
-    if (value > max || value < min) throw new RangeError('"value" argument is out of bounds');
-    if (offset + ext > buf.length) throw new RangeError("Index out of range");
-}
-Buffer.prototype.writeUintLE = Buffer.prototype.writeUIntLE = function writeUIntLE(value, offset, byteLength, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) {
-        const maxBytes = Math.pow(2, 8 * byteLength) - 1;
-        checkInt(this, value, offset, byteLength, maxBytes, 0);
-    }
-    let mul = 1;
-    let i = 0;
-    this[offset] = value & 0xFF;
-    while(++i < byteLength && (mul *= 0x100))this[offset + i] = value / mul & 0xFF;
-    return offset + byteLength;
-};
-Buffer.prototype.writeUintBE = Buffer.prototype.writeUIntBE = function writeUIntBE(value, offset, byteLength, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    byteLength = byteLength >>> 0;
-    if (!noAssert) {
-        const maxBytes = Math.pow(2, 8 * byteLength) - 1;
-        checkInt(this, value, offset, byteLength, maxBytes, 0);
-    }
-    let i = byteLength - 1;
-    let mul = 1;
-    this[offset + i] = value & 0xFF;
-    while(--i >= 0 && (mul *= 0x100))this[offset + i] = value / mul & 0xFF;
-    return offset + byteLength;
-};
-Buffer.prototype.writeUint8 = Buffer.prototype.writeUInt8 = function writeUInt8(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0);
-    this[offset] = value & 0xff;
-    return offset + 1;
-};
-Buffer.prototype.writeUint16LE = Buffer.prototype.writeUInt16LE = function writeUInt16LE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0);
-    this[offset] = value & 0xff;
-    this[offset + 1] = value >>> 8;
-    return offset + 2;
-};
-Buffer.prototype.writeUint16BE = Buffer.prototype.writeUInt16BE = function writeUInt16BE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0);
-    this[offset] = value >>> 8;
-    this[offset + 1] = value & 0xff;
-    return offset + 2;
-};
-Buffer.prototype.writeUint32LE = Buffer.prototype.writeUInt32LE = function writeUInt32LE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0);
-    this[offset + 3] = value >>> 24;
-    this[offset + 2] = value >>> 16;
-    this[offset + 1] = value >>> 8;
-    this[offset] = value & 0xff;
-    return offset + 4;
-};
-Buffer.prototype.writeUint32BE = Buffer.prototype.writeUInt32BE = function writeUInt32BE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0);
-    this[offset] = value >>> 24;
-    this[offset + 1] = value >>> 16;
-    this[offset + 2] = value >>> 8;
-    this[offset + 3] = value & 0xff;
-    return offset + 4;
-};
-function wrtBigUInt64LE(buf, value, offset, min, max) {
-    checkIntBI(value, min, max, buf, offset, 7);
-    let lo = Number(value & BigInt(0xffffffff));
-    buf[offset++] = lo;
-    lo = lo >> 8;
-    buf[offset++] = lo;
-    lo = lo >> 8;
-    buf[offset++] = lo;
-    lo = lo >> 8;
-    buf[offset++] = lo;
-    let hi = Number(value >> BigInt(32) & BigInt(0xffffffff));
-    buf[offset++] = hi;
-    hi = hi >> 8;
-    buf[offset++] = hi;
-    hi = hi >> 8;
-    buf[offset++] = hi;
-    hi = hi >> 8;
-    buf[offset++] = hi;
-    return offset;
-}
-function wrtBigUInt64BE(buf, value, offset, min, max) {
-    checkIntBI(value, min, max, buf, offset, 7);
-    let lo = Number(value & BigInt(0xffffffff));
-    buf[offset + 7] = lo;
-    lo = lo >> 8;
-    buf[offset + 6] = lo;
-    lo = lo >> 8;
-    buf[offset + 5] = lo;
-    lo = lo >> 8;
-    buf[offset + 4] = lo;
-    let hi = Number(value >> BigInt(32) & BigInt(0xffffffff));
-    buf[offset + 3] = hi;
-    hi = hi >> 8;
-    buf[offset + 2] = hi;
-    hi = hi >> 8;
-    buf[offset + 1] = hi;
-    hi = hi >> 8;
-    buf[offset] = hi;
-    return offset + 8;
-}
-Buffer.prototype.writeBigUInt64LE = defineBigIntMethod(function writeBigUInt64LE(value, offset = 0) {
-    return wrtBigUInt64LE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
-});
-Buffer.prototype.writeBigUInt64BE = defineBigIntMethod(function writeBigUInt64BE(value, offset = 0) {
-    return wrtBigUInt64BE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
-});
-Buffer.prototype.writeIntLE = function writeIntLE(value, offset, byteLength, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) {
-        const limit = Math.pow(2, 8 * byteLength - 1);
-        checkInt(this, value, offset, byteLength, limit - 1, -limit);
-    }
-    let i = 0;
-    let mul = 1;
-    let sub = 0;
-    this[offset] = value & 0xFF;
-    while(++i < byteLength && (mul *= 0x100)){
-        if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) sub = 1;
-        this[offset + i] = (value / mul >> 0) - sub & 0xFF;
-    }
-    return offset + byteLength;
-};
-Buffer.prototype.writeIntBE = function writeIntBE(value, offset, byteLength, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) {
-        const limit = Math.pow(2, 8 * byteLength - 1);
-        checkInt(this, value, offset, byteLength, limit - 1, -limit);
-    }
-    let i = byteLength - 1;
-    let mul = 1;
-    let sub = 0;
-    this[offset + i] = value & 0xFF;
-    while(--i >= 0 && (mul *= 0x100)){
-        if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) sub = 1;
-        this[offset + i] = (value / mul >> 0) - sub & 0xFF;
-    }
-    return offset + byteLength;
-};
-Buffer.prototype.writeInt8 = function writeInt8(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -128);
-    if (value < 0) value = 0xff + value + 1;
-    this[offset] = value & 0xff;
-    return offset + 1;
-};
-Buffer.prototype.writeInt16LE = function writeInt16LE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -32768);
-    this[offset] = value & 0xff;
-    this[offset + 1] = value >>> 8;
-    return offset + 2;
-};
-Buffer.prototype.writeInt16BE = function writeInt16BE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -32768);
-    this[offset] = value >>> 8;
-    this[offset + 1] = value & 0xff;
-    return offset + 2;
-};
-Buffer.prototype.writeInt32LE = function writeInt32LE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -2147483648);
-    this[offset] = value & 0xff;
-    this[offset + 1] = value >>> 8;
-    this[offset + 2] = value >>> 16;
-    this[offset + 3] = value >>> 24;
-    return offset + 4;
-};
-Buffer.prototype.writeInt32BE = function writeInt32BE(value, offset, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -2147483648);
-    if (value < 0) value = 0xffffffff + value + 1;
-    this[offset] = value >>> 24;
-    this[offset + 1] = value >>> 16;
-    this[offset + 2] = value >>> 8;
-    this[offset + 3] = value & 0xff;
-    return offset + 4;
-};
-Buffer.prototype.writeBigInt64LE = defineBigIntMethod(function writeBigInt64LE(value, offset = 0) {
-    return wrtBigUInt64LE(this, value, offset, -BigInt("0x8000000000000000"), BigInt("0x7fffffffffffffff"));
-});
-Buffer.prototype.writeBigInt64BE = defineBigIntMethod(function writeBigInt64BE(value, offset = 0) {
-    return wrtBigUInt64BE(this, value, offset, -BigInt("0x8000000000000000"), BigInt("0x7fffffffffffffff"));
-});
-function checkIEEE754(buf, value, offset, ext, max, min) {
-    if (offset + ext > buf.length) throw new RangeError("Index out of range");
-    if (offset < 0) throw new RangeError("Index out of range");
-}
-function writeFloat(buf, value, offset, littleEndian, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -340282346638528860000000000000000000000);
-    ieee754.write(buf, value, offset, littleEndian, 23, 4);
-    return offset + 4;
-}
-Buffer.prototype.writeFloatLE = function writeFloatLE(value, offset, noAssert) {
-    return writeFloat(this, value, offset, true, noAssert);
-};
-Buffer.prototype.writeFloatBE = function writeFloatBE(value, offset, noAssert) {
-    return writeFloat(this, value, offset, false, noAssert);
-};
-function writeDouble(buf, value, offset, littleEndian, noAssert) {
-    value = +value;
-    offset = offset >>> 0;
-    if (!noAssert) checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
-    ieee754.write(buf, value, offset, littleEndian, 52, 8);
-    return offset + 8;
-}
-Buffer.prototype.writeDoubleLE = function writeDoubleLE(value, offset, noAssert) {
-    return writeDouble(this, value, offset, true, noAssert);
-};
-Buffer.prototype.writeDoubleBE = function writeDoubleBE(value, offset, noAssert) {
-    return writeDouble(this, value, offset, false, noAssert);
-};
-// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-Buffer.prototype.copy = function copy(target, targetStart, start, end) {
-    if (!Buffer.isBuffer(target)) throw new TypeError("argument should be a Buffer");
-    if (!start) start = 0;
-    if (!end && end !== 0) end = this.length;
-    if (targetStart >= target.length) targetStart = target.length;
-    if (!targetStart) targetStart = 0;
-    if (end > 0 && end < start) end = start;
-    // Copy 0 bytes; we're done
-    if (end === start) return 0;
-    if (target.length === 0 || this.length === 0) return 0;
-    // Fatal error conditions
-    if (targetStart < 0) throw new RangeError("targetStart out of bounds");
-    if (start < 0 || start >= this.length) throw new RangeError("Index out of range");
-    if (end < 0) throw new RangeError("sourceEnd out of bounds");
-    // Are we oob?
-    if (end > this.length) end = this.length;
-    if (target.length - targetStart < end - start) end = target.length - targetStart + start;
-    const len = end - start;
-    if (this === target && typeof Uint8Array.prototype.copyWithin === "function") // Use built-in when available, missing from IE11
-    this.copyWithin(targetStart, start, end);
-    else Uint8Array.prototype.set.call(target, this.subarray(start, end), targetStart);
-    return len;
-};
-// Usage:
-//    buffer.fill(number[, offset[, end]])
-//    buffer.fill(buffer[, offset[, end]])
-//    buffer.fill(string[, offset[, end]][, encoding])
-Buffer.prototype.fill = function fill(val, start, end, encoding) {
-    // Handle string cases:
-    if (typeof val === "string") {
-        if (typeof start === "string") {
-            encoding = start;
-            start = 0;
-            end = this.length;
-        } else if (typeof end === "string") {
-            encoding = end;
-            end = this.length;
-        }
-        if (encoding !== undefined && typeof encoding !== "string") throw new TypeError("encoding must be a string");
-        if (typeof encoding === "string" && !Buffer.isEncoding(encoding)) throw new TypeError("Unknown encoding: " + encoding);
-        if (val.length === 1) {
-            const code = val.charCodeAt(0);
-            if (encoding === "utf8" && code < 128 || encoding === "latin1") // Fast path: If `val` fits into a single byte, use that numeric value.
-            val = code;
-        }
-    } else if (typeof val === "number") val = val & 255;
-    else if (typeof val === "boolean") val = Number(val);
-    // Invalid ranges are not set to a default, so can range check early.
-    if (start < 0 || this.length < start || this.length < end) throw new RangeError("Out of range index");
-    if (end <= start) return this;
-    start = start >>> 0;
-    end = end === undefined ? this.length : end >>> 0;
-    if (!val) val = 0;
-    let i;
-    if (typeof val === "number") for(i = start; i < end; ++i)this[i] = val;
-    else {
-        const bytes = Buffer.isBuffer(val) ? val : Buffer.from(val, encoding);
-        const len = bytes.length;
-        if (len === 0) throw new TypeError('The value "' + val + '" is invalid for argument "value"');
-        for(i = 0; i < end - start; ++i)this[i + start] = bytes[i % len];
-    }
-    return this;
-};
-// CUSTOM ERRORS
-// =============
-// Simplified versions from Node, changed for Buffer-only usage
-const errors = {};
-function E(sym, getMessage, Base) {
-    errors[sym] = class NodeError extends Base {
-        constructor(){
-            super();
-            Object.defineProperty(this, "message", {
-                value: getMessage.apply(this, arguments),
-                writable: true,
-                configurable: true
-            });
-            // Add the error code to the name to include it in the stack trace.
-            this.name = `${this.name} [${sym}]`;
-            // Access the stack to generate the error message including the error code
-            // from the name.
-            this.stack // eslint-disable-line no-unused-expressions
-            ;
-            // Reset the name to the actual name.
-            delete this.name;
-        }
-        get code() {
-            return sym;
-        }
-        set code(value) {
-            Object.defineProperty(this, "code", {
-                configurable: true,
-                enumerable: true,
-                value,
-                writable: true
-            });
-        }
-        toString() {
-            return `${this.name} [${sym}]: ${this.message}`;
-        }
-    };
-}
-E("ERR_BUFFER_OUT_OF_BOUNDS", function(name) {
-    if (name) return `${name} is outside of buffer bounds`;
-    return "Attempt to access memory outside buffer bounds";
-}, RangeError);
-E("ERR_INVALID_ARG_TYPE", function(name, actual) {
-    return `The "${name}" argument must be of type number. Received type ${typeof actual}`;
-}, TypeError);
-E("ERR_OUT_OF_RANGE", function(str, range, input) {
-    let msg = `The value of "${str}" is out of range.`;
-    let received = input;
-    if (Number.isInteger(input) && Math.abs(input) > 2 ** 32) received = addNumericalSeparator(String(input));
-    else if (typeof input === "bigint") {
-        received = String(input);
-        if (input > BigInt(2) ** BigInt(32) || input < -(BigInt(2) ** BigInt(32))) received = addNumericalSeparator(received);
-        received += "n";
-    }
-    msg += ` It must be ${range}. Received ${received}`;
-    return msg;
-}, RangeError);
-function addNumericalSeparator(val) {
-    let res = "";
-    let i = val.length;
-    const start = val[0] === "-" ? 1 : 0;
-    for(; i >= start + 4; i -= 3)res = `_${val.slice(i - 3, i)}${res}`;
-    return `${val.slice(0, i)}${res}`;
-}
-// CHECK FUNCTIONS
-// ===============
-function checkBounds(buf, offset, byteLength) {
-    validateNumber(offset, "offset");
-    if (buf[offset] === undefined || buf[offset + byteLength] === undefined) boundsError(offset, buf.length - (byteLength + 1));
-}
-function checkIntBI(value, min, max, buf, offset, byteLength) {
-    if (value > max || value < min) {
-        const n = typeof min === "bigint" ? "n" : "";
-        let range;
-        if (byteLength > 3) {
-            if (min === 0 || min === BigInt(0)) range = `>= 0${n} and < 2${n} ** ${(byteLength + 1) * 8}${n}`;
-            else range = `>= -(2${n} ** ${(byteLength + 1) * 8 - 1}${n}) and < 2 ** ` + `${(byteLength + 1) * 8 - 1}${n}`;
-        } else range = `>= ${min}${n} and <= ${max}${n}`;
-        throw new errors.ERR_OUT_OF_RANGE("value", range, value);
-    }
-    checkBounds(buf, offset, byteLength);
-}
-function validateNumber(value, name) {
-    if (typeof value !== "number") throw new errors.ERR_INVALID_ARG_TYPE(name, "number", value);
-}
-function boundsError(value, length, type) {
-    if (Math.floor(value) !== value) {
-        validateNumber(value, type);
-        throw new errors.ERR_OUT_OF_RANGE(type || "offset", "an integer", value);
-    }
-    if (length < 0) throw new errors.ERR_BUFFER_OUT_OF_BOUNDS();
-    throw new errors.ERR_OUT_OF_RANGE(type || "offset", `>= ${type ? 1 : 0} and <= ${length}`, value);
-}
-// HELPER FUNCTIONS
-// ================
-const INVALID_BASE64_RE = /[^+/0-9A-Za-z-_]/g;
-function base64clean(str) {
-    // Node takes equal signs as end of the Base64 encoding
-    str = str.split("=")[0];
-    // Node strips out invalid characters like \n and \t from the string, base64-js does not
-    str = str.trim().replace(INVALID_BASE64_RE, "");
-    // Node converts strings with length < 2 to ''
-    if (str.length < 2) return "";
-    // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
-    while(str.length % 4 !== 0)str = str + "=";
-    return str;
-}
-function utf8ToBytes(string, units) {
-    units = units || Infinity;
-    let codePoint;
-    const length = string.length;
-    let leadSurrogate = null;
-    const bytes = [];
-    for(let i = 0; i < length; ++i){
-        codePoint = string.charCodeAt(i);
-        // is surrogate component
-        if (codePoint > 0xD7FF && codePoint < 0xE000) {
-            // last char was a lead
-            if (!leadSurrogate) {
-                // no lead yet
-                if (codePoint > 0xDBFF) {
-                    // unexpected trail
-                    if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-                    continue;
-                } else if (i + 1 === length) {
-                    // unpaired lead
-                    if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-                    continue;
-                }
-                // valid lead
-                leadSurrogate = codePoint;
-                continue;
-            }
-            // 2 leads in a row
-            if (codePoint < 0xDC00) {
-                if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-                leadSurrogate = codePoint;
-                continue;
-            }
-            // valid surrogate pair
-            codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000;
-        } else if (leadSurrogate) // valid bmp char, but last char was a lead
-        {
-            if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-        }
-        leadSurrogate = null;
-        // encode utf8
-        if (codePoint < 0x80) {
-            if ((units -= 1) < 0) break;
-            bytes.push(codePoint);
-        } else if (codePoint < 0x800) {
-            if ((units -= 2) < 0) break;
-            bytes.push(codePoint >> 0x6 | 0xC0, codePoint & 0x3F | 0x80);
-        } else if (codePoint < 0x10000) {
-            if ((units -= 3) < 0) break;
-            bytes.push(codePoint >> 0xC | 0xE0, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
-        } else if (codePoint < 0x110000) {
-            if ((units -= 4) < 0) break;
-            bytes.push(codePoint >> 0x12 | 0xF0, codePoint >> 0xC & 0x3F | 0x80, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
-        } else throw new Error("Invalid code point");
-    }
-    return bytes;
-}
-function asciiToBytes(str) {
-    const byteArray = [];
-    for(let i = 0; i < str.length; ++i)// Node's code seems to be doing this and not & 0x7F..
-    byteArray.push(str.charCodeAt(i) & 0xFF);
-    return byteArray;
-}
-function utf16leToBytes(str, units) {
-    let c, hi, lo;
-    const byteArray = [];
-    for(let i = 0; i < str.length; ++i){
-        if ((units -= 2) < 0) break;
-        c = str.charCodeAt(i);
-        hi = c >> 8;
-        lo = c % 256;
-        byteArray.push(lo);
-        byteArray.push(hi);
-    }
-    return byteArray;
-}
-function base64ToBytes(str) {
-    return base64.toByteArray(base64clean(str));
-}
-function blitBuffer(src, dst, offset, length) {
-    let i;
-    for(i = 0; i < length; ++i){
-        if (i + offset >= dst.length || i >= src.length) break;
-        dst[i + offset] = src[i];
-    }
-    return i;
-}
-// ArrayBuffer or Uint8Array objects from other contexts (i.e. iframes) do not pass
-// the `instanceof` check but they should be treated as of that type.
-// See: https://github.com/feross/buffer/issues/166
-function isInstance(obj, type) {
-    return obj instanceof type || obj != null && obj.constructor != null && obj.constructor.name != null && obj.constructor.name === type.name;
-}
-function numberIsNaN(obj) {
-    // For IE11 support
-    return obj !== obj // eslint-disable-line no-self-compare
-    ;
-}
-// Create lookup table for `toString('hex')`
-// See: https://github.com/feross/buffer/issues/219
-const hexSliceLookupTable = function() {
-    const alphabet = "0123456789abcdef";
-    const table = new Array(256);
-    for(let i = 0; i < 16; ++i){
-        const i16 = i * 16;
-        for(let j = 0; j < 16; ++j)table[i16 + j] = alphabet[i] + alphabet[j];
-    }
-    return table;
-}();
-// Return not function with Error if BigInt not supported
-function defineBigIntMethod(fn) {
-    return typeof BigInt === "undefined" ? BufferBigIntNotDefined : fn;
-}
-function BufferBigIntNotDefined() {
-    throw new Error("BigInt not supported");
-}
-
-},{"9c62938f1dccc73c":"eIiSV","aceacb6a4531a9d2":"cO95r"}],"eIiSV":[function(require,module,exports) {
-"use strict";
-exports.byteLength = byteLength;
-exports.toByteArray = toByteArray;
-exports.fromByteArray = fromByteArray;
-var lookup = [];
-var revLookup = [];
-var Arr = typeof Uint8Array !== "undefined" ? Uint8Array : Array;
-var code = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-for(var i = 0, len = code.length; i < len; ++i){
-    lookup[i] = code[i];
-    revLookup[code.charCodeAt(i)] = i;
-}
-// Support decoding URL-safe base64 strings, as Node.js does.
-// See: https://en.wikipedia.org/wiki/Base64#URL_applications
-revLookup["-".charCodeAt(0)] = 62;
-revLookup["_".charCodeAt(0)] = 63;
-function getLens(b64) {
-    var len = b64.length;
-    if (len % 4 > 0) throw new Error("Invalid string. Length must be a multiple of 4");
-    // Trim off extra bytes after placeholder bytes are found
-    // See: https://github.com/beatgammit/base64-js/issues/42
-    var validLen = b64.indexOf("=");
-    if (validLen === -1) validLen = len;
-    var placeHoldersLen = validLen === len ? 0 : 4 - validLen % 4;
-    return [
-        validLen,
-        placeHoldersLen
-    ];
-}
-// base64 is 4/3 + up to two characters of the original data
-function byteLength(b64) {
-    var lens = getLens(b64);
-    var validLen = lens[0];
-    var placeHoldersLen = lens[1];
-    return (validLen + placeHoldersLen) * 3 / 4 - placeHoldersLen;
-}
-function _byteLength(b64, validLen, placeHoldersLen) {
-    return (validLen + placeHoldersLen) * 3 / 4 - placeHoldersLen;
-}
-function toByteArray(b64) {
-    var tmp;
-    var lens = getLens(b64);
-    var validLen = lens[0];
-    var placeHoldersLen = lens[1];
-    var arr = new Arr(_byteLength(b64, validLen, placeHoldersLen));
-    var curByte = 0;
-    // if there are placeholders, only get up to the last complete 4 chars
-    var len = placeHoldersLen > 0 ? validLen - 4 : validLen;
-    var i;
-    for(i = 0; i < len; i += 4){
-        tmp = revLookup[b64.charCodeAt(i)] << 18 | revLookup[b64.charCodeAt(i + 1)] << 12 | revLookup[b64.charCodeAt(i + 2)] << 6 | revLookup[b64.charCodeAt(i + 3)];
-        arr[curByte++] = tmp >> 16 & 0xFF;
-        arr[curByte++] = tmp >> 8 & 0xFF;
-        arr[curByte++] = tmp & 0xFF;
-    }
-    if (placeHoldersLen === 2) {
-        tmp = revLookup[b64.charCodeAt(i)] << 2 | revLookup[b64.charCodeAt(i + 1)] >> 4;
-        arr[curByte++] = tmp & 0xFF;
-    }
-    if (placeHoldersLen === 1) {
-        tmp = revLookup[b64.charCodeAt(i)] << 10 | revLookup[b64.charCodeAt(i + 1)] << 4 | revLookup[b64.charCodeAt(i + 2)] >> 2;
-        arr[curByte++] = tmp >> 8 & 0xFF;
-        arr[curByte++] = tmp & 0xFF;
-    }
-    return arr;
-}
-function tripletToBase64(num) {
-    return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F];
-}
-function encodeChunk(uint8, start, end) {
-    var tmp;
-    var output = [];
-    for(var i = start; i < end; i += 3){
-        tmp = (uint8[i] << 16 & 0xFF0000) + (uint8[i + 1] << 8 & 0xFF00) + (uint8[i + 2] & 0xFF);
-        output.push(tripletToBase64(tmp));
-    }
-    return output.join("");
-}
-function fromByteArray(uint8) {
-    var tmp;
-    var len = uint8.length;
-    var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
-    ;
-    var parts = [];
-    var maxChunkLength = 16383 // must be multiple of 3
-    ;
-    // go through the array every three bytes, we'll deal with trailing stuff later
-    for(var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength)parts.push(encodeChunk(uint8, i, i + maxChunkLength > len2 ? len2 : i + maxChunkLength));
-    // pad the end with zeros, but make sure to not forget the extra bytes
-    if (extraBytes === 1) {
-        tmp = uint8[len - 1];
-        parts.push(lookup[tmp >> 2] + lookup[tmp << 4 & 0x3F] + "==");
-    } else if (extraBytes === 2) {
-        tmp = (uint8[len - 2] << 8) + uint8[len - 1];
-        parts.push(lookup[tmp >> 10] + lookup[tmp >> 4 & 0x3F] + lookup[tmp << 2 & 0x3F] + "=");
-    }
-    return parts.join("");
-}
-
-},{}],"cO95r":[function(require,module,exports) {
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */ exports.read = function(buffer, offset, isLE, mLen, nBytes) {
-    var e, m;
-    var eLen = nBytes * 8 - mLen - 1;
-    var eMax = (1 << eLen) - 1;
-    var eBias = eMax >> 1;
-    var nBits = -7;
-    var i = isLE ? nBytes - 1 : 0;
-    var d = isLE ? -1 : 1;
-    var s = buffer[offset + i];
-    i += d;
-    e = s & (1 << -nBits) - 1;
-    s >>= -nBits;
-    nBits += eLen;
-    for(; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8);
-    m = e & (1 << -nBits) - 1;
-    e >>= -nBits;
-    nBits += mLen;
-    for(; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8);
-    if (e === 0) e = 1 - eBias;
-    else if (e === eMax) return m ? NaN : (s ? -1 : 1) * Infinity;
-    else {
-        m = m + Math.pow(2, mLen);
-        e = e - eBias;
-    }
-    return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
-};
-exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
-    var e, m, c;
-    var eLen = nBytes * 8 - mLen - 1;
-    var eMax = (1 << eLen) - 1;
-    var eBias = eMax >> 1;
-    var rt = mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0;
-    var i = isLE ? 0 : nBytes - 1;
-    var d = isLE ? 1 : -1;
-    var s = value < 0 || value === 0 && 1 / value < 0 ? 1 : 0;
-    value = Math.abs(value);
-    if (isNaN(value) || value === Infinity) {
-        m = isNaN(value) ? 1 : 0;
-        e = eMax;
-    } else {
-        e = Math.floor(Math.log(value) / Math.LN2);
-        if (value * (c = Math.pow(2, -e)) < 1) {
-            e--;
-            c *= 2;
-        }
-        if (e + eBias >= 1) value += rt / c;
-        else value += rt * Math.pow(2, 1 - eBias);
-        if (value * c >= 2) {
-            e++;
-            c /= 2;
-        }
-        if (e + eBias >= eMax) {
-            m = 0;
-            e = eMax;
-        } else if (e + eBias >= 1) {
-            m = (value * c - 1) * Math.pow(2, mLen);
-            e = e + eBias;
-        } else {
-            m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen);
-            e = 0;
-        }
-    }
-    for(; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8);
-    e = e << mLen | m;
-    eLen += mLen;
-    for(; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8);
-    buffer[offset + i - d] |= s * 128;
-};
-
-},{}],"fb1UO":[function(require,module,exports) {
-"use strict";
-let { SourceMapConsumer , SourceMapGenerator  } = require("308bf4f109b473bc");
-let { fileURLToPath , pathToFileURL  } = require("fa4f50e6e68066fb");
-let { resolve , isAbsolute  } = require("f14874183395e1da");
-let { nanoid  } = require("1dfe3269871ea6b2");
-let terminalHighlight = require("d3580bd2efb2d622");
-let CssSyntaxError = require("fdd5724c326bf7ae");
-let PreviousMap = require("2fce709b45ddf48f");
-let fromOffsetCache = Symbol("fromOffsetCache");
-let sourceMapAvailable = Boolean(SourceMapConsumer && SourceMapGenerator);
-let pathAvailable = Boolean(resolve && isAbsolute);
-class Input {
-    constructor(css, opts = {}){
-        if (css === null || typeof css === "undefined" || typeof css === "object" && !css.toString) throw new Error(`PostCSS received ${css} instead of CSS string`);
-        this.css = css.toString();
-        if (this.css[0] === "\uFEFF" || this.css[0] === "￾") {
-            this.hasBOM = true;
-            this.css = this.css.slice(1);
-        } else this.hasBOM = false;
-        if (opts.from) {
-            if (!pathAvailable || /^\w+:\/\//.test(opts.from) || isAbsolute(opts.from)) this.file = opts.from;
-            else this.file = resolve(opts.from);
-        }
-        if (pathAvailable && sourceMapAvailable) {
-            let map = new PreviousMap(this.css, opts);
-            if (map.text) {
-                this.map = map;
-                let file = map.consumer().file;
-                if (!this.file && file) this.file = this.mapResolve(file);
-            }
-        }
-        if (!this.file) this.id = "<input css " + nanoid(6) + ">";
-        if (this.map) this.map.file = this.from;
-    }
-    fromOffset(offset) {
-        let lastLine, lineToIndex;
-        if (!this[fromOffsetCache]) {
-            let lines = this.css.split("\n");
-            lineToIndex = new Array(lines.length);
-            let prevIndex = 0;
-            for(let i = 0, l = lines.length; i < l; i++){
-                lineToIndex[i] = prevIndex;
-                prevIndex += lines[i].length + 1;
-            }
-            this[fromOffsetCache] = lineToIndex;
-        } else lineToIndex = this[fromOffsetCache];
-        lastLine = lineToIndex[lineToIndex.length - 1];
-        let min = 0;
-        if (offset >= lastLine) min = lineToIndex.length - 1;
-        else {
-            let max = lineToIndex.length - 2;
-            let mid;
-            while(min < max){
-                mid = min + (max - min >> 1);
-                if (offset < lineToIndex[mid]) max = mid - 1;
-                else if (offset >= lineToIndex[mid + 1]) min = mid + 1;
-                else {
-                    min = mid;
-                    break;
-                }
-            }
-        }
-        return {
-            line: min + 1,
-            col: offset - lineToIndex[min] + 1
-        };
-    }
-    error(message, line, column, opts = {}) {
-        let result, endLine, endColumn;
-        if (line && typeof line === "object") {
-            let start = line;
-            let end = column;
-            if (typeof start.offset === "number") {
-                let pos = this.fromOffset(start.offset);
-                line = pos.line;
-                column = pos.col;
-            } else {
-                line = start.line;
-                column = start.column;
-            }
-            if (typeof end.offset === "number") {
-                let pos = this.fromOffset(end.offset);
-                endLine = pos.line;
-                endColumn = pos.col;
-            } else {
-                endLine = end.line;
-                endColumn = end.column;
-            }
-        } else if (!column) {
-            let pos = this.fromOffset(line);
-            line = pos.line;
-            column = pos.col;
-        }
-        let origin = this.origin(line, column, endLine, endColumn);
-        if (origin) result = new CssSyntaxError(message, origin.endLine === undefined ? origin.line : {
-            line: origin.line,
-            column: origin.column
-        }, origin.endLine === undefined ? origin.column : {
-            line: origin.endLine,
-            column: origin.endColumn
-        }, origin.source, origin.file, opts.plugin);
-        else result = new CssSyntaxError(message, endLine === undefined ? line : {
-            line,
-            column
-        }, endLine === undefined ? column : {
-            line: endLine,
-            column: endColumn
-        }, this.css, this.file, opts.plugin);
-        result.input = {
-            line,
-            column,
-            endLine,
-            endColumn,
-            source: this.css
-        };
-        if (this.file) {
-            if (pathToFileURL) result.input.url = pathToFileURL(this.file).toString();
-            result.input.file = this.file;
-        }
-        return result;
-    }
-    origin(line, column, endLine, endColumn) {
-        if (!this.map) return false;
-        let consumer = this.map.consumer();
-        let from = consumer.originalPositionFor({
-            line,
-            column
-        });
-        if (!from.source) return false;
-        let to;
-        if (typeof endLine === "number") to = consumer.originalPositionFor({
-            line: endLine,
-            column: endColumn
-        });
-        let fromUrl;
-        if (isAbsolute(from.source)) fromUrl = pathToFileURL(from.source);
-        else fromUrl = new URL(from.source, this.map.consumer().sourceRoot || pathToFileURL(this.map.mapFile));
-        let result = {
-            url: fromUrl.toString(),
-            line: from.line,
-            column: from.column,
-            endLine: to && to.line,
-            endColumn: to && to.column
-        };
-        if (fromUrl.protocol === "file:") {
-            if (fileURLToPath) result.file = fileURLToPath(fromUrl);
-            else /* c8 ignore next 2 */ throw new Error(`file: protocol is not available in this PostCSS build`);
-        }
-        let source = consumer.sourceContentFor(from.source);
-        if (source) result.source = source;
-        return result;
-    }
-    mapResolve(file) {
-        if (/^\w+:\/\//.test(file)) return file;
-        return resolve(this.map.consumer().sourceRoot || this.map.root || ".", file);
-    }
-    get from() {
-        return this.file || this.id;
-    }
-    toJSON() {
-        let json = {};
-        for (let name of [
-            "hasBOM",
-            "css",
-            "file",
-            "id"
-        ])if (this[name] != null) json[name] = this[name];
-        if (this.map) {
-            json.map = {
-                ...this.map
-            };
-            if (json.map.consumerCache) json.map.consumerCache = undefined;
-        }
-        return json;
-    }
-}
-module.exports = Input;
-Input.default = Input;
-if (terminalHighlight && terminalHighlight.registerInput) terminalHighlight.registerInput(Input);
-
-},{"308bf4f109b473bc":"jhUEF","fa4f50e6e68066fb":"jhUEF","f14874183395e1da":"jhUEF","1dfe3269871ea6b2":"fO50M","d3580bd2efb2d622":"jhUEF","fdd5724c326bf7ae":"5TKyW","2fce709b45ddf48f":"cmiCo"}],"fO50M":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2PAsh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "nanoid", ()=>nanoid);
-parcelHelpers.export(exports, "customAlphabet", ()=>customAlphabet);
-let urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
-let customAlphabet = (alphabet, defaultSize = 21)=>{
-    return (size = defaultSize)=>{
-        let id = "";
-        let i = size;
-        while(i--)id += alphabet[Math.random() * alphabet.length | 0];
-        return id;
-    };
-};
-let nanoid = (size = 21)=>{
-    let id = "";
-    let i = size;
-    while(i--)id += urlAlphabet[Math.random() * 64 | 0];
-    return id;
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cmiCo":[function(require,module,exports) {
-var Buffer = require("9942fa10d1030c5e").Buffer;
-"use strict";
-let { SourceMapConsumer , SourceMapGenerator  } = require("a9cf17802fe70727");
-let { existsSync , readFileSync  } = require("8be0c628120271f3");
-let { dirname , join  } = require("d1a375d7fefead4e");
-function fromBase64(str) {
-    if (Buffer) return Buffer.from(str, "base64").toString();
-    else /* c8 ignore next 2 */ return window.atob(str);
-}
-class PreviousMap {
-    constructor(css, opts){
-        if (opts.map === false) return;
-        this.loadAnnotation(css);
-        this.inline = this.startWith(this.annotation, "data:");
-        let prev = opts.map ? opts.map.prev : undefined;
-        let text = this.loadMap(opts.from, prev);
-        if (!this.mapFile && opts.from) this.mapFile = opts.from;
-        if (this.mapFile) this.root = dirname(this.mapFile);
-        if (text) this.text = text;
-    }
-    consumer() {
-        if (!this.consumerCache) this.consumerCache = new SourceMapConsumer(this.text);
-        return this.consumerCache;
-    }
-    withContent() {
-        return !!(this.consumer().sourcesContent && this.consumer().sourcesContent.length > 0);
-    }
-    startWith(string, start) {
-        if (!string) return false;
-        return string.substr(0, start.length) === start;
-    }
-    getAnnotationURL(sourceMapString) {
-        return sourceMapString.replace(/^\/\*\s*# sourceMappingURL=/, "").trim();
-    }
-    loadAnnotation(css) {
-        let comments = css.match(/\/\*\s*# sourceMappingURL=/gm);
-        if (!comments) return;
-        // sourceMappingURLs from comments, strings, etc.
-        let start = css.lastIndexOf(comments.pop());
-        let end = css.indexOf("*/", start);
-        if (start > -1 && end > -1) // Locate the last sourceMappingURL to avoid pickin
-        this.annotation = this.getAnnotationURL(css.substring(start, end));
-    }
-    decodeInline(text) {
-        let baseCharsetUri = /^data:application\/json;charset=utf-?8;base64,/;
-        let baseUri = /^data:application\/json;base64,/;
-        let charsetUri = /^data:application\/json;charset=utf-?8,/;
-        let uri = /^data:application\/json,/;
-        if (charsetUri.test(text) || uri.test(text)) return decodeURIComponent(text.substr(RegExp.lastMatch.length));
-        if (baseCharsetUri.test(text) || baseUri.test(text)) return fromBase64(text.substr(RegExp.lastMatch.length));
-        let encoding = text.match(/data:application\/json;([^,]+),/)[1];
-        throw new Error("Unsupported source map encoding " + encoding);
-    }
-    loadFile(path) {
-        this.root = dirname(path);
-        if (existsSync(path)) {
-            this.mapFile = path;
-            return readFileSync(path, "utf-8").toString().trim();
-        }
-    }
-    loadMap(file, prev) {
-        if (prev === false) return false;
-        if (prev) {
-            if (typeof prev === "string") return prev;
-            else if (typeof prev === "function") {
-                let prevPath = prev(file);
-                if (prevPath) {
-                    let map = this.loadFile(prevPath);
-                    if (!map) throw new Error("Unable to load previous source map: " + prevPath.toString());
-                    return map;
+parcelHelpers.export(exports, "data", ()=>data);
+const data = {
+    "statusCode": 0,
+    "data": {
+        "statusMessage": "done successfully",
+        "pageOffset": {
+            "nextOffset": "COVCELQ4KIDYivCUzomrLjCnEzgC",
+            "widgetOffset": {
+                "NewListingView_Topical_Fullbleed": "",
+                "NewListingView_category_bar_chicletranking_TwoRows": "",
+                "NewListingView_category_bar_chicletranking_TwoRows_Rendition": "",
+                "Restaurant_Group_WebView_SEO_PB_Theme": "",
+                "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo": "10",
+                "inlineFacetFilter": "",
+                "restaurantCountWidget": ""
+            }
+        },
+        "cards": [
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+                        "header": {
+                            "headerStyling": {
+                                "padding": {
+                                    "left": 16,
+                                    "top": 14,
+                                    "bottom": 2
+                                }
+                            }
+                        },
+                        "layout": {
+                            "rows": 1,
+                            "columns": 6,
+                            "horizontalScrollEnabled": true,
+                            "shouldSnap": true,
+                            "itemSpacing": 10,
+                            "widgetPadding": {},
+                            "containerStyle": {
+                                "containerPadding": {
+                                    "left": 16,
+                                    "top": 12,
+                                    "right": 16,
+                                    "bottom": 12
+                                }
+                            },
+                            "scrollBar": {
+                                "scrollThumbColor": "#E46D47",
+                                "scrollTrackColor": "#E4E4E4",
+                                "width": 54,
+                                "height": 4,
+                                "scrollStyling": {
+                                    "padding": {
+                                        "top": 6,
+                                        "bottom": 12
+                                    }
+                                }
+                            },
+                            "autoScrollConfig": {
+                                "isScrollEnabled": true,
+                                "autoScrollDuration": 4,
+                                "autoScrollResetDuration": 4
+                            },
+                            "dotScrollBar": {
+                                "activeColor": "#36393E",
+                                "inactiveColor": "#66686E",
+                                "activeSize": 16,
+                                "inactiveMediumSize": 7,
+                                "inactiveSmallSize": 4,
+                                "dotSpacing": 8,
+                                "windowSize": 5,
+                                "showCount": true,
+                                "textColor": "#FFFFFF",
+                                "scrollStyling": {
+                                    "padding": {
+                                        "top": 6,
+                                        "bottom": 12
+                                    }
+                                }
+                            }
+                        },
+                        "imageGridCards": {
+                            "info": [
+                                {
+                                    "id": "635513",
+                                    "imageId": "rng/md/carousel/production/731031544495581f1d6884624aa3ecf5",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/78798?collection_id=78798&tags=layout_ux4&type=rcv2",
+                                        "text": "All new super",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "GET 50% OFF ON FIRST ORDER",
+                                        "altTextCta": "ORDER NOW"
+                                    },
+                                    "entityId": "78798",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "1621344",
+                                    "imageId": "rng/md/carousel/production/2e4b1546c79cdc19256e0476aa678a4b",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/menu/438435",
+                                        "text": "BK",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "Menu @ 129",
+                                        "altTextCta": "Order Now"
+                                    },
+                                    "entityId": "438435",
+                                    "frequencyCapping": {},
+                                    "isManualAds": true
+                                },
+                                {
+                                    "id": "1539059",
+                                    "imageId": "rng/md/carousel/production/7c92c3744ea5da6c0204cb8ec2918410",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/99942?collection_id=99942&type=rcv2",
+                                        "text": "Gourmet LN/DN",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "GOURMET lunch",
+                                        "altTextCta": "Order now"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=99942",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "1621347",
+                                    "imageId": "rng/md/carousel/production/ae95e0a07148bc085334f6054ee74236",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/menu/24174",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "Brands with Offers",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "24174",
+                                    "frequencyCapping": {},
+                                    "isManualAds": true
+                                },
+                                {
+                                    "id": "1621351",
+                                    "imageId": "rng/md/carousel/production/d8365b980b7a2a08abac4a6ffdab9d5f",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/menu/450015",
+                                        "text": "brand card",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "Taco Bell",
+                                        "altTextCta": "Order Now"
+                                    },
+                                    "entityId": "450015",
+                                    "frequencyCapping": {},
+                                    "isManualAds": true
+                                },
+                                {
+                                    "id": "1621341",
+                                    "imageId": "rng/md/carousel/production/e67c6995bfde29190f43556a092c16f8",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/menu/707692",
+                                        "text": "KFC",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "Wednesday Buckets",
+                                        "altTextCta": "Order Now"
+                                    },
+                                    "entityId": "707692",
+                                    "frequencyCapping": {},
+                                    "isManualAds": true
+                                }
+                            ],
+                            "style": {
+                                "width": {
+                                    "type": "TYPE_RELATIVE",
+                                    "value": 0.95238,
+                                    "reference": "RELATIVE_DIMENSION_REFERENCE_CONTAINER_WIDTH"
+                                },
+                                "height": {
+                                    "type": "TYPE_RELATIVE",
+                                    "value": 0.59685,
+                                    "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
+                                }
+                            }
+                        },
+                        "id": "topical_banner",
+                        "gridElements": {
+                            "infoWithStyle": {
+                                "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.ImageInfoLayoutCard",
+                                "info": [
+                                    {
+                                        "id": "635513",
+                                        "imageId": "rng/md/carousel/production/731031544495581f1d6884624aa3ecf5",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/78798?collection_id=78798&tags=layout_ux4&type=rcv2",
+                                            "text": "All new super",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "GET 50% OFF ON FIRST ORDER",
+                                            "altTextCta": "ORDER NOW"
+                                        },
+                                        "entityId": "78798",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "1621344",
+                                        "imageId": "rng/md/carousel/production/2e4b1546c79cdc19256e0476aa678a4b",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/menu/438435",
+                                            "text": "BK",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "Menu @ 129",
+                                            "altTextCta": "Order Now"
+                                        },
+                                        "entityId": "438435",
+                                        "frequencyCapping": {},
+                                        "isManualAds": true
+                                    },
+                                    {
+                                        "id": "1539059",
+                                        "imageId": "rng/md/carousel/production/7c92c3744ea5da6c0204cb8ec2918410",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/99942?collection_id=99942&type=rcv2",
+                                            "text": "Gourmet LN/DN",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "GOURMET lunch",
+                                            "altTextCta": "Order now"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=99942",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "1621347",
+                                        "imageId": "rng/md/carousel/production/ae95e0a07148bc085334f6054ee74236",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/menu/24174",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "Brands with Offers",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "24174",
+                                        "frequencyCapping": {},
+                                        "isManualAds": true
+                                    },
+                                    {
+                                        "id": "1621351",
+                                        "imageId": "rng/md/carousel/production/d8365b980b7a2a08abac4a6ffdab9d5f",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/menu/450015",
+                                            "text": "brand card",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "Taco Bell",
+                                            "altTextCta": "Order Now"
+                                        },
+                                        "entityId": "450015",
+                                        "frequencyCapping": {},
+                                        "isManualAds": true
+                                    },
+                                    {
+                                        "id": "1621341",
+                                        "imageId": "rng/md/carousel/production/e67c6995bfde29190f43556a092c16f8",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/menu/707692",
+                                            "text": "KFC",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "Wednesday Buckets",
+                                            "altTextCta": "Order Now"
+                                        },
+                                        "entityId": "707692",
+                                        "frequencyCapping": {},
+                                        "isManualAds": true
+                                    }
+                                ],
+                                "style": {
+                                    "width": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 0.95238,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_CONTAINER_WIDTH"
+                                    },
+                                    "height": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 0.59685,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            } else if (prev instanceof SourceMapConsumer) return SourceMapGenerator.fromSourceMap(prev).toString();
-            else if (prev instanceof SourceMapGenerator) return prev.toString();
-            else if (this.isMap(prev)) return JSON.stringify(prev);
-            else throw new Error("Unsupported previous source map format: " + prev.toString());
-        } else if (this.inline) return this.decodeInline(this.annotation);
-        else if (this.annotation) {
-            let map = this.annotation;
-            if (file) map = join(dirname(file), map);
-            return this.loadFile(map);
-        }
-    }
-    isMap(map) {
-        if (typeof map !== "object") return false;
-        return typeof map.mappings === "string" || typeof map._mappings === "string" || Array.isArray(map.sections);
-    }
-}
-module.exports = PreviousMap;
-PreviousMap.default = PreviousMap;
-
-},{"9942fa10d1030c5e":"fCgem","a9cf17802fe70727":"jhUEF","8be0c628120271f3":"jhUEF","d1a375d7fefead4e":"jhUEF"}],"1gj6C":[function(require,module,exports) {
-"use strict";
-let { isClean , my  } = require("fe19f7ecb9c04826");
-let Declaration = require("612b113f57da6436");
-let Comment = require("7b441fc27c320a2c");
-let Node = require("f2754be16c7a4192");
-let parse, Rule, AtRule, Root;
-function cleanSource(nodes) {
-    return nodes.map((i)=>{
-        if (i.nodes) i.nodes = cleanSource(i.nodes);
-        delete i.source;
-        return i;
-    });
-}
-function markDirtyUp(node) {
-    node[isClean] = false;
-    if (node.proxyOf.nodes) for (let i of node.proxyOf.nodes)markDirtyUp(i);
-}
-class Container extends Node {
-    push(child) {
-        child.parent = this;
-        this.proxyOf.nodes.push(child);
-        return this;
-    }
-    each(callback) {
-        if (!this.proxyOf.nodes) return undefined;
-        let iterator = this.getIterator();
-        let index, result;
-        while(this.indexes[iterator] < this.proxyOf.nodes.length){
-            index = this.indexes[iterator];
-            result = callback(this.proxyOf.nodes[index], index);
-            if (result === false) break;
-            this.indexes[iterator] += 1;
-        }
-        delete this.indexes[iterator];
-        return result;
-    }
-    walk(callback) {
-        return this.each((child, i)=>{
-            let result;
-            try {
-                result = callback(child, i);
-            } catch (e) {
-                throw child.addToError(e);
-            }
-            if (result !== false && child.walk) result = child.walk(callback);
-            return result;
-        });
-    }
-    walkDecls(prop, callback) {
-        if (!callback) {
-            callback = prop;
-            return this.walk((child, i)=>{
-                if (child.type === "decl") return callback(child, i);
-            });
-        }
-        if (prop instanceof RegExp) return this.walk((child, i)=>{
-            if (child.type === "decl" && prop.test(child.prop)) return callback(child, i);
-        });
-        return this.walk((child, i)=>{
-            if (child.type === "decl" && child.prop === prop) return callback(child, i);
-        });
-    }
-    walkRules(selector, callback) {
-        if (!callback) {
-            callback = selector;
-            return this.walk((child, i)=>{
-                if (child.type === "rule") return callback(child, i);
-            });
-        }
-        if (selector instanceof RegExp) return this.walk((child, i)=>{
-            if (child.type === "rule" && selector.test(child.selector)) return callback(child, i);
-        });
-        return this.walk((child, i)=>{
-            if (child.type === "rule" && child.selector === selector) return callback(child, i);
-        });
-    }
-    walkAtRules(name, callback) {
-        if (!callback) {
-            callback = name;
-            return this.walk((child, i)=>{
-                if (child.type === "atrule") return callback(child, i);
-            });
-        }
-        if (name instanceof RegExp) return this.walk((child, i)=>{
-            if (child.type === "atrule" && name.test(child.name)) return callback(child, i);
-        });
-        return this.walk((child, i)=>{
-            if (child.type === "atrule" && child.name === name) return callback(child, i);
-        });
-    }
-    walkComments(callback) {
-        return this.walk((child, i)=>{
-            if (child.type === "comment") return callback(child, i);
-        });
-    }
-    append(...children) {
-        for (let child of children){
-            let nodes = this.normalize(child, this.last);
-            for (let node of nodes)this.proxyOf.nodes.push(node);
-        }
-        this.markDirty();
-        return this;
-    }
-    prepend(...children) {
-        children = children.reverse();
-        for (let child of children){
-            let nodes = this.normalize(child, this.first, "prepend").reverse();
-            for (let node of nodes)this.proxyOf.nodes.unshift(node);
-            for(let id in this.indexes)this.indexes[id] = this.indexes[id] + nodes.length;
-        }
-        this.markDirty();
-        return this;
-    }
-    cleanRaws(keepBetween) {
-        super.cleanRaws(keepBetween);
-        if (this.nodes) for (let node of this.nodes)node.cleanRaws(keepBetween);
-    }
-    insertBefore(exist, add) {
-        let existIndex = this.index(exist);
-        let type = existIndex === 0 ? "prepend" : false;
-        let nodes = this.normalize(add, this.proxyOf.nodes[existIndex], type).reverse();
-        existIndex = this.index(exist);
-        for (let node of nodes)this.proxyOf.nodes.splice(existIndex, 0, node);
-        let index;
-        for(let id in this.indexes){
-            index = this.indexes[id];
-            if (existIndex <= index) this.indexes[id] = index + nodes.length;
-        }
-        this.markDirty();
-        return this;
-    }
-    insertAfter(exist, add) {
-        let existIndex = this.index(exist);
-        let nodes = this.normalize(add, this.proxyOf.nodes[existIndex]).reverse();
-        existIndex = this.index(exist);
-        for (let node of nodes)this.proxyOf.nodes.splice(existIndex + 1, 0, node);
-        let index;
-        for(let id in this.indexes){
-            index = this.indexes[id];
-            if (existIndex < index) this.indexes[id] = index + nodes.length;
-        }
-        this.markDirty();
-        return this;
-    }
-    removeChild(child) {
-        child = this.index(child);
-        this.proxyOf.nodes[child].parent = undefined;
-        this.proxyOf.nodes.splice(child, 1);
-        let index;
-        for(let id in this.indexes){
-            index = this.indexes[id];
-            if (index >= child) this.indexes[id] = index - 1;
-        }
-        this.markDirty();
-        return this;
-    }
-    removeAll() {
-        for (let node of this.proxyOf.nodes)node.parent = undefined;
-        this.proxyOf.nodes = [];
-        this.markDirty();
-        return this;
-    }
-    replaceValues(pattern, opts, callback) {
-        if (!callback) {
-            callback = opts;
-            opts = {};
-        }
-        this.walkDecls((decl)=>{
-            if (opts.props && !opts.props.includes(decl.prop)) return;
-            if (opts.fast && !decl.value.includes(opts.fast)) return;
-            decl.value = decl.value.replace(pattern, callback);
-        });
-        this.markDirty();
-        return this;
-    }
-    every(condition) {
-        return this.nodes.every(condition);
-    }
-    some(condition) {
-        return this.nodes.some(condition);
-    }
-    index(child) {
-        if (typeof child === "number") return child;
-        if (child.proxyOf) child = child.proxyOf;
-        return this.proxyOf.nodes.indexOf(child);
-    }
-    get first() {
-        if (!this.proxyOf.nodes) return undefined;
-        return this.proxyOf.nodes[0];
-    }
-    get last() {
-        if (!this.proxyOf.nodes) return undefined;
-        return this.proxyOf.nodes[this.proxyOf.nodes.length - 1];
-    }
-    normalize(nodes, sample) {
-        if (typeof nodes === "string") nodes = cleanSource(parse(nodes).nodes);
-        else if (Array.isArray(nodes)) {
-            nodes = nodes.slice(0);
-            for (let i of nodes)if (i.parent) i.parent.removeChild(i, "ignore");
-        } else if (nodes.type === "root" && this.type !== "document") {
-            nodes = nodes.nodes.slice(0);
-            for (let i of nodes)if (i.parent) i.parent.removeChild(i, "ignore");
-        } else if (nodes.type) nodes = [
-            nodes
-        ];
-        else if (nodes.prop) {
-            if (typeof nodes.value === "undefined") throw new Error("Value field is missed in node creation");
-            else if (typeof nodes.value !== "string") nodes.value = String(nodes.value);
-            nodes = [
-                new Declaration(nodes)
-            ];
-        } else if (nodes.selector) nodes = [
-            new Rule(nodes)
-        ];
-        else if (nodes.name) nodes = [
-            new AtRule(nodes)
-        ];
-        else if (nodes.text) nodes = [
-            new Comment(nodes)
-        ];
-        else throw new Error("Unknown node type in node creation");
-        let processed = nodes.map((i)=>{
-            /* c8 ignore next */ if (!i[my]) Container.rebuild(i);
-            i = i.proxyOf;
-            if (i.parent) i.parent.removeChild(i);
-            if (i[isClean]) markDirtyUp(i);
-            if (typeof i.raws.before === "undefined") {
-                if (sample && typeof sample.raws.before !== "undefined") i.raws.before = sample.raws.before.replace(/\S/g, "");
-            }
-            i.parent = this.proxyOf;
-            return i;
-        });
-        return processed;
-    }
-    getProxyProcessor() {
-        return {
-            set (node, prop, value) {
-                if (node[prop] === value) return true;
-                node[prop] = value;
-                if (prop === "name" || prop === "params" || prop === "selector") node.markDirty();
-                return true;
             },
-            get (node, prop) {
-                if (prop === "proxyOf") return node;
-                else if (!node[prop]) return node[prop];
-                else if (prop === "each" || typeof prop === "string" && prop.startsWith("walk")) return (...args)=>{
-                    return node[prop](...args.map((i)=>{
-                        if (typeof i === "function") return (child, index)=>i(child.toProxy(), index);
-                        else return i;
-                    }));
-                };
-                else if (prop === "every" || prop === "some") return (cb)=>{
-                    return node[prop]((child, ...other)=>cb(child.toProxy(), ...other));
-                };
-                else if (prop === "root") return ()=>node.root().toProxy();
-                else if (prop === "nodes") return node.nodes.map((i)=>i.toProxy());
-                else if (prop === "first" || prop === "last") return node[prop].toProxy();
-                else return node[prop];
-            }
-        };
-    }
-    getIterator() {
-        if (!this.lastEach) this.lastEach = 0;
-        if (!this.indexes) this.indexes = {};
-        this.lastEach += 1;
-        let iterator = this.lastEach;
-        this.indexes[iterator] = 0;
-        return iterator;
-    }
-}
-Container.registerParse = (dependant)=>{
-    parse = dependant;
-};
-Container.registerRule = (dependant)=>{
-    Rule = dependant;
-};
-Container.registerAtRule = (dependant)=>{
-    AtRule = dependant;
-};
-Container.registerRoot = (dependant)=>{
-    Root = dependant;
-};
-module.exports = Container;
-Container.default = Container;
-/* c8 ignore start */ Container.rebuild = (node)=>{
-    if (node.type === "atrule") Object.setPrototypeOf(node, AtRule.prototype);
-    else if (node.type === "rule") Object.setPrototypeOf(node, Rule.prototype);
-    else if (node.type === "decl") Object.setPrototypeOf(node, Declaration.prototype);
-    else if (node.type === "comment") Object.setPrototypeOf(node, Comment.prototype);
-    else if (node.type === "root") Object.setPrototypeOf(node, Root.prototype);
-    node[my] = true;
-    if (node.nodes) node.nodes.forEach((child)=>{
-        Container.rebuild(child);
-    });
-} /* c8 ignore stop */ ;
-
-},{"fe19f7ecb9c04826":"9Ej2B","612b113f57da6436":"2mU8a","7b441fc27c320a2c":"5CBjv","f2754be16c7a4192":"5azBO"}],"5CBjv":[function(require,module,exports) {
-"use strict";
-let Node = require("7f4ce483d6e184ba");
-class Comment extends Node {
-    constructor(defaults){
-        super(defaults);
-        this.type = "comment";
-    }
-}
-module.exports = Comment;
-Comment.default = Comment;
-
-},{"7f4ce483d6e184ba":"5azBO"}],"dK3sP":[function(require,module,exports) {
-"use strict";
-let Container = require("4ddefed8be3a5f1");
-let LazyResult, Processor;
-class Document extends Container {
-    constructor(defaults){
-        // type needs to be passed to super, otherwise child roots won't be normalized correctly
-        super({
-            type: "document",
-            ...defaults
-        });
-        if (!this.nodes) this.nodes = [];
-    }
-    toResult(opts = {}) {
-        let lazy = new LazyResult(new Processor(), this, opts);
-        return lazy.stringify();
-    }
-}
-Document.registerLazyResult = (dependant)=>{
-    LazyResult = dependant;
-};
-Document.registerProcessor = (dependant)=>{
-    Processor = dependant;
-};
-module.exports = Document;
-Document.default = Document;
-
-},{"4ddefed8be3a5f1":"1gj6C"}],"dpzGz":[function(require,module,exports) {
-/* eslint-disable no-console */ "use strict";
-let printed = {};
-module.exports = function warnOnce(message) {
-    if (printed[message]) return;
-    printed[message] = true;
-    if (typeof console !== "undefined" && console.warn) console.warn(message);
-};
-
-},{}],"dmoqr":[function(require,module,exports) {
-"use strict";
-let Warning = require("733eab9114813576");
-class Result {
-    constructor(processor, root, opts){
-        this.processor = processor;
-        this.messages = [];
-        this.root = root;
-        this.opts = opts;
-        this.css = undefined;
-        this.map = undefined;
-    }
-    toString() {
-        return this.css;
-    }
-    warn(text, opts = {}) {
-        if (!opts.plugin) {
-            if (this.lastPlugin && this.lastPlugin.postcssPlugin) opts.plugin = this.lastPlugin.postcssPlugin;
-        }
-        let warning = new Warning(text, opts);
-        this.messages.push(warning);
-        return warning;
-    }
-    warnings() {
-        return this.messages.filter((i)=>i.type === "warning");
-    }
-    get content() {
-        return this.css;
-    }
-}
-module.exports = Result;
-Result.default = Result;
-
-},{"733eab9114813576":"lw5j2"}],"lw5j2":[function(require,module,exports) {
-"use strict";
-class Warning {
-    constructor(text, opts = {}){
-        this.type = "warning";
-        this.text = text;
-        if (opts.node && opts.node.source) {
-            let range = opts.node.rangeBy(opts);
-            this.line = range.start.line;
-            this.column = range.start.column;
-            this.endLine = range.end.line;
-            this.endColumn = range.end.column;
-        }
-        for(let opt in opts)this[opt] = opts[opt];
-    }
-    toString() {
-        if (this.node) return this.node.error(this.text, {
-            plugin: this.plugin,
-            index: this.index,
-            word: this.word
-        }).message;
-        if (this.plugin) return this.plugin + ": " + this.text;
-        return this.text;
-    }
-}
-module.exports = Warning;
-Warning.default = Warning;
-
-},{}],"ioa1B":[function(require,module,exports) {
-"use strict";
-let Container = require("6494fda586fb17a1");
-let Parser = require("61509346b7c32406");
-let Input = require("b776f2c6c62c9360");
-function parse(css, opts) {
-    let input = new Input(css, opts);
-    let parser = new Parser(input);
-    try {
-        parser.parse();
-    } catch (e) {
-        if (e.name === "CssSyntaxError" && opts && opts.from) {
-            if (/\.scss$/i.test(opts.from)) e.message += "\nYou tried to parse SCSS with the standard CSS parser; try again with the postcss-scss parser";
-            else if (/\.sass/i.test(opts.from)) e.message += "\nYou tried to parse Sass with the standard CSS parser; try again with the postcss-sass parser";
-            else if (/\.less$/i.test(opts.from)) e.message += "\nYou tried to parse Less with the standard CSS parser; try again with the postcss-less parser";
-        }
-        throw e;
-    }
-    return parser.root;
-}
-module.exports = parse;
-parse.default = parse;
-Container.registerParse(parse);
-
-},{"6494fda586fb17a1":"1gj6C","61509346b7c32406":"flcRV","b776f2c6c62c9360":"fb1UO"}],"flcRV":[function(require,module,exports) {
-"use strict";
-let Declaration = require("47ad52a08a7a676e");
-let tokenizer = require("4a9961ca361e4099");
-let Comment = require("149094ae0d56f3fb");
-let AtRule = require("53d9a3501469ebf8");
-let Root = require("df12142db9f2ac4");
-let Rule = require("fca2d5ee75ced31e");
-const SAFE_COMMENT_NEIGHBOR = {
-    empty: true,
-    space: true
-};
-function findLastWithPosition(tokens) {
-    for(let i = tokens.length - 1; i >= 0; i--){
-        let token = tokens[i];
-        let pos = token[3] || token[2];
-        if (pos) return pos;
-    }
-}
-class Parser {
-    constructor(input){
-        this.input = input;
-        this.root = new Root();
-        this.current = this.root;
-        this.spaces = "";
-        this.semicolon = false;
-        this.customProperty = false;
-        this.createTokenizer();
-        this.root.source = {
-            input,
-            start: {
-                offset: 0,
-                line: 1,
-                column: 1
-            }
-        };
-    }
-    createTokenizer() {
-        this.tokenizer = tokenizer(this.input);
-    }
-    parse() {
-        let token;
-        while(!this.tokenizer.endOfFile()){
-            token = this.tokenizer.nextToken();
-            switch(token[0]){
-                case "space":
-                    this.spaces += token[1];
-                    break;
-                case ";":
-                    this.freeSemicolon(token);
-                    break;
-                case "}":
-                    this.end(token);
-                    break;
-                case "comment":
-                    this.comment(token);
-                    break;
-                case "at-word":
-                    this.atrule(token);
-                    break;
-                case "{":
-                    this.emptyRule(token);
-                    break;
-                default:
-                    this.other(token);
-                    break;
-            }
-        }
-        this.endFile();
-    }
-    comment(token) {
-        let node = new Comment();
-        this.init(node, token[2]);
-        node.source.end = this.getPosition(token[3] || token[2]);
-        let text = token[1].slice(2, -2);
-        if (/^\s*$/.test(text)) {
-            node.text = "";
-            node.raws.left = text;
-            node.raws.right = "";
-        } else {
-            let match = text.match(/^(\s*)([^]*\S)(\s*)$/);
-            node.text = match[2];
-            node.raws.left = match[1];
-            node.raws.right = match[3];
-        }
-    }
-    emptyRule(token) {
-        let node = new Rule();
-        this.init(node, token[2]);
-        node.selector = "";
-        node.raws.between = "";
-        this.current = node;
-    }
-    other(start) {
-        let end = false;
-        let type = null;
-        let colon = false;
-        let bracket = null;
-        let brackets = [];
-        let customProperty = start[1].startsWith("--");
-        let tokens = [];
-        let token = start;
-        while(token){
-            type = token[0];
-            tokens.push(token);
-            if (type === "(" || type === "[") {
-                if (!bracket) bracket = token;
-                brackets.push(type === "(" ? ")" : "]");
-            } else if (customProperty && colon && type === "{") {
-                if (!bracket) bracket = token;
-                brackets.push("}");
-            } else if (brackets.length === 0) {
-                if (type === ";") {
-                    if (colon) {
-                        this.decl(tokens, customProperty);
-                        return;
-                    } else break;
-                } else if (type === "{") {
-                    this.rule(tokens);
-                    return;
-                } else if (type === "}") {
-                    this.tokenizer.back(tokens.pop());
-                    end = true;
-                    break;
-                } else if (type === ":") colon = true;
-            } else if (type === brackets[brackets.length - 1]) {
-                brackets.pop();
-                if (brackets.length === 0) bracket = null;
-            }
-            token = this.tokenizer.nextToken();
-        }
-        if (this.tokenizer.endOfFile()) end = true;
-        if (brackets.length > 0) this.unclosedBracket(bracket);
-        if (end && colon) {
-            if (!customProperty) while(tokens.length){
-                token = tokens[tokens.length - 1][0];
-                if (token !== "space" && token !== "comment") break;
-                this.tokenizer.back(tokens.pop());
-            }
-            this.decl(tokens, customProperty);
-        } else this.unknownWord(tokens);
-    }
-    rule(tokens) {
-        tokens.pop();
-        let node = new Rule();
-        this.init(node, tokens[0][2]);
-        node.raws.between = this.spacesAndCommentsFromEnd(tokens);
-        this.raw(node, "selector", tokens);
-        this.current = node;
-    }
-    decl(tokens, customProperty) {
-        let node = new Declaration();
-        this.init(node, tokens[0][2]);
-        let last = tokens[tokens.length - 1];
-        if (last[0] === ";") {
-            this.semicolon = true;
-            tokens.pop();
-        }
-        node.source.end = this.getPosition(last[3] || last[2] || findLastWithPosition(tokens));
-        while(tokens[0][0] !== "word"){
-            if (tokens.length === 1) this.unknownWord(tokens);
-            node.raws.before += tokens.shift()[1];
-        }
-        node.source.start = this.getPosition(tokens[0][2]);
-        node.prop = "";
-        while(tokens.length){
-            let type = tokens[0][0];
-            if (type === ":" || type === "space" || type === "comment") break;
-            node.prop += tokens.shift()[1];
-        }
-        node.raws.between = "";
-        let token;
-        while(tokens.length){
-            token = tokens.shift();
-            if (token[0] === ":") {
-                node.raws.between += token[1];
-                break;
-            } else {
-                if (token[0] === "word" && /\w/.test(token[1])) this.unknownWord([
-                    token
-                ]);
-                node.raws.between += token[1];
-            }
-        }
-        if (node.prop[0] === "_" || node.prop[0] === "*") {
-            node.raws.before += node.prop[0];
-            node.prop = node.prop.slice(1);
-        }
-        let firstSpaces = [];
-        let next;
-        while(tokens.length){
-            next = tokens[0][0];
-            if (next !== "space" && next !== "comment") break;
-            firstSpaces.push(tokens.shift());
-        }
-        this.precheckMissedSemicolon(tokens);
-        for(let i = tokens.length - 1; i >= 0; i--){
-            token = tokens[i];
-            if (token[1].toLowerCase() === "!important") {
-                node.important = true;
-                let string = this.stringFrom(tokens, i);
-                string = this.spacesFromEnd(tokens) + string;
-                if (string !== " !important") node.raws.important = string;
-                break;
-            } else if (token[1].toLowerCase() === "important") {
-                let cache = tokens.slice(0);
-                let str = "";
-                for(let j = i; j > 0; j--){
-                    let type = cache[j][0];
-                    if (str.trim().indexOf("!") === 0 && type !== "space") break;
-                    str = cache.pop()[1] + str;
-                }
-                if (str.trim().indexOf("!") === 0) {
-                    node.important = true;
-                    node.raws.important = str;
-                    tokens = cache;
-                }
-            }
-            if (token[0] !== "space" && token[0] !== "comment") break;
-        }
-        let hasWord = tokens.some((i)=>i[0] !== "space" && i[0] !== "comment");
-        if (hasWord) {
-            node.raws.between += firstSpaces.map((i)=>i[1]).join("");
-            firstSpaces = [];
-        }
-        this.raw(node, "value", firstSpaces.concat(tokens), customProperty);
-        if (node.value.includes(":") && !customProperty) this.checkMissedSemicolon(tokens);
-    }
-    atrule(token) {
-        let node = new AtRule();
-        node.name = token[1].slice(1);
-        if (node.name === "") this.unnamedAtrule(node, token);
-        this.init(node, token[2]);
-        let type;
-        let prev;
-        let shift;
-        let last = false;
-        let open = false;
-        let params = [];
-        let brackets = [];
-        while(!this.tokenizer.endOfFile()){
-            token = this.tokenizer.nextToken();
-            type = token[0];
-            if (type === "(" || type === "[") brackets.push(type === "(" ? ")" : "]");
-            else if (type === "{" && brackets.length > 0) brackets.push("}");
-            else if (type === brackets[brackets.length - 1]) brackets.pop();
-            if (brackets.length === 0) {
-                if (type === ";") {
-                    node.source.end = this.getPosition(token[2]);
-                    this.semicolon = true;
-                    break;
-                } else if (type === "{") {
-                    open = true;
-                    break;
-                } else if (type === "}") {
-                    if (params.length > 0) {
-                        shift = params.length - 1;
-                        prev = params[shift];
-                        while(prev && prev[0] === "space")prev = params[--shift];
-                        if (prev) node.source.end = this.getPosition(prev[3] || prev[2]);
-                    }
-                    this.end(token);
-                    break;
-                } else params.push(token);
-            } else params.push(token);
-            if (this.tokenizer.endOfFile()) {
-                last = true;
-                break;
-            }
-        }
-        node.raws.between = this.spacesAndCommentsFromEnd(params);
-        if (params.length) {
-            node.raws.afterName = this.spacesAndCommentsFromStart(params);
-            this.raw(node, "params", params);
-            if (last) {
-                token = params[params.length - 1];
-                node.source.end = this.getPosition(token[3] || token[2]);
-                this.spaces = node.raws.between;
-                node.raws.between = "";
-            }
-        } else {
-            node.raws.afterName = "";
-            node.params = "";
-        }
-        if (open) {
-            node.nodes = [];
-            this.current = node;
-        }
-    }
-    end(token) {
-        if (this.current.nodes && this.current.nodes.length) this.current.raws.semicolon = this.semicolon;
-        this.semicolon = false;
-        this.current.raws.after = (this.current.raws.after || "") + this.spaces;
-        this.spaces = "";
-        if (this.current.parent) {
-            this.current.source.end = this.getPosition(token[2]);
-            this.current = this.current.parent;
-        } else this.unexpectedClose(token);
-    }
-    endFile() {
-        if (this.current.parent) this.unclosedBlock();
-        if (this.current.nodes && this.current.nodes.length) this.current.raws.semicolon = this.semicolon;
-        this.current.raws.after = (this.current.raws.after || "") + this.spaces;
-    }
-    freeSemicolon(token) {
-        this.spaces += token[1];
-        if (this.current.nodes) {
-            let prev = this.current.nodes[this.current.nodes.length - 1];
-            if (prev && prev.type === "rule" && !prev.raws.ownSemicolon) {
-                prev.raws.ownSemicolon = this.spaces;
-                this.spaces = "";
-            }
-        }
-    }
-    // Helpers
-    getPosition(offset) {
-        let pos = this.input.fromOffset(offset);
-        return {
-            offset,
-            line: pos.line,
-            column: pos.col
-        };
-    }
-    init(node, offset) {
-        this.current.push(node);
-        node.source = {
-            start: this.getPosition(offset),
-            input: this.input
-        };
-        node.raws.before = this.spaces;
-        this.spaces = "";
-        if (node.type !== "comment") this.semicolon = false;
-    }
-    raw(node, prop, tokens, customProperty) {
-        let token, type;
-        let length = tokens.length;
-        let value = "";
-        let clean = true;
-        let next, prev;
-        for(let i = 0; i < length; i += 1){
-            token = tokens[i];
-            type = token[0];
-            if (type === "space" && i === length - 1 && !customProperty) clean = false;
-            else if (type === "comment") {
-                prev = tokens[i - 1] ? tokens[i - 1][0] : "empty";
-                next = tokens[i + 1] ? tokens[i + 1][0] : "empty";
-                if (!SAFE_COMMENT_NEIGHBOR[prev] && !SAFE_COMMENT_NEIGHBOR[next]) {
-                    if (value.slice(-1) === ",") clean = false;
-                    else value += token[1];
-                } else clean = false;
-            } else value += token[1];
-        }
-        if (!clean) {
-            let raw = tokens.reduce((all, i)=>all + i[1], "");
-            node.raws[prop] = {
-                value,
-                raw
-            };
-        }
-        node[prop] = value;
-    }
-    spacesAndCommentsFromEnd(tokens) {
-        let lastTokenType;
-        let spaces = "";
-        while(tokens.length){
-            lastTokenType = tokens[tokens.length - 1][0];
-            if (lastTokenType !== "space" && lastTokenType !== "comment") break;
-            spaces = tokens.pop()[1] + spaces;
-        }
-        return spaces;
-    }
-    spacesAndCommentsFromStart(tokens) {
-        let next;
-        let spaces = "";
-        while(tokens.length){
-            next = tokens[0][0];
-            if (next !== "space" && next !== "comment") break;
-            spaces += tokens.shift()[1];
-        }
-        return spaces;
-    }
-    spacesFromEnd(tokens) {
-        let lastTokenType;
-        let spaces = "";
-        while(tokens.length){
-            lastTokenType = tokens[tokens.length - 1][0];
-            if (lastTokenType !== "space") break;
-            spaces = tokens.pop()[1] + spaces;
-        }
-        return spaces;
-    }
-    stringFrom(tokens, from) {
-        let result = "";
-        for(let i = from; i < tokens.length; i++)result += tokens[i][1];
-        tokens.splice(from, tokens.length - from);
-        return result;
-    }
-    colon(tokens) {
-        let brackets = 0;
-        let token, type, prev;
-        for (let [i, element] of tokens.entries()){
-            token = element;
-            type = token[0];
-            if (type === "(") brackets += 1;
-            if (type === ")") brackets -= 1;
-            if (brackets === 0 && type === ":") {
-                if (!prev) this.doubleColon(token);
-                else if (prev[0] === "word" && prev[1] === "progid") continue;
-                else return i;
-            }
-            prev = token;
-        }
-        return false;
-    }
-    // Errors
-    unclosedBracket(bracket) {
-        throw this.input.error("Unclosed bracket", {
-            offset: bracket[2]
-        }, {
-            offset: bracket[2] + 1
-        });
-    }
-    unknownWord(tokens) {
-        throw this.input.error("Unknown word", {
-            offset: tokens[0][2]
-        }, {
-            offset: tokens[0][2] + tokens[0][1].length
-        });
-    }
-    unexpectedClose(token) {
-        throw this.input.error("Unexpected }", {
-            offset: token[2]
-        }, {
-            offset: token[2] + 1
-        });
-    }
-    unclosedBlock() {
-        let pos = this.current.source.start;
-        throw this.input.error("Unclosed block", pos.line, pos.column);
-    }
-    doubleColon(token) {
-        throw this.input.error("Double colon", {
-            offset: token[2]
-        }, {
-            offset: token[2] + token[1].length
-        });
-    }
-    unnamedAtrule(node, token) {
-        throw this.input.error("At-rule without name", {
-            offset: token[2]
-        }, {
-            offset: token[2] + token[1].length
-        });
-    }
-    precheckMissedSemicolon() {
-    // Hook for Safe Parser
-    }
-    checkMissedSemicolon(tokens) {
-        let colon = this.colon(tokens);
-        if (colon === false) return;
-        let founded = 0;
-        let token;
-        for(let j = colon - 1; j >= 0; j--){
-            token = tokens[j];
-            if (token[0] !== "space") {
-                founded += 1;
-                if (founded === 2) break;
-            }
-        }
-        // If the token is a word, e.g. `!important`, `red` or any other valid property's value.
-        // Then we need to return the colon after that word token. [3] is the "end" colon of that word.
-        // And because we need it after that one we do +1 to get the next one.
-        throw this.input.error("Missed semicolon", token[0] === "word" ? token[3] + 1 : token[2]);
-    }
-}
-module.exports = Parser;
-
-},{"47ad52a08a7a676e":"2mU8a","4a9961ca361e4099":"bLUE2","149094ae0d56f3fb":"5CBjv","53d9a3501469ebf8":"kbVAt","df12142db9f2ac4":"hsDFv","fca2d5ee75ced31e":"4SFJx"}],"bLUE2":[function(require,module,exports) {
-"use strict";
-const SINGLE_QUOTE = "'".charCodeAt(0);
-const DOUBLE_QUOTE = '"'.charCodeAt(0);
-const BACKSLASH = "\\".charCodeAt(0);
-const SLASH = "/".charCodeAt(0);
-const NEWLINE = "\n".charCodeAt(0);
-const SPACE = " ".charCodeAt(0);
-const FEED = "\f".charCodeAt(0);
-const TAB = "	".charCodeAt(0);
-const CR = "\r".charCodeAt(0);
-const OPEN_SQUARE = "[".charCodeAt(0);
-const CLOSE_SQUARE = "]".charCodeAt(0);
-const OPEN_PARENTHESES = "(".charCodeAt(0);
-const CLOSE_PARENTHESES = ")".charCodeAt(0);
-const OPEN_CURLY = "{".charCodeAt(0);
-const CLOSE_CURLY = "}".charCodeAt(0);
-const SEMICOLON = ";".charCodeAt(0);
-const ASTERISK = "*".charCodeAt(0);
-const COLON = ":".charCodeAt(0);
-const AT = "@".charCodeAt(0);
-const RE_AT_END = /[\t\n\f\r "#'()/;[\\\]{}]/g;
-const RE_WORD_END = /[\t\n\f\r !"#'():;@[\\\]{}]|\/(?=\*)/g;
-const RE_BAD_BRACKET = /.[\n"'(/\\]/;
-const RE_HEX_ESCAPE = /[\da-f]/i;
-module.exports = function tokenizer(input, options = {}) {
-    let css = input.css.valueOf();
-    let ignore = options.ignoreErrors;
-    let code, next, quote, content, escape;
-    let escaped, escapePos, prev, n, currentToken;
-    let length = css.length;
-    let pos = 0;
-    let buffer = [];
-    let returned = [];
-    function position() {
-        return pos;
-    }
-    function unclosed(what) {
-        throw input.error("Unclosed " + what, pos);
-    }
-    function endOfFile() {
-        return returned.length === 0 && pos >= length;
-    }
-    function nextToken(opts) {
-        if (returned.length) return returned.pop();
-        if (pos >= length) return;
-        let ignoreUnclosed = opts ? opts.ignoreUnclosed : false;
-        code = css.charCodeAt(pos);
-        switch(code){
-            case NEWLINE:
-            case SPACE:
-            case TAB:
-            case CR:
-            case FEED:
-                next = pos;
-                do {
-                    next += 1;
-                    code = css.charCodeAt(next);
-                }while (code === SPACE || code === NEWLINE || code === TAB || code === CR || code === FEED);
-                currentToken = [
-                    "space",
-                    css.slice(pos, next)
-                ];
-                pos = next - 1;
-                break;
-            case OPEN_SQUARE:
-            case CLOSE_SQUARE:
-            case OPEN_CURLY:
-            case CLOSE_CURLY:
-            case COLON:
-            case SEMICOLON:
-            case CLOSE_PARENTHESES:
-                {
-                    let controlChar = String.fromCharCode(code);
-                    currentToken = [
-                        controlChar,
-                        controlChar,
-                        pos
-                    ];
-                    break;
-                }
-            case OPEN_PARENTHESES:
-                prev = buffer.length ? buffer.pop()[1] : "";
-                n = css.charCodeAt(pos + 1);
-                if (prev === "url" && n !== SINGLE_QUOTE && n !== DOUBLE_QUOTE && n !== SPACE && n !== NEWLINE && n !== TAB && n !== FEED && n !== CR) {
-                    next = pos;
-                    do {
-                        escaped = false;
-                        next = css.indexOf(")", next + 1);
-                        if (next === -1) {
-                            if (ignore || ignoreUnclosed) {
-                                next = pos;
-                                break;
-                            } else unclosed("bracket");
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+                        "header": {
+                            "title": "What's on your mind?",
+                            "headerStyling": {
+                                "padding": {
+                                    "left": 16,
+                                    "top": 16,
+                                    "bottom": 4
+                                }
+                            }
+                        },
+                        "layout": {
+                            "rows": 1,
+                            "columns": 10,
+                            "horizontalScrollEnabled": true,
+                            "itemSpacing": 24,
+                            "widgetPadding": {},
+                            "containerStyle": {
+                                "containerPadding": {
+                                    "left": 8,
+                                    "top": 8,
+                                    "right": 12,
+                                    "bottom": 4
+                                }
+                            },
+                            "scrollBar": {},
+                            "widgetTheme": {
+                                "defaultMode": {
+                                    "backgroundColour": "#FFFFFF",
+                                    "theme": "THEME_TYPE_LIGHT"
+                                },
+                                "darkMode": {
+                                    "theme": "THEME_TYPE_DARK"
+                                }
+                            }
+                        },
+                        "imageGridCards": {
+                            "info": [
+                                {
+                                    "id": "762797",
+                                    "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83637?collection_id=83637&tags=layout_CCS_Burger&type=rcv2",
+                                        "text": "Burgers",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for burger",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83637&tags=layout_CCS_Burger",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750592",
+                                    "imageId": "v1675667625/PC_Creative%20refresh/Biryani_2.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83649?collection_id=83649&searchQuery=biryani&tags=layout_CCS_Biryani&type=rcv2",
+                                        "text": "Biryani",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for biryani",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83649&tags=layout_CCS_Biryani&searchQuery=biryani",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750584",
+                                    "imageId": "v1675667626/PC_Creative%20refresh/South_Indian_4.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83646?collection_id=83646&tags=layout_CCS_SouthIndian&type=rcv2",
+                                        "text": "South Indian",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for south indian",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83646&tags=layout_CCS_SouthIndian",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "749879",
+                                    "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
+                                        "text": "Chole Bhature",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for chhole bhatoore",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750582",
+                                    "imageId": "v1675667625/PC_Creative%20refresh/North_Indian_4.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83645?collection_id=83645&tags=layout_CCS_NorthIndian&type=rcv2",
+                                        "text": "North Indian",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for north indian",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83645&tags=layout_CCS_NorthIndian",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750580",
+                                    "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
+                                        "text": "pizzas",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for pizza",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "749774",
+                                    "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
+                                        "text": "Noodles",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for noodles",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "80464",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "749874",
+                                    "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83656?collection_id=83656&tags=layout_CCS_Cake&type=rcv2",
+                                        "text": "Cakes",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for cakes",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83656&tags=layout_CCS_Cake",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750644",
+                                    "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
+                                        "text": "Idli",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for idly",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750223",
+                                    "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83670?collection_id=83670&tags=layout_CCS_Rolls&type=rcv2",
+                                        "text": "Rolls",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for roll",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83670&tags=layout_CCS_Rolls",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750132",
+                                    "imageId": "v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80426?collection_id=80426&tags=layout_CCS_Dosa&type=rcv2",
+                                        "text": "Dosa",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for dosa",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=80426&tags=layout_CCS_Dosa",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750588",
+                                    "imageId": "v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83647?collection_id=83647&tags=layout_CCS_Chinese&type=rcv2",
+                                        "text": "Chinese",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for chinese",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83647&tags=layout_CCS_Chinese",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750203",
+                                    "imageId": "v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Paratha.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80476?collection_id=80476&tags=layout_BAU_Contextual%2Cparatha%2Cads_pc_paratha&type=rcv2",
+                                        "text": "Paratha",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for paratha",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "80476",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750111",
+                                    "imageId": "v1675667630/PC_Creative%20refresh/Desserts_2.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83662?collection_id=83662&tags=layout_CCS_Desserts&type=rcv2",
+                                        "text": "Dessert",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for dessert",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83662&tags=layout_CCS_Desserts",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750217",
+                                    "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
+                                        "text": "Pav Bhaji",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for pav bhaji",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750207",
+                                    "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pasta.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80480?collection_id=80480&tags=layout_BAU_Contextual%2Cpasta%2Cads_pc_pasta&type=rcv2",
+                                        "text": "Pasta",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for pasta",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "80480",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750259",
+                                    "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rasgulla.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80389?collection_id=80389&tags=layout_BAU_Contextual%2Crasgulla&type=rcv2",
+                                        "text": "Rasgulla",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for rasgulla",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "80389",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750597",
+                                    "imageId": "v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/83650?collection_id=83650&tags=layout_CCS_IceCreams&type=rcv2",
+                                        "text": "Ice Cream",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurants curated for icecream",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=83650&tags=layout_CCS_IceCreams",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750237",
+                                    "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Poori.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80378?collection_id=80378&tags=layout_BAU_Contextual%2Cpoori&type=rcv2",
+                                        "text": "Poori",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for poori",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "80378",
+                                    "frequencyCapping": {}
+                                },
+                                {
+                                    "id": "750226",
+                                    "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Salad.png",
+                                    "action": {
+                                        "link": "https://www.swiggy.com/collections/80395?collection_id=80395&tags=layout_CCS_Salad&type=rcv2",
+                                        "text": "Salad",
+                                        "type": "WEBLINK"
+                                    },
+                                    "entityType": "BANNER",
+                                    "accessibility": {
+                                        "altText": "restaurant curated for salad",
+                                        "altTextCta": "open"
+                                    },
+                                    "entityId": "swiggy://collectionV2?collection_id=80395&tags=layout_CCS_Salad",
+                                    "frequencyCapping": {}
+                                }
+                            ],
+                            "style": {
+                                "width": {
+                                    "type": "TYPE_RELATIVE",
+                                    "value": 0.2941,
+                                    "reference": "RELATIVE_DIMENSION_REFERENCE_CONTAINER_WIDTH"
+                                },
+                                "height": {
+                                    "type": "TYPE_RELATIVE",
+                                    "value": 1.2444,
+                                    "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
+                                }
+                            }
+                        },
+                        "id": "whats_on_your_mind",
+                        "gridElements": {
+                            "infoWithStyle": {
+                                "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.ImageInfoLayoutCard",
+                                "info": [
+                                    {
+                                        "id": "762797",
+                                        "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83637?collection_id=83637&tags=layout_CCS_Burger&type=rcv2",
+                                            "text": "Burgers",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for burger",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83637&tags=layout_CCS_Burger",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750592",
+                                        "imageId": "v1675667625/PC_Creative%20refresh/Biryani_2.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83649?collection_id=83649&searchQuery=biryani&tags=layout_CCS_Biryani&type=rcv2",
+                                            "text": "Biryani",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for biryani",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83649&tags=layout_CCS_Biryani&searchQuery=biryani",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750584",
+                                        "imageId": "v1675667626/PC_Creative%20refresh/South_Indian_4.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83646?collection_id=83646&tags=layout_CCS_SouthIndian&type=rcv2",
+                                            "text": "South Indian",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for south indian",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83646&tags=layout_CCS_SouthIndian",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "749879",
+                                        "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
+                                            "text": "Chole Bhature",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for chhole bhatoore",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750582",
+                                        "imageId": "v1675667625/PC_Creative%20refresh/North_Indian_4.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83645?collection_id=83645&tags=layout_CCS_NorthIndian&type=rcv2",
+                                            "text": "North Indian",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for north indian",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83645&tags=layout_CCS_NorthIndian",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750580",
+                                        "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
+                                            "text": "pizzas",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for pizza",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "749774",
+                                        "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
+                                            "text": "Noodles",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for noodles",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "80464",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "749874",
+                                        "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83656?collection_id=83656&tags=layout_CCS_Cake&type=rcv2",
+                                            "text": "Cakes",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for cakes",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83656&tags=layout_CCS_Cake",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750644",
+                                        "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
+                                            "text": "Idli",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for idly",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750223",
+                                        "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83670?collection_id=83670&tags=layout_CCS_Rolls&type=rcv2",
+                                            "text": "Rolls",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for roll",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83670&tags=layout_CCS_Rolls",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750132",
+                                        "imageId": "v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80426?collection_id=80426&tags=layout_CCS_Dosa&type=rcv2",
+                                            "text": "Dosa",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for dosa",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=80426&tags=layout_CCS_Dosa",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750588",
+                                        "imageId": "v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83647?collection_id=83647&tags=layout_CCS_Chinese&type=rcv2",
+                                            "text": "Chinese",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for chinese",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83647&tags=layout_CCS_Chinese",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750203",
+                                        "imageId": "v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Paratha.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80476?collection_id=80476&tags=layout_BAU_Contextual%2Cparatha%2Cads_pc_paratha&type=rcv2",
+                                            "text": "Paratha",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for paratha",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "80476",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750111",
+                                        "imageId": "v1675667630/PC_Creative%20refresh/Desserts_2.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83662?collection_id=83662&tags=layout_CCS_Desserts&type=rcv2",
+                                            "text": "Dessert",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for dessert",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83662&tags=layout_CCS_Desserts",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750217",
+                                        "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
+                                            "text": "Pav Bhaji",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for pav bhaji",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750207",
+                                        "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pasta.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80480?collection_id=80480&tags=layout_BAU_Contextual%2Cpasta%2Cads_pc_pasta&type=rcv2",
+                                            "text": "Pasta",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for pasta",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "80480",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750259",
+                                        "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rasgulla.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80389?collection_id=80389&tags=layout_BAU_Contextual%2Crasgulla&type=rcv2",
+                                            "text": "Rasgulla",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for rasgulla",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "80389",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750597",
+                                        "imageId": "v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/83650?collection_id=83650&tags=layout_CCS_IceCreams&type=rcv2",
+                                            "text": "Ice Cream",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurants curated for icecream",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=83650&tags=layout_CCS_IceCreams",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750237",
+                                        "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Poori.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80378?collection_id=80378&tags=layout_BAU_Contextual%2Cpoori&type=rcv2",
+                                            "text": "Poori",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for poori",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "80378",
+                                        "frequencyCapping": {}
+                                    },
+                                    {
+                                        "id": "750226",
+                                        "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Salad.png",
+                                        "action": {
+                                            "link": "https://www.swiggy.com/collections/80395?collection_id=80395&tags=layout_CCS_Salad&type=rcv2",
+                                            "text": "Salad",
+                                            "type": "WEBLINK"
+                                        },
+                                        "entityType": "BANNER",
+                                        "accessibility": {
+                                            "altText": "restaurant curated for salad",
+                                            "altTextCta": "open"
+                                        },
+                                        "entityId": "swiggy://collectionV2?collection_id=80395&tags=layout_CCS_Salad",
+                                        "frequencyCapping": {}
+                                    }
+                                ],
+                                "style": {
+                                    "width": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 0.2941,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_CONTAINER_WIDTH"
+                                    },
+                                    "height": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 1.2444,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
+                                    }
+                                }
+                            }
                         }
-                        escapePos = next;
-                        while(css.charCodeAt(escapePos - 1) === BACKSLASH){
-                            escapePos -= 1;
-                            escaped = !escaped;
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+                        "header": {
+                            "title": "Top restaurant chains in Delhi",
+                            "action": {},
+                            "headerStyling": {
+                                "padding": {
+                                    "left": 16,
+                                    "top": 28,
+                                    "bottom": 18
+                                }
+                            }
+                        },
+                        "layout": {
+                            "rows": 1,
+                            "columns": 20,
+                            "horizontalScrollEnabled": true,
+                            "itemSpacing": 32,
+                            "widgetPadding": {},
+                            "containerStyle": {
+                                "containerPadding": {
+                                    "left": 16,
+                                    "right": 12,
+                                    "bottom": 12
+                                }
+                            },
+                            "scrollBar": {
+                                "scrollThumbColor": "#E46D47",
+                                "scrollTrackColor": "#02060C",
+                                "width": 54,
+                                "height": 4,
+                                "scrollStyling": {
+                                    "padding": {
+                                        "top": 6,
+                                        "bottom": 24
+                                    }
+                                }
+                            },
+                            "widgetTheme": {
+                                "defaultMode": {
+                                    "backgroundColour": "#1B3028",
+                                    "theme": "THEME_TYPE_DARK"
+                                },
+                                "darkMode": {
+                                    "backgroundColour": "#1B3028",
+                                    "theme": "THEME_TYPE_DARK"
+                                }
+                            }
+                        },
+                        "id": "top_brands_for_you",
+                        "gridElements": {
+                            "infoWithStyle": {
+                                "@type": "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle",
+                                "restaurants": [
+                                    {
+                                        "info": {
+                                            "id": "89844",
+                                            "name": "KFC",
+                                            "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
+                                            "locality": "New Ashok Nagar",
+                                            "areaName": "Vasundhara Enclave",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Burgers",
+                                                "Biryani",
+                                                "American",
+                                                "Snacks",
+                                                "Fast Food"
+                                            ],
+                                            "avgRating": 4.1,
+                                            "parentId": "547",
+                                            "avgRatingString": "4.1",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 18,
+                                                "lastMileTravel": 2.7,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "18 mins",
+                                                "lastMileTravelString": "2.7 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 05:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "20% OFF",
+                                                "subHeader": "UPTO ₹50"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/kfc-new-ashok-nagar-vasundhara-enclave-delhi-89844",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "92636",
+                                            "name": "Burger King",
+                                            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+                                            "locality": "V3S Mall",
+                                            "areaName": "Swasthya Vihar",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "Burgers",
+                                                "American"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "166",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 02:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹129"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/burger-king-v3s-mall-swasthya-vihar-delhi-92636",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "253981",
+                                            "name": "McDonald's",
+                                            "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+                                            "locality": "V3S Mall",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "American"
+                                            ],
+                                            "avgRating": 4.4,
+                                            "parentId": "630",
+                                            "avgRatingString": "4.4",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 26,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "26 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:45:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "40% OFF",
+                                                "subHeader": "UPTO ₹80"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/mcdonalds-v3s-mall-laxmi-nagar-delhi-253981",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "24174",
+                                            "name": "Domino's Pizza",
+                                            "cloudinaryImageId": "todoxlqcxjw46nokzb9v",
+                                            "locality": "1St Phase",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Pizzas",
+                                                "Italian",
+                                                "Pastas",
+                                                "Desserts"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "2456",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 02:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "₹150 OFF",
+                                                "subHeader": "ABOVE ₹299",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/dominos-pizza-1st-phase-mayur-vihar-delhi-24174",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "169483",
+                                            "name": "Bakingo",
+                                            "cloudinaryImageId": "0c53fd8f62e3d25ba56d1b4cfe572cef",
+                                            "locality": "West Arjun Nagar",
+                                            "areaName": "Krishna Nagar",
+                                            "costForTwo": "₹300 for two",
+                                            "cuisines": [
+                                                "Bakery",
+                                                "Desserts",
+                                                "Beverages",
+                                                "Snacks"
+                                            ],
+                                            "avgRating": 4.4,
+                                            "parentId": "3818",
+                                            "avgRatingString": "4.4",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 33,
+                                                "lastMileTravel": 6.7,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "33 mins",
+                                                "lastMileTravelString": "6.7 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 01:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "aggregatedDiscountInfoV2": {},
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/bakingo-west-arjun-nagar-krishna-nagar-delhi-169483",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "15851",
+                                            "name": "Faasos - Wraps, Rolls & Shawarma",
+                                            "cloudinaryImageId": "af33b81798b11deba338e94b7585d348",
+                                            "locality": "Laxmi Nagar",
+                                            "areaName": "Shakarpur",
+                                            "costForTwo": "₹200 for two",
+                                            "cuisines": [
+                                                "Kebabs",
+                                                "Fast Food",
+                                                "Snacks",
+                                                "North Indian",
+                                                "American",
+                                                "Healthy Food",
+                                                "Desserts",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "21809",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 27,
+                                                "lastMileTravel": 3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "27 mins",
+                                                "lastMileTravelString": "3.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹139"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/faasos-wraps-rolls-and-shawarma-laxmi-nagar-shakarpur-delhi-15851",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "62881",
+                                            "name": "LunchBox - Meals and Thalis",
+                                            "cloudinaryImageId": "qwxytz94vjl3hqbdpeqo",
+                                            "locality": "R Block",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹200 for two",
+                                            "cuisines": [
+                                                "Biryani",
+                                                "North Indian",
+                                                "Punjabi",
+                                                "Healthy Food",
+                                                "Desserts",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "4925",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹159"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/lunchbox-meals-and-thalis-r-block-laxmi-nagar-delhi-62881",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "55474",
+                                            "name": "Pizza Hut",
+                                            "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                                            "locality": "Mandawali",
+                                            "areaName": "IP Extension",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "Pizzas"
+                                            ],
+                                            "avgRating": 3.8,
+                                            "parentId": "721",
+                                            "avgRatingString": "3.8",
+                                            "totalRatingsString": "5K+",
+                                            "sla": {
+                                                "deliveryTime": 26,
+                                                "lastMileTravel": 3.7,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "26 mins",
+                                                "lastMileTravelString": "3.7 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 03:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "FREE ITEM"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/pizza-hut-mandawali-ip-extension-delhi-55474",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "10710",
+                                            "name": "Subway",
+                                            "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
+                                            "locality": "2nd Phase",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "Salads",
+                                                "Snacks",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.4,
+                                            "parentId": "2",
+                                            "avgRatingString": "4.4",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 13,
+                                                "lastMileTravel": 0.3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "13 mins",
+                                                "lastMileTravelString": "0.3 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 01:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "20% OFF",
+                                                "subHeader": "UPTO ₹50"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/subway-2nd-phase-mayur-vihar-delhi-10710",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "157583",
+                                            "name": "La Pino'z Pizza",
+                                            "cloudinaryImageId": "viw6nojxpa0urypajyoy",
+                                            "locality": "Vijay Main Road",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "Pizzas",
+                                                "Pastas",
+                                                "Italian",
+                                                "Desserts",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4,
+                                            "parentId": "4961",
+                                            "avgRatingString": "4.0",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 05:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "60% OFF",
+                                                "subHeader": "UPTO ₹120"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/la-pinoz-pizza-vijay-main-road-laxmi-nagar-delhi-157583",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "234208",
+                                            "name": "Theobroma",
+                                            "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
+                                            "locality": "Swasthya Vihar",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Bakery",
+                                                "Desserts"
+                                            ],
+                                            "avgRating": 4.5,
+                                            "parentId": "1040",
+                                            "avgRatingString": "4.5",
+                                            "totalRatingsString": "5K+",
+                                            "sla": {
+                                                "deliveryTime": 23,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "23 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "imageBadges": [
+                                                    {
+                                                        "imageId": "newg.png",
+                                                        "description": "Gourmet"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "Gourmet",
+                                                                    "imageId": "newg.png"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "10% OFF",
+                                                "subHeader": "ABOVE ₹159",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/theobroma-swasthya-vihar-laxmi-nagar-delhi-234208",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "497901",
+                                            "name": "Miso - The Asian Kitchen",
+                                            "cloudinaryImageId": "idehmj1lykrmxmznmzpw",
+                                            "locality": "Laxmi Nagar",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹600 for two",
+                                            "cuisines": [
+                                                "Asian",
+                                                "Japanese",
+                                                "Thai"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "473078",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "100+",
+                                            "sla": {
+                                                "deliveryTime": 26,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "26 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "imageBadges": [
+                                                    {
+                                                        "imageId": "newg.png",
+                                                        "description": "Gourmet"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "Gourmet",
+                                                                    "imageId": "newg.png"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "₹125 OFF",
+                                                "subHeader": "ABOVE ₹249",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/miso-the-asian-kitchen-laxmi-nagar-delhi-497901",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "530419",
+                                            "name": "The Brooklyn Creamery - Healthy Ice Cream",
+                                            "cloudinaryImageId": "b1b35780a9b1dfeb26d680506d494eaa",
+                                            "locality": "Pratap Nagar",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹200 for two",
+                                            "cuisines": [
+                                                "Desserts",
+                                                "Ice Cream",
+                                                "Healthy Food"
+                                            ],
+                                            "avgRating": 4.1,
+                                            "veg": true,
+                                            "parentId": "236673",
+                                            "avgRatingString": "4.1",
+                                            "totalRatingsString": "20+",
+                                            "sla": {
+                                                "deliveryTime": 16,
+                                                "lastMileTravel": 0.1,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "16 mins",
+                                                "lastMileTravelString": "0.1 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:50:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "brand",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "brand"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "60% OFF",
+                                                "subHeader": "UPTO ₹120"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/the-brooklyn-creamery-healthy-ice-cream-pratap-nagar-mayur-vihar-delhi-530419",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "226273",
+                                            "name": "Nirula's",
+                                            "cloudinaryImageId": "a66fa8f5befa65947d9e20f29a863ce0",
+                                            "locality": "1St Phase",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹500 for two",
+                                            "cuisines": [
+                                                "Pizzas",
+                                                "Burgers",
+                                                "Ice Cream",
+                                                "North Indian",
+                                                "Fast Food",
+                                                "Pastas",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "1738",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "1K+",
+                                            "sla": {
+                                                "deliveryTime": 14,
+                                                "lastMileTravel": 0.2,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "14 mins",
+                                                "lastMileTravelString": "0.2 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "20% OFF",
+                                                "subHeader": "UPTO ₹50"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/nirulas-1st-phase-mayur-vihar-delhi-226273",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "302685",
+                                            "name": "Barbeque Nation",
+                                            "cloudinaryImageId": "bop3awlf2vildir1tveq",
+                                            "locality": "LAXMI NAGAR",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹600 for two",
+                                            "cuisines": [
+                                                "North Indian",
+                                                "Barbecue",
+                                                "Biryani",
+                                                "Kebabs",
+                                                "Mughlai",
+                                                "Desserts"
+                                            ],
+                                            "avgRating": 3.8,
+                                            "parentId": "2438",
+                                            "avgRatingString": "3.8",
+                                            "totalRatingsString": "1K+",
+                                            "sla": {
+                                                "deliveryTime": 31,
+                                                "lastMileTravel": 3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "31 mins",
+                                                "lastMileTravelString": "3.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 16:30:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "50% OFF",
+                                                "subHeader": "UPTO ₹100"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/barbeque-nation-laxmi-nagar-delhi-302685",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "87797",
+                                            "name": "Hira Sweets",
+                                            "cloudinaryImageId": "vicbanjyammdidibflvr",
+                                            "locality": "Laxmi Nagar",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "North Indian",
+                                                "South Indian",
+                                                "Chinese",
+                                                "Continental",
+                                                "Bakery",
+                                                "Street Food",
+                                                "Sweets",
+                                                "Desserts",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "parentId": "5155",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3.7,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.7 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "aggregatedDiscountInfoV2": {},
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/hira-sweets-laxmi-nagar-delhi-87797",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "69469",
+                                            "name": "Pasta la Vista",
+                                            "cloudinaryImageId": "ba665f892177fdbf0a8daa5fff3ac29f",
+                                            "locality": "D Block",
+                                            "areaName": "Sector 7",
+                                            "costForTwo": "₹300 for two",
+                                            "cuisines": [
+                                                "Continental",
+                                                "Italian"
+                                            ],
+                                            "avgRating": 4.1,
+                                            "veg": true,
+                                            "parentId": "2372",
+                                            "avgRatingString": "4.1",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 4,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "4.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 02:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "imageBadges": [
+                                                    {
+                                                        "imageId": "v1695133679/badges/Pure_Veg111.png",
+                                                        "description": "pureveg"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "pureveg",
+                                                                    "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "₹125 OFF",
+                                                "subHeader": "ABOVE ₹249",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/pasta-la-vista-d-block-sector-7-delhi-69469",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "10982",
+                                            "name": "Nathu's Sweets",
+                                            "cloudinaryImageId": "siz4ryuwzildcgiw6ojg",
+                                            "locality": "Vikas Marg",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Sweets",
+                                                "Bakery",
+                                                "Snacks"
+                                            ],
+                                            "avgRating": 4,
+                                            "veg": true,
+                                            "parentId": "1945",
+                                            "avgRatingString": "4.0",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "imageBadges": [
+                                                    {
+                                                        "imageId": "v1695133679/badges/Pure_Veg111.png",
+                                                        "description": "pureveg"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "pureveg",
+                                                                    "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "50% OFF",
+                                                "subHeader": "UPTO ₹95"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/nathus-sweets-vikas-marg-laxmi-nagar-delhi-10982",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "104568",
+                                            "name": "Starbucks Coffee",
+                                            "cloudinaryImageId": "0c958153eeb436db6d515ca36e47e8a4",
+                                            "locality": "DLF Mall of India",
+                                            "areaName": "Sector 18",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Beverages",
+                                                "Cafe",
+                                                "Snacks",
+                                                "Desserts",
+                                                "Bakery",
+                                                "Ice Cream"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "195515",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "1K+",
+                                            "sla": {
+                                                "deliveryTime": 33,
+                                                "lastMileTravel": 6.4,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "33 mins",
+                                                "lastMileTravelString": "6.4 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 22:30:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "30% OFF",
+                                                "subHeader": "UPTO ₹75"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/starbucks-coffee-dlf-mall-of-india-sector-18-delhi-104568",
+                                            "type": "WEBLINK"
+                                        }
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "157799",
+                                            "name": "The Good Bowl",
+                                            "cloudinaryImageId": "6e04be27387483a7c00444f8e8241108",
+                                            "locality": "Laxmi Nagar",
+                                            "areaName": "Shakarpur",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Biryani",
+                                                "North Indian",
+                                                "Pastas",
+                                                "Punjabi",
+                                                "Desserts",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "7918",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "1K+",
+                                            "sla": {
+                                                "deliveryTime": 26,
+                                                "lastMileTravel": 3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "26 mins",
+                                                "lastMileTravelString": "3.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "60% OFF",
+                                                "subHeader": "UPTO ₹110"
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {},
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/the-good-bowl-laxmi-nagar-shakarpur-delhi-157799",
+                                            "type": "WEBLINK"
+                                        }
+                                    }
+                                ],
+                                "theme": "Restaurant_Group_WebView_SEO_PB_Theme",
+                                "widgetType": "WIDGET_TYPE_POPULAR_BRANDS",
+                                "style": {
+                                    "width": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 0.41111112,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_DEVICE_WIDTH"
+                                    },
+                                    "height": {
+                                        "type": "TYPE_RELATIVE",
+                                        "value": 0.7027027,
+                                        "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
+                                    },
+                                    "layoutAlignment": "LAYOUT_ALIGNMENT_LEFT"
+                                },
+                                "collectionId": "84124"
+                            }
                         }
-                    }while (escaped);
-                    currentToken = [
-                        "brackets",
-                        css.slice(pos, next + 1),
-                        pos,
-                        next
-                    ];
-                    pos = next;
-                } else {
-                    next = css.indexOf(")", pos + 1);
-                    content = css.slice(pos, next + 1);
-                    if (next === -1 || RE_BAD_BRACKET.test(content)) currentToken = [
-                        "(",
-                        "(",
-                        pos
-                    ];
-                    else {
-                        currentToken = [
-                            "brackets",
-                            content,
-                            pos,
-                            next
-                        ];
-                        pos = next;
                     }
                 }
-                break;
-            case SINGLE_QUOTE:
-            case DOUBLE_QUOTE:
-                quote = code === SINGLE_QUOTE ? "'" : '"';
-                next = pos;
-                do {
-                    escaped = false;
-                    next = css.indexOf(quote, next + 1);
-                    if (next === -1) {
-                        if (ignore || ignoreUnclosed) {
-                            next = pos + 1;
-                            break;
-                        } else unclosed("string");
-                    }
-                    escapePos = next;
-                    while(css.charCodeAt(escapePos - 1) === BACKSLASH){
-                        escapePos -= 1;
-                        escaped = !escaped;
-                    }
-                }while (escaped);
-                currentToken = [
-                    "string",
-                    css.slice(pos, next + 1),
-                    pos,
-                    next
-                ];
-                pos = next;
-                break;
-            case AT:
-                RE_AT_END.lastIndex = pos + 1;
-                RE_AT_END.test(css);
-                if (RE_AT_END.lastIndex === 0) next = css.length - 1;
-                else next = RE_AT_END.lastIndex - 2;
-                currentToken = [
-                    "at-word",
-                    css.slice(pos, next + 1),
-                    pos,
-                    next
-                ];
-                pos = next;
-                break;
-            case BACKSLASH:
-                next = pos;
-                escape = true;
-                while(css.charCodeAt(next + 1) === BACKSLASH){
-                    next += 1;
-                    escape = !escape;
-                }
-                code = css.charCodeAt(next + 1);
-                if (escape && code !== SLASH && code !== SPACE && code !== NEWLINE && code !== TAB && code !== CR && code !== FEED) {
-                    next += 1;
-                    if (RE_HEX_ESCAPE.test(css.charAt(next))) {
-                        while(RE_HEX_ESCAPE.test(css.charAt(next + 1)))next += 1;
-                        if (css.charCodeAt(next + 1) === SPACE) next += 1;
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.BasicContent",
+                        "title": "Restaurants with online food delivery in Delhi",
+                        "id": "popular_restaurants_title"
                     }
                 }
-                currentToken = [
-                    "word",
-                    css.slice(pos, next + 1),
-                    pos,
-                    next
-                ];
-                pos = next;
-                break;
-            default:
-                if (code === SLASH && css.charCodeAt(pos + 1) === ASTERISK) {
-                    next = css.indexOf("*/", pos + 2) + 1;
-                    if (next === 0) {
-                        if (ignore || ignoreUnclosed) next = css.length;
-                        else unclosed("comment");
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.InlineViewFilterSortWidget",
+                        "sortConfigs": [
+                            {
+                                "key": "relevance",
+                                "title": "Relevance (Default)",
+                                "selected": true,
+                                "defaultSelection": true
+                            },
+                            {
+                                "key": "deliveryTimeAsc",
+                                "title": "Delivery Time"
+                            },
+                            {
+                                "key": "modelBasedRatingDesc",
+                                "title": "Rating"
+                            },
+                            {
+                                "key": "costForTwoAsc",
+                                "title": "Cost: Low to High"
+                            },
+                            {
+                                "key": "costForTwoDesc",
+                                "title": "Cost: High to Low"
+                            }
+                        ],
+                        "restaurantCount": 1967,
+                        "facetList": [
+                            {
+                                "label": "Delivery Time",
+                                "id": "deliveryTime",
+                                "selection": "SELECT_TYPE_MULTISELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Fast Delivery",
+                                        "id": "deliveryTimefacetquery1",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_HALF_CARD",
+                                "subLabel": "Filter by"
+                            },
+                            {
+                                "label": "Cuisines",
+                                "id": "catalog_cuisines",
+                                "selection": "SELECT_TYPE_MULTISELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Afghani",
+                                        "id": "query_afghani",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "American",
+                                        "id": "query_american",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Andhra",
+                                        "id": "query_andhra",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Arabian",
+                                        "id": "query_arabian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Asian",
+                                        "id": "query_asian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Awadhi",
+                                        "id": "query_awadhi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Bakery",
+                                        "id": "query_bakery",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Barbecue",
+                                        "id": "query_barbecue",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Bengali",
+                                        "id": "query_bengali",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Beverages",
+                                        "id": "query_beverages",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Bihari",
+                                        "id": "query_bihari",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Biryani",
+                                        "id": "query_biryani",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Burgers",
+                                        "id": "query_burgers",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Burmese",
+                                        "id": "query_burmese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Cafe",
+                                        "id": "query_cafe",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Cakes and Pastries",
+                                        "id": "query_cakes_and_pastries",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Chaat",
+                                        "id": "query_chaat",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Chettinad",
+                                        "id": "query_chettinad",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Chinese",
+                                        "id": "query_chinese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Combo",
+                                        "id": "query_combo",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Continental",
+                                        "id": "query_continental",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Desserts",
+                                        "id": "query_desserts",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "European",
+                                        "id": "query_european",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Fast Food",
+                                        "id": "query_fast_food",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "French",
+                                        "id": "query_french",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Grill",
+                                        "id": "query_grill",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Healthy Food",
+                                        "id": "query_healthy_food",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Home Food",
+                                        "id": "query_home_food",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Hyderabadi",
+                                        "id": "query_hyderabadi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Ice Cream",
+                                        "id": "query_ice_cream",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Ice Cream Cakes",
+                                        "id": "query_ice_cream_cakes",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Indian",
+                                        "id": "query_indian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Italian",
+                                        "id": "query_italian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Italian-American",
+                                        "id": "query_italian-american",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Jain",
+                                        "id": "query_jain",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Japanese",
+                                        "id": "query_japanese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Juices",
+                                        "id": "query_juices",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Kebabs",
+                                        "id": "query_kebabs",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Kerala",
+                                        "id": "query_kerala",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Keto",
+                                        "id": "query_keto",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Korean",
+                                        "id": "query_korean",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Lebanese",
+                                        "id": "query_lebanese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Lucknowi",
+                                        "id": "query_lucknowi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Maharashtrian",
+                                        "id": "query_maharashtrian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Meat",
+                                        "id": "query_meat",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Mediterranean",
+                                        "id": "query_mediterranean",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Mexican",
+                                        "id": "query_mexican",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Middle Eastern",
+                                        "id": "query_middle_eastern",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Mughlai",
+                                        "id": "query_mughlai",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Nepalese",
+                                        "id": "query_nepalese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "North Eastern",
+                                        "id": "query_north_eastern",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "North Indian",
+                                        "id": "query_north_indian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Oriental",
+                                        "id": "query_oriental",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Paan",
+                                        "id": "query_paan",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Pan-Asian",
+                                        "id": "query_pan-asian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Parsi",
+                                        "id": "query_parsi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Pastas",
+                                        "id": "query_pastas",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Pizzas",
+                                        "id": "query_pizzas",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Portuguese",
+                                        "id": "query_portuguese",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Punjabi",
+                                        "id": "query_punjabi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Rajasthani",
+                                        "id": "query_rajasthani",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Rolls & Wraps",
+                                        "id": "query_rolls_&_wraps",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Salads",
+                                        "id": "query_salads",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Seafood",
+                                        "id": "query_seafood",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Sindhi",
+                                        "id": "query_sindhi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Snacks",
+                                        "id": "query_snacks",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "South Indian",
+                                        "id": "query_south_indian",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Street Food",
+                                        "id": "query_street_food",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Sushi",
+                                        "id": "query_sushi",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Sweets",
+                                        "id": "query_sweets",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Tandoor",
+                                        "id": "query_tandoor",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Tex-Mex",
+                                        "id": "query_tex-mex",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Thai",
+                                        "id": "query_thai",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Thalis",
+                                        "id": "query_thalis",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Tibetan",
+                                        "id": "query_tibetan",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Turkish",
+                                        "id": "query_turkish",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Waffle",
+                                        "id": "query_waffle",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_HALF_CARD",
+                                "canSearch": true,
+                                "subLabel": "Filter by cuisine",
+                                "openFilter": true
+                            },
+                            {
+                                "label": "Explore",
+                                "id": "explore",
+                                "selection": "SELECT_TYPE_MULTISELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "New on Swiggy",
+                                        "id": "newfacetquery1",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_HALF_CARD"
+                            },
+                            {
+                                "label": "Ratings",
+                                "id": "rating",
+                                "selection": "SELECT_TYPE_MULTISELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Ratings 4.5+",
+                                        "id": "ratingfacetquery3",
+                                        "analytics": {}
+                                    },
+                                    {
+                                        "label": "Ratings 4.0+",
+                                        "id": "ratingfacetquery4",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Ratings 3.5+",
+                                        "id": "ratingfacetquery5",
+                                        "analytics": {}
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_HALF_CARD",
+                                "subLabel": "Filter by"
+                            },
+                            {
+                                "label": "Veg/Non-Veg",
+                                "id": "isVeg",
+                                "selection": "SELECT_TYPE_SINGLESELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Pure Veg",
+                                        "id": "isVegfacetquery2",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Non Veg",
+                                        "id": "isVegfacetquery3",
+                                        "analytics": {}
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_FLATTENED",
+                                "subLabel": "Filter by"
+                            },
+                            {
+                                "label": "Offers",
+                                "id": "restaurantOfferMultiTd",
+                                "selection": "SELECT_TYPE_SINGLESELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Offers",
+                                        "id": "restaurantOfferMultiTdfacetquery3",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_FLATTENED",
+                                "subLabel": "Restaurants with"
+                            },
+                            {
+                                "label": "Cost for two",
+                                "id": "costForTwo",
+                                "selection": "SELECT_TYPE_MULTISELECT",
+                                "facetInfo": [
+                                    {
+                                        "label": "Rs. 300-Rs. 600",
+                                        "id": "costForTwofacetquery3",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    },
+                                    {
+                                        "label": "Greater than Rs. 600",
+                                        "id": "costForTwofacetquery4",
+                                        "analytics": {}
+                                    },
+                                    {
+                                        "label": "Less than Rs. 300",
+                                        "id": "costForTwofacetquery5",
+                                        "analytics": {},
+                                        "openFilter": true
+                                    }
+                                ],
+                                "viewType": "VIEW_TYPE_HALF_CARD",
+                                "subLabel": "Filter by"
+                            }
+                        ]
                     }
-                    currentToken = [
-                        "comment",
-                        css.slice(pos, next + 1),
-                        pos,
-                        next
-                    ];
-                    pos = next;
-                } else {
-                    RE_WORD_END.lastIndex = pos + 1;
-                    RE_WORD_END.test(css);
-                    if (RE_WORD_END.lastIndex === 0) next = css.length - 1;
-                    else next = RE_WORD_END.lastIndex - 2;
-                    currentToken = [
-                        "word",
-                        css.slice(pos, next + 1),
-                        pos,
-                        next
-                    ];
-                    buffer.push(currentToken);
-                    pos = next;
                 }
-                break;
-        }
-        pos++;
-        return currentToken;
-    }
-    function back(token) {
-        returned.push(token);
-    }
-    return {
-        back,
-        nextToken,
-        endOfFile,
-        position
-    };
-};
-
-},{}],"kbVAt":[function(require,module,exports) {
-"use strict";
-let Container = require("70faab7fa86a1d67");
-class AtRule extends Container {
-    constructor(defaults){
-        super(defaults);
-        this.type = "atrule";
-    }
-    append(...children) {
-        if (!this.proxyOf.nodes) this.nodes = [];
-        return super.append(...children);
-    }
-    prepend(...children) {
-        if (!this.proxyOf.nodes) this.nodes = [];
-        return super.prepend(...children);
-    }
-}
-module.exports = AtRule;
-AtRule.default = AtRule;
-Container.registerAtRule(AtRule);
-
-},{"70faab7fa86a1d67":"1gj6C"}],"hsDFv":[function(require,module,exports) {
-"use strict";
-let Container = require("560b8aa33e20ea3e");
-let LazyResult, Processor;
-class Root extends Container {
-    constructor(defaults){
-        super(defaults);
-        this.type = "root";
-        if (!this.nodes) this.nodes = [];
-    }
-    removeChild(child, ignore) {
-        let index = this.index(child);
-        if (!ignore && index === 0 && this.nodes.length > 1) this.nodes[1].raws.before = this.nodes[index].raws.before;
-        return super.removeChild(child);
-    }
-    normalize(child, sample, type) {
-        let nodes = super.normalize(child);
-        if (sample) {
-            if (type === "prepend") {
-                if (this.nodes.length > 1) sample.raws.before = this.nodes[1].raws.before;
-                else delete sample.raws.before;
-            } else if (this.first !== sample) for (let node of nodes)node.raws.before = sample.raws.before;
-        }
-        return nodes;
-    }
-    toResult(opts = {}) {
-        let lazy = new LazyResult(new Processor(), this, opts);
-        return lazy.stringify();
-    }
-}
-Root.registerLazyResult = (dependant)=>{
-    LazyResult = dependant;
-};
-Root.registerProcessor = (dependant)=>{
-    Processor = dependant;
-};
-module.exports = Root;
-Root.default = Root;
-Container.registerRoot(Root);
-
-},{"560b8aa33e20ea3e":"1gj6C"}],"4SFJx":[function(require,module,exports) {
-"use strict";
-let Container = require("d5e0f5e0b325cedb");
-let list = require("221e506798aa56d3");
-class Rule extends Container {
-    constructor(defaults){
-        super(defaults);
-        this.type = "rule";
-        if (!this.nodes) this.nodes = [];
-    }
-    get selectors() {
-        return list.comma(this.selector);
-    }
-    set selectors(values) {
-        let match = this.selector ? this.selector.match(/,\s*/) : null;
-        let sep = match ? match[0] : "," + this.raw("between", "beforeOpen");
-        this.selector = values.join(sep);
-    }
-}
-module.exports = Rule;
-Rule.default = Rule;
-Container.registerRule(Rule);
-
-},{"d5e0f5e0b325cedb":"1gj6C","221e506798aa56d3":"hZo3l"}],"hZo3l":[function(require,module,exports) {
-"use strict";
-let list = {
-    split (string, separators, last) {
-        let array = [];
-        let current = "";
-        let split = false;
-        let func = 0;
-        let inQuote = false;
-        let prevQuote = "";
-        let escape = false;
-        for (let letter of string){
-            if (escape) escape = false;
-            else if (letter === "\\") escape = true;
-            else if (inQuote) {
-                if (letter === prevQuote) inQuote = false;
-            } else if (letter === '"' || letter === "'") {
-                inQuote = true;
-                prevQuote = letter;
-            } else if (letter === "(") func += 1;
-            else if (letter === ")") {
-                if (func > 0) func -= 1;
-            } else if (func === 0) {
-                if (separators.includes(letter)) split = true;
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+                        "layout": {
+                            "columns": 4
+                        },
+                        "id": "restaurant_grid_listing",
+                        "gridElements": {
+                            "infoWithStyle": {
+                                "@type": "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle",
+                                "restaurants": [
+                                    {
+                                        "info": {
+                                            "id": "253981",
+                                            "name": "McDonald's",
+                                            "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+                                            "locality": "V3S Mall",
+                                            "areaName": "Laxmi Nagar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "American"
+                                            ],
+                                            "avgRating": 4.4,
+                                            "parentId": "630",
+                                            "avgRatingString": "4.4",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 26,
+                                                "lastMileTravel": 3.6,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "26 mins",
+                                                "lastMileTravelString": "3.6 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:45:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "40% OFF",
+                                                "subHeader": "UPTO ₹80"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/mcdonalds-v3s-mall-laxmi-nagar-delhi-253981",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "438435",
+                                            "name": "Burger King",
+                                            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+                                            "locality": "Parsvnath Mall",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹350 for two",
+                                            "cuisines": [
+                                                "Burgers",
+                                                "American"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "166",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "1K+",
+                                            "sla": {
+                                                "deliveryTime": 23,
+                                                "lastMileTravel": 2.8,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "23 mins",
+                                                "lastMileTravelString": "2.8 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 05:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹129"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/burger-king-parsvnath-mall-mayur-vihar-delhi-438435",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "707692",
+                                            "name": "KFC",
+                                            "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
+                                            "locality": "Phase 1",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Burgers",
+                                                "Biryani",
+                                                "American",
+                                                "Snacks",
+                                                "Fast Food"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "547",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "100+",
+                                            "sla": {
+                                                "deliveryTime": 22,
+                                                "lastMileTravel": 2.4,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "22 mins",
+                                                "lastMileTravelString": "2.4 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 01:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "20% OFF",
+                                                "subHeader": "UPTO ₹50"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/kfc-phase-1-mayur-vihar-delhi-707692",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "24174",
+                                            "name": "Domino's Pizza",
+                                            "cloudinaryImageId": "todoxlqcxjw46nokzb9v",
+                                            "locality": "1St Phase",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹400 for two",
+                                            "cuisines": [
+                                                "Pizzas",
+                                                "Italian",
+                                                "Pastas",
+                                                "Desserts"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "2456",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 02:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "₹150 OFF",
+                                                "subHeader": "ABOVE ₹299",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/dominos-pizza-1st-phase-mayur-vihar-delhi-24174",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "424706",
+                                            "name": "Punjabi Angithi (Vegorama Group)",
+                                            "cloudinaryImageId": "uubzuxzz2nps1zylts6f",
+                                            "locality": "Gulmohar market",
+                                            "areaName": "Sector 15",
+                                            "costForTwo": "₹300 for two",
+                                            "cuisines": [
+                                                "North Indian",
+                                                "Chinese",
+                                                "Tandoor"
+                                            ],
+                                            "avgRating": 4.2,
+                                            "veg": true,
+                                            "parentId": "465050",
+                                            "avgRatingString": "4.2",
+                                            "totalRatingsString": "10K+",
+                                            "sla": {
+                                                "deliveryTime": 30,
+                                                "lastMileTravel": 4.5,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "30 mins",
+                                                "lastMileTravelString": "4.5 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 00:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "imageBadges": [
+                                                    {
+                                                        "imageId": "v1695133679/badges/Pure_Veg111.png",
+                                                        "description": "pureveg"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "pureveg",
+                                                                    "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "₹125 OFF",
+                                                "subHeader": "ABOVE ₹249",
+                                                "discountTag": "FLAT DEAL"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/punjabi-angithi-vegorama-group-gulmohar-market-sector-15-delhi-424706",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "798794",
+                                            "name": "Bakingo",
+                                            "cloudinaryImageId": "6508f0f371e04af44f5d217785443019",
+                                            "locality": "Patpargangj",
+                                            "areaName": "MAYUR VIHAR",
+                                            "costForTwo": "₹299 for two",
+                                            "cuisines": [
+                                                "Bakery",
+                                                "Desserts",
+                                                "Beverages",
+                                                "Snacks"
+                                            ],
+                                            "avgRating": 4.9,
+                                            "parentId": "3818",
+                                            "avgRatingString": "4.9",
+                                            "totalRatingsString": "7",
+                                            "sla": {
+                                                "deliveryTime": 12,
+                                                "lastMileTravel": 0.1,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "12 mins",
+                                                "lastMileTravelString": "0.1 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 01:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "aggregatedDiscountInfoV2": {},
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "isNewlyOnboarded": true,
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/bakingo-patpargangj-mayur-vihar-delhi-798794",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "650503",
+                                            "name": "NH1 Bowls - Highway To North",
+                                            "cloudinaryImageId": "94654fdf308764cd0faf83dba35bcdc3",
+                                            "locality": "Mayur Vihar",
+                                            "areaName": "Phase1",
+                                            "costForTwo": "₹250 for two",
+                                            "cuisines": [
+                                                "North Indian",
+                                                "Punjabi",
+                                                "Home Food"
+                                            ],
+                                            "avgRating": 4.3,
+                                            "parentId": "22452",
+                                            "avgRatingString": "4.3",
+                                            "totalRatingsString": "100+",
+                                            "sla": {
+                                                "deliveryTime": 17,
+                                                "lastMileTravel": 2,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "12-22 mins",
+                                                "lastMileTravelString": "2.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 02:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "50% OFF",
+                                                "subHeader": "UPTO ₹100"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/nh1-bowls-highway-to-north-mayur-vihar-phase1-delhi-650503",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "636891",
+                                            "name": "Big Bowl",
+                                            "cloudinaryImageId": "c99751d54e4e1847186c62b3309c1327",
+                                            "locality": "1st Phase",
+                                            "areaName": "Mayur Vihar",
+                                            "costForTwo": "₹250 for two",
+                                            "cuisines": [
+                                                "North Indian",
+                                                "Chinese",
+                                                "Tibetan",
+                                                "Desserts"
+                                            ],
+                                            "avgRating": 4.1,
+                                            "parentId": "434792",
+                                            "avgRatingString": "4.1",
+                                            "totalRatingsString": "500+",
+                                            "sla": {
+                                                "deliveryTime": 21,
+                                                "lastMileTravel": 2.4,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "21 mins",
+                                                "lastMileTravelString": "2.4 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-21 03:00:00",
+                                                "opened": true
+                                            },
+                                            "badges": {},
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {}
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹169"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/big-bowl-1st-phase-mayur-vihar-delhi-636891",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    },
+                                    {
+                                        "info": {
+                                            "id": "720360",
+                                            "name": "Wendy's Burgers",
+                                            "cloudinaryImageId": "a2ec5418246b622ec4baa3bd051ef6ab",
+                                            "locality": "Laxmi Nagar",
+                                            "areaName": "Shakarpur",
+                                            "costForTwo": "₹200 for two",
+                                            "cuisines": [
+                                                "Burgers",
+                                                "American",
+                                                "Fast Food",
+                                                "Snacks",
+                                                "Beverages"
+                                            ],
+                                            "avgRating": 4.1,
+                                            "parentId": "972",
+                                            "avgRatingString": "4.1",
+                                            "totalRatingsString": "100+",
+                                            "sla": {
+                                                "deliveryTime": 25,
+                                                "lastMileTravel": 3,
+                                                "serviceability": "SERVICEABLE",
+                                                "slaString": "25 mins",
+                                                "lastMileTravelString": "3.0 km",
+                                                "iconType": "ICON_TYPE_EMPTY"
+                                            },
+                                            "availability": {
+                                                "nextCloseTime": "2023-12-20 23:59:00",
+                                                "opened": true
+                                            },
+                                            "badges": {
+                                                "textExtendedBadges": [
+                                                    {
+                                                        "iconId": "guiltfree/GF_Logo_android_3x",
+                                                        "shortDescription": "options available",
+                                                        "fontColor": "#7E808C"
+                                                    }
+                                                ]
+                                            },
+                                            "isOpen": true,
+                                            "type": "F",
+                                            "badgesV2": {
+                                                "entityBadges": {
+                                                    "imageBased": {},
+                                                    "textBased": {},
+                                                    "textExtendedBadges": {
+                                                        "badgeObject": [
+                                                            {
+                                                                "attributes": {
+                                                                    "description": "",
+                                                                    "fontColor": "#7E808C",
+                                                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                                                    "shortDescription": "options available"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "aggregatedDiscountInfoV3": {
+                                                "header": "ITEMS",
+                                                "subHeader": "AT ₹129"
+                                            },
+                                            "orderabilityCommunication": {
+                                                "title": {},
+                                                "subTitle": {},
+                                                "message": {},
+                                                "customIcon": {}
+                                            },
+                                            "differentiatedUi": {
+                                                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                                                "differentiatedUiMediaDetails": {
+                                                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                                                    "lottie": {},
+                                                    "video": {}
+                                                }
+                                            },
+                                            "reviewsSummary": {},
+                                            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                                            "isNewlyOnboarded": true,
+                                            "restaurantOfferPresentationInfo": {}
+                                        },
+                                        "analytics": {
+                                            "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                                        },
+                                        "cta": {
+                                            "link": "https://www.swiggy.com/restaurants/wendys-burgers-laxmi-nagar-shakarpur-delhi-720360",
+                                            "text": "RESTAURANT_MENU",
+                                            "type": "WEBLINK"
+                                        },
+                                        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                                    }
+                                ],
+                                "theme": "SeoRestaurantListingGridWidget"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.ShowMoreButton",
+                        "message": "Show More",
+                        "id": "show_more_button"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.BrandsContent",
+                        "title": "Best Places to Eat Across Cities",
+                        "brands": [
+                            {
+                                "text": "Best Restaurants in Bangalore",
+                                "link": "https://www.swiggy.com/city/bangalore/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Pune",
+                                "link": "https://www.swiggy.com/city/pune/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Mumbai",
+                                "link": "https://www.swiggy.com/city/mumbai/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Delhi",
+                                "link": "https://www.swiggy.com/city/delhi/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Hyderabad",
+                                "link": "https://www.swiggy.com/city/hyderabad/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Kolkata",
+                                "link": "https://www.swiggy.com/city/kolkata/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Chennai",
+                                "link": "https://www.swiggy.com/city/chennai/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Chandigarh",
+                                "link": "https://www.swiggy.com/city/chandigarh/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Ahmedabad",
+                                "link": "https://www.swiggy.com/city/ahmedabad/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Jaipur",
+                                "link": "https://www.swiggy.com/city/jaipur/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Nagpur",
+                                "link": "https://www.swiggy.com/city/nagpur/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Bhubaneswar",
+                                "link": "https://www.swiggy.com/city/bhubaneswar/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Kochi",
+                                "link": "https://www.swiggy.com/city/kochi/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Surat",
+                                "link": "https://www.swiggy.com/city/surat/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Dehradun",
+                                "link": "https://www.swiggy.com/city/dehradun/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Ludhiana",
+                                "link": "https://www.swiggy.com/city/ludhiana/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Patna",
+                                "link": "https://www.swiggy.com/city/patna/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Mangaluru",
+                                "link": "https://www.swiggy.com/city/mangaluru/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Bhopal",
+                                "link": "https://www.swiggy.com/city/bhopal/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Gurgaon",
+                                "link": "https://www.swiggy.com/city/gurgaon/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Coimbatore",
+                                "link": "https://www.swiggy.com/city/coimbatore/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Agra",
+                                "link": "https://www.swiggy.com/city/agra/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Noida",
+                                "link": "https://www.swiggy.com/city/noida/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Vijayawada",
+                                "link": "https://www.swiggy.com/city/vijayawada/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Guwahati",
+                                "link": "https://www.swiggy.com/city/guwahati/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Mysore",
+                                "link": "https://www.swiggy.com/city/mysore/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Pondicherry",
+                                "link": "https://www.swiggy.com/city/pondicherry/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Thiruvananthapuram",
+                                "link": "https://www.swiggy.com/city/thiruvananthapuram/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Ranchi",
+                                "link": "https://www.swiggy.com/city/ranchi/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Vizag",
+                                "link": "https://www.swiggy.com/city/vizag/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Udaipur",
+                                "link": "https://www.swiggy.com/city/udaipur/best-restaurants"
+                            },
+                            {
+                                "text": "Best Restaurants in Vadodara",
+                                "link": "https://www.swiggy.com/city/vadodara/best-restaurants"
+                            }
+                        ],
+                        "id": "restaurant_near_me_links"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.BrandsContent",
+                        "title": "Best Cuisines Near Me",
+                        "brands": [
+                            {
+                                "text": "Chinese Restaurant Near Me",
+                                "link": "https://www.swiggy.com/chinese-restaurants-near-me"
+                            },
+                            {
+                                "text": "South Indian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/south-indian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Indian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/indian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Kerala Restaurant Near Me",
+                                "link": "https://www.swiggy.com/kerala-restaurants-near-me"
+                            },
+                            {
+                                "text": "Korean Restaurant Near Me",
+                                "link": "https://www.swiggy.com/korean-restaurants-near-me"
+                            },
+                            {
+                                "text": "North Indian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/north-indian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Seafood Restaurant Near Me",
+                                "link": "https://www.swiggy.com/seafood-restaurants-near-me"
+                            },
+                            {
+                                "text": "Bengali Restaurant Near Me",
+                                "link": "https://www.swiggy.com/bengali-restaurants-near-me"
+                            },
+                            {
+                                "text": "Punjabi Restaurant Near Me",
+                                "link": "https://www.swiggy.com/punjabi-restaurants-near-me"
+                            },
+                            {
+                                "text": "Italian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/italian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Andhra Restaurant Near Me",
+                                "link": "https://www.swiggy.com/andhra-restaurants-near-me"
+                            },
+                            {
+                                "text": "Biryani Restaurant Near Me",
+                                "link": "https://www.swiggy.com/biryani-restaurants-near-me"
+                            },
+                            {
+                                "text": "Japanese Restaurant Near Me",
+                                "link": "https://www.swiggy.com/japanese-restaurants-near-me"
+                            },
+                            {
+                                "text": "Arabian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/arabian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Fast Food Restaurant Near Me",
+                                "link": "https://www.swiggy.com/fast-food-restaurants-near-me"
+                            },
+                            {
+                                "text": "Jain Restaurant Near Me",
+                                "link": "https://www.swiggy.com/jain-restaurants-near-me"
+                            },
+                            {
+                                "text": "Gujarati Restaurant Near Me",
+                                "link": "https://www.swiggy.com/gujarati-restaurants-near-me"
+                            },
+                            {
+                                "text": "Thai Restaurant Near Me",
+                                "link": "https://www.swiggy.com/thai-restaurants-near-me"
+                            },
+                            {
+                                "text": "Pizzas Restaurant Near Me",
+                                "link": "https://www.swiggy.com/pizzas-restaurants-near-me"
+                            },
+                            {
+                                "text": "Asian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/asian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Cafe Restaurant Near Me",
+                                "link": "https://www.swiggy.com/cafe-restaurants-near-me"
+                            },
+                            {
+                                "text": "Continental Restaurant Near Me",
+                                "link": "https://www.swiggy.com/continental-restaurants-near-me"
+                            },
+                            {
+                                "text": "Mexican Restaurant Near Me",
+                                "link": "https://www.swiggy.com/mexican-restaurants-near-me"
+                            },
+                            {
+                                "text": "Mughlai Restaurant Near Me",
+                                "link": "https://www.swiggy.com/mughlai-restaurants-near-me"
+                            },
+                            {
+                                "text": "Sushi Restaurant Near Me",
+                                "link": "https://www.swiggy.com/sushi-restaurants-near-me"
+                            },
+                            {
+                                "text": "Mangalorean Restaurant Near Me",
+                                "link": "https://www.swiggy.com/mangalorean-restaurants-near-me"
+                            },
+                            {
+                                "text": "Tibetan Restaurant Near Me",
+                                "link": "https://www.swiggy.com/tibetan-restaurants-near-me"
+                            },
+                            {
+                                "text": "Barbecue Restaurant Near Me",
+                                "link": "https://www.swiggy.com/barbecue-restaurants-near-me"
+                            },
+                            {
+                                "text": "Maharashtrian Restaurant Near Me",
+                                "link": "https://www.swiggy.com/maharashtrian-restaurants-near-me"
+                            },
+                            {
+                                "text": "Nepalese Restaurant Near Me",
+                                "link": "https://www.swiggy.com/nepalese-restaurants-near-me"
+                            },
+                            {
+                                "text": "Rajasthani Restaurant Near Me",
+                                "link": "https://www.swiggy.com/rajasthani-restaurants-near-me"
+                            },
+                            {
+                                "text": "Turkish Restaurant Near Me",
+                                "link": "https://www.swiggy.com/turkish-restaurants-near-me"
+                            }
+                        ],
+                        "id": "restaurant_near_me_links"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.BrandsContent",
+                        "title": "Explore Every Restaurants Near Me",
+                        "brands": [
+                            {
+                                "text": "Explore Restaurants Near Me",
+                                "link": "https://www.swiggy.com/restaurants-near-me"
+                            },
+                            {
+                                "text": "Explore Top Rated Restaurants Near Me",
+                                "link": "https://www.swiggy.com/best-restaurants-near-me"
+                            }
+                        ],
+                        "id": "restaurant_near_me_links"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.AppInstallLinks",
+                        "title": "For better experience,download the Swiggy app now",
+                        "androidAppImage": "portal/m/play_store.png",
+                        "androidAppLink": "https://play.google.com/store/apps/details?id=in.swiggy.android&referrer=utm_source%3Dswiggy%26utm_medium%3Dheader",
+                        "iosAppImage": "portal/m/app_store.png",
+                        "iosAppLink": "https://itunes.apple.com/in/app/id989540920?referrer=utm_source%3Dswiggy%26utm_medium%3Dhomepage",
+                        "id": "app_install_links"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.FooterContent",
+                        "cities": [
+                            {
+                                "text": "Bangalore",
+                                "link": "https://www.swiggy.com/city/bangalore"
+                            },
+                            {
+                                "text": "Gurgaon",
+                                "link": "https://www.swiggy.com/city/gurgaon"
+                            },
+                            {
+                                "text": "Hyderabad",
+                                "link": "https://www.swiggy.com/city/hyderabad"
+                            },
+                            {
+                                "text": "Delhi",
+                                "link": "https://www.swiggy.com/city/delhi"
+                            },
+                            {
+                                "text": "Mumbai",
+                                "link": "https://www.swiggy.com/city/mumbai"
+                            },
+                            {
+                                "text": "Pune",
+                                "link": "https://www.swiggy.com/city/pune"
+                            },
+                            {
+                                "text": "Kolkata",
+                                "link": "https://www.swiggy.com/city/kolkata"
+                            },
+                            {
+                                "text": "Chennai",
+                                "link": "https://www.swiggy.com/city/chennai"
+                            },
+                            {
+                                "text": "Ahmedabad",
+                                "link": "https://www.swiggy.com/city/ahmedabad"
+                            },
+                            {
+                                "text": "Chandigarh",
+                                "link": "https://www.swiggy.com/city/chandigarh"
+                            },
+                            {
+                                "text": "Jaipur",
+                                "link": "https://www.swiggy.com/city/jaipur"
+                            },
+                            {
+                                "text": "Kochi",
+                                "link": "https://www.swiggy.com/city/kochi"
+                            },
+                            {
+                                "text": "Coimbatore",
+                                "link": "https://www.swiggy.com/city/coimbatore"
+                            },
+                            {
+                                "text": "Lucknow",
+                                "link": "https://www.swiggy.com/city/lucknow"
+                            },
+                            {
+                                "text": "Nagpur",
+                                "link": "https://www.swiggy.com/city/nagpur"
+                            },
+                            {
+                                "text": "Vadodara",
+                                "link": "https://www.swiggy.com/city/vadodara"
+                            },
+                            {
+                                "text": "Indore",
+                                "link": "https://www.swiggy.com/city/indore"
+                            },
+                            {
+                                "text": "Guwahati",
+                                "link": "https://www.swiggy.com/city/guwahati"
+                            },
+                            {
+                                "text": "Vizag",
+                                "link": "https://www.swiggy.com/city/vizag"
+                            },
+                            {
+                                "text": "Surat",
+                                "link": "https://www.swiggy.com/city/surat"
+                            },
+                            {
+                                "text": "Dehradun",
+                                "link": "https://www.swiggy.com/city/dehradun"
+                            },
+                            {
+                                "text": "Noida",
+                                "link": "https://www.swiggy.com/city/noida"
+                            },
+                            {
+                                "text": "Ludhiana",
+                                "link": "https://www.swiggy.com/city/ludhiana"
+                            },
+                            {
+                                "text": "Trichy",
+                                "link": "https://www.swiggy.com/city/trichy"
+                            },
+                            {
+                                "text": "Vijayawada",
+                                "link": "https://www.swiggy.com/city/vijayawada"
+                            },
+                            {
+                                "text": "Kanpur",
+                                "link": "https://www.swiggy.com/city/kanpur"
+                            },
+                            {
+                                "text": "Mysore",
+                                "link": "https://www.swiggy.com/city/mysore"
+                            },
+                            {
+                                "text": "Nashik",
+                                "link": "https://www.swiggy.com/city/nashik"
+                            },
+                            {
+                                "text": "Udaipur",
+                                "link": "https://www.swiggy.com/city/udaipur"
+                            },
+                            {
+                                "text": "Pondicherry",
+                                "link": "https://www.swiggy.com/city/pondicherry"
+                            },
+                            {
+                                "text": "Agra",
+                                "link": "https://www.swiggy.com/city/agra"
+                            },
+                            {
+                                "text": "Aurangabad",
+                                "link": "https://www.swiggy.com/city/aurangabad"
+                            },
+                            {
+                                "text": "Jalandhar",
+                                "link": "https://www.swiggy.com/city/jalandhar"
+                            },
+                            {
+                                "text": "Kota",
+                                "link": "https://www.swiggy.com/city/kota"
+                            },
+                            {
+                                "text": "Madurai",
+                                "link": "https://www.swiggy.com/city/madurai"
+                            },
+                            {
+                                "text": "Allahabad",
+                                "link": "https://www.swiggy.com/city/allahabad"
+                            },
+                            {
+                                "text": "Manipal",
+                                "link": "https://www.swiggy.com/city/manipal"
+                            },
+                            {
+                                "text": "Amritsar",
+                                "link": "https://www.swiggy.com/city/amritsar"
+                            },
+                            {
+                                "text": "Bareilly",
+                                "link": "https://www.swiggy.com/city/bareilly"
+                            },
+                            {
+                                "text": "Meerut",
+                                "link": "https://www.swiggy.com/city/meerut"
+                            },
+                            {
+                                "text": "Bhopal",
+                                "link": "https://www.swiggy.com/city/bhopal"
+                            },
+                            {
+                                "text": "Ooty",
+                                "link": "https://www.swiggy.com/city/ooty"
+                            },
+                            {
+                                "text": "Bhubaneswar",
+                                "link": "https://www.swiggy.com/city/bhubaneswar"
+                            },
+                            {
+                                "text": "Raipur",
+                                "link": "https://www.swiggy.com/city/raipur"
+                            },
+                            {
+                                "text": "Bikaner",
+                                "link": "https://www.swiggy.com/city/bikaner"
+                            },
+                            {
+                                "text": "Rajkot",
+                                "link": "https://www.swiggy.com/city/rajkot"
+                            },
+                            {
+                                "text": "Kozhikode",
+                                "link": "https://www.swiggy.com/city/kozhikode"
+                            },
+                            {
+                                "text": "Central Goa",
+                                "link": "https://www.swiggy.com/city/central-goa"
+                            },
+                            {
+                                "text": "Sirsa",
+                                "link": "https://www.swiggy.com/city/sirsa"
+                            },
+                            {
+                                "text": "Gwalior",
+                                "link": "https://www.swiggy.com/city/gwalior"
+                            },
+                            {
+                                "text": "Thrissur",
+                                "link": "https://www.swiggy.com/city/thrissur"
+                            },
+                            {
+                                "text": "Kharagpur",
+                                "link": "https://www.swiggy.com/city/kharagpur"
+                            },
+                            {
+                                "text": "Tirupati",
+                                "link": "https://www.swiggy.com/city/tirupati"
+                            },
+                            {
+                                "text": "Tirupur",
+                                "link": "https://www.swiggy.com/city/tirupur"
+                            },
+                            {
+                                "text": "Vellore",
+                                "link": "https://www.swiggy.com/city/vellore"
+                            },
+                            {
+                                "text": "Thiruvananthapuram",
+                                "link": "https://www.swiggy.com/city/thiruvananthapuram"
+                            },
+                            {
+                                "text": "Warangal",
+                                "link": "https://www.swiggy.com/city/warangal"
+                            },
+                            {
+                                "text": "Varanasi",
+                                "link": "https://www.swiggy.com/city/varanasi"
+                            },
+                            {
+                                "text": "Mangaluru",
+                                "link": "https://www.swiggy.com/city/mangaluru"
+                            },
+                            {
+                                "text": "Patna",
+                                "link": "https://www.swiggy.com/city/patna"
+                            },
+                            {
+                                "text": "Ranchi",
+                                "link": "https://www.swiggy.com/city/ranchi"
+                            },
+                            {
+                                "text": "Faridabad",
+                                "link": "https://www.swiggy.com/city/faridabad"
+                            },
+                            {
+                                "text": "Guntur",
+                                "link": "https://www.swiggy.com/city/guntur"
+                            },
+                            {
+                                "text": "Ujjain",
+                                "link": "https://www.swiggy.com/city/ujjain"
+                            },
+                            {
+                                "text": "Patiala",
+                                "link": "https://www.swiggy.com/city/patiala"
+                            },
+                            {
+                                "text": "Karnal",
+                                "link": "https://www.swiggy.com/city/karnal"
+                            },
+                            {
+                                "text": "Kakinada",
+                                "link": "https://www.swiggy.com/city/kakinada"
+                            },
+                            {
+                                "text": "Rajahmundry",
+                                "link": "https://www.swiggy.com/city/rajahmundry"
+                            },
+                            {
+                                "text": "Bilaspur",
+                                "link": "https://www.swiggy.com/city/bilaspur"
+                            },
+                            {
+                                "text": "Bhilai",
+                                "link": "https://www.swiggy.com/city/bhilai"
+                            },
+                            {
+                                "text": "Anand",
+                                "link": "https://www.swiggy.com/city/anand"
+                            },
+                            {
+                                "text": "Bhavnagar",
+                                "link": "https://www.swiggy.com/city/bhavnagar"
+                            },
+                            {
+                                "text": "Jammu",
+                                "link": "https://www.swiggy.com/city/jammu"
+                            },
+                            {
+                                "text": "Muktsar",
+                                "link": "https://www.swiggy.com/city/muktsar"
+                            },
+                            {
+                                "text": "Panipat",
+                                "link": "https://www.swiggy.com/city/panipat"
+                            },
+                            {
+                                "text": "Dhanbad",
+                                "link": "https://www.swiggy.com/city/dhanbad"
+                            },
+                            {
+                                "text": "Hubli",
+                                "link": "https://www.swiggy.com/city/hubli"
+                            },
+                            {
+                                "text": "Belgaum",
+                                "link": "https://www.swiggy.com/city/belgaum"
+                            },
+                            {
+                                "text": "Jabalpur",
+                                "link": "https://www.swiggy.com/city/jabalpur"
+                            },
+                            {
+                                "text": "Kolhapur",
+                                "link": "https://www.swiggy.com/city/kolhapur"
+                            },
+                            {
+                                "text": "Solapur",
+                                "link": "https://www.swiggy.com/city/solapur"
+                            },
+                            {
+                                "text": "Shillong",
+                                "link": "https://www.swiggy.com/city/shillong"
+                            },
+                            {
+                                "text": "Cuttack",
+                                "link": "https://www.swiggy.com/city/cuttack"
+                            },
+                            {
+                                "text": "Aligarh",
+                                "link": "https://www.swiggy.com/city/aligarh"
+                            },
+                            {
+                                "text": "Salem",
+                                "link": "https://www.swiggy.com/city/salem"
+                            },
+                            {
+                                "text": "Jodhpur",
+                                "link": "https://www.swiggy.com/city/jodhpur"
+                            },
+                            {
+                                "text": "Ajmer",
+                                "link": "https://www.swiggy.com/city/ajmer"
+                            },
+                            {
+                                "text": "Jhansi",
+                                "link": "https://www.swiggy.com/city/jhansi"
+                            },
+                            {
+                                "text": "Gorakhpur",
+                                "link": "https://www.swiggy.com/city/gorakhpur"
+                            },
+                            {
+                                "text": "Thanjavur",
+                                "link": "https://www.swiggy.com/city/thanjavur"
+                            },
+                            {
+                                "text": "Erode",
+                                "link": "https://www.swiggy.com/city/erode"
+                            },
+                            {
+                                "text": "Nellore",
+                                "link": "https://www.swiggy.com/city/nellore"
+                            },
+                            {
+                                "text": "Rourkela",
+                                "link": "https://www.swiggy.com/city/rourkela"
+                            },
+                            {
+                                "text": "Anantapur",
+                                "link": "https://www.swiggy.com/city/anantapur"
+                            },
+                            {
+                                "text": "Kurnool",
+                                "link": "https://www.swiggy.com/city/kurnool"
+                            },
+                            {
+                                "text": "Ahmednagar",
+                                "link": "https://www.swiggy.com/city/ahmednagar"
+                            },
+                            {
+                                "text": "Phagwara",
+                                "link": "https://www.swiggy.com/city/phagwara"
+                            },
+                            {
+                                "text": "Ambala",
+                                "link": "https://www.swiggy.com/city/ambala"
+                            },
+                            {
+                                "text": "Ballari",
+                                "link": "https://www.swiggy.com/city/ballari"
+                            },
+                            {
+                                "text": "Saharanpur",
+                                "link": "https://www.swiggy.com/city/saharanpur"
+                            },
+                            {
+                                "text": "Tirunelveli",
+                                "link": "https://www.swiggy.com/city/tirunelveli"
+                            },
+                            {
+                                "text": "Bathinda",
+                                "link": "https://www.swiggy.com/city/bathinda"
+                            },
+                            {
+                                "text": "Mathura",
+                                "link": "https://www.swiggy.com/city/mathura"
+                            },
+                            {
+                                "text": "Haridwar",
+                                "link": "https://www.swiggy.com/city/haridwar"
+                            },
+                            {
+                                "text": "Ratnagiri",
+                                "link": "https://www.swiggy.com/city/ratnagiri"
+                            },
+                            {
+                                "text": "Sangli",
+                                "link": "https://www.swiggy.com/city/sangli"
+                            },
+                            {
+                                "text": "Amravati",
+                                "link": "https://www.swiggy.com/city/amravati"
+                            },
+                            {
+                                "text": "Rishikesh",
+                                "link": "https://www.swiggy.com/city/rishikesh"
+                            },
+                            {
+                                "text": "Nagercoil",
+                                "link": "https://www.swiggy.com/city/nagercoil"
+                            },
+                            {
+                                "text": "KanyaKumari",
+                                "link": "https://www.swiggy.com/city/kanyakumari"
+                            },
+                            {
+                                "text": "Kadapa",
+                                "link": "https://www.swiggy.com/city/kadapa"
+                            },
+                            {
+                                "text": "Nizamabad",
+                                "link": "https://www.swiggy.com/city/nizamabad"
+                            },
+                            {
+                                "text": "Shivamogga",
+                                "link": "https://www.swiggy.com/city/shivamogga"
+                            },
+                            {
+                                "text": "Davanagere",
+                                "link": "https://www.swiggy.com/city/davanagere"
+                            },
+                            {
+                                "text": "Roorkee",
+                                "link": "https://www.swiggy.com/city/roorkee"
+                            },
+                            {
+                                "text": "Nanded",
+                                "link": "https://www.swiggy.com/city/nanded"
+                            },
+                            {
+                                "text": "Rewa",
+                                "link": "https://www.swiggy.com/city/rewa"
+                            },
+                            {
+                                "text": "Satna",
+                                "link": "https://www.swiggy.com/city/satna"
+                            },
+                            {
+                                "text": "Muzaffarpur",
+                                "link": "https://www.swiggy.com/city/muzaffarpur"
+                            },
+                            {
+                                "text": "Valsad",
+                                "link": "https://www.swiggy.com/city/valsad"
+                            },
+                            {
+                                "text": "Vapi",
+                                "link": "https://www.swiggy.com/city/vapi"
+                            },
+                            {
+                                "text": "Chhapra",
+                                "link": "https://www.swiggy.com/city/chhapra"
+                            },
+                            {
+                                "text": "Dharamshala",
+                                "link": "https://www.swiggy.com/city/dharamshala"
+                            },
+                            {
+                                "text": "Kollam",
+                                "link": "https://www.swiggy.com/city/kollam"
+                            },
+                            {
+                                "text": "Silchar",
+                                "link": "https://www.swiggy.com/city/silchar"
+                            },
+                            {
+                                "text": "Alappuzha",
+                                "link": "https://www.swiggy.com/city/alappuzha"
+                            },
+                            {
+                                "text": "Sonipat",
+                                "link": "https://www.swiggy.com/city/sonipat"
+                            },
+                            {
+                                "text": "Rohtak",
+                                "link": "https://www.swiggy.com/city/rohtak"
+                            },
+                            {
+                                "text": "Mehsana",
+                                "link": "https://www.swiggy.com/city/mehsana"
+                            },
+                            {
+                                "text": "Kullu",
+                                "link": "https://www.swiggy.com/city/kullu"
+                            },
+                            {
+                                "text": "Dhule",
+                                "link": "https://www.swiggy.com/city/dhule"
+                            },
+                            {
+                                "text": "Dharwad",
+                                "link": "https://www.swiggy.com/city/dharwad"
+                            },
+                            {
+                                "text": "Latur",
+                                "link": "https://www.swiggy.com/city/latur"
+                            },
+                            {
+                                "text": "Vizianagaram",
+                                "link": "https://www.swiggy.com/city/vizianagaram"
+                            },
+                            {
+                                "text": "Khammam",
+                                "link": "https://www.swiggy.com/city/khammam"
+                            },
+                            {
+                                "text": "Hampi",
+                                "link": "https://www.swiggy.com/city/hampi"
+                            },
+                            {
+                                "text": "Nainital",
+                                "link": "https://www.swiggy.com/city/nainital"
+                            },
+                            {
+                                "text": "Akola",
+                                "link": "https://www.swiggy.com/city/akola"
+                            },
+                            {
+                                "text": "Kalaburagi",
+                                "link": "https://www.swiggy.com/city/kalaburagi"
+                            },
+                            {
+                                "text": "Gaya",
+                                "link": "https://www.swiggy.com/city/gaya"
+                            },
+                            {
+                                "text": "Muzaffarnagar",
+                                "link": "https://www.swiggy.com/city/muzaffarnagar"
+                            },
+                            {
+                                "text": "Dewas",
+                                "link": "https://www.swiggy.com/city/dewas"
+                            },
+                            {
+                                "text": "Korba",
+                                "link": "https://www.swiggy.com/city/korba"
+                            },
+                            {
+                                "text": "Mussoorie",
+                                "link": "https://www.swiggy.com/city/mussoorie"
+                            },
+                            {
+                                "text": "Jalgaon",
+                                "link": "https://www.swiggy.com/city/jalgaon"
+                            },
+                            {
+                                "text": "Yamuna Nagar",
+                                "link": "https://www.swiggy.com/city/yamuna-nagar"
+                            },
+                            {
+                                "text": "Bhagalpur",
+                                "link": "https://www.swiggy.com/city/bhagalpur"
+                            },
+                            {
+                                "text": "Hapur",
+                                "link": "https://www.swiggy.com/city/hapur"
+                            },
+                            {
+                                "text": "Morena",
+                                "link": "https://www.swiggy.com/city/morena"
+                            },
+                            {
+                                "text": "Hassan",
+                                "link": "https://www.swiggy.com/city/hassan"
+                            },
+                            {
+                                "text": "Hisar",
+                                "link": "https://www.swiggy.com/city/hisar"
+                            },
+                            {
+                                "text": "Godhra",
+                                "link": "https://www.swiggy.com/city/godhra"
+                            },
+                            {
+                                "text": "Kolar ",
+                                "link": "https://www.swiggy.com/city/kolar"
+                            },
+                            {
+                                "text": "Rampur",
+                                "link": "https://www.swiggy.com/city/rampur"
+                            },
+                            {
+                                "text": "Sitapur",
+                                "link": "https://www.swiggy.com/city/sitapur"
+                            },
+                            {
+                                "text": "Etawah",
+                                "link": "https://www.swiggy.com/city/etawah"
+                            },
+                            {
+                                "text": "Porbandar",
+                                "link": "https://www.swiggy.com/city/porbandar"
+                            },
+                            {
+                                "text": "Nadiad",
+                                "link": "https://www.swiggy.com/city/nadiad"
+                            },
+                            {
+                                "text": "Sagar",
+                                "link": "https://www.swiggy.com/city/sagar"
+                            },
+                            {
+                                "text": "Morbi",
+                                "link": "https://www.swiggy.com/city/morbi"
+                            },
+                            {
+                                "text": "Chhindwara",
+                                "link": "https://www.swiggy.com/city/chhindwara"
+                            },
+                            {
+                                "text": "Tumakuru",
+                                "link": "https://www.swiggy.com/city/tumakuru"
+                            },
+                            {
+                                "text": "Singrauli",
+                                "link": "https://www.swiggy.com/city/singrauli"
+                            },
+                            {
+                                "text": "Thoothukudi",
+                                "link": "https://www.swiggy.com/city/thoothukudi"
+                            },
+                            {
+                                "text": "Katni",
+                                "link": "https://www.swiggy.com/city/katni"
+                            },
+                            {
+                                "text": "Khandwa",
+                                "link": "https://www.swiggy.com/city/khandwa"
+                            },
+                            {
+                                "text": "Eluru",
+                                "link": "https://www.swiggy.com/city/eluru"
+                            },
+                            {
+                                "text": "Malappuram",
+                                "link": "https://www.swiggy.com/city/malappuram"
+                            },
+                            {
+                                "text": "Dibrugarh",
+                                "link": "https://www.swiggy.com/city/dibrugarh"
+                            },
+                            {
+                                "text": "Deoghar",
+                                "link": "https://www.swiggy.com/city/deoghar"
+                            },
+                            {
+                                "text": "Khanna",
+                                "link": "https://www.swiggy.com/city/khanna"
+                            },
+                            {
+                                "text": "Bidar",
+                                "link": "https://www.swiggy.com/city/bidar"
+                            },
+                            {
+                                "text": "Madikeri",
+                                "link": "https://www.swiggy.com/city/madikeri"
+                            },
+                            {
+                                "text": "Haldwani",
+                                "link": "https://www.swiggy.com/city/haldwani"
+                            },
+                            {
+                                "text": "Farrukhabad",
+                                "link": "https://www.swiggy.com/city/farrukhabad"
+                            },
+                            {
+                                "text": "Malegaon",
+                                "link": "https://www.swiggy.com/city/malegaon"
+                            },
+                            {
+                                "text": "Dindigul",
+                                "link": "https://www.swiggy.com/city/dindigul"
+                            },
+                            {
+                                "text": "Shahjahanpur",
+                                "link": "https://www.swiggy.com/city/shahjahanpur"
+                            },
+                            {
+                                "text": "Beed",
+                                "link": "https://www.swiggy.com/city/beed"
+                            },
+                            {
+                                "text": "Junagadh",
+                                "link": "https://www.swiggy.com/city/junagadh"
+                            },
+                            {
+                                "text": "Asansol",
+                                "link": "https://www.swiggy.com/city/asansol"
+                            },
+                            {
+                                "text": "Beawar",
+                                "link": "https://www.swiggy.com/city/beawar"
+                            },
+                            {
+                                "text": "Kishangarh",
+                                "link": "https://www.swiggy.com/city/kishangarh"
+                            },
+                            {
+                                "text": "Parbhani",
+                                "link": "https://www.swiggy.com/city/parbhani"
+                            },
+                            {
+                                "text": "Gondia",
+                                "link": "https://www.swiggy.com/city/gondia"
+                            },
+                            {
+                                "text": "Ichalkaranji",
+                                "link": "https://www.swiggy.com/city/ichalkaranji"
+                            },
+                            {
+                                "text": "Jalna",
+                                "link": "https://www.swiggy.com/city/jalna"
+                            },
+                            {
+                                "text": "Yavatmal",
+                                "link": "https://www.swiggy.com/city/yavatmal"
+                            },
+                            {
+                                "text": "Shivpuri",
+                                "link": "https://www.swiggy.com/city/shivpuri"
+                            },
+                            {
+                                "text": "Moga",
+                                "link": "https://www.swiggy.com/city/moga"
+                            },
+                            {
+                                "text": "Abohar",
+                                "link": "https://www.swiggy.com/city/abohar"
+                            },
+                            {
+                                "text": "Adoni",
+                                "link": "https://www.swiggy.com/city/adoni"
+                            },
+                            {
+                                "text": "Madanapalle",
+                                "link": "https://www.swiggy.com/city/madanapalle"
+                            },
+                            {
+                                "text": "Tiruvannamalai",
+                                "link": "https://www.swiggy.com/city/tiruvannamalai"
+                            },
+                            {
+                                "text": "Satara",
+                                "link": "https://www.swiggy.com/city/satara"
+                            },
+                            {
+                                "text": "Ambur",
+                                "link": "https://www.swiggy.com/city/ambur"
+                            },
+                            {
+                                "text": "Karimnagar",
+                                "link": "https://www.swiggy.com/city/karimnagar"
+                            },
+                            {
+                                "text": "Ratlam",
+                                "link": "https://www.swiggy.com/city/ratlam"
+                            },
+                            {
+                                "text": "Moradabad",
+                                "link": "https://www.swiggy.com/city/moradabad"
+                            },
+                            {
+                                "text": "Machilipatnam",
+                                "link": "https://www.swiggy.com/city/machilipatnam"
+                            },
+                            {
+                                "text": "Ongole",
+                                "link": "https://www.swiggy.com/city/ongole"
+                            },
+                            {
+                                "text": "Kottayam",
+                                "link": "https://www.swiggy.com/city/kottayam"
+                            },
+                            {
+                                "text": "Darbhanga",
+                                "link": "https://www.swiggy.com/city/darbhanga"
+                            },
+                            {
+                                "text": "Kurukshetra",
+                                "link": "https://www.swiggy.com/city/kurukshetra"
+                            },
+                            {
+                                "text": "Unnao",
+                                "link": "https://www.swiggy.com/city/unnao"
+                            },
+                            {
+                                "text": "Bulandshahr",
+                                "link": "https://www.swiggy.com/city/bulandshahr"
+                            },
+                            {
+                                "text": "Durgapur",
+                                "link": "https://www.swiggy.com/city/durgapur"
+                            },
+                            {
+                                "text": "Siliguri",
+                                "link": "https://www.swiggy.com/city/siliguri"
+                            },
+                            {
+                                "text": "Pali",
+                                "link": "https://www.swiggy.com/city/pali"
+                            },
+                            {
+                                "text": "Tadepalligudem",
+                                "link": "https://www.swiggy.com/city/tadepalligudem"
+                            },
+                            {
+                                "text": "Ramagundam",
+                                "link": "https://www.swiggy.com/city/ramagundam"
+                            },
+                            {
+                                "text": "Mahbubnagar",
+                                "link": "https://www.swiggy.com/city/mahbubnagar"
+                            },
+                            {
+                                "text": "Bhiwani",
+                                "link": "https://www.swiggy.com/city/bhiwani"
+                            },
+                            {
+                                "text": "Cuddalore",
+                                "link": "https://www.swiggy.com/city/cuddalore"
+                            },
+                            {
+                                "text": "Kaithal",
+                                "link": "https://www.swiggy.com/city/kaithal"
+                            },
+                            {
+                                "text": "Jagtial",
+                                "link": "https://www.swiggy.com/city/jagtial"
+                            },
+                            {
+                                "text": "Palakkad",
+                                "link": "https://www.swiggy.com/city/palakkad"
+                            },
+                            {
+                                "text": "Guna",
+                                "link": "https://www.swiggy.com/city/guna"
+                            },
+                            {
+                                "text": "Kumbakonam",
+                                "link": "https://www.swiggy.com/city/kumbakonam"
+                            },
+                            {
+                                "text": "Maunath Bhanjan",
+                                "link": "https://www.swiggy.com/city/maunath-bhanjan"
+                            },
+                            {
+                                "text": "Baripada",
+                                "link": "https://www.swiggy.com/city/baripada"
+                            },
+                            {
+                                "text": "Orai",
+                                "link": "https://www.swiggy.com/city/orai"
+                            },
+                            {
+                                "text": "Bhadrak",
+                                "link": "https://www.swiggy.com/city/bhadrak"
+                            },
+                            {
+                                "text": "Batala",
+                                "link": "https://www.swiggy.com/city/batala"
+                            },
+                            {
+                                "text": "Firozpur",
+                                "link": "https://www.swiggy.com/city/firozpur"
+                            },
+                            {
+                                "text": "Barnala",
+                                "link": "https://www.swiggy.com/city/barnala"
+                            },
+                            {
+                                "text": "Raigarh",
+                                "link": "https://www.swiggy.com/city/raigarh"
+                            },
+                            {
+                                "text": "Nagaon",
+                                "link": "https://www.swiggy.com/city/nagaon"
+                            },
+                            {
+                                "text": "Mainpuri",
+                                "link": "https://www.swiggy.com/city/mainpuri"
+                            },
+                            {
+                                "text": "Balurghat",
+                                "link": "https://www.swiggy.com/city/balurghat"
+                            },
+                            {
+                                "text": "Giridih",
+                                "link": "https://www.swiggy.com/city/giridih"
+                            },
+                            {
+                                "text": "Ghazipur",
+                                "link": "https://www.swiggy.com/city/ghazipur"
+                            },
+                            {
+                                "text": "Jagdalpur",
+                                "link": "https://www.swiggy.com/city/jagdalpur"
+                            },
+                            {
+                                "text": "Vidisha",
+                                "link": "https://www.swiggy.com/city/vidisha"
+                            },
+                            {
+                                "text": "Dimapur",
+                                "link": "https://www.swiggy.com/city/dimapur"
+                            },
+                            {
+                                "text": "Shikohabad",
+                                "link": "https://www.swiggy.com/city/shikohabad"
+                            },
+                            {
+                                "text": "Imphal",
+                                "link": "https://www.swiggy.com/city/imphal"
+                            },
+                            {
+                                "text": "Lakhimpur",
+                                "link": "https://www.swiggy.com/city/lakhimpur"
+                            },
+                            {
+                                "text": "Rudrapur",
+                                "link": "https://www.swiggy.com/city/rudrapur"
+                            },
+                            {
+                                "text": "Ambikapur",
+                                "link": "https://www.swiggy.com/city/ambikapur"
+                            },
+                            {
+                                "text": "Rae Bareli",
+                                "link": "https://www.swiggy.com/city/rae-bareli"
+                            },
+                            {
+                                "text": "Tinsukia",
+                                "link": "https://www.swiggy.com/city/tinsukia"
+                            },
+                            {
+                                "text": "Rajapalayam",
+                                "link": "https://www.swiggy.com/city/rajapalayam"
+                            },
+                            {
+                                "text": "Rajnandgaon",
+                                "link": "https://www.swiggy.com/city/rajnandgaon"
+                            },
+                            {
+                                "text": "Kashipur",
+                                "link": "https://www.swiggy.com/city/kashipur"
+                            },
+                            {
+                                "text": "Ranibennur",
+                                "link": "https://www.swiggy.com/city/ranibennur"
+                            },
+                            {
+                                "text": "Burhanpur",
+                                "link": "https://www.swiggy.com/city/burhanpur"
+                            },
+                            {
+                                "text": "Bhadravati",
+                                "link": "https://www.swiggy.com/city/bhadravati"
+                            },
+                            {
+                                "text": "Chittoor",
+                                "link": "https://www.swiggy.com/city/chittoor"
+                            },
+                            {
+                                "text": "Pudukkottai",
+                                "link": "https://www.swiggy.com/city/pudukkottai"
+                            },
+                            {
+                                "text": "Hardoi",
+                                "link": "https://www.swiggy.com/city/hardoi"
+                            },
+                            {
+                                "text": "Basti",
+                                "link": "https://www.swiggy.com/city/basti"
+                            },
+                            {
+                                "text": "Karaikkudi",
+                                "link": "https://www.swiggy.com/city/karaikkudi"
+                            },
+                            {
+                                "text": "Lalitpur",
+                                "link": "https://www.swiggy.com/city/lalitpur"
+                            },
+                            {
+                                "text": "Hospet",
+                                "link": "https://www.swiggy.com/city/hospet"
+                            },
+                            {
+                                "text": "Budaun",
+                                "link": "https://www.swiggy.com/city/budaun"
+                            },
+                            {
+                                "text": "Neemuch",
+                                "link": "https://www.swiggy.com/city/neemuch"
+                            },
+                            {
+                                "text": "Pilibhit",
+                                "link": "https://www.swiggy.com/city/pilibhit"
+                            },
+                            {
+                                "text": "Barshi",
+                                "link": "https://www.swiggy.com/city/barshi"
+                            },
+                            {
+                                "text": "Sri Ganganagar",
+                                "link": "https://www.swiggy.com/city/sri-ganganagar"
+                            },
+                            {
+                                "text": "Wardha",
+                                "link": "https://www.swiggy.com/city/wardha"
+                            },
+                            {
+                                "text": "Sehore",
+                                "link": "https://www.swiggy.com/city/sehore"
+                            },
+                            {
+                                "text": "Bhimavaram",
+                                "link": "https://www.swiggy.com/city/bhimavaram"
+                            },
+                            {
+                                "text": "Hanumangarh",
+                                "link": "https://www.swiggy.com/city/hanumangarh"
+                            },
+                            {
+                                "text": "Pathankot",
+                                "link": "https://www.swiggy.com/city/pathankot"
+                            },
+                            {
+                                "text": "Puri",
+                                "link": "https://www.swiggy.com/city/puri"
+                            },
+                            {
+                                "text": "Fatehpur",
+                                "link": "https://www.swiggy.com/city/fatehpur"
+                            },
+                            {
+                                "text": "Surendranagar Dudhrej",
+                                "link": "https://www.swiggy.com/city/surendranagar-dudhrej"
+                            },
+                            {
+                                "text": "Jamnagar",
+                                "link": "https://www.swiggy.com/city/jamnagar"
+                            },
+                            {
+                                "text": "Bhuj",
+                                "link": "https://www.swiggy.com/city/bhuj"
+                            },
+                            {
+                                "text": "Gandhidham",
+                                "link": "https://www.swiggy.com/city/gandhidham"
+                            },
+                            {
+                                "text": "Bharuch",
+                                "link": "https://www.swiggy.com/city/bharuch"
+                            },
+                            {
+                                "text": "Navsari",
+                                "link": "https://www.swiggy.com/city/navsari"
+                            },
+                            {
+                                "text": "Amreli",
+                                "link": "https://www.swiggy.com/city/amreli"
+                            },
+                            {
+                                "text": "Palanpur",
+                                "link": "https://www.swiggy.com/city/palanpur"
+                            },
+                            {
+                                "text": "Bhilwara",
+                                "link": "https://www.swiggy.com/city/bhilwara"
+                            },
+                            {
+                                "text": "Suratgarh",
+                                "link": "https://www.swiggy.com/city/suratgarh"
+                            },
+                            {
+                                "text": "Sikar",
+                                "link": "https://www.swiggy.com/city/sikar"
+                            },
+                            {
+                                "text": "Churu",
+                                "link": "https://www.swiggy.com/city/churu"
+                            },
+                            {
+                                "text": "Alwar",
+                                "link": "https://www.swiggy.com/city/alwar"
+                            },
+                            {
+                                "text": "Bhiwadi",
+                                "link": "https://www.swiggy.com/city/bhiwadi"
+                            },
+                            {
+                                "text": "Bharatpur",
+                                "link": "https://www.swiggy.com/city/bharatpur"
+                            },
+                            {
+                                "text": "Mount Abu",
+                                "link": "https://www.swiggy.com/city/mount-abu"
+                            },
+                            {
+                                "text": "Bundi",
+                                "link": "https://www.swiggy.com/city/bundi"
+                            },
+                            {
+                                "text": "Sawai Madhopur",
+                                "link": "https://www.swiggy.com/city/sawai-madhopur"
+                            },
+                            {
+                                "text": "Purulia",
+                                "link": "https://www.swiggy.com/city/purulia"
+                            },
+                            {
+                                "text": "Bardhaman",
+                                "link": "https://www.swiggy.com/city/bardhaman"
+                            },
+                            {
+                                "text": "Raniganj",
+                                "link": "https://www.swiggy.com/city/raniganj"
+                            },
+                            {
+                                "text": "Darjeeling",
+                                "link": "https://www.swiggy.com/city/darjeeling"
+                            },
+                            {
+                                "text": "Jalpaiguri",
+                                "link": "https://www.swiggy.com/city/jalpaiguri"
+                            },
+                            {
+                                "text": "Chittorgarh",
+                                "link": "https://www.swiggy.com/city/chittorgarh"
+                            },
+                            {
+                                "text": "Dholpur",
+                                "link": "https://www.swiggy.com/city/dholpur"
+                            },
+                            {
+                                "text": "Uluberia",
+                                "link": "https://www.swiggy.com/city/uluberia"
+                            },
+                            {
+                                "text": "Nabadwip",
+                                "link": "https://www.swiggy.com/city/nabadwip"
+                            },
+                            {
+                                "text": "Bongaon",
+                                "link": "https://www.swiggy.com/city/bongaon"
+                            },
+                            {
+                                "text": "Kanchrapara",
+                                "link": "https://www.swiggy.com/city/kanchrapara"
+                            },
+                            {
+                                "text": "Habra",
+                                "link": "https://www.swiggy.com/city/habra"
+                            },
+                            {
+                                "text": "Firozabad",
+                                "link": "https://www.swiggy.com/city/firozabad"
+                            },
+                            {
+                                "text": "Nalgonda",
+                                "link": "https://www.swiggy.com/city/nalgonda"
+                            },
+                            {
+                                "text": "Chandrapur",
+                                "link": "https://www.swiggy.com/city/chandrapur"
+                            },
+                            {
+                                "text": "Bijapur",
+                                "link": "https://www.swiggy.com/city/bijapur"
+                            },
+                            {
+                                "text": "Bhusawal",
+                                "link": "https://www.swiggy.com/city/bhusawal"
+                            },
+                            {
+                                "text": "Raichur",
+                                "link": "https://www.swiggy.com/city/raichur"
+                            },
+                            {
+                                "text": "Bahraich",
+                                "link": "https://www.swiggy.com/city/bahraich"
+                            },
+                            {
+                                "text": "Azamgarh",
+                                "link": "https://www.swiggy.com/city/azamgarh"
+                            },
+                            {
+                                "text": "Bahadurgarh",
+                                "link": "https://www.swiggy.com/city/bahadurgarh"
+                            },
+                            {
+                                "text": "Jind",
+                                "link": "https://www.swiggy.com/city/jind"
+                            },
+                            {
+                                "text": "Rewari",
+                                "link": "https://www.swiggy.com/city/rewari"
+                            },
+                            {
+                                "text": "Palwal",
+                                "link": "https://www.swiggy.com/city/palwal"
+                            },
+                            {
+                                "text": "Hathras",
+                                "link": "https://www.swiggy.com/city/hathras"
+                            },
+                            {
+                                "text": "Sambalpur",
+                                "link": "https://www.swiggy.com/city/sambalpur"
+                            },
+                            {
+                                "text": "Banda",
+                                "link": "https://www.swiggy.com/city/banda"
+                            },
+                            {
+                                "text": "Hoshiarpur",
+                                "link": "https://www.swiggy.com/city/hoshiarpur"
+                            },
+                            {
+                                "text": "Faridkot",
+                                "link": "https://www.swiggy.com/city/faridkot"
+                            },
+                            {
+                                "text": "Mandsaur",
+                                "link": "https://www.swiggy.com/city/mandsaur"
+                            },
+                            {
+                                "text": "Suryapet",
+                                "link": "https://www.swiggy.com/city/suryapet"
+                            },
+                            {
+                                "text": "Adilabad",
+                                "link": "https://www.swiggy.com/city/adilabad"
+                            },
+                            {
+                                "text": "Narasaraopet",
+                                "link": "https://www.swiggy.com/city/narasaraopet"
+                            },
+                            {
+                                "text": "Faizabad",
+                                "link": "https://www.swiggy.com/city/faizabad"
+                            },
+                            {
+                                "text": "Tadpatri",
+                                "link": "https://www.swiggy.com/city/tadpatri"
+                            },
+                            {
+                                "text": "Gonda",
+                                "link": "https://www.swiggy.com/city/gonda"
+                            },
+                            {
+                                "text": "Mughalsarai",
+                                "link": "https://www.swiggy.com/city/mughalsarai"
+                            },
+                            {
+                                "text": "Medinipur",
+                                "link": "https://www.swiggy.com/city/medinipur"
+                            },
+                            {
+                                "text": "Nagda",
+                                "link": "https://www.swiggy.com/city/nagda"
+                            },
+                            {
+                                "text": "Raiganj",
+                                "link": "https://www.swiggy.com/city/raiganj"
+                            },
+                            {
+                                "text": "Deoria City",
+                                "link": "https://www.swiggy.com/city/deoria-city"
+                            },
+                            {
+                                "text": "Sultanpur",
+                                "link": "https://www.swiggy.com/city/sultanpur"
+                            },
+                            {
+                                "text": "Shamli",
+                                "link": "https://www.swiggy.com/city/shamli"
+                            },
+                            {
+                                "text": "Krishnanagar",
+                                "link": "https://www.swiggy.com/city/krishnanagar"
+                            },
+                            {
+                                "text": "Ballia",
+                                "link": "https://www.swiggy.com/city/ballia"
+                            },
+                            {
+                                "text": "Guntakal",
+                                "link": "https://www.swiggy.com/city/guntakal"
+                            },
+                            {
+                                "text": "Miryalaguda",
+                                "link": "https://www.swiggy.com/city/miryalaguda"
+                            },
+                            {
+                                "text": "Etah",
+                                "link": "https://www.swiggy.com/city/etah"
+                            },
+                            {
+                                "text": "Berhampore",
+                                "link": "https://www.swiggy.com/city/berhampore"
+                            },
+                            {
+                                "text": "Gudivada",
+                                "link": "https://www.swiggy.com/city/gudivada"
+                            },
+                            {
+                                "text": "Haldia",
+                                "link": "https://www.swiggy.com/city/haldia"
+                            },
+                            {
+                                "text": "Santipur",
+                                "link": "https://www.swiggy.com/city/santipur"
+                            },
+                            {
+                                "text": "Basirhat",
+                                "link": "https://www.swiggy.com/city/basirhat"
+                            },
+                            {
+                                "text": "Udgir",
+                                "link": "https://www.swiggy.com/city/udgir"
+                            },
+                            {
+                                "text": "Proddatur",
+                                "link": "https://www.swiggy.com/city/proddatur"
+                            },
+                            {
+                                "text": "Nagapattinam",
+                                "link": "https://www.swiggy.com/city/nagapattinam"
+                            },
+                            {
+                                "text": "Chikmagalur",
+                                "link": "https://www.swiggy.com/city/chikmagalur"
+                            },
+                            {
+                                "text": "Chandausi",
+                                "link": "https://www.swiggy.com/city/chandausi"
+                            },
+                            {
+                                "text": "Bhind",
+                                "link": "https://www.swiggy.com/city/bhind"
+                            },
+                            {
+                                "text": "Mandya",
+                                "link": "https://www.swiggy.com/city/mandya"
+                            },
+                            {
+                                "text": "Bagalkot",
+                                "link": "https://www.swiggy.com/city/bagalkot"
+                            },
+                            {
+                                "text": "Nandurbar",
+                                "link": "https://www.swiggy.com/city/nandurbar"
+                            },
+                            {
+                                "text": "Chitradurga",
+                                "link": "https://www.swiggy.com/city/chitradurga"
+                            },
+                            {
+                                "text": "Osmanabad",
+                                "link": "https://www.swiggy.com/city/osmanabad"
+                            },
+                            {
+                                "text": "Modinagar",
+                                "link": "https://www.swiggy.com/city/modinagar"
+                            },
+                            {
+                                "text": "Gadag-Betigeri",
+                                "link": "https://www.swiggy.com/city/gadag-betigeri"
+                            },
+                            {
+                                "text": "Hoshangabad",
+                                "link": "https://www.swiggy.com/city/hoshangabad"
+                            },
+                            {
+                                "text": "Jaunpur",
+                                "link": "https://www.swiggy.com/city/jaunpur"
+                            },
+                            {
+                                "text": "Port Blair",
+                                "link": "https://www.swiggy.com/city/port-blair"
+                            },
+                            {
+                                "text": "Jorhat",
+                                "link": "https://www.swiggy.com/city/jorhat"
+                            },
+                            {
+                                "text": "Nandyal",
+                                "link": "https://www.swiggy.com/city/nandyal"
+                            },
+                            {
+                                "text": "Biharsharif",
+                                "link": "https://www.swiggy.com/city/biharsharif"
+                            },
+                            {
+                                "text": "Buxar",
+                                "link": "https://www.swiggy.com/city/buxar"
+                            },
+                            {
+                                "text": "Siwan",
+                                "link": "https://www.swiggy.com/city/siwan"
+                            },
+                            {
+                                "text": "Dehri",
+                                "link": "https://www.swiggy.com/city/dehri"
+                            },
+                            {
+                                "text": "Bettiah",
+                                "link": "https://www.swiggy.com/city/bettiah"
+                            },
+                            {
+                                "text": "Kishanganj",
+                                "link": "https://www.swiggy.com/city/kishanganj"
+                            },
+                            {
+                                "text": "Saharsa",
+                                "link": "https://www.swiggy.com/city/saharsa"
+                            },
+                            {
+                                "text": "Hajipur",
+                                "link": "https://www.swiggy.com/city/hajipur"
+                            },
+                            {
+                                "text": "Motihari",
+                                "link": "https://www.swiggy.com/city/motihari"
+                            },
+                            {
+                                "text": "Sasaram",
+                                "link": "https://www.swiggy.com/city/sasaram"
+                            },
+                            {
+                                "text": "Munger",
+                                "link": "https://www.swiggy.com/city/munger"
+                            },
+                            {
+                                "text": "Katihar",
+                                "link": "https://www.swiggy.com/city/katihar"
+                            },
+                            {
+                                "text": "Arrah",
+                                "link": "https://www.swiggy.com/city/arrah"
+                            },
+                            {
+                                "text": "Srikakulam",
+                                "link": "https://www.swiggy.com/city/srikakulam"
+                            },
+                            {
+                                "text": "Begusarai",
+                                "link": "https://www.swiggy.com/city/begusarai"
+                            },
+                            {
+                                "text": "Neyveli",
+                                "link": "https://www.swiggy.com/city/neyveli"
+                            },
+                            {
+                                "text": "Waidhan",
+                                "link": "https://www.swiggy.com/city/waidhan"
+                            },
+                            {
+                                "text": "Markapur",
+                                "link": "https://www.swiggy.com/city/markapur"
+                            },
+                            {
+                                "text": "Chikkaballapur",
+                                "link": "https://www.swiggy.com/city/chikkaballapur"
+                            },
+                            {
+                                "text": "Bhatkal",
+                                "link": "https://www.swiggy.com/city/bhatkal"
+                            },
+                            {
+                                "text": "Gokak",
+                                "link": "https://www.swiggy.com/city/gokak"
+                            },
+                            {
+                                "text": "Itarsi",
+                                "link": "https://www.swiggy.com/city/itarsi"
+                            },
+                            {
+                                "text": "Dhar",
+                                "link": "https://www.swiggy.com/city/dhar"
+                            },
+                            {
+                                "text": "Chalisgaon",
+                                "link": "https://www.swiggy.com/city/chalisgaon"
+                            },
+                            {
+                                "text": "Thiruvallur",
+                                "link": "https://www.swiggy.com/city/thiruvallur"
+                            },
+                            {
+                                "text": "Namakkal",
+                                "link": "https://www.swiggy.com/city/namakkal"
+                            },
+                            {
+                                "text": "Dharmapuri",
+                                "link": "https://www.swiggy.com/city/dharmapuri"
+                            },
+                            {
+                                "text": "Bhandara",
+                                "link": "https://www.swiggy.com/city/bhandara"
+                            },
+                            {
+                                "text": "Virudhunagar",
+                                "link": "https://www.swiggy.com/city/virudhunagar"
+                            },
+                            {
+                                "text": "Siddipet",
+                                "link": "https://www.swiggy.com/city/siddipet"
+                            },
+                            {
+                                "text": "Gadwal",
+                                "link": "https://www.swiggy.com/city/gadwal"
+                            },
+                            {
+                                "text": "Bodhan-Rural",
+                                "link": "https://www.swiggy.com/city/bodhan-rural"
+                            },
+                            {
+                                "text": "Kamareddy",
+                                "link": "https://www.swiggy.com/city/kamareddy"
+                            },
+                            {
+                                "text": "Jhunjhunu",
+                                "link": "https://www.swiggy.com/city/jhunjhunu"
+                            },
+                            {
+                                "text": "Kapurthala",
+                                "link": "https://www.swiggy.com/city/kapurthala"
+                            },
+                            {
+                                "text": "Sangrur",
+                                "link": "https://www.swiggy.com/city/sangrur"
+                            },
+                            {
+                                "text": "Gurdaspur",
+                                "link": "https://www.swiggy.com/city/gurdaspur"
+                            },
+                            {
+                                "text": "Ramgarh",
+                                "link": "https://www.swiggy.com/city/ramgarh"
+                            },
+                            {
+                                "text": "Bantwal",
+                                "link": "https://www.swiggy.com/city/bantwal"
+                            },
+                            {
+                                "text": "Doddaballapura",
+                                "link": "https://www.swiggy.com/city/doddaballapura"
+                            },
+                            {
+                                "text": "Buldana",
+                                "link": "https://www.swiggy.com/city/buldana"
+                            },
+                            {
+                                "text": "Karad",
+                                "link": "https://www.swiggy.com/city/karad"
+                            },
+                            {
+                                "text": "Krishnagiri",
+                                "link": "https://www.swiggy.com/city/krishnagiri"
+                            },
+                            {
+                                "text": "Tiptur",
+                                "link": "https://www.swiggy.com/city/tiptur"
+                            },
+                            {
+                                "text": "Bhadrachalam",
+                                "link": "https://www.swiggy.com/city/bhadrachalam"
+                            },
+                            {
+                                "text": "Mancherial",
+                                "link": "https://www.swiggy.com/city/mancherial"
+                            },
+                            {
+                                "text": "Balrampur",
+                                "link": "https://www.swiggy.com/city/balrampur"
+                            },
+                            {
+                                "text": "Bharabanki",
+                                "link": "https://www.swiggy.com/city/bharabanki"
+                            },
+                            {
+                                "text": "Malout",
+                                "link": "https://www.swiggy.com/city/malout"
+                            },
+                            {
+                                "text": "Fatehgarh Sahib",
+                                "link": "https://www.swiggy.com/city/fatehgarh-sahib"
+                            },
+                            {
+                                "text": "Ropar",
+                                "link": "https://www.swiggy.com/city/ropar"
+                            },
+                            {
+                                "text": "Nangal",
+                                "link": "https://www.swiggy.com/city/nangal"
+                            },
+                            {
+                                "text": "Narnaul",
+                                "link": "https://www.swiggy.com/city/narnaul"
+                            },
+                            {
+                                "text": "Naraingarh",
+                                "link": "https://www.swiggy.com/city/naraingarh"
+                            },
+                            {
+                                "text": "Himmatnagar",
+                                "link": "https://www.swiggy.com/city/himmatnagar"
+                            },
+                            {
+                                "text": "Dausa",
+                                "link": "https://www.swiggy.com/city/dausa"
+                            },
+                            {
+                                "text": "Jahanabad",
+                                "link": "https://www.swiggy.com/city/jahanabad"
+                            },
+                            {
+                                "text": "Samastipur",
+                                "link": "https://www.swiggy.com/city/samastipur"
+                            },
+                            {
+                                "text": "Purnea",
+                                "link": "https://www.swiggy.com/city/purnea"
+                            },
+                            {
+                                "text": "Berhampur",
+                                "link": "https://www.swiggy.com/city/berhampur"
+                            },
+                            {
+                                "text": "Malda",
+                                "link": "https://www.swiggy.com/city/malda"
+                            },
+                            {
+                                "text": "Tuni",
+                                "link": "https://www.swiggy.com/city/tuni"
+                            },
+                            {
+                                "text": "Puttur",
+                                "link": "https://www.swiggy.com/city/puttur"
+                            },
+                            {
+                                "text": "Rayachoty",
+                                "link": "https://www.swiggy.com/city/rayachoty"
+                            },
+                            {
+                                "text": "Nirmal",
+                                "link": "https://www.swiggy.com/city/nirmal"
+                            },
+                            {
+                                "text": "Mirzapur",
+                                "link": "https://www.swiggy.com/city/mirzapur"
+                            },
+                            {
+                                "text": "Tanuku",
+                                "link": "https://www.swiggy.com/city/tanuku"
+                            },
+                            {
+                                "text": "Dahod",
+                                "link": "https://www.swiggy.com/city/dahod"
+                            },
+                            {
+                                "text": "Barmer",
+                                "link": "https://www.swiggy.com/city/barmer"
+                            },
+                            {
+                                "text": "Gangapur City",
+                                "link": "https://www.swiggy.com/city/gangapur-city"
+                            },
+                            {
+                                "text": "Mandi Gobindgarh",
+                                "link": "https://www.swiggy.com/city/mandi-gobindgarh"
+                            },
+                            {
+                                "text": "Tarn Taran Sahib",
+                                "link": "https://www.swiggy.com/city/tarn-taran-sahib"
+                            },
+                            {
+                                "text": "Nakodar",
+                                "link": "https://www.swiggy.com/city/nakodar"
+                            },
+                            {
+                                "text": "Ankleshwar",
+                                "link": "https://www.swiggy.com/city/ankleshwar"
+                            },
+                            {
+                                "text": "Vyara",
+                                "link": "https://www.swiggy.com/city/vyara"
+                            },
+                            {
+                                "text": "Bardoli",
+                                "link": "https://www.swiggy.com/city/bardoli"
+                            },
+                            {
+                                "text": "Halol",
+                                "link": "https://www.swiggy.com/city/halol"
+                            },
+                            {
+                                "text": "Bijnor",
+                                "link": "https://www.swiggy.com/city/bijnor"
+                            },
+                            {
+                                "text": "Sangamner",
+                                "link": "https://www.swiggy.com/city/sangamner"
+                            },
+                            {
+                                "text": "Baramati",
+                                "link": "https://www.swiggy.com/city/baramati"
+                            },
+                            {
+                                "text": "Betul",
+                                "link": "https://www.swiggy.com/city/betul"
+                            },
+                            {
+                                "text": "Chhatarpur",
+                                "link": "https://www.swiggy.com/city/chhatarpur"
+                            },
+                            {
+                                "text": "Balaghat",
+                                "link": "https://www.swiggy.com/city/balaghat"
+                            },
+                            {
+                                "text": "Sivakasi",
+                                "link": "https://www.swiggy.com/city/sivakasi"
+                            },
+                            {
+                                "text": "Viluppuram",
+                                "link": "https://www.swiggy.com/city/viluppuram"
+                            },
+                            {
+                                "text": "Ramanathapuram",
+                                "link": "https://www.swiggy.com/city/ramanathapuram"
+                            },
+                            {
+                                "text": "Sirsi",
+                                "link": "https://www.swiggy.com/city/sirsi"
+                            },
+                            {
+                                "text": "Theni",
+                                "link": "https://www.swiggy.com/city/theni"
+                            },
+                            {
+                                "text": "Karur",
+                                "link": "https://www.swiggy.com/city/karur"
+                            },
+                            {
+                                "text": "Karwar",
+                                "link": "https://www.swiggy.com/city/karwar"
+                            },
+                            {
+                                "text": "Sindhanur",
+                                "link": "https://www.swiggy.com/city/sindhanur"
+                            },
+                            {
+                                "text": "Kannur",
+                                "link": "https://www.swiggy.com/city/kannur"
+                            },
+                            {
+                                "text": "Noida 1",
+                                "link": "https://www.swiggy.com/city/noida-1"
+                            },
+                            {
+                                "text": "Thiruvalla",
+                                "link": "https://www.swiggy.com/city/thiruvalla"
+                            },
+                            {
+                                "text": "Thodupuzha",
+                                "link": "https://www.swiggy.com/city/thodupuzha"
+                            },
+                            {
+                                "text": "Kadiri",
+                                "link": "https://www.swiggy.com/city/kadiri"
+                            },
+                            {
+                                "text": "Kavali",
+                                "link": "https://www.swiggy.com/city/kavali"
+                            },
+                            {
+                                "text": "Tezpur",
+                                "link": "https://www.swiggy.com/city/tezpur"
+                            },
+                            {
+                                "text": "Kayamkulam",
+                                "link": "https://www.swiggy.com/city/kayamkulam"
+                            },
+                            {
+                                "text": "Kottarakkara",
+                                "link": "https://www.swiggy.com/city/kottarakkara"
+                            },
+                            {
+                                "text": "Mandi Dabwali",
+                                "link": "https://www.swiggy.com/city/mandi-dabwali"
+                            },
+                            {
+                                "text": "Fatehabad",
+                                "link": "https://www.swiggy.com/city/fatehabad"
+                            },
+                            {
+                                "text": "Jagraon",
+                                "link": "https://www.swiggy.com/city/jagraon"
+                            },
+                            {
+                                "text": "Mansa",
+                                "link": "https://www.swiggy.com/city/mansa"
+                            },
+                            {
+                                "text": "Pinjore City",
+                                "link": "https://www.swiggy.com/city/pinjore-city"
+                            },
+                            {
+                                "text": "Fazilka",
+                                "link": "https://www.swiggy.com/city/fazilka"
+                            },
+                            {
+                                "text": "Baddi",
+                                "link": "https://www.swiggy.com/city/baddi"
+                            },
+                            {
+                                "text": "Solan",
+                                "link": "https://www.swiggy.com/city/solan"
+                            },
+                            {
+                                "text": "Daltonganj",
+                                "link": "https://www.swiggy.com/city/daltonganj"
+                            },
+                            {
+                                "text": "Balangir",
+                                "link": "https://www.swiggy.com/city/balangir"
+                            },
+                            {
+                                "text": "Kothagudem",
+                                "link": "https://www.swiggy.com/city/kothagudem"
+                            },
+                            {
+                                "text": "Hansi",
+                                "link": "https://www.swiggy.com/city/hansi"
+                            },
+                            {
+                                "text": "Aurangabad_Bihar",
+                                "link": "https://www.swiggy.com/city/aurangabadbihar"
+                            },
+                            {
+                                "text": "Gopalganj",
+                                "link": "https://www.swiggy.com/city/gopalganj"
+                            },
+                            {
+                                "text": "Jharsuguda",
+                                "link": "https://www.swiggy.com/city/jharsuguda"
+                            },
+                            {
+                                "text": "Tohana",
+                                "link": "https://www.swiggy.com/city/tohana"
+                            },
+                            {
+                                "text": "Jhalawar",
+                                "link": "https://www.swiggy.com/city/jhalawar"
+                            },
+                            {
+                                "text": "Sivasagar",
+                                "link": "https://www.swiggy.com/city/sivasagar"
+                            },
+                            {
+                                "text": "Bagdogra",
+                                "link": "https://www.swiggy.com/city/bagdogra"
+                            },
+                            {
+                                "text": "Kendrapada",
+                                "link": "https://www.swiggy.com/city/kendrapada"
+                            },
+                            {
+                                "text": "Mallapuram (Do not Use)",
+                                "link": "https://www.swiggy.com/city/mallapuram-do-not-use"
+                            },
+                            {
+                                "text": "Veraval",
+                                "link": "https://www.swiggy.com/city/veraval"
+                            },
+                            {
+                                "text": "Daman",
+                                "link": "https://www.swiggy.com/city/daman"
+                            },
+                            {
+                                "text": "Chiplun",
+                                "link": "https://www.swiggy.com/city/chiplun"
+                            },
+                            {
+                                "text": "Silvassa",
+                                "link": "https://www.swiggy.com/city/silvassa"
+                            },
+                            {
+                                "text": "Lonavla",
+                                "link": "https://www.swiggy.com/city/lonavla"
+                            },
+                            {
+                                "text": "Bongaigaon",
+                                "link": "https://www.swiggy.com/city/bongaigaon"
+                            },
+                            {
+                                "text": "Golaghat",
+                                "link": "https://www.swiggy.com/city/golaghat"
+                            },
+                            {
+                                "text": "Duliajan",
+                                "link": "https://www.swiggy.com/city/duliajan"
+                            },
+                            {
+                                "text": "Bolpur",
+                                "link": "https://www.swiggy.com/city/bolpur"
+                            },
+                            {
+                                "text": "Madhubani",
+                                "link": "https://www.swiggy.com/city/madhubani"
+                            },
+                            {
+                                "text": "Balasore",
+                                "link": "https://www.swiggy.com/city/balasore"
+                            },
+                            {
+                                "text": "Palampur",
+                                "link": "https://www.swiggy.com/city/palampur"
+                            },
+                            {
+                                "text": "Kotdwar",
+                                "link": "https://www.swiggy.com/city/kotdwar"
+                            },
+                            {
+                                "text": "Koppal",
+                                "link": "https://www.swiggy.com/city/koppal"
+                            },
+                            {
+                                "text": "Chikhli",
+                                "link": "https://www.swiggy.com/city/chikhli"
+                            },
+                            {
+                                "text": "Dahanu",
+                                "link": "https://www.swiggy.com/city/dahanu"
+                            },
+                            {
+                                "text": "Itanagar",
+                                "link": "https://www.swiggy.com/city/itanagar"
+                            },
+                            {
+                                "text": "Rangpo",
+                                "link": "https://www.swiggy.com/city/rangpo"
+                            },
+                            {
+                                "text": "Aizawl",
+                                "link": "https://www.swiggy.com/city/aizawl"
+                            },
+                            {
+                                "text": "Gangtok",
+                                "link": "https://www.swiggy.com/city/gangtok"
+                            },
+                            {
+                                "text": "Mayiladuthurai",
+                                "link": "https://www.swiggy.com/city/mayiladuthurai"
+                            },
+                            {
+                                "text": "Kannauj",
+                                "link": "https://www.swiggy.com/city/kannauj"
+                            },
+                            {
+                                "text": "Cooch Behar",
+                                "link": "https://www.swiggy.com/city/cooch-behar"
+                            },
+                            {
+                                "text": "Palani",
+                                "link": "https://www.swiggy.com/city/palani"
+                            },
+                            {
+                                "text": "Bilimora",
+                                "link": "https://www.swiggy.com/city/bilimora"
+                            },
+                            {
+                                "text": "Boisar",
+                                "link": "https://www.swiggy.com/city/boisar"
+                            },
+                            {
+                                "text": "Kohima",
+                                "link": "https://www.swiggy.com/city/kohima"
+                            },
+                            {
+                                "text": "Naharlagun",
+                                "link": "https://www.swiggy.com/city/naharlagun"
+                            },
+                            {
+                                "text": "Dumka",
+                                "link": "https://www.swiggy.com/city/dumka"
+                            },
+                            {
+                                "text": "Rajsamand",
+                                "link": "https://www.swiggy.com/city/rajsamand"
+                            },
+                            {
+                                "text": "Gauriganj",
+                                "link": "https://www.swiggy.com/city/gauriganj"
+                            },
+                            {
+                                "text": "Bodinayakanur",
+                                "link": "https://www.swiggy.com/city/bodinayakanur"
+                            },
+                            {
+                                "text": "Bhawanipatna",
+                                "link": "https://www.swiggy.com/city/bhawanipatna"
+                            },
+                            {
+                                "text": "Baran",
+                                "link": "https://www.swiggy.com/city/baran"
+                            },
+                            {
+                                "text": "Narsinghpur",
+                                "link": "https://www.swiggy.com/city/narsinghpur"
+                            },
+                            {
+                                "text": "Kovilpatti",
+                                "link": "https://www.swiggy.com/city/kovilpatti"
+                            },
+                            {
+                                "text": "Pusad",
+                                "link": "https://www.swiggy.com/city/pusad"
+                            },
+                            {
+                                "text": "Kendujhar",
+                                "link": "https://www.swiggy.com/city/kendujhar"
+                            },
+                            {
+                                "text": "Manali",
+                                "link": "https://www.swiggy.com/city/manali"
+                            },
+                            {
+                                "text": "Diu",
+                                "link": "https://www.swiggy.com/city/diu"
+                            },
+                            {
+                                "text": "Khamgaon",
+                                "link": "https://www.swiggy.com/city/khamgaon"
+                            },
+                            {
+                                "text": "Ramanagara",
+                                "link": "https://www.swiggy.com/city/ramanagara"
+                            },
+                            {
+                                "text": "Alipurduar",
+                                "link": "https://www.swiggy.com/city/alipurduar"
+                            },
+                            {
+                                "text": "Almora",
+                                "link": "https://www.swiggy.com/city/almora"
+                            },
+                            {
+                                "text": "Jhargram",
+                                "link": "https://www.swiggy.com/city/jhargram"
+                            },
+                            {
+                                "text": "Arambagh",
+                                "link": "https://www.swiggy.com/city/arambagh"
+                            },
+                            {
+                                "text": "Bhadohi",
+                                "link": "https://www.swiggy.com/city/bhadohi"
+                            },
+                            {
+                                "text": "Tenkasi",
+                                "link": "https://www.swiggy.com/city/tenkasi"
+                            },
+                            {
+                                "text": "Srivilliputhur",
+                                "link": "https://www.swiggy.com/city/srivilliputhur"
+                            },
+                            {
+                                "text": "Chidambaram",
+                                "link": "https://www.swiggy.com/city/chidambaram"
+                            },
+                            {
+                                "text": "Rajgarh",
+                                "link": "https://www.swiggy.com/city/rajgarh"
+                            },
+                            {
+                                "text": "Pratapgarh",
+                                "link": "https://www.swiggy.com/city/pratapgarh"
+                            },
+                            {
+                                "text": "Washim",
+                                "link": "https://www.swiggy.com/city/washim"
+                            },
+                            {
+                                "text": "Raghunathpur",
+                                "link": "https://www.swiggy.com/city/raghunathpur"
+                            },
+                            {
+                                "text": "Suri",
+                                "link": "https://www.swiggy.com/city/suri"
+                            },
+                            {
+                                "text": "Kadayanallur",
+                                "link": "https://www.swiggy.com/city/kadayanallur"
+                            },
+                            {
+                                "text": "Thiruvarur",
+                                "link": "https://www.swiggy.com/city/thiruvarur"
+                            },
+                            {
+                                "text": "Ranaghat-WB",
+                                "link": "https://www.swiggy.com/city/ranaghat-wb"
+                            },
+                            {
+                                "text": "Wayanad",
+                                "link": "https://www.swiggy.com/city/wayanad"
+                            },
+                            {
+                                "text": "Perambalur",
+                                "link": "https://www.swiggy.com/city/perambalur"
+                            },
+                            {
+                                "text": "Paramakudi",
+                                "link": "https://www.swiggy.com/city/paramakudi"
+                            },
+                            {
+                                "text": "Bela Pratapgarh",
+                                "link": "https://www.swiggy.com/city/bela-pratapgarh"
+                            },
+                            {
+                                "text": "Mahoba",
+                                "link": "https://www.swiggy.com/city/mahoba"
+                            },
+                            {
+                                "text": "Sitamarhi",
+                                "link": "https://www.swiggy.com/city/sitamarhi"
+                            },
+                            {
+                                "text": "Chakdaha",
+                                "link": "https://www.swiggy.com/city/chakdaha"
+                            },
+                            {
+                                "text": "Khalilabad",
+                                "link": "https://www.swiggy.com/city/khalilabad"
+                            },
+                            {
+                                "text": "Pattukkottai",
+                                "link": "https://www.swiggy.com/city/pattukkottai"
+                            },
+                            {
+                                "text": "Tindivanam",
+                                "link": "https://www.swiggy.com/city/tindivanam"
+                            },
+                            {
+                                "text": "Tiruttani",
+                                "link": "https://www.swiggy.com/city/tiruttani"
+                            },
+                            {
+                                "text": "Gangarampur",
+                                "link": "https://www.swiggy.com/city/gangarampur"
+                            },
+                            {
+                                "text": "Dharapuram",
+                                "link": "https://www.swiggy.com/city/dharapuram"
+                            },
+                            {
+                                "text": "Arakkonam",
+                                "link": "https://www.swiggy.com/city/arakkonam"
+                            },
+                            {
+                                "text": "Sirkali",
+                                "link": "https://www.swiggy.com/city/sirkali"
+                            },
+                            {
+                                "text": "Mettupalayam",
+                                "link": "https://www.swiggy.com/city/mettupalayam"
+                            },
+                            {
+                                "text": "Digboi",
+                                "link": "https://www.swiggy.com/city/digboi"
+                            },
+                            {
+                                "text": "Biswanath Chariali",
+                                "link": "https://www.swiggy.com/city/biswanath-chariali"
+                            },
+                            {
+                                "text": "Nalbari",
+                                "link": "https://www.swiggy.com/city/nalbari"
+                            },
+                            {
+                                "text": "Shirdi city",
+                                "link": "https://www.swiggy.com/city/shirdi-city"
+                            },
+                            {
+                                "text": "Mukerian",
+                                "link": "https://www.swiggy.com/city/mukerian"
+                            },
+                            {
+                                "text": "Hosur",
+                                "link": "https://www.swiggy.com/city/hosur"
+                            },
+                            {
+                                "text": "Palakollu",
+                                "link": "https://www.swiggy.com/city/palakollu"
+                            },
+                            {
+                                "text": "Ravulapalem",
+                                "link": "https://www.swiggy.com/city/ravulapalem"
+                            },
+                            {
+                                "text": "Barh",
+                                "link": "https://www.swiggy.com/city/barh"
+                            },
+                            {
+                                "text": "Palghar",
+                                "link": "https://www.swiggy.com/city/palghar"
+                            },
+                            {
+                                "text": "Kushalnagar",
+                                "link": "https://www.swiggy.com/city/kushalnagar"
+                            },
+                            {
+                                "text": "Dungarpur",
+                                "link": "https://www.swiggy.com/city/dungarpur"
+                            },
+                            {
+                                "text": "Chaibasa",
+                                "link": "https://www.swiggy.com/city/chaibasa"
+                            },
+                            {
+                                "text": "Haveri",
+                                "link": "https://www.swiggy.com/city/haveri"
+                            },
+                            {
+                                "text": "Karaikal",
+                                "link": "https://www.swiggy.com/city/karaikal"
+                            },
+                            {
+                                "text": "Jjajjar",
+                                "link": "https://www.swiggy.com/city/jjajjar"
+                            },
+                            {
+                                "text": "Kokrajhar",
+                                "link": "https://www.swiggy.com/city/kokrajhar"
+                            },
+                            {
+                                "text": "Rangia",
+                                "link": "https://www.swiggy.com/city/rangia"
+                            },
+                            {
+                                "text": "Hamirpur",
+                                "link": "https://www.swiggy.com/city/hamirpur"
+                            },
+                            {
+                                "text": "Una",
+                                "link": "https://www.swiggy.com/city/una"
+                            },
+                            {
+                                "text": "Sulthan Bathery",
+                                "link": "https://www.swiggy.com/city/sulthan-bathery"
+                            },
+                            {
+                                "text": "Rayagada",
+                                "link": "https://www.swiggy.com/city/rayagada"
+                            },
+                            {
+                                "text": "Paradeep",
+                                "link": "https://www.swiggy.com/city/paradeep"
+                            },
+                            {
+                                "text": "Mandapeta",
+                                "link": "https://www.swiggy.com/city/mandapeta"
+                            },
+                            {
+                                "text": "Jamui",
+                                "link": "https://www.swiggy.com/city/jamui"
+                            },
+                            {
+                                "text": "Pilkhuwa",
+                                "link": "https://www.swiggy.com/city/pilkhuwa"
+                            },
+                            {
+                                "text": "Parvathipuram",
+                                "link": "https://www.swiggy.com/city/parvathipuram"
+                            },
+                            {
+                                "text": "Ambajogai",
+                                "link": "https://www.swiggy.com/city/ambajogai"
+                            },
+                            {
+                                "text": "Araria",
+                                "link": "https://www.swiggy.com/city/araria"
+                            },
+                            {
+                                "text": "North Lakhimpur",
+                                "link": "https://www.swiggy.com/city/north-lakhimpur"
+                            },
+                            {
+                                "text": "Rajampet",
+                                "link": "https://www.swiggy.com/city/rajampet"
+                            },
+                            {
+                                "text": "Udumalaipettai",
+                                "link": "https://www.swiggy.com/city/udumalaipettai"
+                            },
+                            {
+                                "text": "Tirupattur",
+                                "link": "https://www.swiggy.com/city/tirupattur"
+                            },
+                            {
+                                "text": "Hojai",
+                                "link": "https://www.swiggy.com/city/hojai"
+                            },
+                            {
+                                "text": "Khagaria",
+                                "link": "https://www.swiggy.com/city/khagaria"
+                            },
+                            {
+                                "text": "Dasuya",
+                                "link": "https://www.swiggy.com/city/dasuya"
+                            },
+                            {
+                                "text": "Gudur",
+                                "link": "https://www.swiggy.com/city/gudur"
+                            },
+                            {
+                                "text": "Sullurpeta",
+                                "link": "https://www.swiggy.com/city/sullurpeta"
+                            },
+                            {
+                                "text": "Piler",
+                                "link": "https://www.swiggy.com/city/piler"
+                            },
+                            {
+                                "text": "SankaranKoil",
+                                "link": "https://www.swiggy.com/city/sankarankoil"
+                            },
+                            {
+                                "text": "Nabha",
+                                "link": "https://www.swiggy.com/city/nabha"
+                            },
+                            {
+                                "text": "LPU - Phagwara",
+                                "link": "https://www.swiggy.com/city/lpu-phagwara"
+                            },
+                            {
+                                "text": "Jangipur",
+                                "link": "https://www.swiggy.com/city/jangipur"
+                            },
+                            {
+                                "text": "Roha",
+                                "link": "https://www.swiggy.com/city/roha"
+                            }
+                        ],
+                        "id": "footer_content"
+                    }
+                }
+            },
+            {
+                "card": {
+                    "card": {
+                        "@type": "type.googleapis.com/swiggy.seo.widgets.v1.MetaContext",
+                        "citySlug": "delhi",
+                        "lat": "28.6083697",
+                        "lng": "77.293112",
+                        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                        "gandalfRequest": '{"sortAttribute":"relevance","isFiltered":false,"queryId":"seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9","seoParams":{"apiName":"FoodHomePage","brandId":"","seoUrl":"www.swiggy.com","pageType":"FOOD_HOME_PAGE"}}',
+                        "id": "meta_data",
+                        "metaInfo": {
+                            "pageType": "FOOD_HOME_PAGE",
+                            "pageTitle": "Order Food Online from India's Best Food Delivery Service | Swiggy",
+                            "pageMetaDescription": "Order food online from restaurants and get it delivered. Serving in Bangalore, Hyderabad, Delhi and more. Order Pizzas, Biryanis, from Swiggy.",
+                            "pageKeywords": "Food delivery, Online food order, Online food dleivery"
+                        },
+                        "screenType": "filteredCollection",
+                        "seoParams": {
+                            "apiName": "FoodHomePage",
+                            "seoUrl": "www.swiggy.com",
+                            "pageType": "FOOD_HOME_PAGE"
+                        }
+                    }
+                }
             }
-            if (split) {
-                if (current !== "") array.push(current.trim());
-                current = "";
-                split = false;
-            } else current += letter;
-        }
-        if (last || current !== "") array.push(current.trim());
-        return array;
+        ],
+        "firstOffsetRequest": true,
+        "cacheExpiryTime": 240,
+        "nextFetch": 1
     },
-    space (string) {
-        let spaces = [
-            " ",
-            "\n",
-            "	"
-        ];
-        return list.split(string, spaces);
-    },
-    comma (string) {
-        return list.split(string, [
-            ","
-        ], true);
-    }
+    "tid": "e3eb5fac-cad2-4440-938f-1fdb15d6e10d",
+    "sid": "b4d2cfa6-b66c-4481-a971-dfb5747945ab",
+    "deviceId": "d195e612-1eee-2f06-4c0e-90499f893359",
+    "csrfToken": "gFEtemNQVmnA-IeDALrB_7xb_cwcNLAZAPoBhKQQ"
 };
-module.exports = list;
-list.default = list;
 
-},{}],"lU6wZ":[function(require,module,exports) {
-"use strict";
-let NoWorkResult = require("b4049d0a3e372cb2");
-let LazyResult = require("9231cbb213c02603");
-let Document = require("6f637386b6c47461");
-let Root = require("1b2885e293f24ac6");
-class Processor {
-    constructor(plugins = []){
-        this.version = "8.4.24";
-        this.plugins = this.normalize(plugins);
-    }
-    use(plugin) {
-        this.plugins = this.plugins.concat(this.normalize([
-            plugin
-        ]));
-        return this;
-    }
-    process(css, opts = {}) {
-        if (this.plugins.length === 0 && typeof opts.parser === "undefined" && typeof opts.stringifier === "undefined" && typeof opts.syntax === "undefined") return new NoWorkResult(this, css, opts);
-        else return new LazyResult(this, css, opts);
-    }
-    normalize(plugins) {
-        let normalized = [];
-        for (let i of plugins){
-            if (i.postcss === true) i = i();
-            else if (i.postcss) i = i.postcss;
-            if (typeof i === "object" && Array.isArray(i.plugins)) normalized = normalized.concat(i.plugins);
-            else if (typeof i === "object" && i.postcssPlugin) normalized.push(i);
-            else if (typeof i === "function") normalized.push(i);
-            else if (typeof i === "object" && (i.parse || i.stringify)) throw new Error("PostCSS syntaxes cannot be used as plugins. Instead, please use one of the syntax/parser/stringifier options as outlined in your PostCSS runner documentation.");
-            else throw new Error(i + " is not a PostCSS plugin");
-        }
-        return normalized;
-    }
-}
-module.exports = Processor;
-Processor.default = Processor;
-Root.registerProcessor(Processor);
-Document.registerProcessor(Processor);
-
-},{"b4049d0a3e372cb2":"4PfYq","9231cbb213c02603":"580Su","6f637386b6c47461":"dK3sP","1b2885e293f24ac6":"hsDFv"}],"4PfYq":[function(require,module,exports) {
-"use strict";
-let MapGenerator = require("cac8a030679fbad6");
-let stringify = require("9be69d36458d582b");
-let warnOnce = require("791f97720f0dd0ae");
-let parse = require("910fc79234e1506a");
-const Result = require("96a14b02aaa17183");
-class NoWorkResult {
-    constructor(processor, css, opts){
-        css = css.toString();
-        this.stringified = false;
-        this._processor = processor;
-        this._css = css;
-        this._opts = opts;
-        this._map = undefined;
-        let root;
-        let str = stringify;
-        this.result = new Result(this._processor, root, this._opts);
-        this.result.css = css;
-        let self = this;
-        Object.defineProperty(this.result, "root", {
-            get () {
-                return self.root;
-            }
-        });
-        let map = new MapGenerator(str, root, this._opts, css);
-        if (map.isMap()) {
-            let [generatedCSS, generatedMap] = map.generate();
-            if (generatedCSS) this.result.css = generatedCSS;
-            if (generatedMap) this.result.map = generatedMap;
-        }
-    }
-    get [Symbol.toStringTag]() {
-        return "NoWorkResult";
-    }
-    get processor() {
-        return this.result.processor;
-    }
-    get opts() {
-        return this.result.opts;
-    }
-    get css() {
-        return this.result.css;
-    }
-    get content() {
-        return this.result.css;
-    }
-    get map() {
-        return this.result.map;
-    }
-    get root() {
-        if (this._root) return this._root;
-        let root;
-        let parser = parse;
-        try {
-            root = parser(this._css, this._opts);
-        } catch (error) {
-            this.error = error;
-        }
-        if (this.error) throw this.error;
-        else {
-            this._root = root;
-            return root;
-        }
-    }
-    get messages() {
-        return [];
-    }
-    warnings() {
-        return [];
-    }
-    toString() {
-        return this._css;
-    }
-    then(onFulfilled, onRejected) {
-        if (!("from" in this._opts)) warnOnce("Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.");
-        return this.async().then(onFulfilled, onRejected);
-    }
-    catch(onRejected) {
-        return this.async().catch(onRejected);
-    }
-    finally(onFinally) {
-        return this.async().then(onFinally, onFinally);
-    }
-    async() {
-        if (this.error) return Promise.reject(this.error);
-        return Promise.resolve(this.result);
-    }
-    sync() {
-        if (this.error) throw this.error;
-        return this.result;
-    }
-}
-module.exports = NoWorkResult;
-NoWorkResult.default = NoWorkResult;
-
-},{"cac8a030679fbad6":"ghfT0","9be69d36458d582b":"a0MwE","791f97720f0dd0ae":"dpzGz","910fc79234e1506a":"ioa1B","96a14b02aaa17183":"dmoqr"}],"iiNZS":[function(require,module,exports) {
-"use strict";
-let Declaration = require("4b43ae4fd3737621");
-let PreviousMap = require("60700dde8b5be836");
-let Comment = require("accf7cbbccc760da");
-let AtRule = require("3cdc0b706b482706");
-let Input = require("58554d265ddb6611");
-let Root = require("c11a715055f82a3b");
-let Rule = require("e55fa67de2c8e0eb");
-function fromJSON(json, inputs) {
-    if (Array.isArray(json)) return json.map((n)=>fromJSON(n));
-    let { inputs: ownInputs , ...defaults } = json;
-    if (ownInputs) {
-        inputs = [];
-        for (let input of ownInputs){
-            let inputHydrated = {
-                ...input,
-                __proto__: Input.prototype
-            };
-            if (inputHydrated.map) inputHydrated.map = {
-                ...inputHydrated.map,
-                __proto__: PreviousMap.prototype
-            };
-            inputs.push(inputHydrated);
-        }
-    }
-    if (defaults.nodes) defaults.nodes = json.nodes.map((n)=>fromJSON(n, inputs));
-    if (defaults.source) {
-        let { inputId , ...source } = defaults.source;
-        defaults.source = source;
-        if (inputId != null) defaults.source.input = inputs[inputId];
-    }
-    if (defaults.type === "root") return new Root(defaults);
-    else if (defaults.type === "decl") return new Declaration(defaults);
-    else if (defaults.type === "rule") return new Rule(defaults);
-    else if (defaults.type === "comment") return new Comment(defaults);
-    else if (defaults.type === "atrule") return new AtRule(defaults);
-    else throw new Error("Unknown node type: " + json.type);
-}
-module.exports = fromJSON;
-fromJSON.default = fromJSON;
-
-},{"4b43ae4fd3737621":"2mU8a","60700dde8b5be836":"cmiCo","accf7cbbccc760da":"5CBjv","3cdc0b706b482706":"kbVAt","58554d265ddb6611":"fb1UO","c11a715055f82a3b":"hsDFv","e55fa67de2c8e0eb":"4SFJx"}],"9R1Eu":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40903,63 +42667,7 @@ var _toolkit = require("@reduxjs/toolkit");
 const cartSlice = (0, _toolkit.createSlice)({
     name: "cart",
     initialState: {
-        items: [
-            {
-                "id": "120716746",
-                "name": "Crispy Veg Burger+Fries(M)",
-                "category": "New BK DUOS (Save upto 15%)",
-                "imageId": "7798d7bed74c81bc0e5ffc677a7d2eef",
-                "inStock": 1,
-                "isVeg": 1,
-                "price": 15000,
-                "variants": {},
-                "variantsV2": {},
-                "itemAttribute": {
-                    "vegClassifier": "VEG"
-                },
-                "defaultPrice": 15000,
-                "ribbon": {},
-                "showImage": true,
-                "itemBadge": {},
-                "badgesV2": {},
-                "ratings": {
-                    "aggregatedRating": {
-                        "rating": "4.4",
-                        "ratingCount": "30 ratings",
-                        "ratingCountV2": "30"
-                    }
-                },
-                "qty": 0
-            },
-            {
-                "id": "74456498",
-                "name": "4 Crispy Veg + 2 Medium Fries",
-                "category": "Friends & Family Combo (Save upto 20%)",
-                "description": "4 Crispy Veg + 2 Medium Fries",
-                "imageId": "bd23501ff2292a42b77a8cdcce803a4b",
-                "inStock": 1,
-                "isVeg": 1,
-                "price": 38000,
-                "variants": {},
-                "variantsV2": {},
-                "itemAttribute": {
-                    "vegClassifier": "VEG"
-                },
-                "defaultPrice": 38000,
-                "ribbon": {},
-                "showImage": true,
-                "itemBadge": {},
-                "badgesV2": {},
-                "ratings": {
-                    "aggregatedRating": {
-                        "rating": "4.2",
-                        "ratingCount": "146 ratings",
-                        "ratingCountV2": "146"
-                    }
-                },
-                "qty": 0
-            }
-        ]
+        items: []
     },
     reducers: {
         addItem: (state, action)=>{
@@ -45433,6 +47141,74 @@ $RefreshReg$(_c, "OrderPlaced");
 },{"react/jsx-dev-runtime":"iTorj","../../imgs/img.gif":"1jm5d","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1jm5d":[function(require,module,exports) {
 module.exports = require("d21b014d1b2211ee").getBundleURL("aXMci") + "img.2319dfe9.gif" + "?" + Date.now();
 
-},{"d21b014d1b2211ee":"lgJ39"}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire3318")
+},{"d21b014d1b2211ee":"lgJ39"}],"dkZO3":[function(require,module,exports) {
+module.exports = require("b25969a78033ff58")(require("9e4a8a453d42f0cf").getBundleURL("aXMci") + "Help.f20f5b5a.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("fQMB0"));
+
+},{"b25969a78033ff58":"61B45","9e4a8a453d42f0cf":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire3318")
 
 //# sourceMappingURL=index.7271efb6.js.map

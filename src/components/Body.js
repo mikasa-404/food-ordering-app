@@ -4,8 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
-import { list } from "postcss";
-import { SWIGGY_API_URL } from "../utils/constants";
+import {data} from "../mocks/MOCK_RES_DATA"
 const Body = () => {
   //state  variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -19,24 +18,14 @@ const Body = () => {
     fetchData();
   }, []);
 
-  async function fetchData() {
-    try {
-      const response = await fetch(SWIGGY_API_URL);
-      if (!response.ok) {
-        const err = response.status;
-        throw new Error(err);
-      } else {
-        const json = await response.json();
+  function fetchData() {
+        const json = data;
         const datay=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         const resData = (datay )? (json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants): (json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        
         setlistOfRestaurants(resData);
         setfilteredRestaurants(resData);
       }
-    } catch (error) {
-      console.error(error); // show error in console
-    }
-  }
+   
   const performSearch = (searchText, restaurants) => {
     if (searchText != "") {
       const filtered = filterData(searchText, restaurants);
