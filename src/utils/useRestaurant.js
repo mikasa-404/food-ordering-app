@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { MENU_API } from "../utils/constants";
+import { MENU_DATA } from "../mocks/MOCK_MENU_DATA";
+
 
 const useRestaurant =(resId)=>{
     const [resInfo, setResInfo] = useState(null);
@@ -8,9 +10,9 @@ const useRestaurant =(resId)=>{
         fetchMenu();
       }, []);
     
-      const fetchMenu = async () => {
-        const data = await fetch(MENU_API+resId);
-        const json = await data.json();
+   const fetchMenu = () => {
+        const json = MENU_DATA.find(obj=> obj.id===resId)
+        console.log(json)
         setResInfo(json.data);
       };
 
