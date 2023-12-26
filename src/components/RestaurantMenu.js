@@ -16,32 +16,38 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
 
-   // const { name, cuisines, costForTwoMessage, city , areaName, avgRating ,totalRatings} =
+  // const { name, cuisines, costForTwoMessage, city , areaName, avgRating ,totalRatings} =
   //   resInfo?.cards[0]?.card?.card?.info;
-  const { name, cuisines, costForTwoMessage, city , areaName, avgRating ,totalRatings} =
-  resInfo?.info;
-  const itemCards= resInfo?.itemCards;
-  console.log(itemCards)
-    
+  const {
+    name,
+    cuisines,
+    costForTwoMessage,
+    city,
+    areaName,
+    avgRating,
+    totalRatings,
+  } = resInfo?.info;
+  const itemCards = resInfo?.itemCards;
+  console.log(itemCards);
+
   // console.log(resInfo?.cards[0]?.card?.card?.info);
   // const itemCardsCheck = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
-  // var itemCards  = ((itemCardsCheck)? 
-  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards : 
+  // var itemCards  = ((itemCardsCheck)?
+  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards :
   //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards);
   // if(itemCards==undefined){
   //   const cardsCheck = resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
   //   if(cardsCheck==undefined) itemCards= resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards;
   //   else itemCards=cardsCheck;
   // }
-  
 
-  if(itemCards.length!=0) {
+  if (itemCards.length != 0) {
     itemCards.forEach((element) => {
       element.card.info.qty = 0;
-      console.log(element.card.info)
-    })
+      console.log(element.card.info);
+    });
   }
- console.log(itemCards)
+  console.log(itemCards);
 
   return (
     <div className="menu lg:mx-40 ">
@@ -52,12 +58,17 @@ const RestaurantMenu = () => {
           <h1 className=" m-3 text-3xl  font-bold">{name}</h1>
           <p className="mx-3">{cuisines.join(", ")}</p>
           <p className="mx-3">{costForTwoMessage}</p>
-          <p className="mx-3">{areaName}, {city}</p>
+          <p className="mx-3">
+            {areaName}, {city}
+          </p>
         </div>
         <div className="text-center">
-          <button className="font-semibold  bg-green-700 text-white p-2 rounded-sm"> {avgRating} ★ </button>
+          <button className="font-semibold  bg-green-700 text-white p-2 rounded-sm">
+            {" "}
+            {avgRating} ★{" "}
+          </button>
           <p className=" text-xs m-1">{totalRatings} ratings</p>
-          </div>
+        </div>
       </div>
 
       <div className="line h-0.5 bg-slate-800 mx-3 my-2"></div>
@@ -68,7 +79,7 @@ const RestaurantMenu = () => {
       <ul data-testid="menu" className="mx-3">
         {itemCards?.map((item) => (
           <li
-            className="border-b-2 flex justify-between p-2 items-center hover:scale-95"
+            className="border-b-2 flex justify-between p-2 items-center duration-200 hover:scale-105"
             key={item.card.info.id}
           >
             <div className="flex">
@@ -85,10 +96,10 @@ const RestaurantMenu = () => {
                 </p>
                 <button className="text-green-700 m-1 font-semibold">
                   {item.card.info.ratings.aggregatedRating.rating} ★
-                </button> 
+                </button>
               </div>
             </div>
-            <button 
+            <button
               data-testid="addBtn"
               className="p-1 md:p-2 m-1 md:m-2 rounded-md text-sm md:text-md shadow-lg text-white bg-blue-800 hover:bg-blue-500 active:bg-blue-950 hover:scale-105"
               onClick={() => addFoodItem(item.card.info)}
