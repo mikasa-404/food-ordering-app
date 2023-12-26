@@ -1,10 +1,9 @@
-export const data =
-{
+export const data={
   "statusCode": 0,
   "data": {
     "statusMessage": "done successfully",
     "pageOffset": {
-      "nextOffset": "COVCELQ4KIDYivCUzomrLjCnEzgC",
+      "nextOffset": "COVCELQ4KICY39Sw3ue8FTCnEzgD",
       "widgetOffset": {
         "NewListingView_Topical_Fullbleed": "",
         "NewListingView_category_bar_chicletranking_TwoRows": "",
@@ -22,12 +21,16 @@ export const data =
             "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
             "header": {
               "headerStyling": {
-                "padding": { "left": 16, "top": 14, "bottom": 2 }
+                "padding": {
+                  "left": 16,
+                  "top": 14,
+                  "bottom": 2
+                }
               }
             },
             "layout": {
               "rows": 1,
-              "columns": 6,
+              "columns": 2,
               "horizontalScrollEnabled": true,
               "shouldSnap": true,
               "itemSpacing": 10,
@@ -45,7 +48,12 @@ export const data =
                 "scrollTrackColor": "#E4E4E4",
                 "width": 54,
                 "height": 4,
-                "scrollStyling": { "padding": { "top": 6, "bottom": 12 } }
+                "scrollStyling": {
+                  "padding": {
+                    "top": 6,
+                    "bottom": 12
+                  }
+                }
               },
               "autoScrollConfig": {
                 "isScrollEnabled": true,
@@ -62,16 +70,21 @@ export const data =
                 "windowSize": 5,
                 "showCount": true,
                 "textColor": "#FFFFFF",
-                "scrollStyling": { "padding": { "top": 6, "bottom": 12 } }
+                "scrollStyling": {
+                  "padding": {
+                    "top": 6,
+                    "bottom": 12
+                  }
+                }
               }
             },
             "imageGridCards": {
               "info": [
                 {
-                  "id": "635513",
-                  "imageId": "rng/md/carousel/production/731031544495581f1d6884624aa3ecf5",
+                  "id": "1200052",
+                  "imageId": "rng/md/carousel/production/3967580c0329555334072b18ba3c889c",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/78798?collection_id=78798&tags=layout_ux4&type=rcv2",
+                    "link": "https://www.swiggy.com/collections/92870?collection_id=92870&tags=layout_ux4&type=rcv2",
                     "text": "All new super",
                     "type": "WEBLINK"
                   },
@@ -80,91 +93,24 @@ export const data =
                     "altText": "GET 50% OFF ON FIRST ORDER",
                     "altTextCta": "ORDER NOW"
                   },
-                  "entityId": "78798",
+                  "entityId": "92870",
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "1621344",
-                  "imageId": "rng/md/carousel/production/2e4b1546c79cdc19256e0476aa678a4b",
+                  "id": "1539072",
+                  "imageId": "rng/md/carousel/production/fd426b942f60921eb65afb229d274574",
                   "action": {
-                    "link": "https://www.swiggy.com/menu/438435",
-                    "text": "BK",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "Menu @ 129",
-                    "altTextCta": "Order Now"
-                  },
-                  "entityId": "438435",
-                  "frequencyCapping": {},
-                  "isManualAds": true
-                },
-                {
-                  "id": "1539059",
-                  "imageId": "rng/md/carousel/production/7c92c3744ea5da6c0204cb8ec2918410",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/99942?collection_id=99942&type=rcv2",
+                    "link": "https://www.swiggy.com/collections/99945?collection_id=99945&type=rcv2",
                     "text": "Gourmet LN/DN",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "GOURMET lunch",
+                    "altText": "GOURMET Snacks",
                     "altTextCta": "Order now"
                   },
-                  "entityId": "swiggy://collectionV2?collection_id=99942",
+                  "entityId": "swiggy://collectionV2?collection_id=99945",
                   "frequencyCapping": {}
-                },
-                {
-                  "id": "1621347",
-                  "imageId": "rng/md/carousel/production/ae95e0a07148bc085334f6054ee74236",
-                  "action": {
-                    "link": "https://www.swiggy.com/menu/24174",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "Brands with Offers",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "24174",
-                  "frequencyCapping": {},
-                  "isManualAds": true
-                },
-                {
-                  "id": "1621351",
-                  "imageId": "rng/md/carousel/production/d8365b980b7a2a08abac4a6ffdab9d5f",
-                  "action": {
-                    "link": "https://www.swiggy.com/menu/450015",
-                    "text": "brand card",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "Taco Bell",
-                    "altTextCta": "Order Now"
-                  },
-                  "entityId": "450015",
-                  "frequencyCapping": {},
-                  "isManualAds": true
-                },
-                {
-                  "id": "1621341",
-                  "imageId": "rng/md/carousel/production/e67c6995bfde29190f43556a092c16f8",
-                  "action": {
-                    "link": "https://www.swiggy.com/menu/707692",
-                    "text": "KFC",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "Wednesday Buckets",
-                    "altTextCta": "Order Now"
-                  },
-                  "entityId": "707692",
-                  "frequencyCapping": {},
-                  "isManualAds": true
                 }
               ],
               "style": {
@@ -186,10 +132,10 @@ export const data =
                 "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.ImageInfoLayoutCard",
                 "info": [
                   {
-                    "id": "635513",
-                    "imageId": "rng/md/carousel/production/731031544495581f1d6884624aa3ecf5",
+                    "id": "1200052",
+                    "imageId": "rng/md/carousel/production/3967580c0329555334072b18ba3c889c",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/78798?collection_id=78798&tags=layout_ux4&type=rcv2",
+                      "link": "https://www.swiggy.com/collections/92870?collection_id=92870&tags=layout_ux4&type=rcv2",
                       "text": "All new super",
                       "type": "WEBLINK"
                     },
@@ -198,91 +144,24 @@ export const data =
                       "altText": "GET 50% OFF ON FIRST ORDER",
                       "altTextCta": "ORDER NOW"
                     },
-                    "entityId": "78798",
+                    "entityId": "92870",
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "1621344",
-                    "imageId": "rng/md/carousel/production/2e4b1546c79cdc19256e0476aa678a4b",
+                    "id": "1539072",
+                    "imageId": "rng/md/carousel/production/fd426b942f60921eb65afb229d274574",
                     "action": {
-                      "link": "https://www.swiggy.com/menu/438435",
-                      "text": "BK",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "Menu @ 129",
-                      "altTextCta": "Order Now"
-                    },
-                    "entityId": "438435",
-                    "frequencyCapping": {},
-                    "isManualAds": true
-                  },
-                  {
-                    "id": "1539059",
-                    "imageId": "rng/md/carousel/production/7c92c3744ea5da6c0204cb8ec2918410",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/99942?collection_id=99942&type=rcv2",
+                      "link": "https://www.swiggy.com/collections/99945?collection_id=99945&type=rcv2",
                       "text": "Gourmet LN/DN",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "GOURMET lunch",
+                      "altText": "GOURMET Snacks",
                       "altTextCta": "Order now"
                     },
-                    "entityId": "swiggy://collectionV2?collection_id=99942",
+                    "entityId": "swiggy://collectionV2?collection_id=99945",
                     "frequencyCapping": {}
-                  },
-                  {
-                    "id": "1621347",
-                    "imageId": "rng/md/carousel/production/ae95e0a07148bc085334f6054ee74236",
-                    "action": {
-                      "link": "https://www.swiggy.com/menu/24174",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "Brands with Offers",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "24174",
-                    "frequencyCapping": {},
-                    "isManualAds": true
-                  },
-                  {
-                    "id": "1621351",
-                    "imageId": "rng/md/carousel/production/d8365b980b7a2a08abac4a6ffdab9d5f",
-                    "action": {
-                      "link": "https://www.swiggy.com/menu/450015",
-                      "text": "brand card",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "Taco Bell",
-                      "altTextCta": "Order Now"
-                    },
-                    "entityId": "450015",
-                    "frequencyCapping": {},
-                    "isManualAds": true
-                  },
-                  {
-                    "id": "1621341",
-                    "imageId": "rng/md/carousel/production/e67c6995bfde29190f43556a092c16f8",
-                    "action": {
-                      "link": "https://www.swiggy.com/menu/707692",
-                      "text": "KFC",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "Wednesday Buckets",
-                      "altTextCta": "Order Now"
-                    },
-                    "entityId": "707692",
-                    "frequencyCapping": {},
-                    "isManualAds": true
                   }
                 ],
                 "style": {
@@ -309,7 +188,11 @@ export const data =
             "header": {
               "title": "What's on your mind?",
               "headerStyling": {
-                "padding": { "left": 16, "top": 16, "bottom": 4 }
+                "padding": {
+                  "left": 16,
+                  "top": 16,
+                  "bottom": 4
+                }
               }
             },
             "layout": {
@@ -332,11 +215,29 @@ export const data =
                   "backgroundColour": "#FFFFFF",
                   "theme": "THEME_TYPE_LIGHT"
                 },
-                "darkMode": { "theme": "THEME_TYPE_DARK" }
+                "darkMode": {
+                  "theme": "THEME_TYPE_DARK"
+                }
               }
             },
             "imageGridCards": {
               "info": [
+                {
+                  "id": "750580",
+                  "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
+                    "text": "pizzas",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurants curated for pizza",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
+                  "frequencyCapping": {}
+                },
                 {
                   "id": "762797",
                   "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
@@ -370,83 +271,19 @@ export const data =
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750584",
-                  "imageId": "v1675667626/PC_Creative%20refresh/South_Indian_4.png",
+                  "id": "749769",
+                  "imageId": "v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Momos.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/83646?collection_id=83646&tags=layout_CCS_SouthIndian&type=rcv2",
-                    "text": "South Indian",
+                    "link": "https://www.swiggy.com/collections/80462?collection_id=80462&tags=layout_CCS_Momos&type=rcv2",
+                    "text": "Momos",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurants curated for south indian",
+                    "altText": "restaurant curated for momos",
                     "altTextCta": "open"
                   },
-                  "entityId": "swiggy://collectionV2?collection_id=83646&tags=layout_CCS_SouthIndian",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "749879",
-                  "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
-                    "text": "Chole Bhature",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurant curated for chhole bhatoore",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "750582",
-                  "imageId": "v1675667625/PC_Creative%20refresh/North_Indian_4.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/83645?collection_id=83645&tags=layout_CCS_NorthIndian&type=rcv2",
-                    "text": "North Indian",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurants curated for north indian",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "swiggy://collectionV2?collection_id=83645&tags=layout_CCS_NorthIndian",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "750580",
-                  "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
-                    "text": "pizzas",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurants curated for pizza",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "749774",
-                  "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
-                    "text": "Noodles",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurant curated for noodles",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "80464",
+                  "entityId": "swiggy://collectionV2?collection_id=80462&tags=layout_CCS_Momos",
                   "frequencyCapping": {}
                 },
                 {
@@ -463,22 +300,6 @@ export const data =
                     "altTextCta": "open"
                   },
                   "entityId": "swiggy://collectionV2?collection_id=83656&tags=layout_CCS_Cake",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "750644",
-                  "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
-                    "text": "Idli",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurants curated for idly",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
                   "frequencyCapping": {}
                 },
                 {
@@ -514,6 +335,38 @@ export const data =
                   "frequencyCapping": {}
                 },
                 {
+                  "id": "750230",
+                  "imageId": "v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Samosas.png",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/80397?collection_id=80397&tags=layout_BAU_Contextual%2Csamosa&type=rcv2",
+                    "text": "Samosa",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurants curated for samosa",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "80397",
+                  "frequencyCapping": {}
+                },
+                {
+                  "id": "749879",
+                  "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
+                    "text": "Chole Bhature",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurant curated for chhole bhatoore",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
+                  "frequencyCapping": {}
+                },
+                {
                   "id": "750588",
                   "imageId": "v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png",
                   "action": {
@@ -530,51 +383,35 @@ export const data =
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750203",
-                  "imageId": "v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Paratha.png",
+                  "id": "750249",
+                  "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Shawarma.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/80476?collection_id=80476&tags=layout_BAU_Contextual%2Cparatha%2Cads_pc_paratha&type=rcv2",
-                    "text": "Paratha",
+                    "link": "https://www.swiggy.com/collections/80403?collection_id=80403&tags=layout_Shawarma_Contextual&type=rcv2",
+                    "text": "Shawarma",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurants curated for paratha",
+                    "altText": "restaurant curated for shawarma",
                     "altTextCta": "open"
                   },
-                  "entityId": "80476",
+                  "entityId": "swiggy://collectionV2?collection_id=80403&tags=layout_Shawarma_Contextual",
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750111",
-                  "imageId": "v1675667630/PC_Creative%20refresh/Desserts_2.png",
+                  "id": "750235",
+                  "imageId": "v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Sandwich.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/83662?collection_id=83662&tags=layout_CCS_Desserts&type=rcv2",
-                    "text": "Dessert",
+                    "link": "https://www.swiggy.com/collections/83667?collection_id=83667&tags=layout_CCS_Sandwiches&type=rcv2",
+                    "text": "Sandwich",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurant curated for dessert",
+                    "altText": "restaurants curated for sandwich",
                     "altTextCta": "open"
                   },
-                  "entityId": "swiggy://collectionV2?collection_id=83662&tags=layout_CCS_Desserts",
-                  "frequencyCapping": {}
-                },
-                {
-                  "id": "750217",
-                  "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
-                  "action": {
-                    "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
-                    "text": "Pav Bhaji",
-                    "type": "WEBLINK"
-                  },
-                  "entityType": "BANNER",
-                  "accessibility": {
-                    "altText": "restaurant curated for pav bhaji",
-                    "altTextCta": "open"
-                  },
-                  "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
+                  "entityId": "swiggy://collectionV2?collection_id=83667&tags=layout_CCS_Sandwiches",
                   "frequencyCapping": {}
                 },
                 {
@@ -594,67 +431,115 @@ export const data =
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750259",
-                  "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rasgulla.png",
+                  "id": "749791",
+                  "imageId": "v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Pakodas.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/80389?collection_id=80389&tags=layout_BAU_Contextual%2Crasgulla&type=rcv2",
-                    "text": "Rasgulla",
+                    "link": "https://www.swiggy.com/collections/80470?collection_id=80470&tags=layout_BAU_Contextual%2Cpakoda&type=rcv2",
+                    "text": "Pakoda",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurant curated for rasgulla",
+                    "altText": "restaurant curated for pakoda",
                     "altTextCta": "open"
                   },
-                  "entityId": "80389",
+                  "entityId": "80470",
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750597",
-                  "imageId": "v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png",
+                  "id": "749774",
+                  "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/83650?collection_id=83650&tags=layout_CCS_IceCreams&type=rcv2",
-                    "text": "Ice Cream",
+                    "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
+                    "text": "Noodles",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurants curated for icecream",
+                    "altText": "restaurant curated for noodles",
                     "altTextCta": "open"
                   },
-                  "entityId": "swiggy://collectionV2?collection_id=83650&tags=layout_CCS_IceCreams",
+                  "entityId": "80464",
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750237",
-                  "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Poori.png",
+                  "id": "750217",
+                  "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/80378?collection_id=80378&tags=layout_BAU_Contextual%2Cpoori&type=rcv2",
-                    "text": "Poori",
+                    "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
+                    "text": "Pav Bhaji",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurant curated for poori",
+                    "altText": "restaurant curated for pav bhaji",
                     "altTextCta": "open"
                   },
-                  "entityId": "80378",
+                  "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
                   "frequencyCapping": {}
                 },
                 {
-                  "id": "750226",
-                  "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Salad.png",
+                  "id": "750644",
+                  "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
                   "action": {
-                    "link": "https://www.swiggy.com/collections/80395?collection_id=80395&tags=layout_CCS_Salad&type=rcv2",
-                    "text": "Salad",
+                    "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
+                    "text": "Idli",
                     "type": "WEBLINK"
                   },
                   "entityType": "BANNER",
                   "accessibility": {
-                    "altText": "restaurant curated for salad",
+                    "altText": "restaurants curated for idly",
                     "altTextCta": "open"
                   },
-                  "entityId": "swiggy://collectionV2?collection_id=80395&tags=layout_CCS_Salad",
+                  "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
+                  "frequencyCapping": {}
+                },
+                {
+                  "id": "750209",
+                  "imageId": "v1674029847/PC_Creative%20refresh/3D_bau/banners_new/Pastry.png",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/80358?collection_id=80358&tags=layout_BAU_Contextual%2Clayout_ux4&type=rcv2",
+                    "text": "Pastry",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurant curated for Pastry",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "80358",
+                  "frequencyCapping": {}
+                },
+                {
+                  "id": "750599",
+                  "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Coffee.png",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/83908?collection_id=83908&tags=layout_CCS_Coffee&type=rcv2",
+                    "text": "Coffee",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurants curated for coffee",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "swiggy://collectionV2?collection_id=83908&tags=layout_CCS_Coffee",
+                  "frequencyCapping": {}
+                },
+                {
+                  "id": "750605",
+                  "imageId": "rng/md/carousel/production/cbb85a3c1684891105294d11f8359996",
+                  "action": {
+                    "link": "https://www.swiggy.com/collections/80494?collection_id=80494&tags=layout_CCS_Tea&type=rcv2",
+                    "text": "Tea",
+                    "type": "WEBLINK"
+                  },
+                  "entityType": "BANNER",
+                  "accessibility": {
+                    "altText": "restaurants curated for tea",
+                    "altTextCta": "open"
+                  },
+                  "entityId": "swiggy://collectionV2?collection_id=80494&tags=layout_CCS_Tea",
                   "frequencyCapping": {}
                 }
               ],
@@ -676,6 +561,22 @@ export const data =
               "infoWithStyle": {
                 "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.ImageInfoLayoutCard",
                 "info": [
+                  {
+                    "id": "750580",
+                    "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
+                      "text": "pizzas",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurants curated for pizza",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
+                    "frequencyCapping": {}
+                  },
                   {
                     "id": "762797",
                     "imageId": "v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
@@ -709,83 +610,19 @@ export const data =
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750584",
-                    "imageId": "v1675667626/PC_Creative%20refresh/South_Indian_4.png",
+                    "id": "749769",
+                    "imageId": "v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Momos.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/83646?collection_id=83646&tags=layout_CCS_SouthIndian&type=rcv2",
-                      "text": "South Indian",
+                      "link": "https://www.swiggy.com/collections/80462?collection_id=80462&tags=layout_CCS_Momos&type=rcv2",
+                      "text": "Momos",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurants curated for south indian",
+                      "altText": "restaurant curated for momos",
                       "altTextCta": "open"
                     },
-                    "entityId": "swiggy://collectionV2?collection_id=83646&tags=layout_CCS_SouthIndian",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "749879",
-                    "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
-                      "text": "Chole Bhature",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurant curated for chhole bhatoore",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "750582",
-                    "imageId": "v1675667625/PC_Creative%20refresh/North_Indian_4.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/83645?collection_id=83645&tags=layout_CCS_NorthIndian&type=rcv2",
-                      "text": "North Indian",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurants curated for north indian",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "swiggy://collectionV2?collection_id=83645&tags=layout_CCS_NorthIndian",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "750580",
-                    "imageId": "v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/83644?collection_id=83644&tags=layout_CCS_Pizza&type=rcv2",
-                      "text": "pizzas",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurants curated for pizza",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "swiggy://collectionV2?collection_id=83644&tags=layout_CCS_Pizza",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "749774",
-                    "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
-                      "text": "Noodles",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurant curated for noodles",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "80464",
+                    "entityId": "swiggy://collectionV2?collection_id=80462&tags=layout_CCS_Momos",
                     "frequencyCapping": {}
                   },
                   {
@@ -802,22 +639,6 @@ export const data =
                       "altTextCta": "open"
                     },
                     "entityId": "swiggy://collectionV2?collection_id=83656&tags=layout_CCS_Cake",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "750644",
-                    "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
-                      "text": "Idli",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurants curated for idly",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
                     "frequencyCapping": {}
                   },
                   {
@@ -853,6 +674,38 @@ export const data =
                     "frequencyCapping": {}
                   },
                   {
+                    "id": "750230",
+                    "imageId": "v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Samosas.png",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/80397?collection_id=80397&tags=layout_BAU_Contextual%2Csamosa&type=rcv2",
+                      "text": "Samosa",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurants curated for samosa",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "80397",
+                    "frequencyCapping": {}
+                  },
+                  {
+                    "id": "749879",
+                    "imageId": "v1674029844/PC_Creative%20refresh/3D_bau/banners_new/Chole_Bature.png",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/80383?collection_id=80383&tags=layout_CCS_CholeBhature&type=rcv2",
+                      "text": "Chole Bhature",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurant curated for chhole bhatoore",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "swiggy://collectionV2?collection_id=80383&tags=layout_CCS_CholeBhature",
+                    "frequencyCapping": {}
+                  },
+                  {
                     "id": "750588",
                     "imageId": "v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png",
                     "action": {
@@ -869,51 +722,35 @@ export const data =
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750203",
-                    "imageId": "v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Paratha.png",
+                    "id": "750249",
+                    "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Shawarma.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/80476?collection_id=80476&tags=layout_BAU_Contextual%2Cparatha%2Cads_pc_paratha&type=rcv2",
-                      "text": "Paratha",
+                      "link": "https://www.swiggy.com/collections/80403?collection_id=80403&tags=layout_Shawarma_Contextual&type=rcv2",
+                      "text": "Shawarma",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurants curated for paratha",
+                      "altText": "restaurant curated for shawarma",
                       "altTextCta": "open"
                     },
-                    "entityId": "80476",
+                    "entityId": "swiggy://collectionV2?collection_id=80403&tags=layout_Shawarma_Contextual",
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750111",
-                    "imageId": "v1675667630/PC_Creative%20refresh/Desserts_2.png",
+                    "id": "750235",
+                    "imageId": "v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Sandwich.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/83662?collection_id=83662&tags=layout_CCS_Desserts&type=rcv2",
-                      "text": "Dessert",
+                      "link": "https://www.swiggy.com/collections/83667?collection_id=83667&tags=layout_CCS_Sandwiches&type=rcv2",
+                      "text": "Sandwich",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurant curated for dessert",
+                      "altText": "restaurants curated for sandwich",
                       "altTextCta": "open"
                     },
-                    "entityId": "swiggy://collectionV2?collection_id=83662&tags=layout_CCS_Desserts",
-                    "frequencyCapping": {}
-                  },
-                  {
-                    "id": "750217",
-                    "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
-                    "action": {
-                      "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
-                      "text": "Pav Bhaji",
-                      "type": "WEBLINK"
-                    },
-                    "entityType": "BANNER",
-                    "accessibility": {
-                      "altText": "restaurant curated for pav bhaji",
-                      "altTextCta": "open"
-                    },
-                    "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
+                    "entityId": "swiggy://collectionV2?collection_id=83667&tags=layout_CCS_Sandwiches",
                     "frequencyCapping": {}
                   },
                   {
@@ -933,67 +770,115 @@ export const data =
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750259",
-                    "imageId": "v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rasgulla.png",
+                    "id": "749791",
+                    "imageId": "v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Pakodas.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/80389?collection_id=80389&tags=layout_BAU_Contextual%2Crasgulla&type=rcv2",
-                      "text": "Rasgulla",
+                      "link": "https://www.swiggy.com/collections/80470?collection_id=80470&tags=layout_BAU_Contextual%2Cpakoda&type=rcv2",
+                      "text": "Pakoda",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurant curated for rasgulla",
+                      "altText": "restaurant curated for pakoda",
                       "altTextCta": "open"
                     },
-                    "entityId": "80389",
+                    "entityId": "80470",
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750597",
-                    "imageId": "v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png",
+                    "id": "749774",
+                    "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/83650?collection_id=83650&tags=layout_CCS_IceCreams&type=rcv2",
-                      "text": "Ice Cream",
+                      "link": "https://www.swiggy.com/collections/80464?collection_id=80464&tags=layout_BAU_Contextual%2Cnoodles&type=rcv2",
+                      "text": "Noodles",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurants curated for icecream",
+                      "altText": "restaurant curated for noodles",
                       "altTextCta": "open"
                     },
-                    "entityId": "swiggy://collectionV2?collection_id=83650&tags=layout_CCS_IceCreams",
+                    "entityId": "80464",
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750237",
-                    "imageId": "v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Poori.png",
+                    "id": "750217",
+                    "imageId": "v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/80378?collection_id=80378&tags=layout_BAU_Contextual%2Cpoori&type=rcv2",
-                      "text": "Poori",
+                      "link": "https://www.swiggy.com/collections/80364?collection_id=80364&tags=layout_PavBhaji_Contextual&type=rcv2",
+                      "text": "Pav Bhaji",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurant curated for poori",
+                      "altText": "restaurant curated for pav bhaji",
                       "altTextCta": "open"
                     },
-                    "entityId": "80378",
+                    "entityId": "swiggy://collectionV2?collection_id=80364&tags=layout_PavBhaji_Contextual",
                     "frequencyCapping": {}
                   },
                   {
-                    "id": "750226",
-                    "imageId": "v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Salad.png",
+                    "id": "750644",
+                    "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Idli.png",
                     "action": {
-                      "link": "https://www.swiggy.com/collections/80395?collection_id=80395&tags=layout_CCS_Salad&type=rcv2",
-                      "text": "Salad",
+                      "link": "https://www.swiggy.com/collections/80441?collection_id=80441&searchContext=idli&tags=layout_CCS_Idli&type=rcv2",
+                      "text": "Idli",
                       "type": "WEBLINK"
                     },
                     "entityType": "BANNER",
                     "accessibility": {
-                      "altText": "restaurant curated for salad",
+                      "altText": "restaurants curated for idly",
                       "altTextCta": "open"
                     },
-                    "entityId": "swiggy://collectionV2?collection_id=80395&tags=layout_CCS_Salad",
+                    "entityId": "swiggy://collectionV2?collection_id=80441&tags=layout_CCS_Idli&searchContext=idli",
+                    "frequencyCapping": {}
+                  },
+                  {
+                    "id": "750209",
+                    "imageId": "v1674029847/PC_Creative%20refresh/3D_bau/banners_new/Pastry.png",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/80358?collection_id=80358&tags=layout_BAU_Contextual%2Clayout_ux4&type=rcv2",
+                      "text": "Pastry",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurant curated for Pastry",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "80358",
+                    "frequencyCapping": {}
+                  },
+                  {
+                    "id": "750599",
+                    "imageId": "v1674029846/PC_Creative%20refresh/3D_bau/banners_new/Coffee.png",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/83908?collection_id=83908&tags=layout_CCS_Coffee&type=rcv2",
+                      "text": "Coffee",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurants curated for coffee",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "swiggy://collectionV2?collection_id=83908&tags=layout_CCS_Coffee",
+                    "frequencyCapping": {}
+                  },
+                  {
+                    "id": "750605",
+                    "imageId": "rng/md/carousel/production/cbb85a3c1684891105294d11f8359996",
+                    "action": {
+                      "link": "https://www.swiggy.com/collections/80494?collection_id=80494&tags=layout_CCS_Tea&type=rcv2",
+                      "text": "Tea",
+                      "type": "WEBLINK"
+                    },
+                    "entityType": "BANNER",
+                    "accessibility": {
+                      "altText": "restaurants curated for tea",
+                      "altTextCta": "open"
+                    },
+                    "entityId": "swiggy://collectionV2?collection_id=80494&tags=layout_CCS_Tea",
                     "frequencyCapping": {}
                   }
                 ],
@@ -1022,7 +907,11 @@ export const data =
               "title": "Top restaurant chains in Delhi",
               "action": {},
               "headerStyling": {
-                "padding": { "left": 16, "top": 28, "bottom": 18 }
+                "padding": {
+                  "left": 16,
+                  "top": 28,
+                  "bottom": 18
+                }
               }
             },
             "layout": {
@@ -1032,14 +921,23 @@ export const data =
               "itemSpacing": 32,
               "widgetPadding": {},
               "containerStyle": {
-                "containerPadding": { "left": 16, "right": 12, "bottom": 12 }
+                "containerPadding": {
+                  "left": 16,
+                  "right": 12,
+                  "bottom": 12
+                }
               },
               "scrollBar": {
                 "scrollThumbColor": "#E46D47",
                 "scrollTrackColor": "#02060C",
                 "width": 54,
                 "height": 4,
-                "scrollStyling": { "padding": { "top": 6, "bottom": 24 } }
+                "scrollStyling": {
+                  "padding": {
+                    "top": 6,
+                    "bottom": 24
+                  }
+                }
               },
               "widgetTheme": {
                 "defaultMode": {
@@ -1059,33 +957,30 @@ export const data =
                 "restaurants": [
                   {
                     "info": {
-                      "id": "89844",
-                      "name": "KFC",
-                      "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
-                      "locality": "New Ashok Nagar",
-                      "areaName": "Vasundhara Enclave",
+                      "id": "234208",
+                      "name": "Theobroma",
+                      "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
+                      "locality": "Swasthya Vihar",
+                      "areaName": "Laxmi Nagar",
                       "costForTwo": "₹400 for two",
                       "cuisines": [
-                        "Burgers",
-                        "Biryani",
-                        "American",
-                        "Snacks",
-                        "Fast Food"
+                        "Bakery",
+                        "Desserts"
                       ],
-                      "avgRating": 4.1,
-                      "parentId": "547",
-                      "avgRatingString": "4.1",
-                      "totalRatingsString": "10K+",
+                      "avgRating": 4.5,
+                      "parentId": "1040",
+                      "avgRatingString": "4.5",
+                      "totalRatingsString": "5K+",
                       "sla": {
-                        "deliveryTime": 18,
-                        "lastMileTravel": 2.7,
+                        "deliveryTime": 30,
+                        "lastMileTravel": 3.6,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "18 mins",
-                        "lastMileTravelString": "2.7 km",
+                        "slaString": "30 mins",
+                        "lastMileTravelString": "3.6 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 05:00:00",
+                        "nextCloseTime": "2023-12-26 23:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1099,8 +994,9 @@ export const data =
                         }
                       },
                       "aggregatedDiscountInfoV3": {
-                        "header": "20% OFF",
-                        "subHeader": "UPTO ₹50"
+                        "header": "₹150 OFF",
+                        "subHeader": "ABOVE ₹1149",
+                        "discountTag": "FLAT DEAL"
                       },
                       "differentiatedUi": {
                         "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
@@ -1116,7 +1012,7 @@ export const data =
                     },
                     "analytics": {},
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/kfc-new-ashok-nagar-vasundhara-enclave-delhi-89844",
+                      "link": "https://www.swiggy.com/restaurants/theobroma-swasthya-vihar-laxmi-nagar-delhi-234208",
                       "type": "WEBLINK"
                     }
                   },
@@ -1128,21 +1024,24 @@ export const data =
                       "locality": "V3S Mall",
                       "areaName": "Swasthya Vihar",
                       "costForTwo": "₹350 for two",
-                      "cuisines": ["Burgers", "American"],
+                      "cuisines": [
+                        "Burgers",
+                        "American"
+                      ],
                       "avgRating": 4.2,
                       "parentId": "166",
                       "avgRatingString": "4.2",
                       "totalRatingsString": "10K+",
                       "sla": {
-                        "deliveryTime": 25,
+                        "deliveryTime": 33,
                         "lastMileTravel": 3.6,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
+                        "slaString": "33 mins",
                         "lastMileTravelString": "3.6 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 02:00:00",
+                        "nextCloseTime": "2023-12-27 04:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1179,27 +1078,29 @@ export const data =
                   },
                   {
                     "info": {
-                      "id": "253981",
-                      "name": "McDonald's",
-                      "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
-                      "locality": "V3S Mall",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹400 for two",
-                      "cuisines": ["American"],
-                      "avgRating": 4.4,
-                      "parentId": "630",
-                      "avgRatingString": "4.4",
-                      "totalRatingsString": "10K+",
+                      "id": "55474",
+                      "name": "Pizza Hut",
+                      "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                      "locality": "Mandawali",
+                      "areaName": "IP Extension",
+                      "costForTwo": "₹350 for two",
+                      "cuisines": [
+                        "Pizzas"
+                      ],
+                      "avgRating": 3.8,
+                      "parentId": "721",
+                      "avgRatingString": "3.8",
+                      "totalRatingsString": "5K+",
                       "sla": {
-                        "deliveryTime": 26,
-                        "lastMileTravel": 3.6,
+                        "deliveryTime": 36,
+                        "lastMileTravel": 3.7,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "26 mins",
-                        "lastMileTravelString": "3.6 km",
+                        "slaString": "36 mins",
+                        "lastMileTravelString": "3.7 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 23:45:00",
+                        "nextCloseTime": "2023-12-27 03:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1213,8 +1114,214 @@ export const data =
                         }
                       },
                       "aggregatedDiscountInfoV3": {
-                        "header": "40% OFF",
-                        "subHeader": "UPTO ₹80"
+                        "header": "20% OFF",
+                        "subHeader": "UPTO ₹50"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/pizza-hut-mandawali-ip-extension-delhi-55474",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "104568",
+                      "name": "Starbucks Coffee",
+                      "cloudinaryImageId": "258fe8a3577877fbfe064095ed1d9dc3",
+                      "locality": "DLF Mall of India",
+                      "areaName": "Sector 18",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "Beverages",
+                        "Cafe",
+                        "Snacks",
+                        "Desserts",
+                        "Bakery",
+                        "Ice Cream"
+                      ],
+                      "avgRating": 4.3,
+                      "parentId": "195515",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 43,
+                        "lastMileTravel": 6.4,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "43 mins",
+                        "lastMileTravelString": "6.4 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 22:30:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "10% OFF",
+                        "subHeader": "ABOVE ₹900",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/starbucks-coffee-dlf-mall-of-india-sector-18-delhi-104568",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "89844",
+                      "name": "KFC",
+                      "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
+                      "locality": "New Ashok Nagar",
+                      "areaName": "Vasundhara Enclave",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "Burgers",
+                        "Biryani",
+                        "American",
+                        "Snacks",
+                        "Fast Food"
+                      ],
+                      "avgRating": 4.1,
+                      "parentId": "547",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "10K+",
+                      "sla": {
+                        "deliveryTime": 26,
+                        "lastMileTravel": 2.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "26 mins",
+                        "lastMileTravelString": "2.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-27 05:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "20% OFF",
+                        "subHeader": "UPTO ₹50"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/kfc-new-ashok-nagar-vasundhara-enclave-delhi-89844",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "253981",
+                      "name": "McDonald's",
+                      "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+                      "locality": "V3S Mall",
+                      "areaName": "Laxmi Nagar",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "American"
+                      ],
+                      "avgRating": 4.4,
+                      "parentId": "630",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "10K+",
+                      "sla": {
+                        "deliveryTime": 34,
+                        "lastMileTravel": 3.6,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "34 mins",
+                        "lastMileTravelString": "3.6 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:45:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "10% OFF",
+                        "subHeader": "UPTO ₹40"
                       },
                       "differentiatedUi": {
                         "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
@@ -1242,7 +1349,12 @@ export const data =
                       "locality": "1St Phase",
                       "areaName": "Mayur Vihar",
                       "costForTwo": "₹400 for two",
-                      "cuisines": ["Pizzas", "Italian", "Pastas", "Desserts"],
+                      "cuisines": [
+                        "Pizzas",
+                        "Italian",
+                        "Pastas",
+                        "Desserts"
+                      ],
                       "avgRating": 4.3,
                       "parentId": "2456",
                       "avgRatingString": "4.3",
@@ -1254,7 +1366,7 @@ export const data =
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 02:59:00",
+                        "nextCloseTime": "2023-12-27 03:59:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1292,303 +1404,31 @@ export const data =
                   },
                   {
                     "info": {
-                      "id": "169483",
-                      "name": "Bakingo",
-                      "cloudinaryImageId": "0c53fd8f62e3d25ba56d1b4cfe572cef",
-                      "locality": "West Arjun Nagar",
-                      "areaName": "Krishna Nagar",
-                      "costForTwo": "₹300 for two",
-                      "cuisines": ["Bakery", "Desserts", "Beverages", "Snacks"],
-                      "avgRating": 4.4,
-                      "parentId": "3818",
-                      "avgRatingString": "4.4",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 33,
-                        "lastMileTravel": 6.7,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "33 mins",
-                        "lastMileTravelString": "6.7 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 01:00:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "aggregatedDiscountInfoV2": {},
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/bakingo-west-arjun-nagar-krishna-nagar-delhi-169483",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "15851",
-                      "name": "Faasos - Wraps, Rolls & Shawarma",
-                      "cloudinaryImageId": "af33b81798b11deba338e94b7585d348",
-                      "locality": "Laxmi Nagar",
-                      "areaName": "Shakarpur",
-                      "costForTwo": "₹200 for two",
-                      "cuisines": [
-                        "Kebabs",
-                        "Fast Food",
-                        "Snacks",
-                        "North Indian",
-                        "American",
-                        "Healthy Food",
-                        "Desserts",
-                        "Beverages"
-                      ],
-                      "avgRating": 4.2,
-                      "parentId": "21809",
-                      "avgRatingString": "4.2",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 27,
-                        "lastMileTravel": 3,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "27 mins",
-                        "lastMileTravelString": "3.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "textExtendedBadges": [
-                          {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹139"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/faasos-wraps-rolls-and-shawarma-laxmi-nagar-shakarpur-delhi-15851",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "62881",
-                      "name": "LunchBox - Meals and Thalis",
-                      "cloudinaryImageId": "qwxytz94vjl3hqbdpeqo",
-                      "locality": "R Block",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹200 for two",
-                      "cuisines": [
-                        "Biryani",
-                        "North Indian",
-                        "Punjabi",
-                        "Healthy Food",
-                        "Desserts",
-                        "Beverages"
-                      ],
-                      "avgRating": 4.2,
-                      "parentId": "4925",
-                      "avgRatingString": "4.2",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 3,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "3.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "textExtendedBadges": [
-                          {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹159"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/lunchbox-meals-and-thalis-r-block-laxmi-nagar-delhi-62881",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "55474",
-                      "name": "Pizza Hut",
-                      "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
-                      "locality": "Mandawali",
-                      "areaName": "IP Extension",
-                      "costForTwo": "₹350 for two",
-                      "cuisines": ["Pizzas"],
-                      "avgRating": 3.8,
-                      "parentId": "721",
-                      "avgRatingString": "3.8",
-                      "totalRatingsString": "5K+",
-                      "sla": {
-                        "deliveryTime": 26,
-                        "lastMileTravel": 3.7,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "26 mins",
-                        "lastMileTravelString": "3.7 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 03:00:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": { "header": "FREE ITEM" },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/pizza-hut-mandawali-ip-extension-delhi-55474",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
                       "id": "10710",
                       "name": "Subway",
                       "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
                       "locality": "2nd Phase",
                       "areaName": "Mayur Vihar",
                       "costForTwo": "₹350 for two",
-                      "cuisines": ["Salads", "Snacks", "Beverages"],
+                      "cuisines": [
+                        "Salads",
+                        "Snacks",
+                        "Beverages"
+                      ],
                       "avgRating": 4.4,
                       "parentId": "2",
                       "avgRatingString": "4.4",
                       "totalRatingsString": "10K+",
                       "sla": {
-                        "deliveryTime": 13,
+                        "deliveryTime": 15,
                         "lastMileTravel": 0.3,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "13 mins",
+                        "slaString": "15 mins",
                         "lastMileTravelString": "0.3 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 01:00:00",
+                        "nextCloseTime": "2023-12-27 01:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1625,33 +1465,36 @@ export const data =
                   },
                   {
                     "info": {
-                      "id": "157583",
-                      "name": "La Pino'z Pizza",
-                      "cloudinaryImageId": "viw6nojxpa0urypajyoy",
-                      "locality": "Vijay Main Road",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹350 for two",
+                      "id": "410710",
+                      "name": "Wow! Momo",
+                      "cloudinaryImageId": "0984acc0ed7b914206dbbcb90297becc",
+                      "locality": "Ashok Nagar",
+                      "areaName": "Vasundhara Enclave",
+                      "costForTwo": "₹300 for two",
                       "cuisines": [
-                        "Pizzas",
-                        "Pastas",
-                        "Italian",
+                        "Tibetan",
+                        "Healthy Food",
+                        "Asian",
+                        "Chinese",
+                        "Snacks",
+                        "Continental",
                         "Desserts",
                         "Beverages"
                       ],
-                      "avgRating": 4,
-                      "parentId": "4961",
-                      "avgRatingString": "4.0",
-                      "totalRatingsString": "10K+",
+                      "avgRating": 4.2,
+                      "parentId": "1776",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "500+",
                       "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 3.6,
+                        "deliveryTime": 32,
+                        "lastMileTravel": 2.7,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "3.6 km",
+                        "slaString": "32 mins",
+                        "lastMileTravelString": "2.7 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 05:00:00",
+                        "nextCloseTime": "2023-12-27 02:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -1665,78 +1508,8 @@ export const data =
                         }
                       },
                       "aggregatedDiscountInfoV3": {
-                        "header": "60% OFF",
-                        "subHeader": "UPTO ₹120"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/la-pinoz-pizza-vijay-main-road-laxmi-nagar-delhi-157583",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "234208",
-                      "name": "Theobroma",
-                      "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
-                      "locality": "Swasthya Vihar",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹400 for two",
-                      "cuisines": ["Bakery", "Desserts"],
-                      "avgRating": 4.5,
-                      "parentId": "1040",
-                      "avgRatingString": "4.5",
-                      "totalRatingsString": "5K+",
-                      "sla": {
-                        "deliveryTime": 23,
-                        "lastMileTravel": 3.6,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "23 mins",
-                        "lastMileTravelString": "3.6 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:00:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "imageBadges": [
-                          { "imageId": "newg.png", "description": "Gourmet" }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "Gourmet",
-                                  "imageId": "newg.png"
-                                }
-                              }
-                            ]
-                          },
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "10% OFF",
-                        "subHeader": "ABOVE ₹159",
+                        "header": "₹175 OFF",
+                        "subHeader": "ABOVE ₹599",
                         "discountTag": "FLAT DEAL"
                       },
                       "differentiatedUi": {
@@ -1753,38 +1526,233 @@ export const data =
                     },
                     "analytics": {},
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/theobroma-swasthya-vihar-laxmi-nagar-delhi-234208",
+                      "link": "https://www.swiggy.com/restaurants/wow-momo-ashok-nagar-vasundhara-enclave-delhi-410710",
                       "type": "WEBLINK"
                     }
                   },
                   {
                     "info": {
-                      "id": "497901",
-                      "name": "Miso - The Asian Kitchen",
-                      "cloudinaryImageId": "idehmj1lykrmxmznmzpw",
+                      "id": "87797",
+                      "name": "Hira Sweets",
+                      "cloudinaryImageId": "vicbanjyammdidibflvr",
                       "locality": "Laxmi Nagar",
                       "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹600 for two",
-                      "cuisines": ["Asian", "Japanese", "Thai"],
+                      "costForTwo": "₹350 for two",
+                      "cuisines": [
+                        "North Indian",
+                        "South Indian",
+                        "Chinese",
+                        "Continental",
+                        "Bakery",
+                        "Street Food",
+                        "Sweets",
+                        "Desserts",
+                        "Beverages"
+                      ],
                       "avgRating": 4.2,
-                      "parentId": "473078",
+                      "parentId": "5155",
                       "avgRatingString": "4.2",
-                      "totalRatingsString": "100+",
+                      "totalRatingsString": "10K+",
                       "sla": {
-                        "deliveryTime": 26,
+                        "deliveryTime": 34,
+                        "lastMileTravel": 3.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "34 mins",
+                        "lastMileTravelString": "3.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "aggregatedDiscountInfoV2": {},
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/hira-sweets-laxmi-nagar-delhi-87797",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "50880",
+                      "name": "221B Baker Street",
+                      "cloudinaryImageId": "rxcxcmr0miqmf8bsxqci",
+                      "locality": "DDA Market Road",
+                      "areaName": "Vasundhara Enclave",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "Bakery"
+                      ],
+                      "avgRating": 3.9,
+                      "parentId": "2664",
+                      "avgRatingString": "3.9",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 32,
                         "lastMileTravel": 3.6,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "26 mins",
+                        "slaString": "32 mins",
                         "lastMileTravelString": "3.6 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 23:00:00",
+                        "nextCloseTime": "2023-12-26 21:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "50% OFF",
+                        "subHeader": "UPTO ₹100"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/221b-baker-street-dda-market-road-vasundhara-enclave-delhi-50880",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "226273",
+                      "name": "Nirula's",
+                      "cloudinaryImageId": "a66fa8f5befa65947d9e20f29a863ce0",
+                      "locality": "1St Phase",
+                      "areaName": "Mayur Vihar",
+                      "costForTwo": "₹500 for two",
+                      "cuisines": [
+                        "Pizzas",
+                        "Burgers",
+                        "Ice Cream",
+                        "North Indian",
+                        "Fast Food",
+                        "Pastas",
+                        "Beverages"
+                      ],
+                      "avgRating": 4.2,
+                      "parentId": "1738",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 15,
+                        "lastMileTravel": 0.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15 mins",
+                        "lastMileTravelString": "0.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "20% OFF",
+                        "subHeader": "UPTO ₹50"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/nirulas-1st-phase-mayur-vihar-delhi-226273",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "69469",
+                      "name": "Pasta la Vista",
+                      "cloudinaryImageId": "ba665f892177fdbf0a8daa5fff3ac29f",
+                      "locality": "D Block",
+                      "areaName": "Sector 7",
+                      "costForTwo": "₹300 for two",
+                      "cuisines": [
+                        "Continental",
+                        "Italian"
+                      ],
+                      "avgRating": 4.1,
+                      "veg": true,
+                      "parentId": "2372",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "10K+",
+                      "sla": {
+                        "deliveryTime": 36,
+                        "lastMileTravel": 4,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "36 mins",
+                        "lastMileTravelString": "4.0 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-27 02:00:00",
                         "opened": true
                       },
                       "badges": {
                         "imageBadges": [
-                          { "imageId": "newg.png", "description": "Gourmet" }
+                          {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "pureveg"
+                          }
                         ]
                       },
                       "isOpen": true,
@@ -1795,8 +1763,8 @@ export const data =
                             "badgeObject": [
                               {
                                 "attributes": {
-                                  "description": "Gourmet",
-                                  "imageId": "newg.png"
+                                  "description": "pureveg",
+                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
                                 }
                               }
                             ]
@@ -1824,7 +1792,7 @@ export const data =
                     },
                     "analytics": {},
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/miso-the-asian-kitchen-laxmi-nagar-delhi-497901",
+                      "link": "https://www.swiggy.com/restaurants/pasta-la-vista-d-block-sector-7-delhi-69469",
                       "type": "WEBLINK"
                     }
                   },
@@ -1836,22 +1804,26 @@ export const data =
                       "locality": "Pratap Nagar",
                       "areaName": "Mayur Vihar",
                       "costForTwo": "₹200 for two",
-                      "cuisines": ["Desserts", "Ice Cream", "Healthy Food"],
+                      "cuisines": [
+                        "Desserts",
+                        "Ice Cream",
+                        "Healthy Food"
+                      ],
                       "avgRating": 4.1,
                       "veg": true,
                       "parentId": "236673",
                       "avgRatingString": "4.1",
                       "totalRatingsString": "20+",
                       "sla": {
-                        "deliveryTime": 16,
+                        "deliveryTime": 18,
                         "lastMileTravel": 0.1,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "16 mins",
+                        "slaString": "18 mins",
                         "lastMileTravelString": "0.1 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 23:50:00",
+                        "nextCloseTime": "2023-12-26 23:50:00",
                         "opened": true
                       },
                       "badges": {
@@ -1907,43 +1879,104 @@ export const data =
                   },
                   {
                     "info": {
-                      "id": "226273",
-                      "name": "Nirula's",
-                      "cloudinaryImageId": "a66fa8f5befa65947d9e20f29a863ce0",
-                      "locality": "1St Phase",
-                      "areaName": "Mayur Vihar",
-                      "costForTwo": "₹500 for two",
+                      "id": "34339",
+                      "name": "Oven Story Pizza - Standout Toppings",
+                      "cloudinaryImageId": "f986df6f1a1fcf2ff24d2eaf44d570a7",
+                      "locality": "Kondli",
+                      "areaName": "Mayur Vihar Phase 3",
+                      "costForTwo": "₹400 for two",
                       "cuisines": [
                         "Pizzas",
-                        "Burgers",
-                        "Ice Cream",
-                        "North Indian",
-                        "Fast Food",
                         "Pastas",
+                        "Italian",
+                        "Desserts",
                         "Beverages"
                       ],
-                      "avgRating": 4.2,
-                      "parentId": "1738",
-                      "avgRatingString": "4.2",
+                      "avgRating": 4.5,
+                      "parentId": "3534",
+                      "avgRatingString": "4.5",
                       "totalRatingsString": "1K+",
                       "sla": {
-                        "deliveryTime": 14,
-                        "lastMileTravel": 0.2,
+                        "deliveryTime": 26,
+                        "lastMileTravel": 4.8,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "14 mins",
-                        "lastMileTravelString": "0.2 km",
+                        "slaString": "23-29 mins",
+                        "lastMileTravelString": "4.8 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
+                        "nextCloseTime": "2023-12-26 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "₹125 OFF",
+                        "subHeader": "ABOVE ₹899",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/oven-story-pizza-standout-toppings-kondli-mayur-vihar-phase-3-delhi-34339",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "82120",
+                      "name": "Blue Tokai Coffee Roasters",
+                      "cloudinaryImageId": "1a0521375f07155eda2f1ed263206831",
+                      "locality": "B Block",
+                      "areaName": "Udhyog Marg",
+                      "costForTwo": "₹800 for two",
+                      "cuisines": [
+                        "Cafe",
+                        "Healthy Food",
+                        "Beverages",
+                        "Desserts",
+                        "American"
+                      ],
+                      "avgRating": 4.6,
+                      "parentId": "2682",
+                      "avgRatingString": "4.6",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 36,
+                        "lastMileTravel": 4.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "36 mins",
+                        "lastMileTravelString": "4.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 20:00:00",
                         "opened": true
                       },
                       "badges": {
-                        "textExtendedBadges": [
+                        "imageBadges": [
                           {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
                           }
                         ]
                       },
@@ -1951,20 +1984,18 @@ export const data =
                       "type": "F",
                       "badgesV2": {
                         "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
+                          "imageBased": {
                             "badgeObject": [
                               {
                                 "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
                                 }
                               }
                             ]
-                          }
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
                         }
                       },
                       "aggregatedDiscountInfoV3": {
@@ -1985,40 +2016,253 @@ export const data =
                     },
                     "analytics": {},
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/nirulas-1st-phase-mayur-vihar-delhi-226273",
+                      "link": "https://www.swiggy.com/restaurants/blue-tokai-coffee-roasters-b-block-udhyog-marg-delhi-82120",
                       "type": "WEBLINK"
                     }
                   },
                   {
                     "info": {
-                      "id": "302685",
-                      "name": "Barbeque Nation",
-                      "cloudinaryImageId": "bop3awlf2vildir1tveq",
-                      "locality": "LAXMI NAGAR",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹600 for two",
+                      "id": "169483",
+                      "name": "Bakingo",
+                      "cloudinaryImageId": "0c53fd8f62e3d25ba56d1b4cfe572cef",
+                      "locality": "West Arjun Nagar",
+                      "areaName": "Krishna Nagar",
+                      "costForTwo": "₹300 for two",
                       "cuisines": [
-                        "North Indian",
-                        "Barbecue",
-                        "Biryani",
-                        "Kebabs",
-                        "Mughlai",
-                        "Desserts"
+                        "Bakery",
+                        "Desserts",
+                        "Beverages",
+                        "Snacks"
                       ],
-                      "avgRating": 3.8,
-                      "parentId": "2438",
-                      "avgRatingString": "3.8",
-                      "totalRatingsString": "1K+",
+                      "avgRating": 4.4,
+                      "parentId": "3818",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "10K+",
                       "sla": {
-                        "deliveryTime": 31,
-                        "lastMileTravel": 3,
+                        "deliveryTime": 46,
+                        "lastMileTravel": 6.7,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "31 mins",
-                        "lastMileTravelString": "3.0 km",
+                        "slaString": "46 mins",
+                        "lastMileTravelString": "6.7 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 16:30:00",
+                        "nextCloseTime": "2023-12-27 01:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "₹175 OFF",
+                        "subHeader": "ABOVE ₹999",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/bakingo-west-arjun-nagar-krishna-nagar-delhi-169483",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "34963",
+                      "name": "Angels in my Kitchen",
+                      "cloudinaryImageId": "ucpycovjdz3epr8iqkph",
+                      "areaName": "Sector 18",
+                      "costForTwo": "₹600 for two",
+                      "cuisines": [
+                        "Bakery",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.3,
+                      "parentId": "4405",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 34,
+                        "lastMileTravel": 6.1,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "34 mins",
+                        "lastMileTravelString": "6.1 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 21:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
+                          }
+                        ],
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "₹150 OFF",
+                        "subHeader": "ABOVE ₹899",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/angels-in-my-kitchen-sector-18-delhi-34963",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "403932",
+                      "name": "NOTO - Ice Creams & Desserts",
+                      "cloudinaryImageId": "81ac87e5c89c16adc867be38ce5a1ba3",
+                      "areaName": "Sector 4",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "Ice Cream"
+                      ],
+                      "avgRating": 4.4,
+                      "veg": true,
+                      "parentId": "468478",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "100+",
+                      "sla": {
+                        "deliveryTime": 31,
+                        "lastMileTravel": 4.4,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "31 mins",
+                        "lastMileTravelString": "4.4 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-27 00:30:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹59"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {},
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/noto-ice-creams-and-desserts-sector-4-delhi-403932",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "205404",
+                      "name": "Rollsking",
+                      "cloudinaryImageId": "jbh1c8eb0qnkmd8xthr6",
+                      "locality": "1St Phase",
+                      "areaName": "Mayur Vihar",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "North Indian",
+                        "Fast Food",
+                        "Beverages"
+                      ],
+                      "avgRating": 4,
+                      "parentId": "4697",
+                      "avgRatingString": "4.0",
+                      "totalRatingsString": "1K+",
+                      "sla": {
+                        "deliveryTime": 19,
+                        "lastMileTravel": 0.3,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "19 mins",
+                        "lastMileTravelString": "0.3 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:59:00",
                         "opened": true
                       },
                       "badges": {},
@@ -2049,367 +2293,7 @@ export const data =
                     },
                     "analytics": {},
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/barbeque-nation-laxmi-nagar-delhi-302685",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "87797",
-                      "name": "Hira Sweets",
-                      "cloudinaryImageId": "vicbanjyammdidibflvr",
-                      "locality": "Laxmi Nagar",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹350 for two",
-                      "cuisines": [
-                        "North Indian",
-                        "South Indian",
-                        "Chinese",
-                        "Continental",
-                        "Bakery",
-                        "Street Food",
-                        "Sweets",
-                        "Desserts",
-                        "Beverages"
-                      ],
-                      "avgRating": 4.2,
-                      "parentId": "5155",
-                      "avgRatingString": "4.2",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 3.7,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "3.7 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "aggregatedDiscountInfoV2": {},
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/hira-sweets-laxmi-nagar-delhi-87797",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "69469",
-                      "name": "Pasta la Vista",
-                      "cloudinaryImageId": "ba665f892177fdbf0a8daa5fff3ac29f",
-                      "locality": "D Block",
-                      "areaName": "Sector 7",
-                      "costForTwo": "₹300 for two",
-                      "cuisines": ["Continental", "Italian"],
-                      "avgRating": 4.1,
-                      "veg": true,
-                      "parentId": "2372",
-                      "avgRatingString": "4.1",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 4,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "4.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 02:00:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "imageBadges": [
-                          {
-                            "imageId": "v1695133679/badges/Pure_Veg111.png",
-                            "description": "pureveg"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "pureveg",
-                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
-                                }
-                              }
-                            ]
-                          },
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "₹125 OFF",
-                        "subHeader": "ABOVE ₹249",
-                        "discountTag": "FLAT DEAL"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/pasta-la-vista-d-block-sector-7-delhi-69469",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "10982",
-                      "name": "Nathu's Sweets",
-                      "cloudinaryImageId": "siz4ryuwzildcgiw6ojg",
-                      "locality": "Vikas Marg",
-                      "areaName": "Laxmi Nagar",
-                      "costForTwo": "₹400 for two",
-                      "cuisines": ["Sweets", "Bakery", "Snacks"],
-                      "avgRating": 4,
-                      "veg": true,
-                      "parentId": "1945",
-                      "avgRatingString": "4.0",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 3.6,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "3.6 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:00:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "imageBadges": [
-                          {
-                            "imageId": "v1695133679/badges/Pure_Veg111.png",
-                            "description": "pureveg"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "pureveg",
-                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
-                                }
-                              }
-                            ]
-                          },
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "50% OFF",
-                        "subHeader": "UPTO ₹95"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/nathus-sweets-vikas-marg-laxmi-nagar-delhi-10982",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "104568",
-                      "name": "Starbucks Coffee",
-                      "cloudinaryImageId": "0c958153eeb436db6d515ca36e47e8a4",
-                      "locality": "DLF Mall of India",
-                      "areaName": "Sector 18",
-                      "costForTwo": "₹400 for two",
-                      "cuisines": [
-                        "Beverages",
-                        "Cafe",
-                        "Snacks",
-                        "Desserts",
-                        "Bakery",
-                        "Ice Cream"
-                      ],
-                      "avgRating": 4.3,
-                      "parentId": "195515",
-                      "avgRatingString": "4.3",
-                      "totalRatingsString": "1K+",
-                      "sla": {
-                        "deliveryTime": 33,
-                        "lastMileTravel": 6.4,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "33 mins",
-                        "lastMileTravelString": "6.4 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 22:30:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "textExtendedBadges": [
-                          {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "30% OFF",
-                        "subHeader": "UPTO ₹75"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/starbucks-coffee-dlf-mall-of-india-sector-18-delhi-104568",
-                      "type": "WEBLINK"
-                    }
-                  },
-                  {
-                    "info": {
-                      "id": "157799",
-                      "name": "The Good Bowl",
-                      "cloudinaryImageId": "6e04be27387483a7c00444f8e8241108",
-                      "locality": "Laxmi Nagar",
-                      "areaName": "Shakarpur",
-                      "costForTwo": "₹400 for two",
-                      "cuisines": [
-                        "Biryani",
-                        "North Indian",
-                        "Pastas",
-                        "Punjabi",
-                        "Desserts",
-                        "Beverages"
-                      ],
-                      "avgRating": 4.3,
-                      "parentId": "7918",
-                      "avgRatingString": "4.3",
-                      "totalRatingsString": "1K+",
-                      "sla": {
-                        "deliveryTime": 26,
-                        "lastMileTravel": 3,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "26 mins",
-                        "lastMileTravelString": "3.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "60% OFF",
-                        "subHeader": "UPTO ₹110"
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {},
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/the-good-bowl-laxmi-nagar-shakarpur-delhi-157799",
+                      "link": "https://www.swiggy.com/restaurants/rollsking-1st-phase-mayur-vihar-delhi-205404",
                       "type": "WEBLINK"
                     }
                   }
@@ -2455,12 +2339,24 @@ export const data =
                 "selected": true,
                 "defaultSelection": true
               },
-              { "key": "deliveryTimeAsc", "title": "Delivery Time" },
-              { "key": "modelBasedRatingDesc", "title": "Rating" },
-              { "key": "costForTwoAsc", "title": "Cost: Low to High" },
-              { "key": "costForTwoDesc", "title": "Cost: High to Low" }
+              {
+                "key": "deliveryTimeAsc",
+                "title": "Delivery Time"
+              },
+              {
+                "key": "modelBasedRatingDesc",
+                "title": "Rating"
+              },
+              {
+                "key": "costForTwoAsc",
+                "title": "Cost: Low to High"
+              },
+              {
+                "key": "costForTwoDesc",
+                "title": "Cost: High to Low"
+              }
             ],
-            "restaurantCount": 1967,
+            "restaurantCount": 1981,
             "facetList": [
               {
                 "label": "Delivery Time",
@@ -2771,6 +2667,12 @@ export const data =
                     "openFilter": true
                   },
                   {
+                    "label": "Momos",
+                    "id": "query_momos",
+                    "analytics": {},
+                    "openFilter": true
+                  },
+                  {
                     "label": "Mughlai",
                     "id": "query_mughlai",
                     "analytics": {},
@@ -3058,7 +2960,9 @@ export const data =
         "card": {
           "card": {
             "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
-            "layout": { "columns": 4 },
+            "layout": {
+              "columns": 4
+            },
             "id": "restaurant_grid_listing",
             "gridElements": {
               "infoWithStyle": {
@@ -3066,27 +2970,30 @@ export const data =
                 "restaurants": [
                   {
                     "info": {
-                      "id": "253981",
-                      "name": "McDonald's",
-                      "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
-                      "locality": "V3S Mall",
+                      "id": "234208",
+                      "name": "Theobroma",
+                      "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
+                      "locality": "Swasthya Vihar",
                       "areaName": "Laxmi Nagar",
                       "costForTwo": "₹400 for two",
-                      "cuisines": ["American"],
-                      "avgRating": 4.4,
-                      "parentId": "630",
-                      "avgRatingString": "4.4",
-                      "totalRatingsString": "10K+",
+                      "cuisines": [
+                        "Bakery",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.5,
+                      "parentId": "1040",
+                      "avgRatingString": "4.5",
+                      "totalRatingsString": "5K+",
                       "sla": {
-                        "deliveryTime": 26,
+                        "deliveryTime": 30,
                         "lastMileTravel": 3.6,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "26 mins",
+                        "slaString": "30 mins",
                         "lastMileTravelString": "3.6 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-20 23:45:00",
+                        "nextCloseTime": "2023-12-26 23:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -3100,8 +3007,9 @@ export const data =
                         }
                       },
                       "aggregatedDiscountInfoV3": {
-                        "header": "40% OFF",
-                        "subHeader": "UPTO ₹80"
+                        "header": "₹150 OFF",
+                        "subHeader": "ABOVE ₹1149",
+                        "discountTag": "FLAT DEAL"
                       },
                       "orderabilityCommunication": {
                         "title": {},
@@ -3122,10 +3030,10 @@ export const data =
                       "restaurantOfferPresentationInfo": {}
                     },
                     "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
                     },
                     "cta": {
-                      "link": "https://www.swiggy.com/restaurants/mcdonalds-v3s-mall-laxmi-nagar-delhi-253981",
+                      "link": "https://www.swiggy.com/restaurants/theobroma-swasthya-vihar-laxmi-nagar-delhi-234208",
                       "text": "RESTAURANT_MENU",
                       "type": "WEBLINK"
                     },
@@ -3139,21 +3047,24 @@ export const data =
                       "locality": "Parsvnath Mall",
                       "areaName": "Mayur Vihar",
                       "costForTwo": "₹350 for two",
-                      "cuisines": ["Burgers", "American"],
+                      "cuisines": [
+                        "Burgers",
+                        "American"
+                      ],
                       "avgRating": 4.3,
                       "parentId": "166",
                       "avgRatingString": "4.3",
                       "totalRatingsString": "1K+",
                       "sla": {
-                        "deliveryTime": 23,
-                        "lastMileTravel": 2.8,
+                        "deliveryTime": 27,
+                        "lastMileTravel": 2.7,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "23 mins",
-                        "lastMileTravelString": "2.8 km",
+                        "slaString": "27 mins",
+                        "lastMileTravelString": "2.7 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 05:00:00",
+                        "nextCloseTime": "2023-12-27 05:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -3189,7 +3100,7 @@ export const data =
                       "restaurantOfferPresentationInfo": {}
                     },
                     "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
                     },
                     "cta": {
                       "link": "https://www.swiggy.com/restaurants/burger-king-parsvnath-mall-mayur-vihar-delhi-438435",
@@ -3200,33 +3111,29 @@ export const data =
                   },
                   {
                     "info": {
-                      "id": "707692",
-                      "name": "KFC",
-                      "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
-                      "locality": "Phase 1",
-                      "areaName": "Mayur Vihar",
-                      "costForTwo": "₹400 for two",
+                      "id": "608589",
+                      "name": "Pizza Hut",
+                      "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                      "locality": "Pandav Nagar",
+                      "areaName": "Mayur Vihar Phase 1",
+                      "costForTwo": "₹350 for two",
                       "cuisines": [
-                        "Burgers",
-                        "Biryani",
-                        "American",
-                        "Snacks",
-                        "Fast Food"
+                        "Pizzas"
                       ],
-                      "avgRating": 4.3,
-                      "parentId": "547",
-                      "avgRatingString": "4.3",
-                      "totalRatingsString": "100+",
+                      "avgRating": 3.9,
+                      "parentId": "721",
+                      "avgRatingString": "3.9",
+                      "totalRatingsString": "1K+",
                       "sla": {
-                        "deliveryTime": 22,
-                        "lastMileTravel": 2.4,
+                        "deliveryTime": 23,
+                        "lastMileTravel": 0.1,
                         "serviceability": "SERVICEABLE",
-                        "slaString": "22 mins",
-                        "lastMileTravelString": "2.4 km",
+                        "slaString": "23 mins",
+                        "lastMileTravelString": "0.1 km",
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 01:00:00",
+                        "nextCloseTime": "2023-12-27 05:00:00",
                         "opened": true
                       },
                       "badges": {},
@@ -3262,7 +3169,418 @@ export const data =
                       "restaurantOfferPresentationInfo": {}
                     },
                     "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/pizza-hut-pandav-nagar-mayur-vihar-phase-1-delhi-608589",
+                      "text": "RESTAURANT_MENU",
+                      "type": "WEBLINK"
+                    },
+                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                  },
+                  {
+                    "info": {
+                      "id": "606385",
+                      "name": "Starbucks Coffee",
+                      "cloudinaryImageId": "258fe8a3577877fbfe064095ed1d9dc3",
+                      "locality": "Berger Tower",
+                      "areaName": "Sector 16",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "Beverages",
+                        "Cafe",
+                        "Snacks",
+                        "Desserts",
+                        "Bakery",
+                        "Ice Cream"
+                      ],
+                      "avgRating": 4.3,
+                      "parentId": "195515",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "100+",
+                      "sla": {
+                        "deliveryTime": 41,
+                        "lastMileTravel": 5.8,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "41 mins",
+                        "lastMileTravelString": "5.8 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 22:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "10% OFF",
+                        "subHeader": "ABOVE ₹900",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "orderabilityCommunication": {
+                        "title": {},
+                        "subTitle": {},
+                        "message": {},
+                        "customIcon": {}
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/starbucks-coffee-berger-tower-sector-16-delhi-606385",
+                      "text": "RESTAURANT_MENU",
+                      "type": "WEBLINK"
+                    },
+                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                  },
+                  {
+                    "info": {
+                      "id": "418253",
+                      "name": "7th Heaven",
+                      "cloudinaryImageId": "dbdf0303286fc8d44f392219224549ed",
+                      "locality": "D Block",
+                      "areaName": "Pandav Nagar",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "Bakery",
+                        "Desserts"
+                      ],
+                      "avgRating": 4,
+                      "veg": true,
+                      "parentId": "19",
+                      "avgRatingString": "4.0",
+                      "totalRatingsString": "100+",
+                      "sla": {
+                        "deliveryTime": 21,
+                        "lastMileTravel": 1.5,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "21 mins",
+                        "lastMileTravelString": "1.5 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "pureveg"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "pureveg",
+                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "30% OFF",
+                        "subHeader": "UPTO ₹75"
+                      },
+                      "orderabilityCommunication": {
+                        "title": {},
+                        "subTitle": {},
+                        "message": {},
+                        "customIcon": {}
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/7th-heaven-d-block-pandav-nagar-delhi-418253",
+                      "text": "RESTAURANT_MENU",
+                      "type": "WEBLINK"
+                    },
+                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                  },
+                  {
+                    "info": {
+                      "id": "12911",
+                      "name": "Kamal's Sweets & Restaurant (Madhu Vihar)",
+                      "cloudinaryImageId": "mmpx0zp7zrnjjaq4vu1y",
+                      "locality": "Madhu Vihar",
+                      "areaName": "Patparganj",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "North Indian",
+                        "Chinese",
+                        "Sweets",
+                        "South Indian"
+                      ],
+                      "avgRating": 4.1,
+                      "parentId": "16205",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "10K+",
+                      "sla": {
+                        "deliveryTime": 43,
+                        "lastMileTravel": 4.8,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "43 mins",
+                        "lastMileTravelString": "4.8 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "pureveg"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "pureveg",
+                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "50% OFF",
+                        "subHeader": "UPTO ₹100"
+                      },
+                      "orderabilityCommunication": {
+                        "title": {},
+                        "subTitle": {},
+                        "message": {},
+                        "customIcon": {}
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/kamals-sweets-and-restaurant-madhu-vihar-madhu-vihar-patparganj-delhi-12911",
+                      "text": "RESTAURANT_MENU",
+                      "type": "WEBLINK"
+                    },
+                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                  },
+                  {
+                    "info": {
+                      "id": "253981",
+                      "name": "McDonald's",
+                      "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+                      "locality": "V3S Mall",
+                      "areaName": "Laxmi Nagar",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "American"
+                      ],
+                      "avgRating": 4.4,
+                      "parentId": "630",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "10K+",
+                      "sla": {
+                        "deliveryTime": 34,
+                        "lastMileTravel": 3.6,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "34 mins",
+                        "lastMileTravelString": "3.6 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-26 23:45:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "10% OFF",
+                        "subHeader": "UPTO ₹40"
+                      },
+                      "orderabilityCommunication": {
+                        "title": {},
+                        "subTitle": {},
+                        "message": {},
+                        "customIcon": {}
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/restaurants/mcdonalds-v3s-mall-laxmi-nagar-delhi-253981",
+                      "text": "RESTAURANT_MENU",
+                      "type": "WEBLINK"
+                    },
+                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                  },
+                  {
+                    "info": {
+                      "id": "707692",
+                      "name": "KFC",
+                      "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
+                      "locality": "Phase 1",
+                      "areaName": "Mayur Vihar",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": [
+                        "Burgers",
+                        "Biryani",
+                        "American",
+                        "Snacks",
+                        "Fast Food"
+                      ],
+                      "avgRating": 4.3,
+                      "parentId": "547",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "500+",
+                      "sla": {
+                        "deliveryTime": 27,
+                        "lastMileTravel": 2.4,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "27 mins",
+                        "lastMileTravelString": "2.4 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2023-12-27 01:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "20% OFF",
+                        "subHeader": "UPTO ₹50"
+                      },
+                      "orderabilityCommunication": {
+                        "title": {},
+                        "subTitle": {},
+                        "message": {},
+                        "customIcon": {}
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {}
+                    },
+                    "analytics": {
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
                     },
                     "cta": {
                       "link": "https://www.swiggy.com/restaurants/kfc-phase-1-mayur-vihar-delhi-707692",
@@ -3279,7 +3597,12 @@ export const data =
                       "locality": "1St Phase",
                       "areaName": "Mayur Vihar",
                       "costForTwo": "₹400 for two",
-                      "cuisines": ["Pizzas", "Italian", "Pastas", "Desserts"],
+                      "cuisines": [
+                        "Pizzas",
+                        "Italian",
+                        "Pastas",
+                        "Desserts"
+                      ],
                       "avgRating": 4.3,
                       "parentId": "2456",
                       "avgRatingString": "4.3",
@@ -3291,7 +3614,7 @@ export const data =
                         "iconType": "ICON_TYPE_EMPTY"
                       },
                       "availability": {
-                        "nextCloseTime": "2023-12-21 02:59:00",
+                        "nextCloseTime": "2023-12-27 03:59:00",
                         "opened": true
                       },
                       "badges": {},
@@ -3328,411 +3651,10 @@ export const data =
                       "restaurantOfferPresentationInfo": {}
                     },
                     "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
+                      "context": "seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85"
                     },
                     "cta": {
                       "link": "https://www.swiggy.com/restaurants/dominos-pizza-1st-phase-mayur-vihar-delhi-24174",
-                      "text": "RESTAURANT_MENU",
-                      "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                  },
-                  {
-                    "info": {
-                      "id": "424706",
-                      "name": "Punjabi Angithi (Vegorama Group)",
-                      "cloudinaryImageId": "uubzuxzz2nps1zylts6f",
-                      "locality": "Gulmohar market",
-                      "areaName": "Sector 15",
-                      "costForTwo": "₹300 for two",
-                      "cuisines": ["North Indian", "Chinese", "Tandoor"],
-                      "avgRating": 4.2,
-                      "veg": true,
-                      "parentId": "465050",
-                      "avgRatingString": "4.2",
-                      "totalRatingsString": "10K+",
-                      "sla": {
-                        "deliveryTime": 30,
-                        "lastMileTravel": 4.5,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "30 mins",
-                        "lastMileTravelString": "4.5 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 00:00:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "imageBadges": [
-                          {
-                            "imageId": "v1695133679/badges/Pure_Veg111.png",
-                            "description": "pureveg"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "pureveg",
-                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
-                                }
-                              }
-                            ]
-                          },
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "₹125 OFF",
-                        "subHeader": "ABOVE ₹249",
-                        "discountTag": "FLAT DEAL"
-                      },
-                      "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
-                    },
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/punjabi-angithi-vegorama-group-gulmohar-market-sector-15-delhi-424706",
-                      "text": "RESTAURANT_MENU",
-                      "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                  },
-                  {
-                    "info": {
-                      "id": "798794",
-                      "name": "Bakingo",
-                      "cloudinaryImageId": "6508f0f371e04af44f5d217785443019",
-                      "locality": "Patpargangj",
-                      "areaName": "MAYUR VIHAR",
-                      "costForTwo": "₹299 for two",
-                      "cuisines": ["Bakery", "Desserts", "Beverages", "Snacks"],
-                      "avgRating": 4.9,
-                      "parentId": "3818",
-                      "avgRatingString": "4.9",
-                      "totalRatingsString": "7",
-                      "sla": {
-                        "deliveryTime": 12,
-                        "lastMileTravel": 0.1,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "12 mins",
-                        "lastMileTravelString": "0.1 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 01:00:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "aggregatedDiscountInfoV2": {},
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "isNewlyOnboarded": true,
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
-                    },
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/bakingo-patpargangj-mayur-vihar-delhi-798794",
-                      "text": "RESTAURANT_MENU",
-                      "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                  },
-                  {
-                    "info": {
-                      "id": "650503",
-                      "name": "NH1 Bowls - Highway To North",
-                      "cloudinaryImageId": "94654fdf308764cd0faf83dba35bcdc3",
-                      "locality": "Mayur Vihar",
-                      "areaName": "Phase1",
-                      "costForTwo": "₹250 for two",
-                      "cuisines": ["North Indian", "Punjabi", "Home Food"],
-                      "avgRating": 4.3,
-                      "parentId": "22452",
-                      "avgRatingString": "4.3",
-                      "totalRatingsString": "100+",
-                      "sla": {
-                        "deliveryTime": 17,
-                        "lastMileTravel": 2,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "12-22 mins",
-                        "lastMileTravelString": "2.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 02:00:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "textExtendedBadges": [
-                          {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "50% OFF",
-                        "subHeader": "UPTO ₹100"
-                      },
-                      "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
-                    },
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/nh1-bowls-highway-to-north-mayur-vihar-phase1-delhi-650503",
-                      "text": "RESTAURANT_MENU",
-                      "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                  },
-                  {
-                    "info": {
-                      "id": "636891",
-                      "name": "Big Bowl",
-                      "cloudinaryImageId": "c99751d54e4e1847186c62b3309c1327",
-                      "locality": "1st Phase",
-                      "areaName": "Mayur Vihar",
-                      "costForTwo": "₹250 for two",
-                      "cuisines": [
-                        "North Indian",
-                        "Chinese",
-                        "Tibetan",
-                        "Desserts"
-                      ],
-                      "avgRating": 4.1,
-                      "parentId": "434792",
-                      "avgRatingString": "4.1",
-                      "totalRatingsString": "500+",
-                      "sla": {
-                        "deliveryTime": 21,
-                        "lastMileTravel": 2.4,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "21 mins",
-                        "lastMileTravelString": "2.4 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-21 03:00:00",
-                        "opened": true
-                      },
-                      "badges": {},
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {}
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹169"
-                      },
-                      "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
-                    },
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/big-bowl-1st-phase-mayur-vihar-delhi-636891",
-                      "text": "RESTAURANT_MENU",
-                      "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                  },
-                  {
-                    "info": {
-                      "id": "720360",
-                      "name": "Wendy's Burgers",
-                      "cloudinaryImageId": "a2ec5418246b622ec4baa3bd051ef6ab",
-                      "locality": "Laxmi Nagar",
-                      "areaName": "Shakarpur",
-                      "costForTwo": "₹200 for two",
-                      "cuisines": [
-                        "Burgers",
-                        "American",
-                        "Fast Food",
-                        "Snacks",
-                        "Beverages"
-                      ],
-                      "avgRating": 4.1,
-                      "parentId": "972",
-                      "avgRatingString": "4.1",
-                      "totalRatingsString": "100+",
-                      "sla": {
-                        "deliveryTime": 25,
-                        "lastMileTravel": 3,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25 mins",
-                        "lastMileTravelString": "3.0 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                      },
-                      "availability": {
-                        "nextCloseTime": "2023-12-20 23:59:00",
-                        "opened": true
-                      },
-                      "badges": {
-                        "textExtendedBadges": [
-                          {
-                            "iconId": "guiltfree/GF_Logo_android_3x",
-                            "shortDescription": "options available",
-                            "fontColor": "#7E808C"
-                          }
-                        ]
-                      },
-                      "isOpen": true,
-                      "type": "F",
-                      "badgesV2": {
-                        "entityBadges": {
-                          "imageBased": {},
-                          "textBased": {},
-                          "textExtendedBadges": {
-                            "badgeObject": [
-                              {
-                                "attributes": {
-                                  "description": "",
-                                  "fontColor": "#7E808C",
-                                  "iconId": "guiltfree/GF_Logo_android_3x",
-                                  "shortDescription": "options available"
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      },
-                      "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹129"
-                      },
-                      "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                      },
-                      "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                          "lottie": {},
-                          "video": {}
-                        }
-                      },
-                      "reviewsSummary": {},
-                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                      "isNewlyOnboarded": true,
-                      "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                      "context": "seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9"
-                    },
-                    "cta": {
-                      "link": "https://www.swiggy.com/restaurants/wendys-burgers-laxmi-nagar-shakarpur-delhi-720360",
                       "text": "RESTAURANT_MENU",
                       "type": "WEBLINK"
                     },
@@ -4081,12 +4003,18 @@ export const data =
                 "text": "Hyderabad",
                 "link": "https://www.swiggy.com/city/hyderabad"
               },
-              { "text": "Delhi", "link": "https://www.swiggy.com/city/delhi" },
+              {
+                "text": "Delhi",
+                "link": "https://www.swiggy.com/city/delhi"
+              },
               {
                 "text": "Mumbai",
                 "link": "https://www.swiggy.com/city/mumbai"
               },
-              { "text": "Pune", "link": "https://www.swiggy.com/city/pune" },
+              {
+                "text": "Pune",
+                "link": "https://www.swiggy.com/city/pune"
+              },
               {
                 "text": "Kolkata",
                 "link": "https://www.swiggy.com/city/kolkata"
@@ -4107,7 +4035,10 @@ export const data =
                 "text": "Jaipur",
                 "link": "https://www.swiggy.com/city/jaipur"
               },
-              { "text": "Kochi", "link": "https://www.swiggy.com/city/kochi" },
+              {
+                "text": "Kochi",
+                "link": "https://www.swiggy.com/city/kochi"
+              },
               {
                 "text": "Coimbatore",
                 "link": "https://www.swiggy.com/city/coimbatore"
@@ -4132,13 +4063,22 @@ export const data =
                 "text": "Guwahati",
                 "link": "https://www.swiggy.com/city/guwahati"
               },
-              { "text": "Vizag", "link": "https://www.swiggy.com/city/vizag" },
-              { "text": "Surat", "link": "https://www.swiggy.com/city/surat" },
+              {
+                "text": "Vizag",
+                "link": "https://www.swiggy.com/city/vizag"
+              },
+              {
+                "text": "Surat",
+                "link": "https://www.swiggy.com/city/surat"
+              },
               {
                 "text": "Dehradun",
                 "link": "https://www.swiggy.com/city/dehradun"
               },
-              { "text": "Noida", "link": "https://www.swiggy.com/city/noida" },
+              {
+                "text": "Noida",
+                "link": "https://www.swiggy.com/city/noida"
+              },
               {
                 "text": "Ludhiana",
                 "link": "https://www.swiggy.com/city/ludhiana"
@@ -4171,7 +4111,10 @@ export const data =
                 "text": "Pondicherry",
                 "link": "https://www.swiggy.com/city/pondicherry"
               },
-              { "text": "Agra", "link": "https://www.swiggy.com/city/agra" },
+              {
+                "text": "Agra",
+                "link": "https://www.swiggy.com/city/agra"
+              },
               {
                 "text": "Aurangabad",
                 "link": "https://www.swiggy.com/city/aurangabad"
@@ -4180,7 +4123,10 @@ export const data =
                 "text": "Jalandhar",
                 "link": "https://www.swiggy.com/city/jalandhar"
               },
-              { "text": "Kota", "link": "https://www.swiggy.com/city/kota" },
+              {
+                "text": "Kota",
+                "link": "https://www.swiggy.com/city/kota"
+              },
               {
                 "text": "Madurai",
                 "link": "https://www.swiggy.com/city/madurai"
@@ -4209,7 +4155,10 @@ export const data =
                 "text": "Bhopal",
                 "link": "https://www.swiggy.com/city/bhopal"
               },
-              { "text": "Ooty", "link": "https://www.swiggy.com/city/ooty" },
+              {
+                "text": "Ooty",
+                "link": "https://www.swiggy.com/city/ooty"
+              },
               {
                 "text": "Bhubaneswar",
                 "link": "https://www.swiggy.com/city/bhubaneswar"
@@ -4234,7 +4183,10 @@ export const data =
                 "text": "Central Goa",
                 "link": "https://www.swiggy.com/city/central-goa"
               },
-              { "text": "Sirsa", "link": "https://www.swiggy.com/city/sirsa" },
+              {
+                "text": "Sirsa",
+                "link": "https://www.swiggy.com/city/sirsa"
+              },
               {
                 "text": "Gwalior",
                 "link": "https://www.swiggy.com/city/gwalior"
@@ -4275,7 +4227,10 @@ export const data =
                 "text": "Mangaluru",
                 "link": "https://www.swiggy.com/city/mangaluru"
               },
-              { "text": "Patna", "link": "https://www.swiggy.com/city/patna" },
+              {
+                "text": "Patna",
+                "link": "https://www.swiggy.com/city/patna"
+              },
               {
                 "text": "Ranchi",
                 "link": "https://www.swiggy.com/city/ranchi"
@@ -4316,12 +4271,18 @@ export const data =
                 "text": "Bhilai",
                 "link": "https://www.swiggy.com/city/bhilai"
               },
-              { "text": "Anand", "link": "https://www.swiggy.com/city/anand" },
+              {
+                "text": "Anand",
+                "link": "https://www.swiggy.com/city/anand"
+              },
               {
                 "text": "Bhavnagar",
                 "link": "https://www.swiggy.com/city/bhavnagar"
               },
-              { "text": "Jammu", "link": "https://www.swiggy.com/city/jammu" },
+              {
+                "text": "Jammu",
+                "link": "https://www.swiggy.com/city/jammu"
+              },
               {
                 "text": "Muktsar",
                 "link": "https://www.swiggy.com/city/muktsar"
@@ -4334,7 +4295,10 @@ export const data =
                 "text": "Dhanbad",
                 "link": "https://www.swiggy.com/city/dhanbad"
               },
-              { "text": "Hubli", "link": "https://www.swiggy.com/city/hubli" },
+              {
+                "text": "Hubli",
+                "link": "https://www.swiggy.com/city/hubli"
+              },
               {
                 "text": "Belgaum",
                 "link": "https://www.swiggy.com/city/belgaum"
@@ -4363,12 +4327,18 @@ export const data =
                 "text": "Aligarh",
                 "link": "https://www.swiggy.com/city/aligarh"
               },
-              { "text": "Salem", "link": "https://www.swiggy.com/city/salem" },
+              {
+                "text": "Salem",
+                "link": "https://www.swiggy.com/city/salem"
+              },
               {
                 "text": "Jodhpur",
                 "link": "https://www.swiggy.com/city/jodhpur"
               },
-              { "text": "Ajmer", "link": "https://www.swiggy.com/city/ajmer" },
+              {
+                "text": "Ajmer",
+                "link": "https://www.swiggy.com/city/ajmer"
+              },
               {
                 "text": "Jhansi",
                 "link": "https://www.swiggy.com/city/jhansi"
@@ -4381,7 +4351,10 @@ export const data =
                 "text": "Thanjavur",
                 "link": "https://www.swiggy.com/city/thanjavur"
               },
-              { "text": "Erode", "link": "https://www.swiggy.com/city/erode" },
+              {
+                "text": "Erode",
+                "link": "https://www.swiggy.com/city/erode"
+              },
               {
                 "text": "Nellore",
                 "link": "https://www.swiggy.com/city/nellore"
@@ -4482,8 +4455,14 @@ export const data =
                 "text": "Nanded",
                 "link": "https://www.swiggy.com/city/nanded"
               },
-              { "text": "Rewa", "link": "https://www.swiggy.com/city/rewa" },
-              { "text": "Satna", "link": "https://www.swiggy.com/city/satna" },
+              {
+                "text": "Rewa",
+                "link": "https://www.swiggy.com/city/rewa"
+              },
+              {
+                "text": "Satna",
+                "link": "https://www.swiggy.com/city/satna"
+              },
               {
                 "text": "Muzaffarpur",
                 "link": "https://www.swiggy.com/city/muzaffarpur"
@@ -4492,7 +4471,10 @@ export const data =
                 "text": "Valsad",
                 "link": "https://www.swiggy.com/city/valsad"
               },
-              { "text": "Vapi", "link": "https://www.swiggy.com/city/vapi" },
+              {
+                "text": "Vapi",
+                "link": "https://www.swiggy.com/city/vapi"
+              },
               {
                 "text": "Chhapra",
                 "link": "https://www.swiggy.com/city/chhapra"
@@ -4525,13 +4507,22 @@ export const data =
                 "text": "Mehsana",
                 "link": "https://www.swiggy.com/city/mehsana"
               },
-              { "text": "Kullu", "link": "https://www.swiggy.com/city/kullu" },
-              { "text": "Dhule", "link": "https://www.swiggy.com/city/dhule" },
+              {
+                "text": "Kullu",
+                "link": "https://www.swiggy.com/city/kullu"
+              },
+              {
+                "text": "Dhule",
+                "link": "https://www.swiggy.com/city/dhule"
+              },
               {
                 "text": "Dharwad",
                 "link": "https://www.swiggy.com/city/dharwad"
               },
-              { "text": "Latur", "link": "https://www.swiggy.com/city/latur" },
+              {
+                "text": "Latur",
+                "link": "https://www.swiggy.com/city/latur"
+              },
               {
                 "text": "Vizianagaram",
                 "link": "https://www.swiggy.com/city/vizianagaram"
@@ -4540,23 +4531,38 @@ export const data =
                 "text": "Khammam",
                 "link": "https://www.swiggy.com/city/khammam"
               },
-              { "text": "Hampi", "link": "https://www.swiggy.com/city/hampi" },
+              {
+                "text": "Hampi",
+                "link": "https://www.swiggy.com/city/hampi"
+              },
               {
                 "text": "Nainital",
                 "link": "https://www.swiggy.com/city/nainital"
               },
-              { "text": "Akola", "link": "https://www.swiggy.com/city/akola" },
+              {
+                "text": "Akola",
+                "link": "https://www.swiggy.com/city/akola"
+              },
               {
                 "text": "Kalaburagi",
                 "link": "https://www.swiggy.com/city/kalaburagi"
               },
-              { "text": "Gaya", "link": "https://www.swiggy.com/city/gaya" },
+              {
+                "text": "Gaya",
+                "link": "https://www.swiggy.com/city/gaya"
+              },
               {
                 "text": "Muzaffarnagar",
                 "link": "https://www.swiggy.com/city/muzaffarnagar"
               },
-              { "text": "Dewas", "link": "https://www.swiggy.com/city/dewas" },
-              { "text": "Korba", "link": "https://www.swiggy.com/city/korba" },
+              {
+                "text": "Dewas",
+                "link": "https://www.swiggy.com/city/dewas"
+              },
+              {
+                "text": "Korba",
+                "link": "https://www.swiggy.com/city/korba"
+              },
               {
                 "text": "Mussoorie",
                 "link": "https://www.swiggy.com/city/mussoorie"
@@ -4573,7 +4579,10 @@ export const data =
                 "text": "Bhagalpur",
                 "link": "https://www.swiggy.com/city/bhagalpur"
               },
-              { "text": "Hapur", "link": "https://www.swiggy.com/city/hapur" },
+              {
+                "text": "Hapur",
+                "link": "https://www.swiggy.com/city/hapur"
+              },
               {
                 "text": "Morena",
                 "link": "https://www.swiggy.com/city/morena"
@@ -4582,12 +4591,18 @@ export const data =
                 "text": "Hassan",
                 "link": "https://www.swiggy.com/city/hassan"
               },
-              { "text": "Hisar", "link": "https://www.swiggy.com/city/hisar" },
+              {
+                "text": "Hisar",
+                "link": "https://www.swiggy.com/city/hisar"
+              },
               {
                 "text": "Godhra",
                 "link": "https://www.swiggy.com/city/godhra"
               },
-              { "text": "Kolar ", "link": "https://www.swiggy.com/city/kolar" },
+              {
+                "text": "Kolar ",
+                "link": "https://www.swiggy.com/city/kolar"
+              },
               {
                 "text": "Rampur",
                 "link": "https://www.swiggy.com/city/rampur"
@@ -4608,8 +4623,14 @@ export const data =
                 "text": "Nadiad",
                 "link": "https://www.swiggy.com/city/nadiad"
               },
-              { "text": "Sagar", "link": "https://www.swiggy.com/city/sagar" },
-              { "text": "Morbi", "link": "https://www.swiggy.com/city/morbi" },
+              {
+                "text": "Sagar",
+                "link": "https://www.swiggy.com/city/sagar"
+              },
+              {
+                "text": "Morbi",
+                "link": "https://www.swiggy.com/city/morbi"
+              },
               {
                 "text": "Chhindwara",
                 "link": "https://www.swiggy.com/city/chhindwara"
@@ -4626,12 +4647,18 @@ export const data =
                 "text": "Thoothukudi",
                 "link": "https://www.swiggy.com/city/thoothukudi"
               },
-              { "text": "Katni", "link": "https://www.swiggy.com/city/katni" },
+              {
+                "text": "Katni",
+                "link": "https://www.swiggy.com/city/katni"
+              },
               {
                 "text": "Khandwa",
                 "link": "https://www.swiggy.com/city/khandwa"
               },
-              { "text": "Eluru", "link": "https://www.swiggy.com/city/eluru" },
+              {
+                "text": "Eluru",
+                "link": "https://www.swiggy.com/city/eluru"
+              },
               {
                 "text": "Malappuram",
                 "link": "https://www.swiggy.com/city/malappuram"
@@ -4648,7 +4675,10 @@ export const data =
                 "text": "Khanna",
                 "link": "https://www.swiggy.com/city/khanna"
               },
-              { "text": "Bidar", "link": "https://www.swiggy.com/city/bidar" },
+              {
+                "text": "Bidar",
+                "link": "https://www.swiggy.com/city/bidar"
+              },
               {
                 "text": "Madikeri",
                 "link": "https://www.swiggy.com/city/madikeri"
@@ -4673,7 +4703,10 @@ export const data =
                 "text": "Shahjahanpur",
                 "link": "https://www.swiggy.com/city/shahjahanpur"
               },
-              { "text": "Beed", "link": "https://www.swiggy.com/city/beed" },
+              {
+                "text": "Beed",
+                "link": "https://www.swiggy.com/city/beed"
+              },
               {
                 "text": "Junagadh",
                 "link": "https://www.swiggy.com/city/junagadh"
@@ -4702,7 +4735,10 @@ export const data =
                 "text": "Ichalkaranji",
                 "link": "https://www.swiggy.com/city/ichalkaranji"
               },
-              { "text": "Jalna", "link": "https://www.swiggy.com/city/jalna" },
+              {
+                "text": "Jalna",
+                "link": "https://www.swiggy.com/city/jalna"
+              },
               {
                 "text": "Yavatmal",
                 "link": "https://www.swiggy.com/city/yavatmal"
@@ -4711,12 +4747,18 @@ export const data =
                 "text": "Shivpuri",
                 "link": "https://www.swiggy.com/city/shivpuri"
               },
-              { "text": "Moga", "link": "https://www.swiggy.com/city/moga" },
+              {
+                "text": "Moga",
+                "link": "https://www.swiggy.com/city/moga"
+              },
               {
                 "text": "Abohar",
                 "link": "https://www.swiggy.com/city/abohar"
               },
-              { "text": "Adoni", "link": "https://www.swiggy.com/city/adoni" },
+              {
+                "text": "Adoni",
+                "link": "https://www.swiggy.com/city/adoni"
+              },
               {
                 "text": "Madanapalle",
                 "link": "https://www.swiggy.com/city/madanapalle"
@@ -4729,7 +4771,10 @@ export const data =
                 "text": "Satara",
                 "link": "https://www.swiggy.com/city/satara"
               },
-              { "text": "Ambur", "link": "https://www.swiggy.com/city/ambur" },
+              {
+                "text": "Ambur",
+                "link": "https://www.swiggy.com/city/ambur"
+              },
               {
                 "text": "Karimnagar",
                 "link": "https://www.swiggy.com/city/karimnagar"
@@ -4762,7 +4807,10 @@ export const data =
                 "text": "Kurukshetra",
                 "link": "https://www.swiggy.com/city/kurukshetra"
               },
-              { "text": "Unnao", "link": "https://www.swiggy.com/city/unnao" },
+              {
+                "text": "Unnao",
+                "link": "https://www.swiggy.com/city/unnao"
+              },
               {
                 "text": "Bulandshahr",
                 "link": "https://www.swiggy.com/city/bulandshahr"
@@ -4775,7 +4823,10 @@ export const data =
                 "text": "Siliguri",
                 "link": "https://www.swiggy.com/city/siliguri"
               },
-              { "text": "Pali", "link": "https://www.swiggy.com/city/pali" },
+              {
+                "text": "Pali",
+                "link": "https://www.swiggy.com/city/pali"
+              },
               {
                 "text": "Tadepalligudem",
                 "link": "https://www.swiggy.com/city/tadepalligudem"
@@ -4808,7 +4859,10 @@ export const data =
                 "text": "Palakkad",
                 "link": "https://www.swiggy.com/city/palakkad"
               },
-              { "text": "Guna", "link": "https://www.swiggy.com/city/guna" },
+              {
+                "text": "Guna",
+                "link": "https://www.swiggy.com/city/guna"
+              },
               {
                 "text": "Kumbakonam",
                 "link": "https://www.swiggy.com/city/kumbakonam"
@@ -4821,7 +4875,10 @@ export const data =
                 "text": "Baripada",
                 "link": "https://www.swiggy.com/city/baripada"
               },
-              { "text": "Orai", "link": "https://www.swiggy.com/city/orai" },
+              {
+                "text": "Orai",
+                "link": "https://www.swiggy.com/city/orai"
+              },
               {
                 "text": "Bhadrak",
                 "link": "https://www.swiggy.com/city/bhadrak"
@@ -4938,7 +4995,10 @@ export const data =
                 "text": "Hardoi",
                 "link": "https://www.swiggy.com/city/hardoi"
               },
-              { "text": "Basti", "link": "https://www.swiggy.com/city/basti" },
+              {
+                "text": "Basti",
+                "link": "https://www.swiggy.com/city/basti"
+              },
               {
                 "text": "Karaikkudi",
                 "link": "https://www.swiggy.com/city/karaikkudi"
@@ -4991,7 +5051,10 @@ export const data =
                 "text": "Pathankot",
                 "link": "https://www.swiggy.com/city/pathankot"
               },
-              { "text": "Puri", "link": "https://www.swiggy.com/city/puri" },
+              {
+                "text": "Puri",
+                "link": "https://www.swiggy.com/city/puri"
+              },
               {
                 "text": "Fatehpur",
                 "link": "https://www.swiggy.com/city/fatehpur"
@@ -5004,7 +5067,10 @@ export const data =
                 "text": "Jamnagar",
                 "link": "https://www.swiggy.com/city/jamnagar"
               },
-              { "text": "Bhuj", "link": "https://www.swiggy.com/city/bhuj" },
+              {
+                "text": "Bhuj",
+                "link": "https://www.swiggy.com/city/bhuj"
+              },
               {
                 "text": "Gandhidham",
                 "link": "https://www.swiggy.com/city/gandhidham"
@@ -5033,9 +5099,18 @@ export const data =
                 "text": "Suratgarh",
                 "link": "https://www.swiggy.com/city/suratgarh"
               },
-              { "text": "Sikar", "link": "https://www.swiggy.com/city/sikar" },
-              { "text": "Churu", "link": "https://www.swiggy.com/city/churu" },
-              { "text": "Alwar", "link": "https://www.swiggy.com/city/alwar" },
+              {
+                "text": "Sikar",
+                "link": "https://www.swiggy.com/city/sikar"
+              },
+              {
+                "text": "Churu",
+                "link": "https://www.swiggy.com/city/churu"
+              },
+              {
+                "text": "Alwar",
+                "link": "https://www.swiggy.com/city/alwar"
+              },
               {
                 "text": "Bhiwadi",
                 "link": "https://www.swiggy.com/city/bhiwadi"
@@ -5048,7 +5123,10 @@ export const data =
                 "text": "Mount Abu",
                 "link": "https://www.swiggy.com/city/mount-abu"
               },
-              { "text": "Bundi", "link": "https://www.swiggy.com/city/bundi" },
+              {
+                "text": "Bundi",
+                "link": "https://www.swiggy.com/city/bundi"
+              },
               {
                 "text": "Sawai Madhopur",
                 "link": "https://www.swiggy.com/city/sawai-madhopur"
@@ -5097,7 +5175,10 @@ export const data =
                 "text": "Kanchrapara",
                 "link": "https://www.swiggy.com/city/kanchrapara"
               },
-              { "text": "Habra", "link": "https://www.swiggy.com/city/habra" },
+              {
+                "text": "Habra",
+                "link": "https://www.swiggy.com/city/habra"
+              },
               {
                 "text": "Firozabad",
                 "link": "https://www.swiggy.com/city/firozabad"
@@ -5134,7 +5215,10 @@ export const data =
                 "text": "Bahadurgarh",
                 "link": "https://www.swiggy.com/city/bahadurgarh"
               },
-              { "text": "Jind", "link": "https://www.swiggy.com/city/jind" },
+              {
+                "text": "Jind",
+                "link": "https://www.swiggy.com/city/jind"
+              },
               {
                 "text": "Rewari",
                 "link": "https://www.swiggy.com/city/rewari"
@@ -5151,7 +5235,10 @@ export const data =
                 "text": "Sambalpur",
                 "link": "https://www.swiggy.com/city/sambalpur"
               },
-              { "text": "Banda", "link": "https://www.swiggy.com/city/banda" },
+              {
+                "text": "Banda",
+                "link": "https://www.swiggy.com/city/banda"
+              },
               {
                 "text": "Hoshiarpur",
                 "link": "https://www.swiggy.com/city/hoshiarpur"
@@ -5184,7 +5271,10 @@ export const data =
                 "text": "Tadpatri",
                 "link": "https://www.swiggy.com/city/tadpatri"
               },
-              { "text": "Gonda", "link": "https://www.swiggy.com/city/gonda" },
+              {
+                "text": "Gonda",
+                "link": "https://www.swiggy.com/city/gonda"
+              },
               {
                 "text": "Mughalsarai",
                 "link": "https://www.swiggy.com/city/mughalsarai"
@@ -5193,7 +5283,10 @@ export const data =
                 "text": "Medinipur",
                 "link": "https://www.swiggy.com/city/medinipur"
               },
-              { "text": "Nagda", "link": "https://www.swiggy.com/city/nagda" },
+              {
+                "text": "Nagda",
+                "link": "https://www.swiggy.com/city/nagda"
+              },
               {
                 "text": "Raiganj",
                 "link": "https://www.swiggy.com/city/raiganj"
@@ -5226,7 +5319,10 @@ export const data =
                 "text": "Miryalaguda",
                 "link": "https://www.swiggy.com/city/miryalaguda"
               },
-              { "text": "Etah", "link": "https://www.swiggy.com/city/etah" },
+              {
+                "text": "Etah",
+                "link": "https://www.swiggy.com/city/etah"
+              },
               {
                 "text": "Berhampore",
                 "link": "https://www.swiggy.com/city/berhampore"
@@ -5247,7 +5343,10 @@ export const data =
                 "text": "Basirhat",
                 "link": "https://www.swiggy.com/city/basirhat"
               },
-              { "text": "Udgir", "link": "https://www.swiggy.com/city/udgir" },
+              {
+                "text": "Udgir",
+                "link": "https://www.swiggy.com/city/udgir"
+              },
               {
                 "text": "Proddatur",
                 "link": "https://www.swiggy.com/city/proddatur"
@@ -5264,7 +5363,10 @@ export const data =
                 "text": "Chandausi",
                 "link": "https://www.swiggy.com/city/chandausi"
               },
-              { "text": "Bhind", "link": "https://www.swiggy.com/city/bhind" },
+              {
+                "text": "Bhind",
+                "link": "https://www.swiggy.com/city/bhind"
+              },
               {
                 "text": "Mandya",
                 "link": "https://www.swiggy.com/city/mandya"
@@ -5317,9 +5419,18 @@ export const data =
                 "text": "Biharsharif",
                 "link": "https://www.swiggy.com/city/biharsharif"
               },
-              { "text": "Buxar", "link": "https://www.swiggy.com/city/buxar" },
-              { "text": "Siwan", "link": "https://www.swiggy.com/city/siwan" },
-              { "text": "Dehri", "link": "https://www.swiggy.com/city/dehri" },
+              {
+                "text": "Buxar",
+                "link": "https://www.swiggy.com/city/buxar"
+              },
+              {
+                "text": "Siwan",
+                "link": "https://www.swiggy.com/city/siwan"
+              },
+              {
+                "text": "Dehri",
+                "link": "https://www.swiggy.com/city/dehri"
+              },
               {
                 "text": "Bettiah",
                 "link": "https://www.swiggy.com/city/bettiah"
@@ -5352,7 +5463,10 @@ export const data =
                 "text": "Katihar",
                 "link": "https://www.swiggy.com/city/katihar"
               },
-              { "text": "Arrah", "link": "https://www.swiggy.com/city/arrah" },
+              {
+                "text": "Arrah",
+                "link": "https://www.swiggy.com/city/arrah"
+              },
               {
                 "text": "Srikakulam",
                 "link": "https://www.swiggy.com/city/srikakulam"
@@ -5381,12 +5495,18 @@ export const data =
                 "text": "Bhatkal",
                 "link": "https://www.swiggy.com/city/bhatkal"
               },
-              { "text": "Gokak", "link": "https://www.swiggy.com/city/gokak" },
+              {
+                "text": "Gokak",
+                "link": "https://www.swiggy.com/city/gokak"
+              },
               {
                 "text": "Itarsi",
                 "link": "https://www.swiggy.com/city/itarsi"
               },
-              { "text": "Dhar", "link": "https://www.swiggy.com/city/dhar" },
+              {
+                "text": "Dhar",
+                "link": "https://www.swiggy.com/city/dhar"
+              },
               {
                 "text": "Chalisgaon",
                 "link": "https://www.swiggy.com/city/chalisgaon"
@@ -5459,7 +5579,10 @@ export const data =
                 "text": "Buldana",
                 "link": "https://www.swiggy.com/city/buldana"
               },
-              { "text": "Karad", "link": "https://www.swiggy.com/city/karad" },
+              {
+                "text": "Karad",
+                "link": "https://www.swiggy.com/city/karad"
+              },
               {
                 "text": "Krishnagiri",
                 "link": "https://www.swiggy.com/city/krishnagiri"
@@ -5492,7 +5615,10 @@ export const data =
                 "text": "Fatehgarh Sahib",
                 "link": "https://www.swiggy.com/city/fatehgarh-sahib"
               },
-              { "text": "Ropar", "link": "https://www.swiggy.com/city/ropar" },
+              {
+                "text": "Ropar",
+                "link": "https://www.swiggy.com/city/ropar"
+              },
               {
                 "text": "Nangal",
                 "link": "https://www.swiggy.com/city/nangal"
@@ -5509,7 +5635,10 @@ export const data =
                 "text": "Himmatnagar",
                 "link": "https://www.swiggy.com/city/himmatnagar"
               },
-              { "text": "Dausa", "link": "https://www.swiggy.com/city/dausa" },
+              {
+                "text": "Dausa",
+                "link": "https://www.swiggy.com/city/dausa"
+              },
               {
                 "text": "Jahanabad",
                 "link": "https://www.swiggy.com/city/jahanabad"
@@ -5526,8 +5655,14 @@ export const data =
                 "text": "Berhampur",
                 "link": "https://www.swiggy.com/city/berhampur"
               },
-              { "text": "Malda", "link": "https://www.swiggy.com/city/malda" },
-              { "text": "Tuni", "link": "https://www.swiggy.com/city/tuni" },
+              {
+                "text": "Malda",
+                "link": "https://www.swiggy.com/city/malda"
+              },
+              {
+                "text": "Tuni",
+                "link": "https://www.swiggy.com/city/tuni"
+              },
               {
                 "text": "Puttur",
                 "link": "https://www.swiggy.com/city/puttur"
@@ -5548,7 +5683,10 @@ export const data =
                 "text": "Tanuku",
                 "link": "https://www.swiggy.com/city/tanuku"
               },
-              { "text": "Dahod", "link": "https://www.swiggy.com/city/dahod" },
+              {
+                "text": "Dahod",
+                "link": "https://www.swiggy.com/city/dahod"
+              },
               {
                 "text": "Barmer",
                 "link": "https://www.swiggy.com/city/barmer"
@@ -5573,12 +5711,18 @@ export const data =
                 "text": "Ankleshwar",
                 "link": "https://www.swiggy.com/city/ankleshwar"
               },
-              { "text": "Vyara", "link": "https://www.swiggy.com/city/vyara" },
+              {
+                "text": "Vyara",
+                "link": "https://www.swiggy.com/city/vyara"
+              },
               {
                 "text": "Bardoli",
                 "link": "https://www.swiggy.com/city/bardoli"
               },
-              { "text": "Halol", "link": "https://www.swiggy.com/city/halol" },
+              {
+                "text": "Halol",
+                "link": "https://www.swiggy.com/city/halol"
+              },
               {
                 "text": "Bijnor",
                 "link": "https://www.swiggy.com/city/bijnor"
@@ -5591,7 +5735,10 @@ export const data =
                 "text": "Baramati",
                 "link": "https://www.swiggy.com/city/baramati"
               },
-              { "text": "Betul", "link": "https://www.swiggy.com/city/betul" },
+              {
+                "text": "Betul",
+                "link": "https://www.swiggy.com/city/betul"
+              },
               {
                 "text": "Chhatarpur",
                 "link": "https://www.swiggy.com/city/chhatarpur"
@@ -5612,9 +5759,18 @@ export const data =
                 "text": "Ramanathapuram",
                 "link": "https://www.swiggy.com/city/ramanathapuram"
               },
-              { "text": "Sirsi", "link": "https://www.swiggy.com/city/sirsi" },
-              { "text": "Theni", "link": "https://www.swiggy.com/city/theni" },
-              { "text": "Karur", "link": "https://www.swiggy.com/city/karur" },
+              {
+                "text": "Sirsi",
+                "link": "https://www.swiggy.com/city/sirsi"
+              },
+              {
+                "text": "Theni",
+                "link": "https://www.swiggy.com/city/theni"
+              },
+              {
+                "text": "Karur",
+                "link": "https://www.swiggy.com/city/karur"
+              },
               {
                 "text": "Karwar",
                 "link": "https://www.swiggy.com/city/karwar"
@@ -5671,7 +5827,10 @@ export const data =
                 "text": "Jagraon",
                 "link": "https://www.swiggy.com/city/jagraon"
               },
-              { "text": "Mansa", "link": "https://www.swiggy.com/city/mansa" },
+              {
+                "text": "Mansa",
+                "link": "https://www.swiggy.com/city/mansa"
+              },
               {
                 "text": "Pinjore City",
                 "link": "https://www.swiggy.com/city/pinjore-city"
@@ -5680,8 +5839,14 @@ export const data =
                 "text": "Fazilka",
                 "link": "https://www.swiggy.com/city/fazilka"
               },
-              { "text": "Baddi", "link": "https://www.swiggy.com/city/baddi" },
-              { "text": "Solan", "link": "https://www.swiggy.com/city/solan" },
+              {
+                "text": "Baddi",
+                "link": "https://www.swiggy.com/city/baddi"
+              },
+              {
+                "text": "Solan",
+                "link": "https://www.swiggy.com/city/solan"
+              },
               {
                 "text": "Daltonganj",
                 "link": "https://www.swiggy.com/city/daltonganj"
@@ -5694,7 +5859,10 @@ export const data =
                 "text": "Kothagudem",
                 "link": "https://www.swiggy.com/city/kothagudem"
               },
-              { "text": "Hansi", "link": "https://www.swiggy.com/city/hansi" },
+              {
+                "text": "Hansi",
+                "link": "https://www.swiggy.com/city/hansi"
+              },
               {
                 "text": "Aurangabad_Bihar",
                 "link": "https://www.swiggy.com/city/aurangabadbihar"
@@ -5735,7 +5903,10 @@ export const data =
                 "text": "Veraval",
                 "link": "https://www.swiggy.com/city/veraval"
               },
-              { "text": "Daman", "link": "https://www.swiggy.com/city/daman" },
+              {
+                "text": "Daman",
+                "link": "https://www.swiggy.com/city/daman"
+              },
               {
                 "text": "Chiplun",
                 "link": "https://www.swiggy.com/city/chiplun"
@@ -5840,7 +6011,10 @@ export const data =
                 "text": "Naharlagun",
                 "link": "https://www.swiggy.com/city/naharlagun"
               },
-              { "text": "Dumka", "link": "https://www.swiggy.com/city/dumka" },
+              {
+                "text": "Dumka",
+                "link": "https://www.swiggy.com/city/dumka"
+              },
               {
                 "text": "Rajsamand",
                 "link": "https://www.swiggy.com/city/rajsamand"
@@ -5857,7 +6031,10 @@ export const data =
                 "text": "Bhawanipatna",
                 "link": "https://www.swiggy.com/city/bhawanipatna"
               },
-              { "text": "Baran", "link": "https://www.swiggy.com/city/baran" },
+              {
+                "text": "Baran",
+                "link": "https://www.swiggy.com/city/baran"
+              },
               {
                 "text": "Narsinghpur",
                 "link": "https://www.swiggy.com/city/narsinghpur"
@@ -5866,7 +6043,10 @@ export const data =
                 "text": "Kovilpatti",
                 "link": "https://www.swiggy.com/city/kovilpatti"
               },
-              { "text": "Pusad", "link": "https://www.swiggy.com/city/pusad" },
+              {
+                "text": "Pusad",
+                "link": "https://www.swiggy.com/city/pusad"
+              },
               {
                 "text": "Kendujhar",
                 "link": "https://www.swiggy.com/city/kendujhar"
@@ -5875,7 +6055,10 @@ export const data =
                 "text": "Manali",
                 "link": "https://www.swiggy.com/city/manali"
               },
-              { "text": "Diu", "link": "https://www.swiggy.com/city/diu" },
+              {
+                "text": "Diu",
+                "link": "https://www.swiggy.com/city/diu"
+              },
               {
                 "text": "Khamgaon",
                 "link": "https://www.swiggy.com/city/khamgaon"
@@ -5932,7 +6115,10 @@ export const data =
                 "text": "Raghunathpur",
                 "link": "https://www.swiggy.com/city/raghunathpur"
               },
-              { "text": "Suri", "link": "https://www.swiggy.com/city/suri" },
+              {
+                "text": "Suri",
+                "link": "https://www.swiggy.com/city/suri"
+              },
               {
                 "text": "Kadayanallur",
                 "link": "https://www.swiggy.com/city/kadayanallur"
@@ -6029,7 +6215,10 @@ export const data =
                 "text": "Mukerian",
                 "link": "https://www.swiggy.com/city/mukerian"
               },
-              { "text": "Hosur", "link": "https://www.swiggy.com/city/hosur" },
+              {
+                "text": "Hosur",
+                "link": "https://www.swiggy.com/city/hosur"
+              },
               {
                 "text": "Palakollu",
                 "link": "https://www.swiggy.com/city/palakollu"
@@ -6038,7 +6227,10 @@ export const data =
                 "text": "Ravulapalem",
                 "link": "https://www.swiggy.com/city/ravulapalem"
               },
-              { "text": "Barh", "link": "https://www.swiggy.com/city/barh" },
+              {
+                "text": "Barh",
+                "link": "https://www.swiggy.com/city/barh"
+              },
               {
                 "text": "Palghar",
                 "link": "https://www.swiggy.com/city/palghar"
@@ -6079,7 +6271,10 @@ export const data =
                 "text": "Hamirpur",
                 "link": "https://www.swiggy.com/city/hamirpur"
               },
-              { "text": "Una", "link": "https://www.swiggy.com/city/una" },
+              {
+                "text": "Una",
+                "link": "https://www.swiggy.com/city/una"
+              },
               {
                 "text": "Sulthan Bathery",
                 "link": "https://www.swiggy.com/city/sulthan-bathery"
@@ -6096,7 +6291,10 @@ export const data =
                 "text": "Mandapeta",
                 "link": "https://www.swiggy.com/city/mandapeta"
               },
-              { "text": "Jamui", "link": "https://www.swiggy.com/city/jamui" },
+              {
+                "text": "Jamui",
+                "link": "https://www.swiggy.com/city/jamui"
+              },
               {
                 "text": "Pilkhuwa",
                 "link": "https://www.swiggy.com/city/pilkhuwa"
@@ -6129,7 +6327,10 @@ export const data =
                 "text": "Tirupattur",
                 "link": "https://www.swiggy.com/city/tirupattur"
               },
-              { "text": "Hojai", "link": "https://www.swiggy.com/city/hojai" },
+              {
+                "text": "Hojai",
+                "link": "https://www.swiggy.com/city/hojai"
+              },
               {
                 "text": "Khagaria",
                 "link": "https://www.swiggy.com/city/khagaria"
@@ -6138,17 +6339,26 @@ export const data =
                 "text": "Dasuya",
                 "link": "https://www.swiggy.com/city/dasuya"
               },
-              { "text": "Gudur", "link": "https://www.swiggy.com/city/gudur" },
+              {
+                "text": "Gudur",
+                "link": "https://www.swiggy.com/city/gudur"
+              },
               {
                 "text": "Sullurpeta",
                 "link": "https://www.swiggy.com/city/sullurpeta"
               },
-              { "text": "Piler", "link": "https://www.swiggy.com/city/piler" },
+              {
+                "text": "Piler",
+                "link": "https://www.swiggy.com/city/piler"
+              },
               {
                 "text": "SankaranKoil",
                 "link": "https://www.swiggy.com/city/sankarankoil"
               },
-              { "text": "Nabha", "link": "https://www.swiggy.com/city/nabha" },
+              {
+                "text": "Nabha",
+                "link": "https://www.swiggy.com/city/nabha"
+              },
               {
                 "text": "LPU - Phagwara",
                 "link": "https://www.swiggy.com/city/lpu-phagwara"
@@ -6157,7 +6367,10 @@ export const data =
                 "text": "Jangipur",
                 "link": "https://www.swiggy.com/city/jangipur"
               },
-              { "text": "Roha", "link": "https://www.swiggy.com/city/roha" }
+              {
+                "text": "Roha",
+                "link": "https://www.swiggy.com/city/roha"
+              }
             ],
             "id": "footer_content"
           }
@@ -6170,8 +6383,8 @@ export const data =
             "citySlug": "delhi",
             "lat": "28.6083697",
             "lng": "77.293112",
-            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "gandalfRequest": "{\"sortAttribute\":\"relevance\",\"isFiltered\":false,\"queryId\":\"seo-data-7fa6fc9e-2027-47d0-9efb-52803813d3c9\",\"seoParams\":{\"apiName\":\"FoodHomePage\",\"brandId\":\"\",\"seoUrl\":\"www.swiggy.com\",\"pageType\":\"FOOD_HOME_PAGE\"}}",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            "gandalfRequest": "{\"sortAttribute\":\"relevance\",\"isFiltered\":false,\"queryId\":\"seo-data-dbbb7fbe-6065-4e2d-819e-f0f6e9fdab85\",\"seoParams\":{\"apiName\":\"FoodHomePage\",\"brandId\":\"\",\"seoUrl\":\"www.swiggy.com\",\"pageType\":\"FOOD_HOME_PAGE\"}}",
             "id": "meta_data",
             "metaInfo": {
               "pageType": "FOOD_HOME_PAGE",
@@ -6193,8 +6406,8 @@ export const data =
     "cacheExpiryTime": 240,
     "nextFetch": 1
   },
-  "tid": "e3eb5fac-cad2-4440-938f-1fdb15d6e10d",
-  "sid": "b4d2cfa6-b66c-4481-a971-dfb5747945ab",
-  "deviceId": "d195e612-1eee-2f06-4c0e-90499f893359",
-  "csrfToken": "gFEtemNQVmnA-IeDALrB_7xb_cwcNLAZAPoBhKQQ"
+  "tid": "ebcf95be-38b3-4a9c-9785-7d55b221f859",
+  "sid": "b8i1f9ad-fce3-4e0d-b8c9-da06b18f65b8",
+  "deviceId": "050fbf4e-c6a7-661c-ae48-712a20752bf7",
+  "csrfToken": "KV6nrkea0tJt-3fAnw7jHxHIhAEnk3eiU8GE6ppw"
 }
