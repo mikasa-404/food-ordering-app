@@ -11,10 +11,22 @@ const Body = () => {
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [noReserr, setnoReserr] = useState("");
+  const [loading, setLoading]=useState(true);
+
 
   // const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
+    const fetchData = async ()=> {
+      const json = data;
+      const datay=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      const resData = (datay )? (json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants): (json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setTimeout(()=>{
+        setlistOfRestaurants(resData);
+        setfilteredRestaurants(resData);
+        setLoading(false)
+        }, 2000)
+    }
     fetchData();
   }, []);
 
@@ -45,7 +57,7 @@ const Body = () => {
     return <h1>Offline, please check your internet connection!!!</h1>;
   }
 
-  return (listOfRestaurants.length === 0) ? (
+  return (loading) ? (
     <Shimmer />
   ) : (
     <div className="body">
