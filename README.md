@@ -9,24 +9,25 @@ This is a food ordering app project developed using ReactJS. The app aims to pro
 **[https://foodyville.netlify.app/](https://foodyville.netlify.app/)**
 
 
+## 📓Features 
+- Implemented dynamic routing using *react-router-dom*
+- Utilized *Redux Toolkit* for efficient cart management
+- Integrated custom hooks for enhanced functionality
+- testing implemented using Jest and React Testing Library
+- Implemented a search bar for convenient restaurant exploration
+- Incorporated a *custom shimmer UI* for improved user experience
+- Implemented lazy loading for optimized performance
+- Ensured complete responsiveness for a seamless user interface
+
 ## 💻 Tech-Stack 
 - Frontend Library: React 
 - Styling: Tailwind CSS 
 - Bundler: Parcel 
 - State Management: Redux Toolkit 
 - Package Manager: npm 
-- Transpiler: Babel 
-- Routing: React Router 
-
-## 📓Features 
-- Fetches data of nearby restaurants using Swiggy API
-- Restaurant listings with area name, cuisine category, and ratings
-- Cart management feature implemented using *Redux Toolkit*.
-- Custom shimmer UI effect for improved user experience.
-- Dynamic routing using *react-router-dom*
-- Search functionality for restaurants
-- Utilizes custom hooks for code organization and reusability.
-- Implements lazy loading to optimize performance.
+- Transpiler: Babel
+- Routing: React Router
+- React-testing-library and Jest
 
 ## ⚙️Installation 
 To set up the Food Ordering App project locally, follow these steps:
