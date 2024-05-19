@@ -30,16 +30,6 @@ const RestaurantMenu = () => {
   const itemCards = resInfo?.itemCards;
   console.log(itemCards);
 
-  // console.log(resInfo?.cards[0]?.card?.card?.info);
-  // const itemCardsCheck = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
-  // var itemCards  = ((itemCardsCheck)?
-  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards :
-  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards);
-  // if(itemCards==undefined){
-  //   const cardsCheck = resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
-  //   if(cardsCheck==undefined) itemCards= resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.categories[0]?.itemCards;
-  //   else itemCards=cardsCheck;
-  // }
 
   if (itemCards.length != 0) {
     itemCards.forEach((element) => {

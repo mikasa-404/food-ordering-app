@@ -2,6 +2,6 @@ node_modules
 dist
 parcel-cache
 /.parcel-cache
-/dist
 /coverage
 /node_modules
+/dist
