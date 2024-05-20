@@ -1,10 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem("cart");
+    if (serializedState === null) {
+      return { items: [] };
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return { items: [] };
+  }
+};
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    items: [],
-  },
+  initialState:loadState(),
   reducers: {
     addItem: (state, action) => {
       //find in items=>if already there increase quantity for that item
