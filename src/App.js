@@ -1,36 +1,30 @@
 // import "../index.css"
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import About from "./components/About";
-import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Shimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
-import Cart from "./components/Cart";
-import OrderPlaced from "./components/Orderplaced";
 
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Error from "./components/Error";
+import Shimmer from "./components/Shimmer";
+
+// Lazy load components
+const About = lazy(() => import("./components/About"));
+const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const Cart = lazy(() => import("./components/Cart"));
+const OrderPlaced = lazy(() => import("./components/Orderplaced"));
 const Help = lazy(() => import("./components/Help"));
 
 const AppLayout = () => {
-  // const [user, setUser] = useState({
-  //   name: "Priya",
-  //   email: "jhapriya106@gmail.com",
-  // });
-  
-
   return (
-      <Provider store={store}>
-        <Header />
-        <Suspense fallback={<Shimmer />}>
+    <Provider store={store}>
+      <Header />
+      <Suspense fallback={<Shimmer />}>
         <Outlet />
-        </Suspense>
-
+      </Suspense>
     </Provider>
-    
   );
 };
 
@@ -45,25 +39,43 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About name="Priya"/>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About name="Priya" />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <RestaurantMenu />
+          </Suspense>
+        ),
       },
       {
         path: "/help",
         element: (
+          <Suspense fallback={<Shimmer />}>
             <Help />
+          </Suspense>
         ),
       },
       {
         path: "/cart",
-        element: <Cart/>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/order",
-        element: <OrderPlaced/>,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <OrderPlaced />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,
